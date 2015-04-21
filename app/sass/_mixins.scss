@@ -1,0 +1,49 @@
+/* SASS MIXINS
+---------------------------------------------------------------------------*/
+
+/* sets font-size, font-weight, and line-height. Note: use real weights (300, 400, 700, 900)  */
+@mixin set-type($theSize, $theWeight, $theLeading) {
+	font-size: #{$theSize / $font-base-size}em; /* calculate the correct font size in em */ 
+	font-weight: $theWeight; /* set the font weight */
+	line-height: #{$theLeading / $theSize}em; /* calculate the leading based on the current font size and indicate in ems */
+}
+
+@mixin set-linear-gradient($deg, $fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, $deg left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient($deg, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient($deg, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient($deg, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient($deg, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient($deg, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin set-webaim-hidden() {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+@mixin set-webaim-hidden-false() {
+	position:relative;
+	left:auto;
+	top:auto;
+	width:auto;
+	height:auto;
+	overflow:visible;
+}

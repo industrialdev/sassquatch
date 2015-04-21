@@ -1,0 +1,28 @@
+/* ACCESSIBILITY STYLES
+---------------------------------------------------------------------------*/
+.webaimHidden {
+  @include set-webaim-hidden();
+}
+
+.skip-link {
+	@include set-webaim-hidden();
+}
+.skip-link:focus {
+	display: block;
+	visibility: visible;
+
+/* 	@include set-type(18, 800, 40); */
+	color: $color-text-dk;
+
+	width: auto;
+	height: auto;
+	
+	padding: 0 1em;
+	
+	left: 0.5em;
+	top: 0.5em;
+			
+	background: $color-bg-lt;
+	
+	box-shadow: 0px 0px 10px $color-bg-dk;
+}
