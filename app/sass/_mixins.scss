@@ -47,3 +47,52 @@
 	height:auto;
 	overflow:visible;
 }
+
+/* 
+  IconVal = unicode value from fontawesome.github.io
+  Orient = left or right orientation - if let empty it will default to left orientation with no margin
+  Color = color of the icon
+  fontSize = size of the icon
+*/
+@mixin font-awesome-icon($iconVal, $orient: "", $color: "", $fontSize: ""){
+  @if $orient == 'left'{
+    &:before{
+      content:$iconVal;
+      display:inline-block;
+      font-family:$font-icon-family;
+      margin-right: 0.5em;
+      @if $color != ""{
+        color:$color;
+      }
+      @if $fontSize != ""{
+        font-size:$fontSize;
+      }
+    }
+  } @else if $orient == 'right'{
+    &:after{
+      content:$iconVal;
+      display:inline-block;
+      font-family:$font-icon-family;
+      margin-left: 0.5em;
+      @if $color != ""{
+        color:$color;
+      }
+      @if $fontSize != ""{
+        font-size:$fontSize;
+      }
+    }
+  } @else{
+    &:before{
+      content:$iconVal;
+      display:inline-block;
+      text-decoration:none;
+      font-family:$font-icon-family;
+      @if $color != ""{
+        color:$color;
+      }
+      @if $fontSize != ""{
+        font-size:$fontSize;
+      }
+    }
+  }
+}
