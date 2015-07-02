@@ -1,0 +1,101 @@
+/* VARIABLES
+------------------------------------------------------------------------------*/
+
+/* Brand Vars
+   Best practice is to bot use these outside the "vars" file. Rather assign to
+   a "Contextual Var" and use that to call the colout.
+------------------------------------------------------------------------------*/
+$color-brand-1:       #FF0000;	// red
+$color-brand-1-lt:    #FF6666;
+$color-brand-1-dk:    #660000;
+
+$color-brand-2:       #00FF00;	// green
+$color-brand-2-lt:    #99FF99;
+$color-brand-2-dk:    #006600;
+
+$color-brand-3:       #0000FF;	// blue
+$color-brand-3-lt:    #9999FF;
+$color-brand-3-dk:    #000066;
+
+$color-brand-4:       #FFFF00;	// yellow
+$color-brand-4-lt:    #FFFF99;
+$color-brand-4-dk:    #666600;
+
+$color-brand-5:       #FF6633;	// orange
+$color-brand-5-lt:    #FFCC99;
+$color-brand-5-dk:    #663300;
+
+$color-brand-6:       #9900FF;	// purple
+$color-brand-6-lt:    #CC99FF;
+$color-brand-6-dk:    #330066;
+
+
+/* Conntextual Vars
+------------------------------------------------------------------------------*/
+
+/* base colours */
+$color-text:	  	#000000;
+
+$color-text-lt:   #ffffff;	// white
+$color-text-med:  #CCCCCC;  // Grey
+$color-text-dk:   #000000;	// black
+
+$color-bg-lt:     #ffffff;	// white
+$color-bg-med:    #CCCCCC;  // Grey
+$color-bg-dk:     #000000;	// black
+
+
+/* Interface colors
+----------------------------------------------*/
+$color-link:		    $color-brand-3-lt;
+$color-link-hover:  $color-brand-3-dk;
+
+$color-hover-lt:	#999999;
+$color-hover-dk:	#CCCCCC;
+
+
+/* buttons */
+$color-button-text-dk: $color-text-dk;
+$color-button-text-lt: $color-text-lt;
+
+$color-button-border:       #000000;
+$color-button-border-hover: #CCCCCC;
+
+$color-button-background:       blue;
+$color-button-background-hover: #000000;
+
+/* Form colours
+----------------------------------------------*/
+$color-form-1:        $color-brand-3-lt;
+
+$color-font-warning:  $color-brand-1;
+
+
+/* Typography vars
+------------------------------------------------------------------------------*/
+$font-base-size: 16;//declarte the font size in pixels with not unit 
+
+$font-body-family:    'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
+$font-display-family: 'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
+$font-icon-family:    'FontAwesome';
+$font-mono-family: 'Courier New', Courier, monospace;
+
+/* Paths
+------------------------------------------------------------------------------*/
+$path-base:   '/';
+$path-images: '/assets/img';
+$path-fonts:  '/assets/fonts'; 
+
+
+/* Layout vars
+------------------------------------------------------------------------------*/
+$mobile:       480px;
+$tablet:       768px;
+$desktop:      991px;
+$desktop-wide: 1199px;
+
+
+/* Grid
+------------------------------------------------------------------------------*/
+
+

@@ -1,0 +1,72 @@
+/* Footer
+-----------------------------------------------*/
+body > footer {
+	background-color: $color-brand-4-lt;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
+	.vcard {
+		font-family: $font-display-family;
+		@include set-type(20, 700, 24);
+		color: $color-text-dk;
+
+		.photo,
+		.tel,
+		.url {
+			line-height: 30px;
+		}
+		figure {
+			display: inline-block;
+			.photo {
+				max-width: 140px;
+				height: auto;
+				margin-bottom: 0.25em;
+			}
+			figcaption {
+				
+			}
+		}
+		.tel {
+			.type {
+				
+			}
+			.value {
+				color: $color-brand-1;	
+			}
+		}
+		.url {
+			
+		}
+		a {
+			color: $color-brand-1;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+@media handheld, screen and (min-width: 599px) {
+	body > footer {
+		.vcard {
+			@include set-type(18, 700, 24);
+
+			figure {
+				.photo {
+					max-width: 215px;
+				}
+			}
+			.tel {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+@media handheld, screen and (min-width: 899px) {
+	body > footer {
+		.vcard {
+			@include set-type(20, 700, 24);			
+		}
+	}	
+}
