@@ -1,0 +1,170 @@
+html,
+body{
+  font-family:sans-serif;
+}
+
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------
+
+STRUCTURE
+
+------------------------------------------------- */
+.page-header{
+  &.wire{
+    padding:15px 0;
+  }
+}
+
+.page-footer{
+  &.wire{
+    margin-bottom:0;
+  }
+}
+
+nav{
+  ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+    @include clearfix();
+    li{
+      display:inline-block;
+      float:left;
+      a{
+        display:block;
+        padding:5px 10px;
+        color:#000;
+        text-decoration:none;
+        font-weight:bold;
+        &:hover,
+        &:focus,
+        &:active{
+          color:#ccc;
+        }
+      }
+      &:first-of-type{
+        a{
+          padding-left:0;
+        }
+      }
+    }
+  }
+}
+
+
+/* ----------------------------------------------
+
+HELPERS
+
+------------------------------------------------- */
+.centered-content{
+  width:100%;
+  max-width:1260px;
+  padding:0 30px;
+  margin:0 auto;
+}
+
+.button,
+button,
+input[type="button"],
+input[type="submit"]{
+  text-transform:uppercase;
+  font-weight:bold;
+  display:inline-block;
+  text-decoration:none;
+  padding:5px 10px;
+  border:2px solid;
+  color:#000;
+  &:hover,
+  &:focus,
+  &:active{
+    background:#000;
+    color:#fff;
+  }
+}
+
+.wire{
+  border:1px solid;
+  background:whitesmoke;
+  padding:15px;
+  margin-bottom:15px;
+}
+
+/* ----------------------------------------------
+
+GRID
+
+------------------------------------------------- */
+.row{
+  @include clearfix();
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12{
+  @include fill-parent();
+}
+
+@media (min-width: 480px){
+  .col-1{
+    @include span-columns(1);
+  }
+
+  .col-2{
+    @include span-columns(2);
+  }
+
+  .col-3{
+    @include span-columns(3);
+  }
+
+  .col-4{
+    @include span-columns(4);
+  }
+
+  .col-5{
+    @include span-columns(5);
+  }
+
+  .col-6{
+    @include span-columns(6);
+  }
+
+  .col-7{
+    @include span-columns(7);
+  }
+
+  .col-8{
+    @include span-columns(8);
+  }
+
+  .col-9{
+    @include span-columns(9);
+  }
+
+  .col-10{
+    @include span-columns(10);
+  }
+
+  .col-11{
+    @include span-columns(11);
+  }
+
+  .col-12{
+    @include span-columns(12);
+  }
+}
