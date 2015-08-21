@@ -17,3 +17,8 @@ window.addEventListener("hashchange", function(event) {
     }
 
 }, false); 
+
+
+(function($){
+  $('body').annotator();
+})(jQuery);
