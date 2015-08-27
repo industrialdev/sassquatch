@@ -20,5 +20,5 @@ window.addEventListener("hashchange", function(event) {
 
 
 (function($){
-  $('body').annotator();
+  var content = $('body').annotator();
 })(jQuery);

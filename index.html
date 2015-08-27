@@ -17,10 +17,10 @@
       <link rel="stylesheet" href="assets/styles/annotator.min.css">
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+      <script src="assets/scripts/scrollReveal.js"></script>
       <script src="assets/scripts/annotator-full.min.js"></script>
   </head>
   <body>
-
 
     <header class="page-header wire">
       <nav class="centered-content">
@@ -33,9 +33,10 @@
     </header><!-- /header -->
 
     <main class="main-content centered-content">
+
       <section>
-      <h1>Grid System</h1>
-        <div class="row">
+        <h1>Grid System</h1>
+        <div class="row" data-sr>
           <h2>Column 12 (.col-12)</h2>
           <div class="col-12 wire">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -140,6 +141,9 @@
 
     <!-- Scripts -->
     <script src="assets/scripts/base.js"></script>
+    <script>
+    window.sr = new scrollReveal();
+    </script>
   </body>
 </html>
 
