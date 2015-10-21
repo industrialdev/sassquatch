@@ -95,6 +95,10 @@ input[type="submit"]{
   margin-bottom:15px;
 }
 
+[data-icon]{
+  @include font-awesome-icon-a(attr(data-icon));
+  display:inline-block;
+}
 /* ----------------------------------------------
 
 GRID

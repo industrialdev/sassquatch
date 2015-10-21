@@ -51,7 +51,7 @@
 /* 
   Author: Kevin Andrews
   IconVal = unicode value from fontawesome.github.io
-  Orient = left or right orientation - if let empty it will default to left orientation with no margin
+  Orient = left or right orientation - if left empty it will default to left orientation with no margin
   Color = color of the icon
   fontSize = size of the icon
 */
@@ -94,6 +94,20 @@
       @if $fontSize != ""{
         font-size:$fontSize;
       }
+    }
+  }
+}
+
+//Accessible option - use with a designated html element and pair with an aria-label or aria-hidden ex: <span data-icon="\1234" aria-label="google chrome"></span>
+@mixin font-awesome-icon-a($iconVal, $color: "", $fontSize: ""){
+  &:before{
+    content:$iconVal;
+    font-family:$font-icon-family;
+    @if $color != ""{
+      color:$color;
+    }
+    @if $fontSize != ""{
+      font-size:$fontSize;
     }
   }
 }

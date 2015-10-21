@@ -1,19 +1,17 @@
-/* Compass and vendor foundation 
+/* Libraries 
 ------------------------------------------------------------------------------*/
-@import 'bourbon';
-@import 'neat';
+@import 'vendor/bourbon/bourbon';
+@import 'vendor/neat/neat';
 @import 'normalize';
 
-@import "vars";
-
-/* font import */
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+/* Font imports
+------------------------------------------------------------------------------*/
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 @import url('//fonts.googleapis.com/css?family=Open+Sans:400,700,800');
-
 
 /* custom superstructure
 ------------------------------------------------------------------------------*/
-
+@import "vars";
 @import "mixins";
 @import "boilerplate";
 @import "base";
