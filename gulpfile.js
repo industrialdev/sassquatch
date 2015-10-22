@@ -1,14 +1,31 @@
 'use strict';
 
 var gulp = require('gulp');
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var webserver = require('gulp-webserver');
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['webserver', 'sass', 'watch']);
+
+gulp.task('webserver', function() {
+  gulp.src('./')
+    .pipe(webserver({
+      fallback: 'index.html',
+      livereload: true,
+      directoryListing: {
+        enable: true,
+        path: 'root'
+      },
+      open: true
+    }));
+});
 
 gulp.task('sass', function () {
-  return sass('./assets/styles/main.scss', {sourcemap: false})
+  gulp.src('./assets/styles/main.scss')
+    .pipe(sass({
+      includePaths: require('node-neat').includePaths,
+      style: 'compressed'
+    }))
     .on('error', function (err) {
       console.log(err.message);
     })
@@ -23,19 +40,6 @@ gulp.task('scripts', function() {
   return gulp.src('public/resources/js/**/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('public/resources/min'));
-});
-
-gulp.task('webserver', function() {
-  gulp.src('./')
-    .pipe(webserver({
-      fallback: 'index.html',
-      livereload: true,
-      directoryListing: {
-        enable: true,
-        path: 'root'
-      },
-      open: true
-    }));
 });
 
 function errorHandler(error) {
