@@ -98,7 +98,7 @@
   }
 }
 
-//Accessible option - use with a designated html element and pair with an aria-label or aria-hidden ex: <span data-icon="\1234" aria-label="google chrome"></span>
+//Accessible option - use with a designated html element and pair with an aria-label or aria-hidden ex: <span data-icon="&#xf268;" aria-label="google chrome"></span>
 @mixin font-awesome-icon-a($iconVal, $color: "", $fontSize: ""){
   &:before{
     content:$iconVal;
