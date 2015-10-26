@@ -16,12 +16,14 @@ STRUCTURE
 
 ------------------------------------------------- */
 .page-header{
+  margin-bottom:15px;
   &.wire{
     padding:15px 0;
   }
 }
 
 .page-footer{
+  margin-top:15px;
   &.wire{
     margin-bottom:0;
   }
@@ -80,7 +82,7 @@ HELPERS
 
 /* Accessible font-awesome icons */
 [data-icon]{
-  @include font-awesome-icon(attr(data-icon));
+  @include font-awesome-icon(attr(data-icon), right);
   display:inline-block;
 }
 
@@ -95,14 +97,22 @@ GRID
 
 /* LOOPS TO DEFINE GRID CLASSES
 
-  - For 12 column grid define just the column width ex: .col-6
-  - For 13 to 24 column grid define both column width and total ex: .col-6-13
+  - Col: ex: col-1 OR col-1-24
 
+  - Push: ex: push-1 OR push-1-24
+  - Pull: ex: pull-1 OR pull-1-24
+data
 */
 
 @for $i from 1 through 12{
   .col-#{$i} {
     @include span-columns($i);
+  }
+  .pull-#{$i} {
+    @include shift(-$i);
+  }
+  .push-#{$i} {
+    @include shift($i);
   }
 }
 
@@ -111,6 +121,12 @@ GRID
     @if $y <= $i{
       .col-#{$y}-#{$i} {
         @include span-columns($y of $i);
+      }
+      .pull-#{$y}-#{$i} {
+        @include shift(-$y of $i);
+      }
+      .push-#{$y}-#{$i} {
+        @include shift($y of $i);
       }
     }
   }

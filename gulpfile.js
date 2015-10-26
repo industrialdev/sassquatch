@@ -24,7 +24,7 @@ gulp.task('sass', function () {
   gulp.src('./assets/styles/main.scss')
     .pipe(sass({
       includePaths: require('node-neat').includePaths,
-      style: 'compressed'
+      outputStyle: 'compressed'
     }))
     .on('error', function (err) {
       console.log(err.message);
