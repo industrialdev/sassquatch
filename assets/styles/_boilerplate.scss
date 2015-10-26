@@ -1,6 +1,7 @@
 html,
 body{
   font-family:sans-serif;
+  margin:0;
 }
 
 *{
@@ -69,37 +70,18 @@ HELPERS
   margin:0 auto;
 }
 
-.button,
-button,
-input[type="button"],
-input[type="submit"]{
-  text-transform:uppercase;
-  font-weight:bold;
-  display:inline-block;
-  text-decoration:none;
-  padding:5px 10px;
-  border:2px solid;
-  color:#000;
-  &:hover,
-  &:focus,
-  &:active{
-    background:#000;
-    color:#fff;
-  }
-}
-
-/* Accessible font-awesome icons */
-[data-icon]{
-  @include font-awesome-icon-a(attr(data-icon));
-  display:inline-block;
-}
-
 /* for wireframing */
 .wire{
   border:1px solid;
   background:whitesmoke;
   padding:15px;
   margin-bottom:15px;
+}
+
+/* Accessible font-awesome icons */
+[data-icon]{
+  @include font-awesome-icon(attr(data-icon));
+  display:inline-block;
 }
 
 /* ----------------------------------------------
@@ -111,67 +93,32 @@ GRID
   @include clearfix();
 }
 
-.col-1,
-.col-2,
-.col-3,
-.col-4,
-.col-5,
-.col-6,
-.col-7,
-.col-8,
-.col-9,
-.col-10,
-.col-11,
-.col-12{
-  @include fill-parent();
-}
+/* LOOPS TO DEFINE GRID CLASSES
 
-@media (min-width: 480px){
-  .col-1{
-    @include span-columns(1);
-  }
+  - For 12 column grid define just the column width ex: .col-6
+  - For 13 to 24 column grid define both column width and total ex: .col-6-13
 
-  .col-2{
-    @include span-columns(2);
-  }
+*/
 
-  .col-3{
-    @include span-columns(3);
-  }
-
-  .col-4{
-    @include span-columns(4);
-  }
-
-  .col-5{
-    @include span-columns(5);
-  }
-
-  .col-6{
-    @include span-columns(6);
-  }
-
-  .col-7{
-    @include span-columns(7);
-  }
-
-  .col-8{
-    @include span-columns(8);
-  }
-
-  .col-9{
-    @include span-columns(9);
-  }
-
-  .col-10{
-    @include span-columns(10);
-  }
-
-  .col-11{
-    @include span-columns(11);
-  }
-
-  .col-12{
-    @include span-columns(12);
+@for $i from 1 through 12{
+  .col-#{$i} {
+    @include span-columns($i);
   }
 }
+
+@for $i from 13 through 24{
+  @for $y from 1 through 24{
+    @if $y <= $i{
+      .col-#{$y}-#{$i} {
+        @include span-columns($y of $i);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

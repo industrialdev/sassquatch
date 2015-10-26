@@ -1,1 +1,18 @@
-
+.button,
+button,
+input[type="button"],
+input[type="submit"]{
+  text-transform:uppercase;
+  font-weight:bold;
+  display:inline-block;
+  text-decoration:none;
+  padding:5px 10px;
+  border:2px solid;
+  color:#000;
+  &:hover,
+  &:focus,
+  &:active{
+    background:#000;
+    color:#fff;
+  }
+}
