@@ -7,12 +7,62 @@ input[type="submit"]{
   display:inline-block;
   text-decoration:none;
   padding:5px 10px;
-  border:2px solid;
+  border:2px solid #000;
   color:#000;
+  margin-bottom:1em;
   &:hover,
   &:focus,
   &:active{
     background:#000;
     color:#fff;
+  }
+  &:last-child{
+    margin-bottom:0;
+  }
+}
+
+.page-header{
+  nav{
+    @include clearfix();
+  }
+}
+
+.mobile-toggle{
+  padding:5px;
+  text-align:center;
+  display:none;
+  [data-icon]{
+    &:before{
+      margin:0;
+    }
+  }
+}
+
+@media (max-width: 768px){
+  body{
+    padding-top:80px;
+  }
+  header{
+    position:fixed;
+    top:0;
+    width:100%;
+  }
+  .mobile-toggle{
+    display:block;
+    float:right;
+    + ul{
+      display:none;
+      position:absolute;
+      left:0;
+      top:60px;
+      width:100%;
+      li{
+        display:block;
+        width:100%;
+        background:#fff;
+        border:1px solid;
+        border-top:none;
+      }
+    }
   }
 }

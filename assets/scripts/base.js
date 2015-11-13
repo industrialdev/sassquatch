@@ -20,5 +20,16 @@ window.addEventListener("hashchange", function(event) {
 
 
 (function($){
-  var content = $('body').annotator();
+  window.sr = new scrollReveal();
+  $('.mobile-toggle').click(function(){
+    var mobileMenu = $(this).next('ul');
+    
+    mobileMenu.toggleClass('open');
+
+    if(mobileMenu.hasClass("open")){
+      mobileMenu.slideDown('fast');
+    }else{
+      mobileMenu.slideUp('fast');
+    }
+  });
 })(jQuery);
