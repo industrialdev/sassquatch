@@ -65,12 +65,3 @@
     }
   }
 }
-
-@mixin transition($scope, $speed){
-  -webkit-transition: $scope $speed ease;
-  -moz-transition: $scope $speed ease;
-  -ms-transition: $scope $speed ease;
-  transition: $scope $speed ease;
-}
-
-
