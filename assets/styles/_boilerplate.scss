@@ -109,6 +109,10 @@ HELPERS
   margin:0 auto;
 }
 
+.webaim-hidden{
+  @include set-webaim-hidden();
+}
+
 /* for wireframing */
 .wire{
   border:1px solid;
@@ -151,7 +155,7 @@ GRID
   }
 }
 
-@for $i from 13 through 24{
+@for $i from 1 through 24{
   @for $y from 1 through 24{
     @if $y <= $i{
       .col-#{$y}-#{$i} {

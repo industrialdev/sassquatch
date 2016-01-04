@@ -1,9 +1,9 @@
-'use strict';
-
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var webserver = require('gulp-webserver');
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
 
 gulp.task('default', ['webserver', 'sass', 'watch']);
 
@@ -25,6 +25,10 @@ gulp.task('sass', function () {
     .pipe(sass({
       includePaths: require('node-neat').includePaths,
       outputStyle: 'compressed'
+    }))
+    .pipe(autoprefixer({
+      browsers: ['last 100 versions'],
+      cascade: false
     }))
     .on('error', function (err) {
       console.log(err.message);

@@ -2,6 +2,7 @@
 button,
 input[type="button"],
 input[type="submit"]{
+  cursor:pointer;
   text-transform:uppercase;
   font-weight:bold;
   display:inline-block;
@@ -34,6 +35,23 @@ input[type="submit"]{
   [data-icon]{
     &:before{
       margin:0;
+    }
+  }
+}
+
+form{
+  margin-bottom:15px;
+  .form-group{
+    margin-bottom:15px;
+  }
+}
+
+@media (min-width: 769px){
+  .page-header{
+    nav{
+      ul{
+        display:block!important;
+      }
     }
   }
 }

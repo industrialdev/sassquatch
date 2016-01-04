@@ -24,11 +24,11 @@
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="page-header wire">
-      <nav class="centered-content">
-        <div class="mobile-toggle">
+      <nav class="centered-content" role="navigation">
+        <div class="mobile-toggle drawer-toggle" aria-expanded="false">
           <span data-icon="&#xf0c9;"></span>
         </div>
-        <ul>
+        <ul class="drawer" aria-hidden="true">
           <li><a href="">Link 1</a></li>
           <li><a href="">Link 2</a></li>
           <li><a href="">Link 3</a></li>
@@ -37,14 +37,134 @@
     </header><!-- /header -->
 
     <div class="centered-content row">
-      <main id="main-content" class="col-9">
+      <main id="main-content" class="col-9" role="main">
         <h1>Industrial Boilerplate</h1>
         <section>
           <h2>Grid System</h2>
-          <div class="row" data-sr>
-            <h3>Columns 12 (.col-12)</h3>
+  
+          <div class="row">
+            <div class="col-1 wire">
+              <p>One</p>
+            </div>
+            <div class="col-11 wire">
+              <p>Eleven</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
+            <div class="col-2 wire">
+              <p>Two</p>
+            </div>
+            <div class="col-10 wire">
+              <p>Ten</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
+            <div class="col-3 wire">
+              <p>Three</p>
+            </div>
+            <div class="col-9 wire">
+              <p>Nine</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
+            <div class="col-4 wire">
+              <p>Four</p>
+            </div>
+            <div class="col-8 wire">
+              <p>Eight</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
+            <div class="col-5 wire">
+              <p>Five</p>
+            </div>
+            <div class="col-7 wire">
+              <p>Seven</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
+            <div class="col-6 wire">
+              <p>Six</p>
+            </div>
+            <div class="col-6 wire">
+              <p>Six</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
+            <div class="col-7 wire">
+              <p>Seven</p>
+            </div>
+            <div class="col-5 wire">
+              <p>Five</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
+            <div class="col-8 wire">
+              <p>Eight</p>
+            </div>
+            <div class="col-4 wire">
+              <p>Four</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
+            <div class="col-9 wire">
+              <p>Nine</p>
+            </div>
+            <div class="col-3 wire">
+              <p>Three</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
+            <div class="col-10 wire">
+              <p>Ten</p>
+            </div>          
+            <div class="col-2 wire">
+              <p>Two</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
+            <div class="col-11 wire">
+              <p>Eleven</p>
+            </div>
+            <div class="col-1 wire">
+              <p>One</p>
+            </div>
+          </div><!-- /row -->
+          <div class="row">
             <div class="col-12 wire">
-              <h4>Scroll Reveal Animation (data-sr)</h4>
+              <p>Twelve</p>
+            </div>
+          </div><!-- /row -->
+
+          <div class="row">
+            <div class="col-4 push-8 wire">
+              <p>Four / Push Eight</p>
+            </div>
+            <div class="col-3 pull-7 wire">
+              <p>Three / Pull Seven</p>
+            </div>
+            <div class="col-5 pull-12 wire">
+              <p>Five / Pull Twelve</p>
+            </div>
+          </div><!-- /row -->
+          
+          <div class="row">
+            <div class="col-6-18 wire">
+              <p>Six of Eighteen</p>
+            </div>
+            <div class="col-6-18 wire">
+              <p>Six of Eighteen</p>
+            </div>
+            <div class="col-6-18 wire">
+              <p>Six of Eighteen</p>
+            </div>
+          </div><!-- /row -->
+        </section>
+
+        <section>
+          <h2>UI Elements</h2>
+          <div class="row">
+            <div class="col-12 wire">
               <p><strong>Lorem</strong> <em>ipsum</em> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               <a class="button" href="">Button</a>
               <table>
@@ -77,118 +197,26 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 11 (.col-11)</h3>
-            <div class="col-11 wire">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 10 (.col-10)</h3>
-            <div class="col-10 wire">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 9 (.col-9)</h3>
-            <div class="col-9 wire">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 8 (.col-8)</h3>
-            <div class="col-8 wire">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 7 (.col-7)</h3>
-            <div class="col-7 wire">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 6 (.col-6)</h3>
-            <div class="col-6 wire">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 5 (.col-5)</h3>
-            <div class="col-5 wire">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 4 (.col-4)</h3>
-            <div class="col-4 wire">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 3 (.col-3)</h3>
-            <div class="col-3 wire">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 2 (.col-2)</h3>
-            <div class="col-2 wire">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-            </div>
-          </div><!-- /row -->
-          <div class="row">
-            <h3>Columns 1 (.col-1)</h3>
-            <div class="col-1 wire">
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-          </div><!-- /row -->
-
-          <div class="row">
-            <h3>Multi Column Example</h3>
-            <div class="col-4 wire">
-              <h4>Column 1</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <div class="col-3 wire">
-              <h4>Column 2</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <div class="col-5 wire">
-              <h4>Column 3</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div><!-- /row -->
-
-          <div class="row">
-            <h3>Multi Column Example with Push/Pull</h3>
-            <div class="col-4 push-8 wire">
-              <h4>Column 1 (col-4 push-8)</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <div class="col-3 pull-7 wire">
-              <h4>Column 2 (col-3 pull-7)</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <div class="col-5 pull-12 wire">
-              <h4>Column 3 (col-5 pull-12)</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <h4>Form Example</h4>
+              <form class="search">
+                <div class="form-group">
+                  <label for="search">Search</label>
+                  <input type="search" name="search" id="search">
+                </div>
+                <input type="submit" value="search">
+              </form>
             </div>
           </div><!-- /row -->
         </section>
+
         <section>
           <h2>Font Awesome Data Icons</h2>
-          <span data-icon="&#xf06e;"></span>
-          <span data-icon="&#xf004;"></span>
-          <span data-icon="&#xf268;"></span>
+          <span data-icon="&#xf06e;" aria-label="eye"></span>
+          <span data-icon="&#xf004;" aria-label="heart"></span>
+          <span data-icon="&#xf268;" aria-label="chrome"></span>
         </section>
       </main><!-- /main-content -->
+
       <aside class="sidebar col-3">
         <div class="wire">
           <ul>
@@ -203,11 +231,12 @@
           </ol>
         </div>
       </aside><!-- /sidebar -->
+
     </div>
 
     <footer class="page-footer wire">
       <div class="centered-content">
-        <p>© Copyright, Industrial 2015</p>
+        <p>© Copyright, Industrial 2016</p>
       </div>
     </footer><!-- /page-footer -->
 
