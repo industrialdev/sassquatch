@@ -1,13 +1,8 @@
 /* SASS MIXINS
 ---------------------------------------------------------------------------*/
 
-/* sets font-size, font-weight, and line-height. Note: use real weights (300, 400, 700, 900)  */
-@mixin set-type($theSize, $theWeight, $theLeading) {
-	font-size: #{$theSize / $font-base-size}em; /* calculate the correct font size in em */ 
-	font-weight: $theWeight; /* set the font weight */
-	line-height: #{$theLeading / $theSize}em; /* calculate the leading based on the current font size and indicate in ems */
-}
 
+/* Clearfix for container with floated children */
 @mixin clearfix() { 
   &:before,
   &:after {

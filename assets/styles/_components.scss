@@ -22,12 +22,6 @@ input[type="submit"]{
   }
 }
 
-.page-header{
-  nav{
-    @include clearfix();
-  }
-}
-
 .mobile-toggle{
   padding:5px;
   text-align:center;
@@ -43,44 +37,5 @@ form{
   margin-bottom:15px;
   .form-group{
     margin-bottom:15px;
-  }
-}
-
-@media (min-width: 769px){
-  .page-header{
-    nav{
-      ul{
-        display:block!important;
-      }
-    }
-  }
-}
-
-@media (max-width: 768px){
-  body{
-    padding-top:80px;
-  }
-  header{
-    position:fixed;
-    top:0;
-    width:100%;
-  }
-  .mobile-toggle{
-    display:block;
-    float:right;
-    + ul{
-      display:none;
-      position:absolute;
-      left:0;
-      top:60px;
-      width:100%;
-      li{
-        display:block;
-        width:100%;
-        background:#fff;
-        border:1px solid;
-        border-top:none;
-      }
-    }
   }
 }

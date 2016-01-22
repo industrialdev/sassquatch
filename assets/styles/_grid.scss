@@ -1,0 +1,47 @@
+/* ----------------------------------------------
+
+GRID
+
+------------------------------------------------- */
+.row{
+  @include clearfix();
+  margin-bottom:15px;
+}
+
+/* LOOPS TO DEFINE GRID CLASSES
+  - Col: ex: col-1 OR col-1-24
+  - Push: ex: push-1 OR push-1-24
+  - Pull: ex: pull-1 OR pull-1-24
+*/
+
+@for $i from 1 through 12{
+  .col-#{$i} {
+    @include span-columns($i);
+  }
+  .pull-#{$i} {
+    @include shift(-$i);
+  }
+  .push-#{$i} {
+    @include shift($i);
+  }
+}
+
+@for $i from 1 through 24{
+  @for $y from 1 through 24{
+    @if $y <= $i{
+      .col-#{$y}-#{$i} {
+        @include span-columns($y of $i);
+      }
+      .pull-#{$y}-#{$i} {
+        @include shift(-$y of $i);
+      }
+      .push-#{$y}-#{$i} {
+        @include shift($y of $i);
+      }
+    }
+  }
+}
+
+*[class*="col-"]{
+  margin-bottom:0;
+}
