@@ -10,6 +10,7 @@ window.addEventListener("hashchange", function(event) {
 }, false);
 
 (function($){
+  
   /* Activate scroll reveal animation library */
 
   window.sr = new scrollReveal();
@@ -32,7 +33,7 @@ window.addEventListener("hashchange", function(event) {
     }
   });
 
-  /* Smooth scrolling if requested */
+  /* Smooth scrolling if requested (focus issue for accessibility needs to be fixed) */
 
   // $('a[href*=#]:not([href=#])').click(function() {
   //   if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

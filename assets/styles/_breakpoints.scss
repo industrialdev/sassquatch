@@ -2,16 +2,6 @@
   
   /* Grid.scss
   ---------------------------------- */
-  .row{
-    margin-bottom:0;
-  }
-  *[class*="col-"],
-  *[class*="pull-"],
-  *[class*="push-"]{
-    @include span-columns(12);
-    @include shift(0);
-    margin-bottom:15px;
-  }
 
   /* Boilerplate.scss
   ---------------------------------- */
@@ -55,7 +45,7 @@
 
 /* Force menu to appear on desktop view */
 @media (min-width: 769px){
-  .drawer{
+  nav .drawer{
     display:block!important;
   }
 }

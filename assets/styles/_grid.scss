@@ -5,7 +5,17 @@ GRID
 ------------------------------------------------- */
 .row{
   @include clearfix();
+  margin-bottom:0;
+}
+//Default - Mobile first grid
+*[class*="col_"]{
+  @include span-columns(12);
   margin-bottom:15px;
+}
+
+*[class*="pull_"],
+*[class*="push_"]{
+  @include shift(0);
 }
 
 /* LOOPS TO DEFINE GRID CLASSES
@@ -14,34 +24,68 @@ GRID
   - Pull: ex: pull-1 OR pull-1-24
 */
 
+//Default grid structure for all views
 @for $i from 1 through 12{
-  .col-#{$i} {
+  .col_#{$i}{
     @include span-columns($i);
   }
-  .pull-#{$i} {
+  .pull_#{$i} {
     @include shift(-$i);
   }
-  .push-#{$i} {
+  .push_#{$i} {
     @include shift($i);
   }
 }
 
-@for $i from 1 through 24{
+@for $x from 1 through 24{
   @for $y from 1 through 24{
-    @if $y <= $i{
-      .col-#{$y}-#{$i} {
-        @include span-columns($y of $i);
+    @if $y <= $x{
+      .col_#{$y}-#{$x} {
+        @include span-columns($y of $x);
       }
-      .pull-#{$y}-#{$i} {
-        @include shift(-$y of $i);
+      .pull_#{$y}-#{$x} {
+        @include shift(-$y of $x);
       }
-      .push-#{$y}-#{$i} {
-        @include shift($y of $i);
+      .push_#{$y}-#{$x} {
+        @include shift($y of $x);
       }
     }
   }
 }
 
-*[class*="col-"]{
-  margin-bottom:0;
+//Grid structure classes for window sizes 480px and up
+$breakpoints: $mobile $tablet $desktop $desktop-wide;
+$grid-prefix: sm md lg xl;
+
+@for $z from 1 through 4{
+  @media(min-width: nth($breakpoints, $z)){
+    @for $i from 1 through 12{
+      .col_#{nth($grid-prefix, $z)}-#{$i}{
+        @include span-columns($i);
+      }
+      .pull_#{nth($grid-prefix, $z)}-#{$i} {
+        @include shift(-$i);
+      }
+      .push_#{nth($grid-prefix, $z)}-#{$i} {
+        @include shift($i);
+      }
+    }
+    @for $x from 1 through 24{
+      @for $y from 1 through 24{
+        @if $y <= $x{
+          .col_#{nth($grid-prefix, $z)}-#{$y}-#{$x} {
+            @include span-columns($y of $x);
+          }
+          .pull_#{nth($grid-prefix, $z)}-#{$y}-#{$x} {
+            @include shift(-$y of $x);
+          }
+          .push_#{nth($grid-prefix, $z)}-#{$y}-#{$x} {
+            @include shift($y of $x);
+          }
+        }
+      }
+    }
+  }
 }
+
+
