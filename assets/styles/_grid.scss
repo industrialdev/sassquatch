@@ -58,7 +58,7 @@ $breakpoints: $mobile $tablet $desktop $desktop-wide;
 $grid-prefix: sm md lg xl;
 
 @for $z from 1 through 4{
-  @media(min-width: nth($breakpoints, $z)){
+  @include media(nth($breakpoints, $z)){
     @for $i from 1 through 12{
       .col_#{nth($grid-prefix, $z)}-#{$i}{
         @include span-columns($i);
