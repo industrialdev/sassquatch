@@ -119,7 +119,7 @@ HELPERS
 }
 
 .flex{
-  display:flex;
+  @include display(flex);
 }
 
 .centered{

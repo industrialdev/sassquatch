@@ -1,18 +1,6 @@
 /* SASS MIXINS
 ---------------------------------------------------------------------------*/
 
-/* Clearfix for container with floated children */
-@mixin clearfix() { 
-  &:before,
-  &:after {
-    content: "";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
-
 /* Hide elements while remaining accessible */
 @mixin set-webaim-hidden() {
 	position:absolute;
