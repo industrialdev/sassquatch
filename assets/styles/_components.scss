@@ -8,13 +8,13 @@ input[type="submit"]{
   display:inline-block;
   text-decoration:none;
   padding:5px 10px;
-  border:2px solid #000;
-  color:#000;
+  background:#000;
+  color:#fff;
   margin-bottom:1em;
   &:hover,
   &:focus,
   &:active{
-    background:#000;
+    background:#4a4a4a;
     color:#fff;
   }
   &:last-child{
@@ -23,9 +23,24 @@ input[type="submit"]{
 }
 
 .mobile-toggle{
+  display:block;
+  float:right;
   padding:5px;
   text-align:center;
-  display:none;
+  + ul{
+    display:none;
+    position:absolute;
+    left:0;
+    top:60px;
+    width:100%;
+    li{
+      display:block;
+      width:100%;
+      background:#fff;
+      border:1px solid;
+      border-top:none;
+    }
+  }
   [data-icon]{
     &:before{
       margin:0;

@@ -1,48 +1,39 @@
-@media (max-width: 768px){
+@media (min-width: 768px){
 
   /* Boilerplate.scss
   ---------------------------------- */
+
+  /* Force menu to appear on desktop view */
+  nav .drawer{
+    display:block!important;
+  }
+
   .drawer{
-    display:none;
+    display:block;
   }
 
   /* Base.scss
   ---------------------------------- */
   body{
-    padding-top:80px;
+    padding-top:0px;
   }
+
   header{
-    position:fixed;
-    top:0;
-    width:100%;
+    position:static;
   }
   
   /* Components.scss
   ---------------------------------- */
   .mobile-toggle{
-    display:block;
-    float:right;
+    display:none;
     + ul{
-      display:none;
-      position:absolute;
-      left:0;
-      top:60px;
-      width:100%;
+      position:static;
       li{
-        display:block;
-        width:100%;
-        background:#fff;
-        border:1px solid;
-        border-top:none;
+        width:auto;
+        background:transparent;
+        border:none;
       }
     }
   }
 
-}
-
-/* Force menu to appear on desktop view */
-@media (min-width: 769px){
-  nav .drawer{
-    display:block!important;
-  }
 }
