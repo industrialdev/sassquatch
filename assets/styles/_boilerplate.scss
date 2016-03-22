@@ -3,6 +3,7 @@ body{
   font-size: $font-base-size; 
   font-family:$font-body-family;
   margin:0;
+  -webkit-text-size-adjust: 100%; 
 }
 
 body{
@@ -34,6 +35,12 @@ ol{
 
 p{
   margin-top:0;
+}
+
+a, 
+img{
+  border:none;
+  outline:none;
 }
 
 header{
