@@ -37,22 +37,6 @@ GRID
   }
 }
 
-@for $x from 1 through 24{
-  @for $y from 1 through 24{
-    @if $y <= $x{
-      .col_#{$y}-#{$x} {
-        @include span-columns($y of $x);
-      }
-      .pull_#{$y}-#{$x} {
-        @include shift(-$y of $x);
-      }
-      .push_#{$y}-#{$x} {
-        @include shift($y of $x);
-      }
-    }
-  }
-}
-
 //Grid structure classes for window sizes 480px and up
 $breakpoints: $mobile $tablet $desktop $desktop-wide;
 $grid-prefix: sm md lg xl;
@@ -68,21 +52,6 @@ $grid-prefix: sm md lg xl;
       }
       .push_#{nth($grid-prefix, $z)}-#{$i} {
         @include shift($i);
-      }
-    }
-    @for $x from 1 through 24{
-      @for $y from 1 through 24{
-        @if $y <= $x{
-          .col_#{nth($grid-prefix, $z)}-#{$y}-#{$x} {
-            @include span-columns($y of $x);
-          }
-          .pull_#{nth($grid-prefix, $z)}-#{$y}-#{$x} {
-            @include shift(-$y of $x);
-          }
-          .push_#{nth($grid-prefix, $z)}-#{$y}-#{$x} {
-            @include shift($y of $x);
-          }
-        }
       }
     }
   }
