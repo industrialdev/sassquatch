@@ -3,7 +3,9 @@ body{
   font-size: $font-base-size; 
   font-family:$font-body-family;
   margin:0;
-  -webkit-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  
 }
 
 body{
@@ -98,8 +100,8 @@ HELPERS
   width:100%;
 }
 
-.flex{
-  @include display(flex);
+.float-right{
+  float:right;
 }
 
 .centered{
@@ -177,14 +179,14 @@ HELPERS
 .skip-link:focus {
   display: block;
   visibility: visible;
-  color: $color-text-dk;
+  color: $color-dk;
   width: auto;
   height: auto;
   padding: 0 1em;
   left: 0.5em;
   top: 0.5em;   
-  background: $color-bg-lt;
-  box-shadow: 0px 0px 10px $color-bg-dk;
+  background: $color-lt;
+  box-shadow: 0px 0px 10px $color-dk;
 }
 
 /* Accessible font-awesome icons */

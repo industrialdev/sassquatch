@@ -37,6 +37,19 @@ GRID
   }
 }
 
+//20 column grid
+@for $x from 1 through 20{
+  .col_#{$x}-20{
+    @include span-columns($x of 20);
+  }
+  .pull_#{$x}-20{
+    @include shift(-$x);
+  }
+  .push_#{$x}-20{
+    @include shift($x);
+  }
+}
+
 //Grid structure classes for window sizes 480px and up
 $breakpoints: $mobile $tablet $desktop $desktop-wide;
 $grid-prefix: sm md lg xl;
@@ -52,6 +65,17 @@ $grid-prefix: sm md lg xl;
       }
       .push_#{nth($grid-prefix, $z)}-#{$i} {
         @include shift($i);
+      }
+    }
+    @for $x from 1 through 20{
+      .col_#{nth($grid-prefix, $z)}-#{$x}-20{
+        @include span-columns($x of 20);
+      }
+      .pull_#{nth($grid-prefix, $z)}-#{$x}-20{
+        @include shift(-$x of 20);
+      }
+      .push_#{nth($grid-prefix, $z)}-#{$x}-20{
+        @include shift($x of 20);
       }
     }
   }

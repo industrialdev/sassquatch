@@ -19,26 +19,12 @@ $color-brand-4:       #FFFF00;	// yellow
 $color-brand-4-lt:    #FFFF99;
 $color-brand-4-dk:    #666600;
 
-$color-brand-5:       #FF6633;	// orange
-$color-brand-5-lt:    #FFCC99;
-$color-brand-5-dk:    #663300;
-
-$color-brand-6:       #9900FF;	// purple
-$color-brand-6-lt:    #CC99FF;
-$color-brand-6-dk:    #330066;
-
 
 /* Conntextual Colours
 ------------------------------------------------------------------------------*/
-$color-text:	  	#000000;
-
-$color-text-lt:   #ffffff;	// white
-$color-text-med:  #CCCCCC;  // Grey
-$color-text-dk:   #000000;	// black
-
-$color-bg-lt:     #ffffff;	// white
-$color-bg-med:    #CCCCCC;  // Grey
-$color-bg-dk:     #000000;	// black
+$color-lt:   #ffffff;	// white
+$color-med:  #CCCCCC;  // Grey
+$color-dk:   #000000;	// black
 
 
 /* Typography
@@ -48,7 +34,6 @@ $font-base-size: 14px; //declare the font size in pixels without unit
 $font-body-family:    'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
 $font-display-family: 'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
 $font-icon-family:    'FontAwesome';
-$font-mono-family:    'Courier New', Courier, monospace;
 
 
 /* Layout vars
