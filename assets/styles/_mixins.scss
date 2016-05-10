@@ -23,21 +23,15 @@
 
 /* 
   - IconVal = unicode value from fontawesome.github.io
-  - Margin = which side of the icon do you want to add margin to "left" or "right" 
   - Color = color of the icon
   - FontSize = size of the icon
   use with a designated html element and pair with an aria-label or aria-hidden ex: <span data-icon="&#xf268;" aria-label="google chrome"></span>
 */
-@mixin font-awesome-icon($iconVal, $margin: "", $color: "", $fontSize: ""){
+@mixin font-awesome-icon($iconVal, $color: "", $fontSize: ""){
   &:before{
     content:$iconVal;
     display:inline-block;
     font-family:$font-icon-family;
-    @if $margin == "left"{
-      margin-left: 0.5em;
-    }@elseif $margin =="right"{
-      margin-right: 0.5em;
-    }
     @if $color != ""{
       color:$color;
     }

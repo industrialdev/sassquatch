@@ -1,63 +1,8 @@
-.button,
-button,
-input[type="button"],
-input[type="submit"]{
-  cursor:pointer;
-  text-transform:uppercase;
-  font-weight:bold;
-  display:inline-block;
-  text-decoration:none;
-  padding:5px 10px;
-  background:#000;
-  color:#fff;
-  margin-bottom:1em;
-  &:hover,
-  &:focus,
-  &:active{
-    background:#4a4a4a;
-    color:#fff;
-  }
-  &:last-child{
-    margin-bottom:0;
-  }
-}
-
-.mobile-toggle{
-  display:block;
-  float:right;
-  padding:5px;
-  text-align:center;
-  + ul{
-    display:none;
-    position:absolute;
-    left:0;
-    top:60px;
-    width:100%;
-    li{
-      display:block;
-      width:100%;
-      background:#fff;
-      border:1px solid;
-      border-top:none;
-    }
-  }
-  [data-icon]{
-    &:before{
-      margin:0;
-    }
-  }
-}
-
-form{
+/* STRUCTURE COMPONENTS
+---------------------------------------------------------------------------*/
+.card{
+  border:1px solid;
+  background:whitesmoke;
+  padding:15px;
   margin-bottom:15px;
-  .form-group{
-    margin-bottom:15px;
-  }
-}
-
-
-input{
- margin:0;
- -webkit-appearance: none;
- -webkit-border-radius:0px;
 }

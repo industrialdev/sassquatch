@@ -1,93 +1,5 @@
-html,
-body{
-  font-size: $font-base-size; 
-  font-family:$font-body-family;
-  margin:0;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;  
-}
-
-body{
-  padding-top:80px;
-}
-
-*{
-  box-sizing: border-box;
-  &:last-child{
-    margin-bottom:0;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
-  margin-top:0;
-  font-family:$font-display-family;
-}
-
-ul,
-ol{
-  margin-top:0;
-  padding-left:25px;
-}
-
-p{
-  margin-top:0;
-}
-
-a, 
-img{
-  border:none;
-  outline:none;
-}
-
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-}
-
-nav{
-  @include clearfix();
-  ul{
-    margin:0;
-    padding:0;
-    list-style:none;
-    @include clearfix();
-    li{
-      display:inline-block;
-      float:left;
-      a{
-        display:block;
-        padding:5px 10px;
-        color:#000;
-        text-decoration:none;
-        font-weight:bold;
-        &:hover,
-        &:focus,
-        &:active{
-          color:#ccc;
-        }
-      }
-      &:first-of-type{
-        a{
-          padding-left:0;
-        }
-      }
-    }
-  }
-}
-
-
-/* ----------------------------------------------
-
-HELPERS
-
-------------------------------------------------- */
+/* HELPERS
+---------------------------------------------------------------------------*/
 .centered-content{
   width:100%;
   max-width:1260px;
@@ -100,13 +12,8 @@ HELPERS
   width:100%;
 }
 
-.float-right{
+.pull-right{
   float:right;
-}
-
-.centered{
-  left:50%;
-  transform:translateX(-50%);
 }
 
 .text-centered{
@@ -118,20 +25,12 @@ HELPERS
   margin:0 auto;
 }
 
-.drawer{
-  display:none;
-}
-
 .italic{
   font-style:italic;
 }
 
 .caps{
   text-transform:uppercase;
-}
-
-.hidden{
-  @include set-webaim-hidden();
 }
 
 .table-wrapper{
@@ -144,38 +43,19 @@ HELPERS
   }
 }
 
-.webaim-hidden{
+.webaim-hidden,
+.skip-link,
+.hidden{
   @include set-webaim-hidden();
 }
 
-/* for wireframing */
-.wire{
-  border:1px solid;
-  background:whitesmoke;
-  padding:15px;
-  margin-bottom:15px;
+[data-icon]{
+  @include font-awesome-icon(attr(data-icon), right);
+  display:inline-block;
 }
 
-.page-header{
-  margin-bottom:15px;
-}
-
-.page-footer{
-  margin-top:15px;
-  &.wire{
-    margin-bottom:0;
-  }
-}
-
-/* ACCESSIBILITY STYLES
+/* ACCESSIBILITY HELPERS
 ---------------------------------------------------------------------------*/
-.webaimHidden {
-  @include set-webaim-hidden();
-}
-
-.skip-link {
-  @include set-webaim-hidden();
-}
 .skip-link:focus {
   display: block;
   visibility: visible;
@@ -189,11 +69,7 @@ HELPERS
   box-shadow: 0px 0px 10px $color-dk;
 }
 
-/* Accessible font-awesome icons */
-[data-icon]{
-  @include font-awesome-icon(attr(data-icon), right);
-  display:inline-block;
-}
+
 
 
 

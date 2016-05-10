@@ -19,17 +19,25 @@ $color-brand-4:       #FFFF00;	// yellow
 $color-brand-4-lt:    #FFFF99;
 $color-brand-4-dk:    #666600;
 
+$color-grey:          #CCCCCC;
+$color-grey-lt:       #CCCCCC;
+$color-grey-dk:       #CCCCCC;
+
 
 /* Conntextual Colours
 ------------------------------------------------------------------------------*/
-$color-lt:   #ffffff;	// white
-$color-med:  #CCCCCC;  // Grey
-$color-dk:   #000000;	// black
+$color-lt:            #ffffff; // white
+$color-med:           #CCCCCC; // grey
+$color-dk:            #000000; // black
+
+$color-danger:        #ff3333; // red
+$color-success:       #85e085; // green
+$color-caution:       #ffff99; // yellow
 
 
 /* Typography
 ------------------------------------------------------------------------------*/
-$font-base-size: 14px; //declare the font size in pixels without unit 
+$font-base-size: 14px;
 
 $font-body-family:    'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
 $font-display-family: 'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;

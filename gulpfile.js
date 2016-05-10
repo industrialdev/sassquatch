@@ -38,12 +38,13 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function () {
   gulp.watch('./assets/styles/*.scss', ['sass']);
+  gulp.watch('./assets/scripts/*.js', ['scripts']);
 });
 
 gulp.task('scripts', function() {
-  return gulp.src('public/resources/js/**/*.js')
+  return gulp.src('./assets/scripts/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('public/resources/min'));
+    .pipe(gulp.dest('./assets/scripts/min/'));
 });
 
 function errorHandler(error) {

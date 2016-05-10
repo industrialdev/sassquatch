@@ -7,24 +7,13 @@ GRID
   @include row();
   margin-bottom:0;
 }
-//Default - Mobile first grid
-*[class*="col_"]{
-  @include span-columns(12);
-  margin-bottom:15px;
-}
-
-*[class*="pull_"],
-*[class*="push_"]{
-  @include shift(0);
-}
 
 /* LOOPS TO DEFINE GRID CLASSES
-  - Col: ex: col-1 OR col-1-24
-  - Push: ex: push-1 OR push-1-24
-  - Pull: ex: pull-1 OR pull-1-24
+  - Col: ex: col_1 OR col_sm-1, col_md-1, col_lg-1, col_xl-1
+  - Push: ex: push_1 OR push_sm-1, push_md-1, push_lg-1, push_xl-1
+  - Pull: ex: pull_1 OR pull_sm-1, pull_md-1, pull_lg-1, pull_xl-1
 */
 
-//Default grid structure for all views
 @for $i from 1 through 12{
   .col_#{$i}{
     @include span-columns($i);
@@ -37,45 +26,19 @@ GRID
   }
 }
 
-//20 column grid
-@for $x from 1 through 20{
-  .col_#{$x}-20{
-    @include span-columns($x of 20);
-  }
-  .pull_#{$x}-20{
-    @include shift(-$x);
-  }
-  .push_#{$x}-20{
-    @include shift($x);
-  }
-}
-
-//Grid structure classes for window sizes 480px and up
 $breakpoints: $mobile $tablet $desktop $desktop-wide;
 $grid-prefix: sm md lg xl;
-
 @for $z from 1 through 4{
   @include media(nth($breakpoints, $z)){
     @for $i from 1 through 12{
       .col_#{nth($grid-prefix, $z)}-#{$i}{
         @include span-columns($i);
       }
-      .pull_#{nth($grid-prefix, $z)}-#{$i} {
+      .pull_#{nth($grid-prefix, $z)}-#{$i}{
         @include shift(-$i);
       }
-      .push_#{nth($grid-prefix, $z)}-#{$i} {
+      .push_#{nth($grid-prefix, $z)}-#{$i}{
         @include shift($i);
-      }
-    }
-    @for $x from 1 through 20{
-      .col_#{nth($grid-prefix, $z)}-#{$x}-20{
-        @include span-columns($x of 20);
-      }
-      .pull_#{nth($grid-prefix, $z)}-#{$x}-20{
-        @include shift(-$x of 20);
-      }
-      .push_#{nth($grid-prefix, $z)}-#{$x}-20{
-        @include shift($x of 20);
       }
     }
   }
