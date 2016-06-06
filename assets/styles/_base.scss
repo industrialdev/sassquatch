@@ -1,6 +1,6 @@
 html,
 body{
-  font-size: $font-base-size; 
+  font-size: $font-base-size + px; 
   font-family: $font-body-family;
   margin:0;
   -webkit-text-size-adjust: 100%;
@@ -25,6 +25,47 @@ h4,
 h5,
 h6{
   font-family:$font-display-family;
+  margin-bottom: 20px;
+  margin-top:15px;
+}
+
+*{
+  + h1,
+  + h2,
+  + h3,
+  + h4,
+  + h5,
+  + h6{
+    margin-top:45px;
+  }
+}
+
+h1{
+  @include set-type(32, 700);
+}
+
+h2{
+  @include set-type(28, 600);
+}
+
+h3{
+  @include set-type(24, 600);
+}
+
+h4{
+  @include set-type(20, 600);
+}
+
+h5{
+  @include set-type(18, 600);
+}
+
+h6{
+  @include set-type(16, 600);
+}
+
+p{
+  margin-bottom:15px;
 }
 
 a, 

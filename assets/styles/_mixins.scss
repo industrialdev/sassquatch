@@ -1,6 +1,17 @@
 /* SASS MIXINS
 ---------------------------------------------------------------------------*/
 
+/* Converts pixel font size value into EM based on base font size variable */
+@mixin set-type($theSize, $theWeight: "", $theHeight: "") {
+  font-size: #{$theSize / $font-base-size}em;
+  @if $theWeight != "" {
+    font-weight: $theWeight;
+  }
+  @if $theHeight != "" {
+    line-height: #{$theHeight / $theSize}em;
+  }
+}
+
 /* Hide elements while remaining accessible */
 @mixin set-webaim-hidden() {
 	position:absolute;
@@ -21,23 +32,4 @@
 	overflow:visible;
 }
 
-/* 
-  - IconVal = unicode value from fontawesome.github.io
-  - Color = color of the icon
-  - FontSize = size of the icon
-  use with a designated html element and pair with an aria-label or aria-hidden ex: <span data-icon="&#xf268;" aria-label="google chrome"></span>
-*/
-@mixin font-awesome-icon($iconVal, $color: "", $fontSize: ""){
-  &:before{
-    content:$iconVal;
-    display:inline-block;
-    font-family:$font-icon-family;
-    @if $color != ""{
-      color:$color;
-    }
-    @if $fontSize != ""{
-      font-size:$fontSize;
-    }
-  }
-}
 

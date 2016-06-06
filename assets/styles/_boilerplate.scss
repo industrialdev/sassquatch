@@ -44,14 +44,12 @@
 }
 
 .webaim-hidden,
-.skip-link,
-.hidden{
+.skip-link{
   @include set-webaim-hidden();
 }
 
-[data-icon]{
-  @include font-awesome-icon(attr(data-icon), right);
-  display:inline-block;
+.hidden{
+  display:none;
 }
 
 /* ACCESSIBILITY HELPERS
