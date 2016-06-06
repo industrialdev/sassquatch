@@ -5,7 +5,7 @@ GRID
 ------------------------------------------------- */
 .row{
   @include row();
-  margin-bottom:0;
+  margin-bottom:15px;
 }
 
 /* LOOPS TO DEFINE GRID CLASSES

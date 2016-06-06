@@ -3,12 +3,16 @@
 @import 'bourbon';
 @import 'neat';
 
-/* custom superstructure
+/* Config
 ------------------------------------------------------------------------------*/
+@import "reset";
 @import "vars";
 @import "mixins";
 @import "grid";
 @import "boilerplate";
+
+/* Custom Styles
+------------------------------------------------------------------------------*/
 @import "base";
 @import "components";
 @import "breakpoints";
