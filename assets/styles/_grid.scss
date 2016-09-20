@@ -1,44 +1,40 @@
-/* ----------------------------------------------
-
-GRID
-
-------------------------------------------------- */
-.row{
-  @include row();
-  margin-bottom:15px;
+/* GRID
+---------------------------------------------------------------------------*/
+.row,
+.row_alt{
+  @include clearfix();
+  margin:0 (-$gutter-width);
 }
 
-/* LOOPS TO DEFINE GRID CLASSES
-  - Col: ex: col_1 OR col_sm-1, col_md-1, col_lg-1, col_xl-1
-  - Push: ex: push_1 OR push_sm-1, push_md-1, push_lg-1, push_xl-1
-  - Pull: ex: pull_1 OR pull_sm-1, pull_md-1, pull_lg-1, pull_xl-1
-*/
+*[class*="col"]{
+  padding:0 ($gutter-width);
+}
 
-@for $i from 1 through 12{
+@for $i from 1 through $columns{
   .col_#{$i}{
-    @include span-columns($i);
+    float:left;
+    width: (($i / $columns) * 100%);
   }
-  .pull_#{$i} {
-    @include shift(-$i);
+  .push_#{$i}{
+    margin-left:(($i / $columns) * 100%);
   }
-  .push_#{$i} {
-    @include shift($i);
+  .pull_#{$i}{
+    margin-left:-(($i / $columns) * 100%);
   }
 }
 
-$breakpoints: $mobile $tablet $desktop $desktop-wide;
-$grid-prefix: sm md lg xl;
 @for $z from 1 through 4{
-  @include media(nth($breakpoints, $z)){
-    @for $i from 1 through 12{
+  @media(min-width: nth($breakpoints, $z)){
+    @for $i from 1 through $columns{
       .col_#{nth($grid-prefix, $z)}-#{$i}{
-        @include span-columns($i);
-      }
-      .pull_#{nth($grid-prefix, $z)}-#{$i}{
-        @include shift(-$i);
+        float:left;
+        width: (($i / $columns) * 100%);
       }
       .push_#{nth($grid-prefix, $z)}-#{$i}{
-        @include shift($i);
+        margin-left:(($i / $columns) * 100%);
+      }
+      .pull_#{nth($grid-prefix, $z)}-#{$i}{
+        margin-left:-(($i / $columns) * 100%);
       }
     }
   }

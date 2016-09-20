@@ -1,0 +1,66 @@
+/* STRUCTURE HELPERS
+---------------------------------------------------------------------------*/
+.centered-content{
+  width:100%;
+  max-width:1260px;
+  padding:0 $gutter-width;
+  margin:0 auto;
+}
+
+.full-width{
+  width:100%;
+}
+
+.pull-right{
+  float:right;
+}
+
+.hidden{
+  display:none;
+}
+
+/* COMPONENT HELPERS
+---------------------------------------------------------------------------*/
+.img-centered{
+  display:block;
+  margin:0 auto;
+}
+
+.table-wrapper{
+  overflow-x:auto;
+  &:last-child{
+    margin-bottom:0;
+  }
+  table{
+    width:100%;
+  }
+}
+
+/* TYPOGRAPHY HELPERS
+---------------------------------------------------------------------------*/
+.text-centered{
+  text-align:center;
+}
+
+.italic{
+  font-style:italic;
+}
+
+.caps{
+  text-transform:uppercase;
+}
+
+/* ACCESSIBILITY HELPERS
+---------------------------------------------------------------------------*/
+.webaim-hidden,
+.skip-link{
+  @include set-webaim-hidden();
+}
+
+.skip-link:focus {
+  @include set-webaim-hidden-false();
+  position:fixed;
+  left: $gutter-width;
+  top: $gutter-width;   
+  background: $color-lt;
+}

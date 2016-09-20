@@ -73,3 +73,27 @@ img{
   border:none;
   outline:none;
 }
+
+.nav{
+  @include clearfix();
+  &_main{
+    display:table;
+    width:100%;
+  }
+}
+
+.menu{
+  li{
+    display:inline-block;
+  }
+  &_main{
+    display:table-row;
+    li{
+      display:table-cell;
+      text-align:center;
+    }
+  }
+  &_utility{
+    float:right;
+  }
+}

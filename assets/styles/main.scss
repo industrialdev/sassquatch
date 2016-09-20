@@ -1,18 +1,18 @@
-/* Libraries 
+/* LIBRARIES
 ------------------------------------------------------------------------------*/
 @import 'bourbon';
-@import 'neat';
 
-/* Config
+/* CONFIG
 ------------------------------------------------------------------------------*/
 @import "reset";
 @import "vars";
 @import "mixins";
 @import "grid";
-@import "boilerplate";
+@import "helpers";
+@import "components";
+@import "theme";
 
-/* Custom Styles
+/* CUSTOM STYLES
 ------------------------------------------------------------------------------*/
 @import "base";
-@import "components";
 @import "breakpoints";
