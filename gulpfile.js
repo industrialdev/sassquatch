@@ -4,6 +4,8 @@ var uglify = require('gulp-uglify');
 var webserver = require('gulp-webserver');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
+var plumber = require('gulp-plumber');
+var notify = require('gulp-notify');
 
 gulp.task('default', ['webserver', 'sass', 'watch']);
 
@@ -22,10 +24,12 @@ gulp.task('webserver', function() {
 
 gulp.task('sass', function () {
   gulp.src('./assets/styles/main.scss')
+    .pipe(plumber())
     .pipe(sass({
       includePaths: require('node-neat').includePaths,
       outputStyle: 'compressed'
     }))
+    .on('error', onError)
     .pipe(autoprefixer({
       browsers: ['last 100 versions'],
       cascade: false
@@ -43,11 +47,18 @@ gulp.task('watch', function () {
 
 gulp.task('scripts', function() {
   return gulp.src('./assets/scripts/*.js')
+    .pipe(plumber())
     .pipe(uglify())
+    .on('error', onError)
     .pipe(gulp.dest('./assets/scripts/min/'));
 });
 
-function errorHandler(error) {
-  console.log(error.toString());
-  this.emit('end');
+// error notifications using GULP Notify
+var onError = function (err) {
+    notify({
+         title: 'Gulp Task Error',
+         message:  "Error: <%= error.message %>",
+     }).write(err);
+
+     this.emit('end');
 }
