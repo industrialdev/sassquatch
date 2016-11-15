@@ -1,8 +1,9 @@
 /* STRUCTURE HELPERS
 ---------------------------------------------------------------------------*/
 .centered-content{
+  @include clearfix();
   width:100%;
-  max-width:1260px;
+  max-width:$site-width;
   padding:0 $gutter-width;
   margin:0 auto;
 }
@@ -17,6 +18,29 @@
 
 .hidden{
   display:none;
+}
+
+.table{
+  display:table;
+  width:100%;
+}
+
+.fixed-top{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+}
+
+.card{
+  padding:15px;
+  border:1px solid $color-dk;
+  overflow:hidden;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.padded{
+  padding:10px;    
 }
 
 /* COMPONENT HELPERS

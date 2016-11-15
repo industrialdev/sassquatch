@@ -2,17 +2,21 @@
 ------------------------------------------------------------------------------*/
 @import 'bourbon';
 
-/* CONFIG
+/* CONFIGURATION
 ------------------------------------------------------------------------------*/
-@import "reset";
-@import "vars";
-@import "mixins";
-@import "grid";
-@import "helpers";
-@import "components";
-@import "theme";
+@import "config/reset";
+@import "config/vars";
+@import "config/mixins";
 
-/* CUSTOM STYLES
+/* UI COMPONENTS
 ------------------------------------------------------------------------------*/
-@import "base";
-@import "breakpoints";
+@import "theme/components/grid";
+@import "theme/components/helpers";
+@import "theme/components/buttons";
+@import "theme/components/banner";
+
+/* THEME STYLES
+------------------------------------------------------------------------------*/
+@import "theme/base";
+@import "theme/theme";
+@import "theme/breakpoints";

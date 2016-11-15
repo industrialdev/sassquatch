@@ -1,0 +1,84 @@
+/* VARIABLES
+------------------------------------------------------------------------------*/
+
+/* Brand Colours
+------------------------------------------------------------------------------*/
+$color-brand-1:       #FF5033;  // red
+$color-brand-1-lt:    #FFA89A;
+$color-brand-1-lt-2:  #FED3CC;
+$color-brand-1-dk:    #BF3C26;
+$color-brand-1-dk-2:  #7F281A;
+$color-brand-1-dk-3:  #5F1E13;
+
+$color-brand-2:       #E1E0D6;  // Grey
+$color-brand-2-lt:    #F0F0EB;
+$color-brand-2-lt-2:  #F7F7F4;
+$color-brand-2-dk:    #A8A8A0;
+$color-brand-2-dk-2:  #70706B;
+$color-brand-2-dk-3:  #545450;
+
+$color-brand-3:       #E4FF00;  // Yellow
+$color-brand-3-2:     #dfe21d;
+$color-brand-3-lt:    #F2FF80;
+$color-brand-3-lt-2:  #F8FEBF;
+$color-brand-3-dk:    #ABBF00;
+$color-brand-3-dk-2:  #727F00;
+$color-brand-3-dk-3:  #555F00;
+
+$color-brand-4:       #00C360;  // Green
+$color-brand-4-lt:    #80E1B0;
+$color-brand-4-lt-2:  #BFEFD7;
+$color-brand-4-dk:    #009248;
+$color-brand-4-dk-2:  #006130;
+$color-brand-4-dk-3:  #004824;
+
+$color-brand-5:       #00CBC4;  // Blue
+$color-brand-5-lt:    #80E5E2;
+$color-brand-5-lt-2:  #BFF1F0;
+$color-brand-5-dk:    #009893;
+$color-brand-5-dk-2:  #006562;
+$color-brand-5-dk-3:  #004B49;
+
+$color-brand-6:       #FF009D;  // Pink
+$color-brand-6-lt:    #FF80CE;
+$color-brand-6-lt-2:  #FEBFE6;
+$color-brand-6-dk:    #BF0075;
+$color-brand-6-dk-2:  #7F004E;
+$color-brand-6-dk-3:  #5F003A;
+
+
+/* General Colours
+------------------------------------------------------------------------------*/
+$color-lt:            #ffffff; // white
+$color-med:           #CCCCCC; // grey
+$color-dk:            #000000; // black
+
+$color-danger:        #ff3333; // red
+$color-success:       #85e085; // green
+$color-caution:       #ffff99; // yellow
+
+
+/* Typography
+------------------------------------------------------------------------------*/
+$font-base-size: 16;
+
+$font-body-family:    'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
+$font-display-family: 'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
+$font-icon-family:    'FontAwesome';
+
+
+/* Layout vars
+------------------------------------------------------------------------------*/
+$site-width:1260px;
+
+$columns:12;
+$gutter-width:15px;
+
+$mobile:       480px;
+$tablet:       768px;
+$desktop:      991px;
+$desktop-wide: 1199px;
+
+
+$breakpoints: $mobile $tablet $desktop $desktop-wide;
+$grid-prefix: sm md lg xl;

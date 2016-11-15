@@ -1,7 +1,10 @@
+/* BASELINE STYLES
+----------------------------------------------------------------------*/
 html,
 body{
   font-size: $font-base-size + px; 
   font-family: $font-body-family;
+  line-height:1.4em;
   margin:0;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -27,6 +30,9 @@ h6{
   font-family:$font-display-family;
   margin-bottom: 20px;
   margin-top:15px;
+  &:first-child{
+    margin-top:0;
+  }
 }
 
 *{
@@ -74,26 +80,77 @@ img{
   outline:none;
 }
 
+strong{
+  font-weight:bold;
+}
+
+ul{
+  list-style:disc;
+}
+
 .nav{
   @include clearfix();
+  &_utility{
+    padding:15px 0;
+  }
   &_main{
-    display:table;
-    width:100%;
+    background:$color-lt;
+  }
+  ul{
+    list-style:none;
   }
 }
 
 .menu{
-  li{
-    display:inline-block;
+  &_utility{
+   float:right;
+    li{
+      display:inline-block;
+      margin-right:10px;
+      &:last-of-type{
+        margin-right:0;
+      }
+    }
   }
   &_main{
     display:table-row;
     li{
       display:table-cell;
       text-align:center;
+      a{
+        display:block;
+        padding:15px 0;
+      }
     }
   }
-  &_utility{
-    float:right;
+}
+
+section{
+  padding:30px 0;
+  *:first-child{
+    &:empty{
+      + * {
+        margin-top:0;
+      }
+    }
+  }
+}
+
+code{
+  background:$color-dk;
+  color:$color-lt;
+  padding:0 5px;
+  &.code-block{
+    display:block;
+    padding:15px;
+    border-radius:5px;
+  }
+}
+
+details{
+  display:block;
+  border:1px solid $color-brand-2;
+  summary{
+    padding:10px;
   }
 }

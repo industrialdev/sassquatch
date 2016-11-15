@@ -4,6 +4,7 @@
 .row_alt{
   @include clearfix();
   margin:0 (-$gutter-width);
+  margin-bottom:$gutter-width;
 }
 
 *[class*="col"]{
