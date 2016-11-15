@@ -46,7 +46,6 @@ $color-brand-6-dk:    #BF0075;
 $color-brand-6-dk-2:  #7F004E;
 $color-brand-6-dk-3:  #5F003A;
 
-
 /* General Colours
 ------------------------------------------------------------------------------*/
 $color-lt:            #ffffff; // white
@@ -57,7 +56,6 @@ $color-danger:        #ff3333; // red
 $color-success:       #85e085; // green
 $color-caution:       #ffff99; // yellow
 
-
 /* Typography
 ------------------------------------------------------------------------------*/
 $font-base-size: 16;
@@ -65,7 +63,6 @@ $font-base-size: 16;
 $font-body-family:    'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
 $font-display-family: 'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
 $font-icon-family:    'FontAwesome';
-
 
 /* Layout vars
 ------------------------------------------------------------------------------*/
@@ -78,7 +75,6 @@ $mobile:       480px;
 $tablet:       768px;
 $desktop:      991px;
 $desktop-wide: 1199px;
-
 
 $breakpoints: $mobile $tablet $desktop $desktop-wide;
 $grid-prefix: sm md lg xl;

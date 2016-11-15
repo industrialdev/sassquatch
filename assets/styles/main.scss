@@ -1,22 +1,24 @@
 /* LIBRARIES
 ------------------------------------------------------------------------------*/
-@import 'bourbon';
+@import 'bourbon';//TODO: Replace with custom sass mixin library
 
 /* CONFIGURATION
 ------------------------------------------------------------------------------*/
-@import "config/reset";
-@import "config/vars";
-@import "config/mixins";
+@import "config/config";
+
+/* BASE STYLES
+------------------------------------------------------------------------------*/
+@import "theme/base";
+
+/* HELPERS
+------------------------------------------------------------------------------*/
+@import "theme/helpers/helpers";
 
 /* UI COMPONENTS
 ------------------------------------------------------------------------------*/
-@import "theme/components/grid";
-@import "theme/components/helpers";
-@import "theme/components/buttons";
-@import "theme/components/banner";
+@import "theme/components/components";
 
-/* THEME STYLES
+/* CUSTOM STYLES
 ------------------------------------------------------------------------------*/
-@import "theme/base";
 @import "theme/theme";
 @import "theme/breakpoints";
