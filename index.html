@@ -1,8 +1,9 @@
 <!Doctype html>
-<html>
+<html lang="en-CA">
   <head>
     <meta charset="utf-8">
-    <title>Industrial | Boilerplate</title>
+    <title>Sswatch</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Industrial project boilerplate">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -28,83 +29,62 @@
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="assets/styles/sswatch.css">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
-        <nav class="nav nav_utility">
-          <div class="centered-content">
-            <ul class="menu menu_utility">
-              <li><a href="//industrialagency.ca">Industrial</a></li>
-            </ul>
-          </div>
-        </nav>
-        <div class="banner">
-          <div class="centered-content">
-            <h1><img class="img-centered banner-bg" src="assets/images/industrial_logo.svg" alt="Industrial boilerplate"></h1>
-          </div>
+      <div class="banner">
+        <div class="centered-content">
+          <h1 class="no-text"><img src="assets/images/SSwatch.svg" alt="Industrial boilerplate"></h1>
         </div>
-        <nav class="nav nav_main">
-          <div class="table centered-content">
-            <ul class="menu menu_main">
-              <li><a href="#about">Getting Started <span class="fa fa-chevron-down" aira-hidden="true"></span></a></li>
-              <li><a href="#config">Config <span class="fa fa-chevron-down" aira-hidden="true"></span></a></li>
-              <li><a href="#grid">The Grid <span class="fa fa-chevron-down" aira-hidden="true"></span></a></li>
-              <li><a href="#components">Components <span class="fa fa-chevron-down" aira-hidden="true"></span></a></li>
-              <li><a href="#helpers">Helpers <span class="fa fa-chevron-down" aira-hidden="true"></span></a></li>
-            </ul>
-          </div>
-        </nav>
+      </div>
     </header><!-- /header -->
 
-    <main id="main-content">
-      <section class="about-section">
+    <main id="main-content" tabindex="-1">
+      <section>
         <div class="centered-content">
-          <a id="about"></a>
-          <h2 class="text-centered">Getting Started</h2>
-          <hr/>
+          <h2>Color Palette</h2>
           <div class="row">
-            <div class="col_sm-6 push_sm-3">
-              <p>This project boilerplate is intended to serve as a front end starting point for all of industrial's projects. This project provides a baseline for building responsive and accessible website structures.</p>
-              <p>Getting started with the project boilerplate is simple:</p>
-              <ul>
-                <li>Copy the assets folder from this project into the project theme folder that you would like to apply the boilerplate to</li>
-                <li>Drop the gulpfile from this boilerplate into the root of your project</li>
-                <li>Ensure that all paths in the gulpfile are relative to your projects folder structure</li>
-                <li>Navigate to your project in the command line</li>
-                <li>Run the command: <code>npm install</code> to install dependencies</li>
-                <li>Run the command: <code>gulp</code> to compile your assets and watch for changes</li>
-              </ul>
+            <div class="col_md-4">
+              <div class="palette palette_1">
+                <!-- Colors will render here based on the color-data value entered -->
+              </div>
+            </div>
+            <div class="col_md-4">
+              <div class="palette palette_2">
+                <!-- Colors will render here based on the color-data value entered -->
+              </div>
+            </div>
+            <div class="col_md-4">
+              <div class="palette palette_3">
+                <!-- Colors will render here based on the color-data value entered -->
+              </div>
             </div>
           </div>
           <div class="row">
-            <div class="col_sm-6">
-              <p></p>
+            <div class="col_md-4">
+              <div class="palette palette_4">
+                <!-- Colors will render here based on the color-data value entered -->
+              </div>
+            </div>
+            <div class="col_md-4">
+              <div class="palette palette_5">
+                <!-- Colors will render here based on the color-data value entered -->
+              </div>
+            </div>
+            <div class="col_md-4">
+              <div class="palette palette_6">
+                <!-- Colors will render here based on the color-data value entered -->
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="config-section">
+      <section>
         <div class="centered-content">
-          <a id="config"></a>
-          <h2 class="text-centered">Config</h2>
-          <hr/>
-        </div>
-      </section>
-      <section class="grid-section">
-        <div class="centered-content">
-          <a id="grid"></a>
-          <h2 class="text-centered">The Grid</h2>
-          <hr/>
-          <div class="row">
-            <div class="col_sm-6 push_sm-3">
-              <p>The industrial boilerplate uses a custom grid system. Using the default class definitions outlined below will result in a flexible grid that is not responsive. Breakpoint prefixes can be used if you want the columns to break to different widths at various screen sizes.</p>
-              <p><strong>eg.</strong> .col_1, .col_sm-1, .col_md-1, .col_lg-1, col_xl-1</p>
-              <p>The following is an example of the default 12 column grid however this can be modified by changing the 'columns' variable in the vars.scss file.</p>
-            </div>
-          </div>
+          <h2>The Grid</h2>
           <div class="row">
             <div class="col_sm-1">
               <div class="card">
@@ -184,33 +164,14 @@
               </div>
             </div>
           </div>
-          <details>
-            <summary>View code</summary>
-            <div class="padded">
-              <code class="code-block">
-                &#60;div class="row"&#62;<br/>
-                  &nbsp;&nbsp;&#60;div class="col_1"&#62;<br/>
-                  &nbsp;&nbsp;&#60;/div&#62;<br/><br/>
-                  &nbsp;&nbsp;&#60;div class="col_11"&#62;<br/>
-                  &nbsp;&nbsp;&#60;/div&#62;<br/>
-                &#60;/div&#62;
-              </code>
-            </div>
-          </details>
         </div>
       </section>
-      <section class="components-section">
+      <section>
         <div class="centered-content">
-          <a id="components"></a>
-          <h2 class="text-centered">Components</h2>
-          <hr/>
-        </div>
-      </section>
-      <section class="helper-section">
-        <div class="centered-content">
-          <a id="helpers"></a>
-          <h2 class="text-centered">Helpers</h2>
-          <hr/>
+          <h2>Buttons</h2>
+          <p><button class="btn btn_primary btn_md">Primary Button</button></p>
+          <p><button class="btn btn_secondary btn_md">Primary Button</button></p>
+          <p><button class="btn btn_tertiary btn_md">Primary Button</button></p>
         </div>
       </section>
     </main><!-- /main -->
@@ -220,10 +181,10 @@
     </footer><!-- /footer -->
 
     <!-- Scripts -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.1.4/scrollreveal.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="assets/scripts/base.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.1.4/scrollreveal.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>-->
+    <script src="assets/scripts/min/base.js"></script>
   </body>
 </html>
 

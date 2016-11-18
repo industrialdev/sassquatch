@@ -3,48 +3,33 @@
 
 /* Brand Colours
 ------------------------------------------------------------------------------*/
+$color-threshold: 20%;
+
 $color-brand-1:       #FF5033;  // red
-$color-brand-1-lt:    #FFA89A;
-$color-brand-1-lt-2:  #FED3CC;
-$color-brand-1-dk:    #BF3C26;
-$color-brand-1-dk-2:  #7F281A;
-$color-brand-1-dk-3:  #5F1E13;
+$color-brand-1-lt:    lighten($color-brand-1, $color-threshold);
+$color-brand-1-dk:    darken($color-brand-1, $color-threshold);
 
-$color-brand-2:       #E1E0D6;  // Grey
-$color-brand-2-lt:    #F0F0EB;
-$color-brand-2-lt-2:  #F7F7F4;
-$color-brand-2-dk:    #A8A8A0;
-$color-brand-2-dk-2:  #70706B;
-$color-brand-2-dk-3:  #545450;
+$color-brand-2:       #E4FF00;  // Yellow
+$color-brand-2-lt:    lighten($color-brand-2, $color-threshold);
+$color-brand-2-dk:    darken($color-brand-2, $color-threshold);
 
-$color-brand-3:       #E4FF00;  // Yellow
-$color-brand-3-2:     #dfe21d;
-$color-brand-3-lt:    #F2FF80;
-$color-brand-3-lt-2:  #F8FEBF;
-$color-brand-3-dk:    #ABBF00;
-$color-brand-3-dk-2:  #727F00;
-$color-brand-3-dk-3:  #555F00;
+$color-brand-3:       #00C360;  // Green
+$color-brand-3-lt:    lighten($color-brand-3, $color-threshold);
+$color-brand-3-dk:    darken($color-brand-3, $color-threshold);
 
-$color-brand-4:       #00C360;  // Green
-$color-brand-4-lt:    #80E1B0;
-$color-brand-4-lt-2:  #BFEFD7;
-$color-brand-4-dk:    #009248;
-$color-brand-4-dk-2:  #006130;
-$color-brand-4-dk-3:  #004824;
+$color-brand-4:       #00CBC4;  // Blue
+$color-brand-4-lt:    lighten($color-brand-4, $color-threshold);
+$color-brand-4-dk:    darken($color-brand-4, $color-threshold);
 
-$color-brand-5:       #00CBC4;  // Blue
-$color-brand-5-lt:    #80E5E2;
-$color-brand-5-lt-2:  #BFF1F0;
-$color-brand-5-dk:    #009893;
-$color-brand-5-dk-2:  #006562;
-$color-brand-5-dk-3:  #004B49;
+$color-brand-5:       #FF009D;  // Pink
+$color-brand-5-lt:    lighten($color-brand-5, $color-threshold);
+$color-brand-5-dk:    darken($color-brand-5, $color-threshold);
 
-$color-brand-6:       #FF009D;  // Pink
-$color-brand-6-lt:    #FF80CE;
-$color-brand-6-lt-2:  #FEBFE6;
-$color-brand-6-dk:    #BF0075;
-$color-brand-6-dk-2:  #7F004E;
-$color-brand-6-dk-3:  #5F003A;
+$color-neutral:       #E1E0D6;  // Grey
+$color-neutral-lt:    lighten($color-neutral, $color-threshold);
+$color-neutral-dk:    darken($color-neutral, $color-threshold);
+
+$brand-colors: $color-brand-1, $color-brand-2, $color-brand-3, $color-brand-4, $color-brand-5, $color-neutral;
 
 /* General Colours
 ------------------------------------------------------------------------------*/
@@ -69,7 +54,8 @@ $font-icon-family:    'FontAwesome';
 $site-width:1260px;
 
 $columns:12;
-$gutter-width:15px;
+$gutter: 15;
+$gutter-width:$gutter + px;
 
 $mobile:       480px;
 $tablet:       768px;

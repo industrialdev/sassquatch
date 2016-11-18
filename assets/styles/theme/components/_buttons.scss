@@ -1,2 +1,42 @@
 /* BUTTON COMPONENTS
 ---------------------------------------------------------------------------*/
+/* BUTTON COMPONENTS
+---------------------------------------------------------------------------*/
+.btn{
+  padding:5px 15px;
+  cursor:pointer;
+  transition:all 0.2s;
+  display:inline-block;
+  appearance:none;
+  font-weight:700;
+  text-decoration:none;
+  border:0;
+  /* Button themes */
+  @for $i from 1 through length($brand-colors){
+    &_brand-#{$i}{
+      
+    }
+  }
+  &_link{
+    background:transparent;
+    text-decoration:none;
+    padding:5px 0;
+    &:hover,
+    &:focus{
+      text-decoration:underline;
+    }
+  }
+  /* Button sizes */
+  &_sm{
+    padding:3px 8px;
+    font-size:12px;
+  }
+  &_md{
+    padding:10px 25px;
+    font-size:14px;
+  }
+  &_lg{
+    padding:20px 30px;
+    font-size:18px;
+  }
+}

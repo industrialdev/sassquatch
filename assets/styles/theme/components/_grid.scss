@@ -1,14 +1,20 @@
 /* GRID
 ---------------------------------------------------------------------------*/
-.row,
-.row_alt{
+.row{
   @include clearfix();
   margin:0 (-$gutter-width);
-  margin-bottom:$gutter-width;
+  margin-bottom:($gutter * 2) + px;
+  &:last-of-type{
+    margin-bottom:0;
+  }
 }
 
 *[class*="col"]{
   padding:0 ($gutter-width);
+  margin-bottom:($gutter * 2) + px;
+  &:last-of-type{
+    margin-bottom:0;
+  }
 }
 
 @for $i from 1 through $columns{
@@ -30,6 +36,7 @@
       .col_#{nth($grid-prefix, $z)}-#{$i}{
         float:left;
         width: (($i / $columns) * 100%);
+        margin-bottom:0;
       }
       .push_#{nth($grid-prefix, $z)}-#{$i}{
         margin-left:(($i / $columns) * 100%);

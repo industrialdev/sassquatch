@@ -3,6 +3,7 @@
 .webaim-hidden,
 .skip-link{
   @include set-webaim-hidden();
+  z-index:1000;
 }
 
 .skip-link:focus {

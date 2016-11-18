@@ -4,6 +4,7 @@ var uglify = require('gulp-uglify');
 var webserver = require('gulp-webserver');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
+var rename = require('gulp-rename');
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify');
 
@@ -23,7 +24,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('sass', function () {
-  gulp.src('./assets/styles/main.scss')
+  gulp.src('./assets/styles/sswatch.scss')
     .pipe(plumber())
     .pipe(sass({
       includePaths: require('node-neat').includePaths,
@@ -48,9 +49,12 @@ gulp.task('watch', function () {
 gulp.task('scripts', function() {
   return gulp.src('./assets/scripts/*.js')
     .pipe(plumber())
-    .pipe(uglify())
+    .pipe(concat('sswatch.js'))
     .on('error', onError)
-    .pipe(gulp.dest('./assets/scripts/min/'));
+    .pipe(gulp.dest('./assets/scripts/min'))
+    .pipe(rename('sswatch.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./assets/scripts/min'));
 });
 
 // error notifications using GULP Notify

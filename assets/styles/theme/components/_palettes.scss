@@ -1,0 +1,51 @@
+/* BRAND COLOR PALETTES
+---------------------------------------------------------------------------*/
+
+/*
+  To add a new swatch:
+  
+    HTML:
+      <div class="palette palette_7">
+      </div>
+
+    Add a new color definition in config/_vars.scss, ex:
+      $color-brand-6: #333333;
+      $color-brand-6-lt: lighten($color-brand-6, $color-threshold);
+      $color-brand-6-dk: darken($color-brand-6, $color-threshold);
+
+    Append the new color definition to the $brand-colors variable:
+      $brand-colors: $color-brand-1, $color-brand-2, $color-brand-3, $color-brand-4, $color-brand-6, $color-neutral;
+*/
+
+.palette{
+  height:150px;
+  width:100%;
+  position:relative;
+  &:before,
+  &:after{
+    content:"";
+    display:block;
+    width:33%;
+    position:absolute;
+    top:0;
+    height:100%;
+  }
+  &:before{
+    left:0;
+  }
+  &:after{
+    right:0;
+  }
+}
+
+@for $i from 1 through length($brand-colors){
+  .palette_#{$i}{
+    background:nth($brand-colors, $i);
+    &:before{
+      background:lighten(nth($brand-colors, $i), $color-threshold);
+    }
+    &:after{
+      background:darken(nth($brand-colors, $i), $color-threshold);
+    }
+  }
+}
