@@ -20,25 +20,9 @@
   display:none;
 }
 
-.table{
-  display:table;
-  width:100%;
-}
-
-.fixed{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-}
-
 .card{
   padding:15px;
   border:1px solid $color-dk;
   overflow:hidden;
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
-}
-
-.padded{
-  padding:10px;    
 }
