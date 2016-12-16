@@ -43,130 +43,440 @@
     </header><!-- /header -->
 
     <main id="main-content" tabindex="-1">
-      <section>
+      <section id="colors">
         <div class="centered-content">
           <h2>Color Palette</h2>
-          <div class="row">
-            <div class="col_md-4">
-              <div class="palette palette_1">
-                <!-- Colors will render here based on the color-data value entered -->
-              </div>
-            </div>
-            <div class="col_md-4">
-              <div class="palette palette_2">
-                <!-- Colors will render here based on the color-data value entered -->
-              </div>
-            </div>
-            <div class="col_md-4">
-              <div class="palette palette_3">
-                <!-- Colors will render here based on the color-data value entered -->
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_md-4">
-              <div class="palette palette_4">
-                <!-- Colors will render here based on the color-data value entered -->
-              </div>
-            </div>
-            <div class="col_md-4">
-              <div class="palette palette_5">
-                <!-- Colors will render here based on the color-data value entered -->
-              </div>
-            </div>
-            <div class="col_md-4">
-              <div class="palette palette_6">
-                <!-- Colors will render here based on the color-data value entered -->
-              </div>
-            </div>
+          <div class="palettes">
+            <!-- Colors will render here based on the color-data value entered -->
           </div>
         </div>
       </section>
-      <section>
+      <section id="grid">
         <div class="centered-content">
           <h2>The Grid</h2>
-          <div class="row">
-            <div class="col_sm-1">
-              <div class="card">
-                .col_1
+          <h3>Default Grid</h3>
+          <p>The default grid does not break to full width at smaller screen sizes</p>
+          <button class="btn btn_drawer-toggle">View default grid example</button>
+          <div id="grid-default" class="drawer no-break">
+            <div class="row">
+              <div class="col_1">
+                <div class="card">
+                  .col_1
+                </div>
+              </div>
+              <div class="col_11">
+                <div class="card">
+                  .col_11
+                </div>
               </div>
             </div>
-            <div class="col_sm-11">
-              <div class="card">
-                .col_11
+            <div class="row">
+              <div class="col_2">
+                <div class="card">
+                  .col_2
+                </div>
+              </div>
+              <div class="col_10">
+                <div class="card">
+                  .col_10
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_3">
+                <div class="card">
+                  .col_3
+                </div>
+              </div>
+              <div class="col_9">
+                <div class="card">
+                  .col_9
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_4">
+                <div class="card">
+                  .col_4
+                </div>
+              </div>
+              <div class="col_8">
+                <div class="card">
+                  .col_8
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_5">
+                <div class="card">
+                  .col_5
+                </div>
+              </div>
+              <div class="col_7">
+                <div class="card">
+                  .col_7
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_6">
+                <div class="card">
+                  .col_6
+                </div>
+              </div>
+              <div class="col_6">
+                <div class="card">
+                  .col_6
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_12">
+                <div class="card">
+                  .col_12
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col_sm-2">
-              <div class="card">
-                .col_2
+          <h3>Mobile Grid</h3>
+          <p>The mobile grid is full width up until 480px wide then it breaks into its defined grid widths.</p>
+          <button class="btn btn_drawer-toggle">View mobile grid example</button>
+          <div id="grid-mobile" class="drawer no-break">
+            <div class="row">
+              <div class="col_sm-1">
+                <div class="card">
+                  .col_sm-1
+                </div>
+              </div>
+              <div class="col_sm-11">
+                <div class="card">
+                  .col_sm-11
+                </div>
               </div>
             </div>
-            <div class="col_sm-10">
-              <div class="card">
-                .col_10
+            <div class="row">
+              <div class="col_sm-2">
+                <div class="card">
+                  .col_sm-2
+                </div>
+              </div>
+              <div class="col_sm-10">
+                <div class="card">
+                  .col_sm-10
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_sm-3">
+                <div class="card">
+                  .col_sm-3
+                </div>
+              </div>
+              <div class="col_sm-9">
+                <div class="card">
+                  .col_sm-9
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_sm-4">
+                <div class="card">
+                  .col_sm-4
+                </div>
+              </div>
+              <div class="col_sm-8">
+                <div class="card">
+                  .col_sm-8
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_sm-5">
+                <div class="card">
+                  .col_sm-5
+                </div>
+              </div>
+              <div class="col_sm-7">
+                <div class="card">
+                  .col_sm-7
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_sm-6">
+                <div class="card">
+                  .col_sm-6
+                </div>
+              </div>
+              <div class="col_sm-6">
+                <div class="card">
+                  .col_sm-6
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_sm-12">
+                <div class="card">
+                  .col_sm-12
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col_sm-3">
-              <div class="card">
-                .col_3
+          <h3>Tablet Grid</h3>
+          <p>The tablet grid is full width up until 768px wide then it breaks into its defined grid widths.</p>
+          <button class="btn btn_drawer-toggle">View tablet grid example</button>
+          <div id="grid-tablet" class="drawer no-break">
+            <div class="row">
+              <div class="col_md-1">
+                <div class="card">
+                  .col_md-1
+                </div>
+              </div>
+              <div class="col_md-11">
+                <div class="card">
+                  .col_md-11
+                </div>
               </div>
             </div>
-            <div class="col_sm-9">
-              <div class="card">
-                .col_9
+            <div class="row">
+              <div class="col_md-2">
+                <div class="card">
+                  .col_md-2
+                </div>
+              </div>
+              <div class="col_md-10">
+                <div class="card">
+                  .col_md-10
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_md-3">
+                <div class="card">
+                  .col_md-3
+                </div>
+              </div>
+              <div class="col_md-9">
+                <div class="card">
+                  .col_md-9
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_md-4">
+                <div class="card">
+                  .col_md-4
+                </div>
+              </div>
+              <div class="col_md-8">
+                <div class="card">
+                  .col_md-8
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_md-5">
+                <div class="card">
+                  .col_md-5
+                </div>
+              </div>
+              <div class="col_md-7">
+                <div class="card">
+                  .col_md-7
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_md-6">
+                <div class="card">
+                  .col_md-6
+                </div>
+              </div>
+              <div class="col_md-6">
+                <div class="card">
+                  .col_md-6
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_md-12">
+                <div class="card">
+                  .col_md-12
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col_sm-4">
-              <div class="card">
-                .col_4
+          <h3>Desktop Grid</h3>
+          <p>The desktop grid is full width up until 991px wide then it breaks into its defined grid widths.</p>
+          <button class="btn btn_drawer-toggle">View desktop grid example</button>
+          <div id="grid-desktop" class="drawer no-break">
+            <div class="row">
+              <div class="col_lg-1">
+                <div class="card">
+                  .col_lg-1
+                </div>
+              </div>
+              <div class="col_lg-11">
+                <div class="card">
+                  .col_lg-11
+                </div>
               </div>
             </div>
-            <div class="col_sm-8">
-              <div class="card">
-                .col_8
+            <div class="row">
+              <div class="col_lg-2">
+                <div class="card">
+                  .col_lg-2
+                </div>
+              </div>
+              <div class="col_lg-10">
+                <div class="card">
+                  .col_lg-10
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_lg-3">
+                <div class="card">
+                  .col_lg-3
+                </div>
+              </div>
+              <div class="col_lg-9">
+                <div class="card">
+                  .col_lg-9
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_lg-4">
+                <div class="card">
+                  .col_lg-4
+                </div>
+              </div>
+              <div class="col_lg-8">
+                <div class="card">
+                  .col_lg-8
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_lg-5">
+                <div class="card">
+                  .col_lg-5
+                </div>
+              </div>
+              <div class="col_lg-7">
+                <div class="card">
+                  .col_lg-7
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_lg-6">
+                <div class="card">
+                  .col_lg-6
+                </div>
+              </div>
+              <div class="col_lg-6">
+                <div class="card">
+                  .col_lg-6
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_lg-12">
+                <div class="card">
+                  .col_lg-12
+                </div>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col_sm-5">
-              <div class="card">
-                .col_5
+          <h3>Wide Desktop Grid</h3>
+          <p>The wide desktop grid is full width up until 1199px wide then it breaks into its defined grid widths.</p>
+          <button class="btn btn_drawer-toggle">View wide desktop grid example</button>
+          <div id="grid-wide-desktop" class="drawer no-break">
+            <div class="row">
+              <div class="col_xl-1">
+                <div class="card">
+                  .col_xl-1
+                </div>
+              </div>
+              <div class="col_xl-11">
+                <div class="card">
+                  .col_xl-11
+                </div>
               </div>
             </div>
-            <div class="col_sm-7">
-              <div class="card">
-                .col_7
+            <div class="row">
+              <div class="col_xl-2">
+                <div class="card">
+                  .col_xl-2
+                </div>
+              </div>
+              <div class="col_xl-10">
+                <div class="card">
+                  .col_xl-10
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col_sm-6">
-              <div class="card">
-                .col_6
+            <div class="row">
+              <div class="col_xl-3">
+                <div class="card">
+                  .col_xl-3
+                </div>
+              </div>
+              <div class="col_xl-9">
+                <div class="card">
+                  .col_xl-9
+                </div>
               </div>
             </div>
-            <div class="col_sm-6">
-              <div class="card">
-                .col_6
+            <div class="row">
+              <div class="col_xl-4">
+                <div class="card">
+                  .col_xl-4
+                </div>
+              </div>
+              <div class="col_xl-8">
+                <div class="card">
+                  .col_xl-8
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col_sm-12">
-              <div class="card">
-                .col_12
+            <div class="row">
+              <div class="col_xl-5">
+                <div class="card">
+                  .col_xl-5
+                </div>
+              </div>
+              <div class="col_xl-7">
+                <div class="card">
+                  .col_xl-7
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_xl-6">
+                <div class="card">
+                  .col_xl-6
+                </div>
+              </div>
+              <div class="col_xl-6">
+                <div class="card">
+                  .col_xl-6
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col_xl-12">
+                <div class="card">
+                  .col_xl-12
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section>
+      <section id="buttons">
         <div class="centered-content">
           <h2>Buttons</h2>
           <p><button class="btn btn_primary btn_md">Primary Button</button></p>
@@ -184,7 +494,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--<script src="//cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.1.4/scrollreveal.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>-->
-    <script src="assets/scripts/min/base.js"></script>
+    <script src="assets/scripts/min/sswatch.js"></script>
   </body>
 </html>
 

@@ -1,5 +1,8 @@
 /* DROPDOWN COMPONENTS
 ---------------------------------------------------------------------------*/
-details{
-  border:1px solid $color-brand-2;
+.drawer{
+  display:none;
+  padding:$gutter-width;
+  border:1px solid $color-neutral-dk;
+  border-top:none;
 }

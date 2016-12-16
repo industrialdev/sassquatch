@@ -16,36 +16,82 @@
     Append the new color definition to the $brand-colors variable:
       $brand-colors: $color-brand-1, $color-brand-2, $color-brand-3, $color-brand-4, $color-brand-6, $color-neutral;
 */
+.palettes{
+  *[class^="col_"]{
+    margin-bottom:30px;
+  }
+}
 
 .palette{
   height:150px;
   width:100%;
   position:relative;
-  &:before,
-  &:after{
-    content:"";
+  padding:0 33%;
+  &_light,
+  &_dark{
     display:block;
     width:33%;
     position:absolute;
     top:0;
     height:100%;
+    padding:10px;
+    box-sizing:border-box;
   }
-  &:before{
+  &_light{
     left:0;
+    color:$color-dk;
   }
-  &:after{
+  &_dark{
     right:0;
+    color:$color-lt;
   }
-}
-
-@for $i from 1 through length($brand-colors){
-  .palette_#{$i}{
-    background:nth($brand-colors, $i);
-    &:before{
-      background:lighten(nth($brand-colors, $i), $color-threshold);
+  &_info-light,
+  &_info-default,
+  &_info-dark{
+    width:33%;
+    flex-grow:1;
+    padding:10px;
+    float:left;
+    text-transform:uppercase;
+    cursor:pointer;
+    .copy{
+      margin-left:5px;
+      color:transparent;
+      transition:color 0.2s;
     }
-    &:after{
-      background:darken(nth($brand-colors, $i), $color-threshold);
+  }
+  @for $i from 1 through length($brand-colors){
+    &_#{$i}{
+      background:nth($brand-colors, $i);
+      .palette_light{
+        background:lighten(nth($brand-colors, $i), $color-threshold);
+      }
+      .palette_dark{
+        background:darken(nth($brand-colors, $i), $color-threshold);
+      }
+    }
+    &_#{$i}-info{
+      display:flex;
+      .palette_info-light,
+      .palette_info-default,
+      .palette_info-dark{
+        &:hover,
+        &:focus{
+          .copy{
+            color:darken(nth($brand-colors, $i), $color-threshold);
+          }
+        }
+      }
+      .palette_info-light{
+        border-bottom:4px solid lighten(nth($brand-colors, $i), $color-threshold);
+      }
+      .palette_info-default{
+        border-bottom:4px solid nth($brand-colors, $i);
+      }
+      .palette_info-dark{
+        float:right;
+        border-bottom:4px solid darken(nth($brand-colors, $i), $color-threshold);
+      }
     }
   }
 }

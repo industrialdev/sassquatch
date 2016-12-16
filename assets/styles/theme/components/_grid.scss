@@ -9,7 +9,7 @@
   }
 }
 
-*[class*="col"]{
+*[class*="col_"]{
   padding:0 ($gutter-width);
   margin-bottom:($gutter * 2) + px;
   &:last-of-type{
@@ -21,6 +21,7 @@
   .col_#{$i}{
     float:left;
     width: (($i / $columns) * 100%);
+    margin-bottom:0;
   }
   .push_#{$i}{
     margin-left:(($i / $columns) * 100%);

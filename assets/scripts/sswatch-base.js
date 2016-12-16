@@ -11,5 +11,4 @@ window.addEventListener("hashchange", function(event) {
 
 (function($){
 
-
 })(jQuery);

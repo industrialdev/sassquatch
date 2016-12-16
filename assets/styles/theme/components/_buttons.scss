@@ -1,7 +1,5 @@
 /* BUTTON COMPONENTS
 ---------------------------------------------------------------------------*/
-/* BUTTON COMPONENTS
----------------------------------------------------------------------------*/
 .btn{
   padding:5px 15px;
   cursor:pointer;
@@ -11,12 +9,6 @@
   font-weight:700;
   text-decoration:none;
   border:0;
-  /* Button themes */
-  @for $i from 1 through length($brand-colors){
-    &_brand-#{$i}{
-      
-    }
-  }
   &_link{
     background:transparent;
     text-decoration:none;
@@ -38,5 +30,25 @@
   &_lg{
     padding:20px 30px;
     font-size:18px;
+  }
+  &_drawer-toggle{
+    @include set-type(18, 600, 22);
+    width:100%;
+    text-align:left;
+    padding:10px 15px;
+    background:transparent;
+    border:1px solid $color-neutral-dk;
+    position:relative;
+    .icon{
+      position:absolute;
+      right:15px;
+      top:50%;
+      transform:translateY(-50%);
+    }
+    &.open{
+      .icon{
+        transform:rotate(180deg) translateY(50%);
+      }
+    }
   }
 }
