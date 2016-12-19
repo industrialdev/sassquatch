@@ -19,3 +19,11 @@
 .no-break{
   white-space:nowrap;
 }
+
+.ellipsis{
+  display:block;
+  white-space:nowrap;
+  max-width:100%;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
