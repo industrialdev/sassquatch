@@ -67,8 +67,11 @@ gulp.task('images', function(){
 });
 
 gulp.task('templates', function() {
-  return gulp.src('./src/*.html')
+  return gulp.src('./src/*.twig')
     .pipe(twig())
+    .pipe(rename(function(path){
+      path.suffix += ".html";
+    }))
     .pipe(gulp.dest('./dist'));
 });
 
