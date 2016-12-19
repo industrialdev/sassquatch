@@ -150,6 +150,11 @@ window.addEventListener("hashchange", function(event) {
 })(jQuery);
 
 (function($){
+
+  /* Auto formats select inputs */
+  $("select").wrap("<div class='select-wrapper'></div>");
+  $(".select-wrapper").append("<span class='fa fa-angle-down' aria-hidden='true'></span>");
+
   /* Mobile toggle control */
   $(".mobile-toggle").click(function(event){
     event.preventDefault();
@@ -183,7 +188,23 @@ window.addEventListener("hashchange", function(event) {
       $(".btn_drawer-toggle").attr("aria-expanded", "false");
     }
   });
+  
 })(jQuery);
+(function($){
+  var selectedGrid = $("#select-grid").val();
+  showGrid(selectedGrid);
+
+  $("#select-grid").change(function(){
+    selectedGrid = $("#select-grid").val();
+    showGrid(selectedGrid);
+  });
+
+})(jQuery);
+
+function showGrid(selectedGrid){
+  $("#grid-default, #grid-mobile, #grid-tablet, #grid-desktop, #grid-wide-desktop").hide();
+  $("#grid-" + selectedGrid).show();
+}
 (function($){
   generatePalette();
   $(".palette_info-default, .palette_info-light, .palette_info-dark").click(function(){

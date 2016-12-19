@@ -5,4 +5,10 @@
   padding:$gutter-width;
   border:1px solid $color-neutral-dk;
   border-top:none;
+  &_wrapper{
+    margin-bottom:25px;
+    &:last-child{
+      margin-bottom:0;
+    }
+  }
 }

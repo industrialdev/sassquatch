@@ -1,18 +1,19 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
-var webserver = require('gulp-webserver');
-var autoprefixer = require('gulp-autoprefixer');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var plumber = require('gulp-plumber');
-var notify = require('gulp-notify');
-var imagemin = require('gulp-imagemin');
+var gulp = require('gulp'),
+    sass = require('gulp-sass'),
+    uglify = require('gulp-uglify'),
+    webserver = require('gulp-webserver'),
+    autoprefixer = require('gulp-autoprefixer'),
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename'),
+    plumber = require('gulp-plumber'),
+    notify = require('gulp-notify'),
+    twig = require('gulp-twig'),
+    imagemin = require('gulp-imagemin');
 
-gulp.task('default', ['webserver', 'sass', 'watch']);
+gulp.task('default', ['templates', 'sass', 'scripts', 'webserver', 'watch']);
 
 gulp.task('webserver', function() {
-  gulp.src('./')
+  gulp.src('./dist')
     .pipe(webserver({
       fallback: 'index.html',
       livereload: true,
@@ -25,7 +26,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('sass', function () {
-  gulp.src('./assets/styles/sswatch.scss')
+  gulp.src('./src/assets/styles/sswatch.scss')
     .pipe(plumber())
     .pipe(sass({
       includePaths: require('node-neat').includePaths,
@@ -39,37 +40,44 @@ gulp.task('sass', function () {
     .on('error', function (err) {
       console.log(err.message);
     })
-    .pipe(gulp.dest('./assets/styles'));
+    .pipe(gulp.dest('./dist/assets/styles'));
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./assets/styles/**/*.scss', ['sass']);
-  gulp.watch('./assets/scripts/*.js', ['scripts']);
+  gulp.watch('./src/assets/styles/**/*.scss', ['sass']);
+  gulp.watch('./src/assets/scripts/*.js', ['scripts']);
+  gulp.watch('./src/templates/**/*.html', ['templates']);
 });
 
 gulp.task('scripts', function() {
-  return gulp.src('./assets/scripts/*.js')
+  return gulp.src('./src/assets/scripts/*.js')
     .pipe(plumber())
     .pipe(concat('sswatch.js'))
     .on('error', onError)
-    .pipe(gulp.dest('./assets/scripts/min'))
+    .pipe(gulp.dest('./dist/assets/scripts'))
     .pipe(rename('sswatch.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./assets/scripts/min'));
+    .pipe(gulp.dest('./dist/assets/scripts/min'));
 });
 
 gulp.task('images', function(){
-  gulp.src(['./assets/images/*', '!./assets/images/min'])
+  gulp.src('./src/assets/images/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('./assets/images/min'))
+    .pipe(gulp.dest('./dist/assets/images'))
+});
+
+gulp.task('templates', function() {
+  return gulp.src('./src/*.html')
+    .pipe(twig())
+    .pipe(gulp.dest('./dist'));
 });
 
 // error notifications using GULP Notify
 var onError = function (err) {
-    notify({
-         title: 'Gulp Task Error',
-         message:  "Error: <%= error.message %>",
-     }).write(err);
+  notify({
+    title: 'Gulp Task Error',
+    message:  "Error: <%= error.message %>",
+  }).write(err);
 
-     this.emit('end');
+  this.emit('end');
 }

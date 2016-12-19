@@ -1,4 +1,9 @@
 (function($){
+
+  /* Auto formats select inputs */
+  $("select").wrap("<div class='select-wrapper'></div>");
+  $(".select-wrapper").append("<span class='fa fa-angle-down' aria-hidden='true'></span>");
+
   /* Mobile toggle control */
   $(".mobile-toggle").click(function(event){
     event.preventDefault();
@@ -32,4 +37,5 @@
       $(".btn_drawer-toggle").attr("aria-expanded", "false");
     }
   });
+  
 })(jQuery);

@@ -1,0 +1,119 @@
+/* FORM COMPONENTS
+---------------------------------------------------------------------------*/
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+textarea,
+select{
+  &.form-input{
+    appearance:none;
+    border:none;
+    border-radius:0;
+    border:1px solid $color-neutral-dk;
+    background:$color-lt;
+    color:$color-dk;
+    font-size:$font-base-size + px;
+    padding:5px 10px;
+    font-family:$font-body-family;
+    margin:0;
+    max-width:100%;
+  }
+}
+
+fieldset{
+  legend{
+    font-weight:600;
+  }
+}
+
+.radio{
+  input{
+    margin-right:5px;
+  }
+}
+
+.select-wrapper{
+  position:relative;
+  display:inline-block;
+}
+
+select{
+  &.form-input{
+    padding-right:30px;
+  }
+  + .fa{
+    pointer-events:none;
+    position:absolute;
+    right:10px;
+    top:50%;
+    transform:translateY(-50%);
+    color:$color-dk;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.form-group{
+  margin-bottom:25px;
+}
+
+.form-label{
+  display:block;
+  margin-bottom:5px;
+  font-weight:600;
+}
+
+.form{
+  &_inline-submit{
+    position:relative;
+    .form-input{
+      display:inline-block;
+      width:100%;
+    }
+    input[type="submit"]{
+      position:absolute;
+      right:0;
+      top:0;
+      height:100%;
+    }
+  }
+  &_inline{
+    .form-label,
+    .form-input,
+    .form-group{
+      display:inline-block;
+    }
+    .form-label{
+      margin-right:10px;
+    }
+    .form-group{
+      margin-right:30px;
+      &:last-of-type{
+        margin-right:0;
+      }
+    }
+  }
+}
+
+.error{
+  color:$color-danger;
+  font-weight:300;
+}
+
+.form-required{
+  &:before{
+    content:'*';
+    color:$color-danger;
+    display:inline-block;
+    margin-right:2px;
+  }
+}
+
+
+
