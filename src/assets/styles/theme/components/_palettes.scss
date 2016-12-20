@@ -72,6 +72,7 @@
     }
     &_#{$i}-info{
       display:flex;
+      white-space:nowrap;
       .palette_info-light,
       .palette_info-default,
       .palette_info-dark{

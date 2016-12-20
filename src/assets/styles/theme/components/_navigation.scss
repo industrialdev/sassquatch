@@ -1,2 +1,94 @@
 /* NAVIGATION COMPONENTS
 ---------------------------------------------------------------------------*/
+.nav{
+  &_main{
+    ul{
+      display:table;
+      width:100%;
+      li{
+        display:table-cell;
+        text-align:center;
+        a{
+          display:inline-block;
+          text-decoration:none;
+          font-weight:700;
+          color:$color-dk;
+          padding:10px;
+          padding-top:0;
+          border-bottom:3px solid transparent;
+          transition:all 0.2s;
+          position:relative;
+          &:hover,
+          &:focus{
+            color:$color-lt;
+            border-bottom:3px solid $color-lt;
+          }
+        }
+        &.active{
+          a{
+            color:$color-lt;
+            border-bottom:3px solid $color-lt;
+            &:after{
+              content:'';
+              display:inline-block;
+              width: 0; 
+              height: 0; 
+              border-left: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-bottom: 5px solid $color-lt;
+              position:absolute;
+              bottom:0;
+              left:50%;
+              transform:translateX(-50%);
+            }
+          }
+        }
+      }
+    }
+  }
+  &_side{
+    h2{
+      display:block;
+      padding-bottom:10px;
+      margin:0;
+      border-bottom:3px solid $color-brand-1;
+      @include set-type(20, 700, 24);
+    }
+    ul{
+      background:$color-brand-1-lt;
+      li{
+        border-bottom:1px solid $color-brand-1;
+        a{
+          display:block;
+          text-decoration:none;
+          padding:10px;
+          font-weight:700;
+          color:$color-dk;
+          transition:all 0.2s;
+          &:hover,
+          &:focus{
+            background:$color-brand-1-dk;
+            color:$color-lt;
+          }
+        }
+        &.active{
+          a{
+            padding-left:25px;
+            position:relative;
+            background:$color-brand-1-dk;
+            color:$color-lt;
+            &:before{
+              content:'';
+              border-top: 5px solid transparent;
+              border-bottom: 5px solid transparent;
+              border-left: 5px solid $color-lt;
+              position:absolute;
+              left:10px;
+              top:16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

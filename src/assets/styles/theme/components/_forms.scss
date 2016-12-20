@@ -16,9 +16,9 @@ select{
     border:1px solid $color-neutral-dk;
     background:$color-lt;
     color:$color-dk;
-    font-size:$font-base-size + px;
-    padding:5px 10px;
     font-family:$font-body-family;
+    @include set-type(16, 400, 20);
+    padding:5px 10px;
     margin:0;
     max-width:100%;
   }

@@ -22,10 +22,12 @@
   &_sm{
     padding:3px 8px;
     font-size:12px;
+    @include set-type(12, 700, 16);
   }
   &_md{
     padding:10px 25px;
     font-size:14px;
+    @include set-type(14, 700, 20);
   }
   &_lg{
     padding:20px 30px;
