@@ -1,0 +1,12 @@
+/* CARD COMPONENTS
+---------------------------------------------------------------------------*/
+
+.card{
+  padding:15px;
+  border:1px solid $color-neutral-dk;
+  overflow:hidden;
+  &.drawer{
+    background:$color-lt;
+    border-top:none;
+  }
+}

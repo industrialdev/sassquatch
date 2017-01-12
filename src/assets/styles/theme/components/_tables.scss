@@ -1,0 +1,36 @@
+/* TABLE COMPONENTS
+---------------------------------------------------------------------------*/
+
+.table-wrapper{
+  overflow-x:auto;
+  margin-bottom:15px;
+  &:last-child{
+    margin-bottom:0;
+  }
+}
+
+table{
+  thead{
+    tr{
+      th{
+        text-align:left;
+        font-weight:700;
+        padding:10px;
+        white-space:nowrap;
+        border-bottom:2px solid $color-dk;
+      }
+    }
+  }
+  tbody{
+    tr{
+      td{
+        padding:10px;
+        border-bottom:1px solid $color-med;
+      }
+    }
+  }
+  &.bordered{
+    border:1px solid $color-dk;
+    border-collapse:initial;
+  }
+}

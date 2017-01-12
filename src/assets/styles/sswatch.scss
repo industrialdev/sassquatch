@@ -1,20 +1,9 @@
 /* CONFIGURATION
 ------------------------------------------------------------------------------*/
-@import "config/config";
-
-/* BASE STYLES
-------------------------------------------------------------------------------*/
-@import "base";
-
-/* HELPERS
-------------------------------------------------------------------------------*/
-@import "theme/helpers/helpers";
-
-/* UI COMPONENTS
-------------------------------------------------------------------------------*/
-@import "theme/components/components";
+@import "config/reset";
+@import "config/vars";
+@import "config/mixins";
 
 /* CUSTOM STYLES
 ------------------------------------------------------------------------------*/
 @import "theme/theme";
-@import "theme/breakpoints";

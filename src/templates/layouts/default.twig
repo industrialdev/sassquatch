@@ -5,11 +5,7 @@
     {% include "../partials/header.twig" %}
 
     <main id="main-content">
-      <section id="page-content">
-        <div class="centered-content">
-          {% block content %}{% endblock %}
-        </div>
-      </section>
+      {% block content %}{% endblock %}
     </main><!-- /main -->
 
     {% include "../partials/footer.twig" %}

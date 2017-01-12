@@ -1,10 +1,16 @@
 <nav class="nav nav_side">
-  <h2>Section title</h2>
+  <h2>{{ page }}</h2>
   <ul class="menu menu_side">
-    <li><a href="#">About</a></li>
-    <li><a href="#">Style Guide</a></li>
-    <li><a href="#">Components</a></li>
-    <li><a href="#">List item</a></li>
-    <li><a href="#">List item</a></li>
+    {% if page == "Getting Started" %}
+    
+    {% elseif page == "SASS" %}
+
+    {% elseif page == "Javascript" %}
+
+    {% elseif page == "Components" %}
+
+    {% elseif page == "Configuration" %}
+    
+    {% endif %}
   </ul>
 </nav>

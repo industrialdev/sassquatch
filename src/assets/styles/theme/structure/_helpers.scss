@@ -1,5 +1,6 @@
 /* STRUCTURE HELPERS
 ---------------------------------------------------------------------------*/
+
 .centered-content{
   @include clearfix();
   width:100%;
@@ -18,10 +19,4 @@
 
 .hidden{
   display:none;
-}
-
-.card{
-  padding:15px;
-  border:1px solid $color-neutral-dk;
-  overflow:hidden;
 }

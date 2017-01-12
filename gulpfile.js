@@ -29,7 +29,6 @@ gulp.task('sass', function () {
   gulp.src('./src/assets/styles/sswatch.scss')
     .pipe(plumber())
     .pipe(sass({
-      includePaths: require('node-neat').includePaths,
       outputStyle: 'compressed'
     }))
     .on('error', onError)
@@ -64,6 +63,10 @@ gulp.task('images', function(){
   gulp.src('./src/assets/images/*')
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/assets/images'))
+
+  gulp.src('./src/assets/icons/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./dist/assets/icons'))
 });
 
 gulp.task('templates', function() {

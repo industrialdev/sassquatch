@@ -1,6 +1,5 @@
-{% extends "templates/layouts/homepage.twig" %}
-{% set title = "Sswatch" %}
-{% set pageTitle = "Test" %}
+{% extends "templates/layouts/default.twig" %}
+{% set pageTitle = "Home" %}
 
 {% block content %}
 
@@ -18,445 +17,109 @@
       <div class="form-group">
         <select id="select-grid" class="form-input">
           <option value="default">Default Grid</option>
-          <option value="mobile">Mobile Grid</option>
-          <option value="tablet">Tablet Grid</option>
-          <option value="desktop">Desktop Grid</option>
-          <option value="wide-desktop">Wide Desktop Grid</option>
+          <option value="sm">Mobile Grid</option>
+          <option value="md">Tablet Grid</option>
+          <option value="lg">Desktop Grid</option>
+          <option value="xl">Wide Desktop Grid</option>
         </select>
       </div>
-      <div id="grid-default" class="drawer_wrapper">       
-        <button class="btn btn_drawer-toggle">View grid example</button>
-        <div class="drawer">
-          <p>The default grid does not break to full width at smaller screen sizes</p>
-          <div class="row">
-            <div class="col_1">
-              <div class="card">
-                <span class="ellipsis">.col_1</span>
-              </div>
-            </div>
-            <div class="col_11">
-              <div class="card">
-                <span class="ellipsis">.col_11</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_2">
-              <div class="card">
-                <span class="ellipsis">.col_2</span>
-              </div>
-            </div>
-            <div class="col_10">
-              <div class="card">
-                <span class="ellipsis">.col_10</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_3">
-              <div class="card">
-                <span class="ellipsis">.col_3</span>
-              </div>
-            </div>
-            <div class="col_9">
-              <div class="card">
-                <span class="ellipsis">.col_9</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_4">
-              <div class="card">
-                <span class="ellipsis">.col_4</span>
-              </div>
-            </div>
-            <div class="col_8">
-              <div class="card">
-                <span class="ellipsis">.col_8</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_5">
-              <div class="card">
-                <span class="ellipsis">.col_5</span>
-              </div>
-            </div>
-            <div class="col_7">
-              <div class="card">
-                <span class="ellipsis">.col_7</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_6">
-              <div class="card">
-                <span class="ellipsis">.col_6</span>
-              </div>
-            </div>
-            <div class="col_6">
-              <div class="card">
-                <span class="ellipsis">.col_6</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_12">
-              <div class="card">
-                <span class="ellipsis">.col_12</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="grid-mobile" class="drawer_wrapper">    
-        <button class="btn btn_drawer-toggle">View grid example</button>
-        <div class="drawer">
-          <p>The mobile grid is full width up until 480px wide then it breaks into its defined grid widths.</p>
-          <div class="row">
-            <div class="col_sm-1">
-              <div class="card">
-                <span class="ellipsis">.col_sm-1</span>
-              </div>
-            </div>
-            <div class="col_sm-11">
-              <div class="card">
-                <span class="ellipsis">.col_sm-11</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_sm-2">
-              <div class="card">
-                <span class="ellipsis">.col_sm-2</span>
-              </div>
-            </div>
-            <div class="col_sm-10">
-              <div class="card">
-                <span class="ellipsis">.col_sm-10</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_sm-3">
-              <div class="card">
-                <span class="ellipsis">.col_sm-3</span>
-              </div>
-            </div>
-            <div class="col_sm-9">
-              <div class="card">
-                <span class="ellipsis">.col_sm-9</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_sm-4">
-              <div class="card">
-                <span class="ellipsis">.col_sm-4</span>
-              </div>
-            </div>
-            <div class="col_sm-8">
-              <div class="card">
-                <span class="ellipsis">.col_sm-8</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_sm-5">
-              <div class="card">
-                <span class="ellipsis">.col_sm-5</span>
-              </div>
-            </div>
-            <div class="col_sm-7">
-              <div class="card">
-                <span class="ellipsis">.col_sm-7</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_sm-6">
-              <div class="card">
-                <span class="ellipsis">.col_sm-6</span>
-              </div>
-            </div>
-            <div class="col_sm-6">
-              <div class="card">
-                <span class="ellipsis">.col_sm-6</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_sm-12">
-              <div class="card">
-                <span class="ellipsis">.col_sm-12</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="grid-tablet" class="drawer_wrapper">
-        <button class="btn btn_drawer-toggle">View grid example</button>
-        <div class="drawer">
-          <p>The tablet grid is full width up until 768px wide then it breaks into its defined grid widths.</p>
-          <div class="row">
-            <div class="col_md-1">
-              <div class="card">
-                <span class="ellipsis">.col_md-1</span>
-              </div>
-            </div>
-            <div class="col_md-11">
-              <div class="card">
-                <span class="ellipsis">.col_md-11</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_md-2">
-              <div class="card">
-                <span class="ellipsis">.col_md-2</span>
-              </div>
-            </div>
-            <div class="col_md-10">
-              <div class="card">
-                <span class="ellipsis">.col_md-10</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_md-3">
-              <div class="card">
-                <span class="ellipsis">.col_md-3</span>
-              </div>
-            </div>
-            <div class="col_md-9">
-              <div class="card">
-                <span class="ellipsis">.col_md-9</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_md-4">
-              <div class="card">
-                <span class="ellipsis">.col_md-4</span>
-              </div>
-            </div>
-            <div class="col_md-8">
-              <div class="card">
-                <span class="ellipsis">.col_md-8</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_md-5">
-              <div class="card">
-                <span class="ellipsis">.col_md-5</span>
-              </div>
-            </div>
-            <div class="col_md-7">
-              <div class="card">
-                <span class="ellipsis">.col_md-7</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_md-6">
-              <div class="card">
-                <span class="ellipsis">.col_md-6</span>
-              </div>
-            </div>
-            <div class="col_md-6">
-              <div class="card">
-                <span class="ellipsis">.col_md-6</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_md-12">
-              <div class="card">
-                <span class="ellipsis">.col_md-12</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="grid-desktop" class="drawer_wrapper">
-        <button class="btn btn_drawer-toggle">View grid example</button>
-        <div class="drawer">
-          <p>The desktop grid is full width up until 991px wide then it breaks into its defined grid widths.</p>
-          <div class="row">
-            <div class="col_lg-1">
-              <div class="card">
-                <span class="ellipsis">.col_lg-1</span>
-              </div>
-            </div>
-            <div class="col_lg-11">
-              <div class="card">
-                <span class="ellipsis">.col_lg-11</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_lg-2">
-              <div class="card">
-                <span class="ellipsis">.col_lg-2</span>
-              </div>
-            </div>
-            <div class="col_lg-10">
-              <div class="card">
-                <span class="ellipsis">.col_lg-10</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_lg-3">
-              <div class="card">
-                <span class="ellipsis">.col_lg-3</span>
-              </div>
-            </div>
-            <div class="col_lg-9">
-              <div class="card">
-                <span class="ellipsis">.col_lg-9</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_lg-4">
-              <div class="card">
-                <span class="ellipsis">.col_lg-4</span>
-              </div>
-            </div>
-            <div class="col_lg-8">
-              <div class="card">
-                <span class="ellipsis">.col_lg-8</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_lg-5">
-              <div class="card">
-                <span class="ellipsis">.col_lg-5</span>
-              </div>
-            </div>
-            <div class="col_lg-7">
-              <div class="card">
-                <span class="ellipsis">.col_lg-7</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_lg-6">
-              <div class="card">
-                <span class="ellipsis">.col_lg-6</span>
-              </div>
-            </div>
-            <div class="col_lg-6">
-              <div class="card">
-                <span class="ellipsis">.col_lg-6</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_lg-12">
-              <div class="card">
-                <span class="ellipsis">.col_lg-12</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="grid-wide-desktop" class="drawer_wrapper">
-        <button class="btn btn_drawer-toggle">View grid example</button>
-        <div id="grid-wide-desktop" class="drawer">
-          <p>The wide desktop grid is full width up until 1199px wide then it breaks into its defined grid widths.</p>
-          <div class="row">
-            <div class="col_xl-1">
-              <div class="card">
-                <span class="ellipsis">.col_xl-1</span>
-              </div>
-            </div>
-            <div class="col_xl-11">
-              <div class="card">
-                <span class="ellipsis">.col_xl-11</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_xl-2">
-              <div class="card">
-                <span class="ellipsis">.col_xl-2</span>
-              </div>
-            </div>
-            <div class="col_xl-10">
-              <div class="card">
-                <span class="ellipsis">.col_xl-10</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_xl-3">
-              <div class="card">
-                <span class="ellipsis">.col_xl-3</span>
-              </div>
-            </div>
-            <div class="col_xl-9">
-              <div class="card">
-                <span class="ellipsis">.col_xl-9</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_xl-4">
-              <div class="card">
-                <span class="ellipsis">.col_xl-4</span>
-              </div>
-            </div>
-            <div class="col_xl-8">
-              <div class="card">
-                <span class="ellipsis">.col_xl-8</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_xl-5">
-              <div class="card">
-                <span class="ellipsis">.col_xl-5</span>
-              </div>
-            </div>
-            <div class="col_xl-7">
-              <div class="card">
-                <span class="ellipsis">.col_xl-7</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_xl-6">
-              <div class="card">
-                <span class="ellipsis">.col_xl-6</span>
-              </div>
-            </div>
-            <div class="col_xl-6">
-              <div class="card">
-                <span class="ellipsis">.col_xl-6</span>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col_xl-12">
-              <div class="card">
-                <span class="ellipsis">.col_xl-12</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Grid preview will render here based on the selected grid -->
     </div>
   </section>
   <section id="buttons">
     <div class="centered-content">
       <h2>Buttons</h2>
-      <p><button class="btn btn_primary btn_md">Primary Button</button></p>
-      <p><button class="btn btn_secondary btn_md">Primary Button</button></p>
-      <p><button class="btn btn_tertiary btn_md">Primary Button</button></p>
+      <p>
+        <button data-attach-icon-before="long-arrow-left" class="btn btn_nav btn_prev">Previous button link</button>
+        <button data-attach-icon-after="long-arrow-right" class="btn btn_nav btn_next">Next button link</button>
+      </p>
+    </div>
+  </section>
+  <section id="tables">
+    <div class="centered-content">
+      <h2>Tables</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Table heading 1</th>
+            <th>Table heading 2</th>
+            <th>Table heading 3</th>
+            <th>Table heading 4</th>
+            <th>Table heading 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Table cell 1</td>
+            <td>Table cell 2</td>
+            <td>Table cell 3</td>
+            <td>Table cell 4</td>
+            <td>Table cell 5</td>
+          </tr>
+          <tr>
+            <td>Table cell 1</td>
+            <td>Table cell 2</td>
+            <td>Table cell 3</td>
+            <td>Table cell 4</td>
+            <td>Table cell 5</td>
+          </tr>
+          <tr>
+            <td>Table cell 1</td>
+            <td>Table cell 2</td>
+            <td>Table cell 3</td>
+            <td>Table cell 4</td>
+            <td>Table cell 5</td>
+          </tr>
+          <tr>
+            <td>Table cell 1</td>
+            <td>Table cell 2</td>
+            <td>Table cell 3</td>
+            <td>Table cell 4</td>
+            <td>Table cell 5</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="bordered">
+        <thead>
+          <tr>
+            <th>Table heading 1</th>
+            <th>Table heading 2</th>
+            <th>Table heading 3</th>
+            <th>Table heading 4</th>
+            <th>Table heading 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Table cell 1</td>
+            <td>Table cell 2</td>
+            <td>Table cell 3</td>
+            <td>Table cell 4</td>
+            <td>Table cell 5</td>
+          </tr>
+          <tr>
+            <td>Table cell 1</td>
+            <td>Table cell 2</td>
+            <td>Table cell 3</td>
+            <td>Table cell 4</td>
+            <td>Table cell 5</td>
+          </tr>
+          <tr>
+            <td>Table cell 1</td>
+            <td>Table cell 2</td>
+            <td>Table cell 3</td>
+            <td>Table cell 4</td>
+            <td>Table cell 5</td>
+          </tr>
+          <tr>
+            <td>Table cell 1</td>
+            <td>Table cell 2</td>
+            <td>Table cell 3</td>
+            <td>Table cell 4</td>
+            <td>Table cell 5</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 

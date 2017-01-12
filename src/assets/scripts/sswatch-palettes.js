@@ -16,6 +16,7 @@ function generatePalette(){
     $(".palettes .row").append("<div class='col_md-4'><div class='palette palette_" + (i + 1) + "'><div class='palette_light'></div><div class='palette_dark'></div></div><div class='palette_" + (i + 1) + "-info'><div class='palette_info-light'><span class='copy fa fa-files-o' aria-hidden='true'></span></div><div class='palette_info-default'><span class='copy fa fa-files-o' aria-hidden='true'></span></div><div class='palette_info-dark'><span class='copy fa fa-files-o' aria-hidden='true'></span></div></div></div>");
   }
 
+
   $(".palette").each(function(){
     var defaultColor = $(this).css('backgroundColor');
     var lightColor = $(this).find('.palette_light').css('backgroundColor');

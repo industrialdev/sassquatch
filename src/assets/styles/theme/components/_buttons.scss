@@ -1,14 +1,15 @@
 /* BUTTON COMPONENTS
 ---------------------------------------------------------------------------*/
+
 .btn{
-  padding:5px 15px;
+  padding:10px 25px;
   cursor:pointer;
   transition:all 0.2s;
   display:inline-block;
   appearance:none;
-  font-weight:700;
   text-decoration:none;
   border:0;
+  @include set-type(14, 700, 20);
   &_link{
     background:transparent;
     text-decoration:none;
@@ -18,38 +19,65 @@
       text-decoration:underline;
     }
   }
-  /* Button sizes */
-  &_sm{
-    padding:3px 8px;
-    font-size:12px;
-    @include set-type(12, 700, 16);
+  &_prev{
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    i{
+      position:absolute;
+      left:10px;
+      top:50%;
+      transform:translate(0, -50%);
+      transition:transform 0.1s ease-in-out;
+    }
+    &:hover,
+    &:focus{
+      i{
+        animation-name: hover-button;
+        animation-duration: 1s;
+        transform:translate(0, -50%);
+      }
+    }
   }
-  &_md{
-    padding:10px 25px;
-    font-size:14px;
-    @include set-type(14, 700, 20);
-  }
-  &_lg{
-    padding:20px 30px;
-    font-size:18px;
+  &_next{
+    display: inline-block;
+    position: relative;
+    padding-right: 30px;
+    i{
+      position:absolute;
+      right:10px;
+      top:50%;
+      transform:translate(0, -50%);
+      transition:transform 0.1s ease-in-out;
+    }
+    &:hover,
+    &:focus{
+      i{
+        animation-name: hover-button;
+        animation-duration: 1s;
+        transform:translate(0, -50%);
+      }
+    }
   }
   &_drawer-toggle{
     @include set-type(18, 600, 22);
     width:100%;
     text-align:left;
     padding:10px 15px;
-    background:transparent;
+    background:$color-lt;
     border:1px solid $color-neutral-dk;
     position:relative;
     transition:none;
-    .icon{
+    i{
       position:absolute;
       right:15px;
       top:50%;
       transform:translateY(-50%);
+      transition:transform 0.2s;
     }
+  
     &.open{
-      .icon{
+      i{
         transform:rotate(180deg) translateY(50%);
       }
     }

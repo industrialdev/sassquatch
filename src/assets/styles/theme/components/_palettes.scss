@@ -16,6 +16,7 @@
     Append the new color definition to the $brand-colors variable:
       $brand-colors: $color-brand-1, $color-brand-2, $color-brand-3, $color-brand-4, $color-brand-6, $color-neutral;
 */
+
 .palettes{
   *[class^="col_"]{
     margin-bottom:30px;
@@ -26,11 +27,11 @@
   height:150px;
   width:100%;
   position:relative;
-  padding:0 33%;
+  padding:0 33.333%;
   &_light,
   &_dark{
     display:block;
-    width:33%;
+    width:33.333%;
     position:absolute;
     top:0;
     height:100%;
@@ -48,8 +49,7 @@
   &_info-light,
   &_info-default,
   &_info-dark{
-    width:33%;
-    flex-grow:1;
+    width:33.333%;
     padding:10px;
     float:left;
     text-transform:uppercase;
@@ -71,27 +71,47 @@
       }
     }
     &_#{$i}-info{
-      display:flex;
       white-space:nowrap;
-      .palette_info-light,
-      .palette_info-default,
+      @include clearfix();
+      user-select:none;
+      .palette_info-light{
+        border-bottom:4px solid lighten(nth($brand-colors, $i), $color-threshold);
+        transition:color 0.2s;
+        &:active{
+          color:lighten(nth($brand-colors, $i), $color-threshold);
+        }
+        &:hover,
+        &:focus{
+          .copy{
+            color:lighten(nth($brand-colors, $i), $color-threshold);
+          }
+        }
+      }
+      .palette_info-default{
+        border-bottom:4px solid nth($brand-colors, $i);
+        transition:color 0.2s;
+        &:active{
+          color:nth($brand-colors, $i);
+        }
+        &:hover,
+        &:focus{
+          .copy{
+            color:nth($brand-colors, $i);
+          }
+        }
+      }
       .palette_info-dark{
+        border-bottom:4px solid darken(nth($brand-colors, $i), $color-threshold);
+        transition:color 0.2s;
+        &:active{
+          color:darken(nth($brand-colors, $i), $color-threshold);
+        }
         &:hover,
         &:focus{
           .copy{
             color:darken(nth($brand-colors, $i), $color-threshold);
           }
         }
-      }
-      .palette_info-light{
-        border-bottom:4px solid lighten(nth($brand-colors, $i), $color-threshold);
-      }
-      .palette_info-default{
-        border-bottom:4px solid nth($brand-colors, $i);
-      }
-      .palette_info-dark{
-        float:right;
-        border-bottom:4px solid darken(nth($brand-colors, $i), $color-threshold);
       }
     }
   }

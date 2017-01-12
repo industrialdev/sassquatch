@@ -1,14 +1,37 @@
-/* CUSTOM THEME STYLES
-----------------------------------------------------------------------*/
-.banner{
-  background:$color-brand-1;
-}
+/* BASELINE STYLES
+------------------------------------------------------------------------------*/
+@import "base";
 
-#grid{
-  .drawer_wrapper{
-    display:none;
-  }
-}
+/* STRUCTURE
+------------------------------------------------------------------------------*/
+@import "structure/grid";
+@import "structure/common";
+@import "structure/header";
+@import "structure/sections";
+@import "structure/footer";
+
+/* ANIMATIONS
+------------------------------------------------------------------------------*/
+@import "animations/animations";
+
+/* COMPONENTS
+------------------------------------------------------------------------------*/
+@import "components/banners";
+@import "components/buttons";
+@import "components/cards";
+@import "components/dropdowns";
+@import "components/forms";
+@import "components/tables";
+@import "components/palettes";
+@import "components/examples";
+
+/* HELPERS
+------------------------------------------------------------------------------*/
+@import "components/helpers";
+@import "structure/helpers";
+@import "helpers/accessibility";
+@import "helpers/typography";
+
 
 
 
