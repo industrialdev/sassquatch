@@ -1,0 +1,34 @@
+<div class="grid-preview">
+  <div class="drawer_wrapper">
+    {% include "../button.twig" with {'class' : 'btn_dropdown drawer-toggle', 'text' : 'Preview Grid', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
+    <div class="card drawer drawer_overlay" aria-expanded="false">
+      <div class="row">
+        {% include "../card.twig" with {'column' : '1', 'content' : '<span class="ellipsis">.col_1</span>'} %}
+        {% include "../card.twig" with {'column' : '11', 'content' : '<span class="ellipsis">.col_11</span>'} %}
+      </div>
+      <div class="row">
+        {% include "../card.twig" with {'column' : '2', 'content' : '<span class="ellipsis">.col_2</span>'} %}
+        {% include "../card.twig" with {'column' : '10', 'content' : '<span class="ellipsis">.col_10</span>'} %}
+      </div>
+      <div class="row">
+        {% include "../card.twig" with {'column' : '3', 'content' : '<span class="ellipsis">.col_3</span>'} %}
+        {% include "../card.twig" with {'column' : '9', 'content' : '<span class="ellipsis">.col_9</span>'} %}
+      </div>
+      <div class="row">
+        {% include "../card.twig" with {'column' : '4', 'content' : '<span class="ellipsis">.col_4</span>'} %}
+        {% include "../card.twig" with {'column' : '8', 'content' : '<span class="ellipsis">.col_8</span>'} %}
+      </div>
+      <div class="row">
+        {% include "../card.twig" with {'column' : '5', 'content' : '<span class="ellipsis">.col_5</span>'} %}
+        {% include "../card.twig" with {'column' : '7', 'content' : '<span class="ellipsis">.col_7</span>'} %}
+      </div>
+      <div class="row">
+        {% include "../card.twig" with {'column' : '6', 'content' : '<span class="ellipsis">.col_6</span>'} %}
+        {% include "../card.twig" with {'column' : '6', 'content' : '<span class="ellipsis">.col_6</span>'} %}
+      </div>
+      <div class="row">
+        {% include "../card.twig" with {'column' : '12', 'content' : '<span class="ellipsis">.col_12</span>'} %}
+      </div>
+    </div>
+  </div>
+</div>

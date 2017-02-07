@@ -10,25 +10,29 @@
   text-decoration:none;
   border:0;
   @include set-type(14, 700, 20);
+  &:hover,
+  &:focus{
+    background:lighten($color-med, 10%);
+  }
   &_link{
     background:transparent;
     text-decoration:none;
-    padding:5px 0;
+    color:$color-dk;
+    padding:0;
     &:hover,
     &:focus{
+      background:transparent;
       text-decoration:underline;
     }
   }
-  &_prev{
+  &_pager{
     display: inline-block;
     position: relative;
-    padding-left: 30px;
     i{
       position:absolute;
-      left:10px;
       top:50%;
       transform:translate(0, -50%);
-      transition:transform 0.1s ease-in-out;
+      transition:transform 0.1s ease-in-out; 
     }
     &:hover,
     &:focus{
@@ -38,28 +42,28 @@
         transform:translate(0, -50%);
       }
     }
-  }
-  &_next{
-    display: inline-block;
-    position: relative;
-    padding-right: 30px;
-    i{
-      position:absolute;
-      right:10px;
-      top:50%;
-      transform:translate(0, -50%);
-      transition:transform 0.1s ease-in-out;
-    }
-    &:hover,
-    &:focus{
+    &-forward{
+      padding-left: 30px;
       i{
-        animation-name: hover-button;
-        animation-duration: 1s;
-        transform:translate(0, -50%);
+        left:10px;
+      }
+    }
+    &-back{
+      padding-right: 30px;
+      i{
+        right:10px;
       }
     }
   }
-  &_drawer-toggle{
+  &_close{
+    padding:0;
+    background:transparent;
+    &:hover,
+    &:focus{
+      background:transparent;
+    }
+  }
+  &_dropdown{
     @include set-type(18, 600, 22);
     width:100%;
     text-align:left;
@@ -68,18 +72,9 @@
     border:1px solid $color-neutral-dk;
     position:relative;
     transition:none;
-    i{
-      position:absolute;
-      right:15px;
-      top:50%;
-      transform:translateY(-50%);
-      transition:transform 0.2s;
-    }
-  
-    &.open{
-      i{
-        transform:rotate(180deg) translateY(50%);
-      }
+    &:hover,
+    &:focus{
+      background:$color-lt;
     }
   }
 }

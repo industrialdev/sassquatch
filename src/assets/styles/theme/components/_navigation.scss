@@ -1,2 +1,131 @@
 /* NAVIGATION COMPONENTS
 ---------------------------------------------------------------------------*/
+.nav{
+  a{
+    transition:all 0.4s;
+  }
+  &_table,
+  &_inline{
+    position:relative;
+    > ul{
+      > li{
+        display:table-cell;
+        text-align:center;
+        border-right:1px solid $color-med;
+        &:last-of-type{
+          border-right:none;
+        }
+        &.has-submenu{
+          > a{
+            padding-right:30px;
+          }
+        }
+        > a,
+        .drawer_wrapper > a{
+          display:block;
+          padding:10px 15px;
+          background:$color-lt;
+          color:$color-dk;
+          text-decoration:none;
+          &:hover,
+          &:focus,
+          &.open{
+            background:$color-med;
+          }
+        }
+      }
+    }
+    .submenu{
+      position:absolute;
+      z-index:10;
+      width:100%;
+      top:100%;
+      left:0;
+      padding:15px 0;
+      background:$color-med;
+      text-align:left;
+      ul{
+        li{
+          a{
+            text-decoration:none;
+            color:$color-dk;
+            &:hover,
+            &:focus{
+              text-decoration:underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  &_table{
+    background:$color-lt;
+    > ul{
+      display:table;
+      width:100%;
+    }
+  }
+  &_inline{
+    > ul{
+      @include clearfix();
+      > li{
+        display:inline-block;
+        float:left;
+        position:relative;
+      }
+    }
+    .submenu{
+      width:200%;
+    }
+  }
+  &_sub{
+    ul{
+      padding-left:45px;
+      li{
+        position:relative;
+        a{
+          display:block;
+          padding:10px 15px;
+          color:$color-dk;
+          text-decoration:none;
+          span{
+            position:relative;
+            z-index:1;
+          }
+          &:before{
+            content:'';
+            display:block;
+            background:$color-lt;
+            border-top:1px solid $color-med;
+            position:absolute;
+            width:1000%;
+            height:100%;
+            top:0;
+            left:-100%;
+            z-index:0;
+            transition:all 0.4s;
+          }
+          &:hover,
+          &:focus{
+            &:before{
+              background:$color-med;
+            }
+          }
+        }
+      }
+    }
+    > ul{
+      padding-left:0;
+      overflow:hidden;
+      > li{
+        &:first-of-type{
+          > a{
+            &:before{
+              border-top:none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

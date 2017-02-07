@@ -1,0 +1,9 @@
+{% if column %}
+  <div class="col_{{ column }}">
+{% endif %}
+  <div class="card">
+    {{ content }}
+  </div>
+{% if column %}
+  </div>
+{% endif %}

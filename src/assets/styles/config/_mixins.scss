@@ -8,7 +8,7 @@
     font-weight: $theWeight;
   }
   @if $theHeight != "" {
-    line-height: #{$theHeight / $theSize}em;
+    line-height: #{$theHeight / $theSize};
   }
 }
 

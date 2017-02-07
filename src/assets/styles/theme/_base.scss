@@ -4,11 +4,12 @@ html,
 body{
   font-size: $font-base-size + px; 
   font-family: $font-body-family;
-  line-height:1.4em;
+  line-height:1.4;
   margin:0;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;  
+  overflow-x:hidden;
 }
 
 *{

@@ -1,6 +1,33 @@
 /* DROPDOWN COMPONENTS
 ---------------------------------------------------------------------------*/
+.dropdown{
+  position:relative;
+}
+
+.drawer-toggle{
+  position:relative;
+  i{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    transition:transform 0.2s;
+  }
+  &.open{
+    i{
+      transform:rotate(180deg) translateY(50%);
+    }
+  }
+}
 
 .drawer{
   display:none;
+  &_wrapper{
+    position:relative;
+  }
+  &_overlay{
+    position:absolute;
+    width:100%;
+    z-index:10;
+  }
 }

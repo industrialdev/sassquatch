@@ -1,28 +1,30 @@
 (function($){
-
-  // User selection of previewed grid
-  var selectedGrid = $("#select-grid").val();
-  showGrid(selectedGrid);
-
-  $("#select-grid").change(function(){
-    selectedGrid = $("#select-grid").val();
-    showGrid(selectedGrid);
+  generatePalette();
+  $(".palette_info-default, .palette_info-light, .palette_info-dark").click(function(){
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(this).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
   });
-
 })(jQuery);
 
-function showGrid(selectedGrid){
-
-  $(".grid-preview").remove();
-
-  if(selectedGrid == "default"){
-    selectedGrid = "";
-  }else{
-    selectedGrid = selectedGrid + "-";
-  }
-
-  var gridHtml = '<div class="grid-preview"><div class="drawer_wrapper"><button class="btn btn_drawer-toggle drawer-toggle" aria-expanded="false">Preview Grid<i class="fa fa-angle-down"></i></button><div class="card drawer" aria-expanded="false"><div class="row"><div class="col_' + selectedGrid + '1"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '1</span></div></div><div class="col_' + selectedGrid + '11"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '11</span></div></div></div><div class="row"><div class="col_' + selectedGrid + '2"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '2</span></div></div><div class="col_' + selectedGrid + '10"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '10</span></div></div></div><div class="row"><div class="col_' + selectedGrid + '3"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '3</span></div></div><div class="col_' + selectedGrid + '9"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '9</span></div></div></div><div class="row"><div class="col_' + selectedGrid + '4"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '4</span></div></div><div class="col_' + selectedGrid + '8"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '8</span></div></div></div><div class="row"><div class="col_' + selectedGrid + '5"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '5</span></div></div><div class="col_' + selectedGrid + '7"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '7</span></div></div></div><div class="row"><div class="col_' + selectedGrid + '6"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '6</span></div></div><div class="col_' + selectedGrid + '6"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '6</span></div></div></div><div class="row"><div class="col_' + selectedGrid + '12"><div class="card"><span class="ellipsis">.col_' + selectedGrid + '12</span></div></div></div></div></div></div>';
-
-  $("#select-grid").closest('.form-group').after(gridHtml);
-
+function generatePalette(){
+  $(".palette").each(function(){
+    var defaultColor = $(this).css('backgroundColor');
+    var lightColor = $(this).find('.palette_light').css('backgroundColor');
+    var darkColor = $(this).find('.palette_dark').css('backgroundColor');
+    $(this).next('div').find('.palette_info-default').prepend(rgb2hex(defaultColor));
+    $(this).next('div').find('.palette_info-light').prepend(rgb2hex(lightColor));
+    $(this).next('div').find('.palette_info-dark').prepend(rgb2hex(darkColor));
+  });
 }
+
+function rgb2hex(rgb) {
+  rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+  function hex(x) {
+      return ("0" + parseInt(x).toString(16)).slice(-2);
+  }
+  return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+

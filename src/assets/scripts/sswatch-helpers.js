@@ -22,6 +22,11 @@
 
   });
 
+  // Dismiss alerts
+  $('.alert_close').click(function(e){
+    $(this).closest('.alert').remove();
+  });
+
   // Wraps tables for mobile scrolling
   $('table').wrap('<div class="table-wrapper"></div>');
 

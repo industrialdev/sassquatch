@@ -38,8 +38,17 @@ $color-med:           #CCCCCC; // grey
 $color-dk:            #000000; // black
 
 $color-danger:        #ff3333; // red
-$color-success:       #85e085; // green
-$color-caution:       #ffff99; // yellow
+$color-danger-lt:     lighten($color-danger, $color-threshold);
+$color-danger-dk:     darken($color-danger, $color-threshold);
+$color-success:       #70db70; // green
+$color-success-lt:    lighten($color-success, $color-threshold);
+$color-success-dk:    darken($color-success, $color-threshold);
+$color-caution:       #ffdb4d; // yellow
+$color-caution-lt:    lighten($color-caution, $color-threshold);
+$color-caution-dk:    darken($color-caution, $color-threshold);
+$color-info:          #80ccff; // blue
+$color-info-lt:       lighten($color-info, $color-threshold);
+$color-info-dk:       darken($color-info, $color-threshold);
 
 /* Typography
 ------------------------------------------------------------------------------*/

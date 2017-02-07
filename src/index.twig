@@ -2,125 +2,209 @@
 {% set pageTitle = "Home" %}
 
 {% block content %}
-
-  <section id="colors">
-    <div class="centered-content">
-      <h2>Color Palette</h2>
-      <div class="palettes">
-        <!-- Colors will render here based on the color-data value entered -->
-      </div>
-    </div>
-  </section>
-  <section id="grid">
+  
+  <section id="grid"><!-- Grid -->
     <div class="centered-content">
       <h2>The Grid</h2>
-      <div class="form-group">
-        <select id="select-grid" class="form-input">
-          <option value="default">Default Grid</option>
-          <option value="sm">Mobile Grid</option>
-          <option value="md">Tablet Grid</option>
-          <option value="lg">Desktop Grid</option>
-          <option value="xl">Wide Desktop Grid</option>
-        </select>
-      </div>
-      <!-- Grid preview will render here based on the selected grid -->
+      {% include "components/examples/grid.twig" %}
     </div>
-  </section>
-  <section id="buttons">
+  </section><!-- /Grid -->
+
+  <section id="menus"><!-- Menus -->
+    <div class="centered-content">
+      <h2>Navigation</h2>
+      <div class="row">
+        <div class="col_12">
+          <nav class="nav nav_table">
+            <ul> 
+              <li class="has-submenu">
+                <a href="#" class="drawer-toggle" aria-expanded="false">Menu item 1 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div class="submenu drawer" aria-expanded="false">
+                  <div class="centered-content">
+                    <div class="row">
+                      <div class="col_md-3">
+                        <ul>
+                          <li><a href="#">Submenu item 1</a></li>
+                          <li><a href="#">Submenu item 2</a></li>
+                          <li><a href="#">Submenu item 3</a></li>
+                          <li><a href="#">Submenu item 4</a></li>
+                        </ul>
+                      </div>
+                      <div class="col_md-3">
+                        <ul>
+                          <li><a href="#">Submenu item 5</a></li>
+                          <li><a href="#">Submenu item 6</a></li>
+                          <li><a href="#">Submenu item 7</a></li>
+                          <li><a href="#">Submenu item 8</a></li>
+                        </ul>
+                      </div>
+                      <div class="col_md-3">
+                        <ul>
+                          <li><a href="#">Submenu item 9</a></li>
+                          <li><a href="#">Submenu item 10</a></li>
+                          <li><a href="#">Submenu item 11</a></li>
+                          <li><a href="#">Submenu item 12</a></li>
+                        </ul>
+                      </div>
+                      <div class="col_md-3">
+                        <ul>
+                          <li><a href="#">Submenu item 13</a></li>
+                          <li><a href="#">Submenu item 14</a></li>
+                          <li><a href="#">Submenu item 15</a></li>
+                          <li><a href="#">Submenu item 16</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><a href="#">Menu item 2</a></li>
+              <li><a href="#">Menu item 3</a></li>
+              <li><a href="#">Menu item 4</a></li>
+              <li><a href="#">Menu item 5</a></li>
+              <li><a href="#">Menu item 6</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col_12">
+          <nav class="nav nav_inline">
+            <ul> 
+              <li class="has-submenu">
+                <a href="#" class="drawer-toggle" aria-expanded="false">Menu item 1 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div class="submenu drawer" aria-expanded="false">
+                  <div class="centered-content">     
+                    <ul>
+                      <li><a href="#">Submenu item 1</a></li>
+                      <li><a href="#">Submenu item 2</a></li>
+                      <li><a href="#">Submenu item 3</a></li>
+                      <li><a href="#">Submenu item 4</a></li>
+                      <li><a href="#">Submenu item 5</a></li>
+                      <li><a href="#">Submenu item 6</a></li>
+                      <li><a href="#">Submenu item 7</a></li>
+                      <li><a href="#">Submenu item 8</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li><a href="#">Menu item 2</a></li>
+              <li><a href="#">Menu item 3</a></li>
+              <li><a href="#">Menu item 4</a></li>
+              <li><a href="#">Menu item 5</a></li>
+              <li><a href="#">Menu item 6</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col_sm-4">
+          <nav class="nav nav_sub">
+            <ul>
+              <li><a href="#"><span>Top level menu item</span></a></li>
+              <li>
+                <a href="#"><span data-attach-icon-after="caret-down">Top level menu item</span></a>
+                <ul>
+                  <li><a href="#"><span>Second level menu item</span></a></li>
+                  <li>
+                    <a href="#"><span data-attach-icon-after="caret-down">Second level menu item</span></a>
+                    <ul>
+                      <li><a href="#"><span>Third level menu item</span></a></li>
+                      <li><a href="#"><span>Third level menu item</span></a></li>
+                      <li><a href="#"><span>Third level menu item</span></a></li>
+                      <li><a href="#"><span>Third level menu item</span></a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><span>Second level menu item</span></a></li>
+                  <li><a href="#"><span>Second level menu item</span></a></li>
+                </ul>
+              </li>
+              <li><a href="#"><span>Top level menu item</span></a></li>
+              <li><a href="#"><span>Top level menu item</span></a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col_sm-4">
+        </div>
+        <div class="col_sm-4">
+        </div>
+      </div>
+    </div>
+  </section><!-- /Menus -->
+
+  <section id="dropdowns"><!-- Dropdowns -->
+    <div class="centered-content">
+      <h2>Dropdowns</h2>
+      <div class="row">
+        <div class="col_sm-4">
+          <div class="dropdown">
+            {% include "components/button.twig" with {'class' : 'btn_dropdown drawer-toggle', 'text' : 'Dropdown', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
+            <div class="card drawer" aria-expanded="false">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+          </div>
+        </div>
+        <div class="col_sm-4">
+          <div class="dropdown">
+            {% include "components/button.twig" with {'class' : 'btn_dropdown drawer-toggle', 'text' : 'Dropdown overlay', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
+            <div class="card drawer drawer_overlay" aria-expanded="false">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- /Dropdowns -->
+
+  <section id="buttons"><!-- Buttons -->
     <div class="centered-content">
       <h2>Buttons</h2>
       <p>
-        <button data-attach-icon-before="long-arrow-left" class="btn btn_nav btn_prev">Previous button link</button>
-        <button data-attach-icon-after="long-arrow-right" class="btn btn_nav btn_next">Next button link</button>
+        {% include "components/button.twig" with {'class' : 'btn_pager btn_pager-forward', 'text' : 'Previous button link', 'iconBefore' : 'long-arrow-left'} %}
+        {% include "components/button.twig" with {'class' : 'btn_pager btn_pager-back', 'text' : 'Next button link', 'iconAfter' : 'long-arrow-right'} %}
+        {% include "components/button.twig" with {'class' : 'btn_link', 'text' : 'Link button'} %}
       </p>
     </div>
-  </section>
-  <section id="tables">
+  </section><!-- /Buttons -->
+
+  <section id="tables"><!-- Tables -->
     <div class="centered-content">
       <h2>Tables</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Table heading 1</th>
-            <th>Table heading 2</th>
-            <th>Table heading 3</th>
-            <th>Table heading 4</th>
-            <th>Table heading 5</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Table cell 1</td>
-            <td>Table cell 2</td>
-            <td>Table cell 3</td>
-            <td>Table cell 4</td>
-            <td>Table cell 5</td>
-          </tr>
-          <tr>
-            <td>Table cell 1</td>
-            <td>Table cell 2</td>
-            <td>Table cell 3</td>
-            <td>Table cell 4</td>
-            <td>Table cell 5</td>
-          </tr>
-          <tr>
-            <td>Table cell 1</td>
-            <td>Table cell 2</td>
-            <td>Table cell 3</td>
-            <td>Table cell 4</td>
-            <td>Table cell 5</td>
-          </tr>
-          <tr>
-            <td>Table cell 1</td>
-            <td>Table cell 2</td>
-            <td>Table cell 3</td>
-            <td>Table cell 4</td>
-            <td>Table cell 5</td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="bordered">
-        <thead>
-          <tr>
-            <th>Table heading 1</th>
-            <th>Table heading 2</th>
-            <th>Table heading 3</th>
-            <th>Table heading 4</th>
-            <th>Table heading 5</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Table cell 1</td>
-            <td>Table cell 2</td>
-            <td>Table cell 3</td>
-            <td>Table cell 4</td>
-            <td>Table cell 5</td>
-          </tr>
-          <tr>
-            <td>Table cell 1</td>
-            <td>Table cell 2</td>
-            <td>Table cell 3</td>
-            <td>Table cell 4</td>
-            <td>Table cell 5</td>
-          </tr>
-          <tr>
-            <td>Table cell 1</td>
-            <td>Table cell 2</td>
-            <td>Table cell 3</td>
-            <td>Table cell 4</td>
-            <td>Table cell 5</td>
-          </tr>
-          <tr>
-            <td>Table cell 1</td>
-            <td>Table cell 2</td>
-            <td>Table cell 3</td>
-            <td>Table cell 4</td>
-            <td>Table cell 5</td>
-          </tr>
-        </tbody>
-      </table>
+      {% include "components/table.twig" %}
+      {% include "components/table.twig" with {'class' : 'bordered'} %}
     </div>
-  </section>
+  </section><!-- /Tables -->
+
+  <section id="popups"><!-- Popups -->
+    <div class="centered-content">
+      <h2>Popup Modals</h2>
+      {% include "components/popup.twig" with {'id': 'example-popup', 'buttonText' : 'Example popup', 'title' : 'Popup', 'content' : '<p>This is an example popup</p>'} %}
+      {% include "components/popup.twig" with {'id': 'example-popup-2', 'buttonText' : 'Another popup', 'content' : '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>'} %}
+    </div>
+  </section><!-- /Popups -->
+
+  <section id="alerts"><!-- Alerts -->
+    <div class="centered-content">
+      <h2>Alerts</h2>
+      {% include "components/alert.twig" with {'type' : 'info', 'icon' : 'info-circle', 'content' : 'This is an info alert'} %}
+      {% include "components/alert.twig" with {'type' : 'success', 'icon' : 'check-circle', 'content' : 'This is a success alert'} %}
+      {% include "components/alert.twig" with {'type' : 'warning', 'icon' : 'exclamation-triangle', 'content' : 'This is a warning alert'} %}
+      {% include "components/alert.twig" with {'type' : 'danger', 'icon' : 'exclamation-circle', 'content' : 'This is a danger alert'} %}
+    </div>
+  </section><!-- /Alerts -->
+
+  <section id="tooltips"><!-- Tooltips -->
+    <div class="centered-content">
+      <h2>Tooltips</h2>
+      <p>Tooltip bottom {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip top {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_top">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip left {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_left">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip right {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_right">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %} nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    </div>
+  </section><!-- /Tooltips -->
 
 {% endblock %}
