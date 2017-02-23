@@ -29,23 +29,29 @@ $color-neutral:       #E1E0D6;  // Grey
 $color-neutral-lt:    lighten($color-neutral, $color-threshold);
 $color-neutral-dk:    darken($color-neutral, $color-threshold);
 
-$brand-colors: $color-brand-1, $color-brand-2, $color-brand-3, $color-brand-4, $color-brand-5, $color-neutral;
-
 /* General Colours
 ------------------------------------------------------------------------------*/
 $color-lt:            #ffffff; // white
 $color-med:           #CCCCCC; // grey
 $color-dk:            #000000; // black
 
+/* Contextual Colours
+------------------------------------------------------------------------------*/
+$color-link: $color-brand-1-dk;
+$color-link-hover: $color-brand-1;
+
 $color-danger:        #ff3333; // red
 $color-danger-lt:     lighten($color-danger, $color-threshold);
 $color-danger-dk:     darken($color-danger, $color-threshold);
+
 $color-success:       #70db70; // green
 $color-success-lt:    lighten($color-success, $color-threshold);
 $color-success-dk:    darken($color-success, $color-threshold);
+
 $color-caution:       #ffdb4d; // yellow
 $color-caution-lt:    lighten($color-caution, $color-threshold);
 $color-caution-dk:    darken($color-caution, $color-threshold);
+
 $color-info:          #80ccff; // blue
 $color-info-lt:       lighten($color-info, $color-threshold);
 $color-info-dk:       darken($color-info, $color-threshold);

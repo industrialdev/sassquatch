@@ -4,6 +4,9 @@
   a{
     transition:all 0.4s;
   }
+  ul{
+    padding-left:0;
+  }
   &_table,
   &_inline{
     position:relative;
@@ -78,6 +81,25 @@
       width:200%;
     }
   }
+  &_breadcrumbs{
+    ul{
+      @include clearfix();
+      li{
+        display:inline-block;
+        float:left;
+        &:after{
+          content:'/';
+          display:inline-block;
+          margin:0 5px;
+        }
+        &:last-of-type{
+          &:after{
+            display:none;
+          }
+        }
+      }
+    }
+  }
   &_sub{
     ul{
       padding-left:45px;
@@ -110,6 +132,15 @@
             &:before{
               background:$color-med;
             }
+          }
+        }
+        ul{
+          display:none;
+        }
+        &.active,
+        &.active-trail{
+          > ul{
+            display:block;
           }
         }
       }

@@ -2,17 +2,18 @@
 ------------------------------------------------------------------------------*/
 @import "base";
 
+/* ANIMATIONS
+------------------------------------------------------------------------------*/
+@import "animations/animations";
+
 /* STRUCTURE
 ------------------------------------------------------------------------------*/
 @import "structure/grid";
 @import "structure/common";
+@import "structure/navigation";
 @import "structure/header";
 @import "structure/sections";
 @import "structure/footer";
-
-/* ANIMATIONS
-------------------------------------------------------------------------------*/
-@import "animations/animations";
 
 /* COMPONENTS
 ------------------------------------------------------------------------------*/
@@ -21,33 +22,17 @@
 @import "components/cards";
 @import "components/dropdowns";
 @import "components/tooltips";
-@import "components/navigation";
 @import "components/forms";
 @import "components/tables";
 @import "components/popups";
 @import "components/alerts";
-@import "components/examples";
 
 /* HELPERS
 ------------------------------------------------------------------------------*/
-@import "components/helpers";
-@import "structure/helpers";
+@import "helpers/components";
+@import "helpers/structure";
 @import "helpers/accessibility";
 @import "helpers/typography";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

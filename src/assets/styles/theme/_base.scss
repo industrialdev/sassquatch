@@ -75,6 +75,14 @@ p{
   margin-bottom:15px;
 }
 
+a{
+  color:$color-link;
+  &:hover,
+  &:focus{
+    color:$color-link-hover;
+  }
+}
+
 a, 
 img{
   border:none;
@@ -106,9 +114,13 @@ ol{
   margin-bottom:25px;
   li{
     margin-bottom:10px;
-  }
-  &.menu{
-    padding-left:0;
+    > ul,
+    > ol{
+      margin-top:10px;
+      &:last-child{
+        margin-top:10px;
+      }
+    }
   }
 }
 
@@ -123,6 +135,13 @@ nav{
     padding-left:0;
     li{
       margin-bottom:0;
+      > ul,
+      > ol{
+        margin-top:0;
+        &:last-child{
+          margin-top:0;
+        }
+      }
     }
   }
 }

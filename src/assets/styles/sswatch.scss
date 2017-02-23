@@ -1,3 +1,15 @@
+/*
+  Sswatch
+  Version: 0.1
+  Author: Kevin Andrews
+  Organization: Industrial
+
+  Sswatch uses a modified version of the BEM css class naming convention.
+  .block__element
+  .block--modifier
+  .block__element--modifier
+*/
+
 /* CONFIGURATION
 ------------------------------------------------------------------------------*/
 @import "config/reset";

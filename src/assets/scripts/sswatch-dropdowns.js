@@ -8,7 +8,7 @@
   // adds accessible icon to toggle button
   $(document).on("click", ".drawer-toggle", function(event){
     event.preventDefault();
-    $(this).next(".drawer").toggleClass('open');
+    $(this).next(".drawer").toggleClass("open");
     $(this).toggleClass("open");
     if($(this).next(".drawer").hasClass("open")){
       $(this).next(".drawer").slideDown("fast").attr("aria-expanded", "true");
