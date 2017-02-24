@@ -3,35 +3,35 @@
   border:1px solid;
   margin-bottom:15px;
   position:relative;
-  &_info{
+  &--info{
     border-color:$color-info-dk;
     background:$color-info-lt;
     i{
       color:$color-info-dk;
     }
   }
-  &_success{
+  &--success{
     border-color:$color-success-dk;
     background:$color-success-lt;
     i{
       color:$color-success-dk;
     }
   }
-  &_warning{
+  &--warning{
     border-color:$color-caution-dk;
     background:$color-caution-lt;
     i{
       color:$color-caution-dk;
     }
   }
-  &_danger{
+  &--danger{
     border-color:$color-danger-dk;
     background:$color-danger-lt;
     i{
       color:$color-danger-dk;
     }
   }
-  &_close{
+  &__close{
     position:absolute;
     top:15px;
     right:15px;

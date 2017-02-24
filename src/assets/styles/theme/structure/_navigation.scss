@@ -7,29 +7,26 @@
   ul{
     padding-left:0;
   }
-  &_table,
-  &_inline{
+  &--mega,
+  &--inline{
     position:relative;
-    > ul{
-      > li{
+    ul{
+      li{
         display:table-cell;
         text-align:center;
         border-right:1px solid $color-med;
         &:last-of-type{
           border-right:none;
         }
-        &.has-submenu{
-          > a{
-            padding-right:30px;
-          }
-        }
-        > a,
-        .drawer_wrapper > a{
+        a{
           display:block;
           padding:10px 15px;
           background:$color-lt;
           color:$color-dk;
           text-decoration:none;
+          &.drawer-toggle{
+            padding-right:30px;
+          }
           &:hover,
           &:focus,
           &.open{
@@ -38,50 +35,29 @@
         }
       }
     }
-    .submenu{
-      position:absolute;
-      z-index:10;
-      width:100%;
-      top:100%;
-      left:0;
-      padding:15px 0;
-      background:$color-med;
-      text-align:left;
-      ul{
-        li{
-          a{
-            text-decoration:none;
-            color:$color-dk;
-            &:hover,
-            &:focus{
-              text-decoration:underline;
-            }
-          }
-        }
-      }
-    }
   }
-  &_table{
+  &--mega{
     background:$color-lt;
-    > ul{
+    ul{
       display:table;
       width:100%;
     }
+    .nav__submenu{
+      width:100%;
+      padding:15px 0;
+    }
   }
-  &_inline{
-    > ul{
+  &--inline{
+    ul{
       @include clearfix();
-      > li{
+      li{
         display:inline-block;
         float:left;
         position:relative;
       }
     }
-    .submenu{
-      width:200%;
-    }
   }
-  &_breadcrumbs{
+  &--breadcrumbs{
     ul{
       @include clearfix();
       li{
@@ -100,7 +76,7 @@
       }
     }
   }
-  &_sub{
+  &--vertical{
     ul{
       padding-left:45px;
       li{
@@ -154,6 +130,35 @@
             &:before{
               border-top:none;
             }
+          }
+        }
+      }
+    }
+  }
+  &__submenu{
+    position:absolute;
+    z-index:10;
+    width:200%;
+    top:100%;
+    left:0;
+    padding:15px;
+    background:$color-med;
+    text-align:left;
+    ul{
+      display:block;
+      li{
+        display:block;
+        float:none;
+        position:static;
+        text-align:left;
+        a{
+          text-decoration:none;
+          color:$color-dk;
+          background:transparent;
+          padding:10px 0;
+          &:hover,
+          &:focus{
+            text-decoration:underline;
           }
         }
       }

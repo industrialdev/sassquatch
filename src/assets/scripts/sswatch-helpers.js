@@ -23,7 +23,7 @@
   });
 
   // Dismiss alerts
-  $('.alert_close').click(function(e){
+  $('.alert__close').click(function(e){
     $(this).closest('.alert').remove();
   });
 

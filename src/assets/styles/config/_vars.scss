@@ -58,6 +58,7 @@ $color-info-dk:       darken($color-info, $color-threshold);
 
 /* Typography
 ------------------------------------------------------------------------------*/
+$theSize: 20;
 $font-base-size: 16;
 
 $font-body-family:    'Open Sans', 'Helvetica Nueue', 'Arial', sans-serif;
@@ -68,7 +69,7 @@ $font-icon-family:    'FontAwesome';
 ------------------------------------------------------------------------------*/
 $site-width:1260px;
 
-$columns:12;
+$columns: 12;
 $gutter: 15;
 $gutter-width:$gutter + px;
 

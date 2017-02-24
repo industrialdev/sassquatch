@@ -13,16 +13,16 @@
   <section id="menus"><!-- Menus -->
     <div class="centered-content">
       <h2>Navigation</h2>
-      <div class="row">
-        <div class="col_12">
-          <nav class="nav nav_table">
-            <ul> 
-              <li class="has-submenu">
+      <div class="grid">
+        <div class="grid__col--12">
+          <nav class="nav nav--mega">
+            <ul class="nav__menu"> 
+              <li>
                 <a href="#" class="drawer-toggle" aria-expanded="false">Menu item 1 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                <div class="submenu drawer" aria-expanded="false">
+                <div class="nav__submenu drawer" aria-expanded="false">
                   <div class="centered-content">
-                    <div class="row">
-                      <div class="col_md-3">
+                    <div class="grid">
+                      <div class="grid__col--md-3">
                         <ul>
                           <li><a href="#">Submenu item 1</a></li>
                           <li><a href="#">Submenu item 2</a></li>
@@ -30,7 +30,7 @@
                           <li><a href="#">Submenu item 4</a></li>
                         </ul>
                       </div>
-                      <div class="col_md-3">
+                      <div class="grid__col--md-3">
                         <ul>
                           <li><a href="#">Submenu item 5</a></li>
                           <li><a href="#">Submenu item 6</a></li>
@@ -38,7 +38,7 @@
                           <li><a href="#">Submenu item 8</a></li>
                         </ul>
                       </div>
-                      <div class="col_md-3">
+                      <div class="grid__col--md-3">
                         <ul>
                           <li><a href="#">Submenu item 9</a></li>
                           <li><a href="#">Submenu item 10</a></li>
@@ -46,7 +46,7 @@
                           <li><a href="#">Submenu item 12</a></li>
                         </ul>
                       </div>
-                      <div class="col_md-3">
+                      <div class="grid__col--md-3">
                         <ul>
                           <li><a href="#">Submenu item 13</a></li>
                           <li><a href="#">Submenu item 14</a></li>
@@ -67,25 +67,23 @@
           </nav>
         </div>
       </div>
-      <div class="row">
-        <div class="col_12">
-          <nav class="nav nav_inline">
-            <ul> 
-              <li class="has-submenu">
+      <div class="grid">
+        <div class="grid__col--12">
+          <nav class="nav nav--inline">
+            <ul class="nav__menu"> 
+              <li>
                 <a href="#" class="drawer-toggle" aria-expanded="false">Menu item 1 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                <div class="submenu drawer" aria-expanded="false">
-                  <div class="centered-content">     
-                    <ul>
-                      <li><a href="#">Submenu item 1</a></li>
-                      <li><a href="#">Submenu item 2</a></li>
-                      <li><a href="#">Submenu item 3</a></li>
-                      <li><a href="#">Submenu item 4</a></li>
-                      <li><a href="#">Submenu item 5</a></li>
-                      <li><a href="#">Submenu item 6</a></li>
-                      <li><a href="#">Submenu item 7</a></li>
-                      <li><a href="#">Submenu item 8</a></li>
-                    </ul>
-                  </div>
+                <div class="nav__submenu drawer" aria-expanded="false">
+                  <ul>
+                    <li><a href="#">Submenu item 1</a></li>
+                    <li><a href="#">Submenu item 2</a></li>
+                    <li><a href="#">Submenu item 3</a></li>
+                    <li><a href="#">Submenu item 4</a></li>
+                    <li><a href="#">Submenu item 5</a></li>
+                    <li><a href="#">Submenu item 6</a></li>
+                    <li><a href="#">Submenu item 7</a></li>
+                    <li><a href="#">Submenu item 8</a></li>
+                  </ul>
                 </div>
               </li>
               <li><a href="#">Menu item 2</a></li>
@@ -97,10 +95,10 @@
           </nav>
         </div>
       </div>
-      <div class="row">
-        <div class="col_12">
-          <nav class="nav nav_breadcrumbs">
-            <ul>
+      <div class="grid">
+        <div class="grid__col--12">
+          <nav class="nav nav--breadcrumbs">
+            <ul class="nav__menu">
               <li><a href="#">Home</a></li>
               <li><a href="#">Category 1</a></li>
               <li><a href="#">Nested Category 1</a></li>
@@ -109,10 +107,10 @@
           </nav>
         </div>
       </div>
-      <div class="row">
-        <div class="col_sm-4">
-          <nav class="nav nav_sub">
-            <ul>
+      <div class="grid">
+        <div class="grid__col--sm-4">
+          <nav class="nav nav--vertical">
+            <ul class="nav__menu">
               <li>
                 <a href="#"><span data-attach-icon-after="caret-down">Top level menu item</span></a>
                 <ul>
@@ -152,9 +150,9 @@
             </ul>
           </nav>
         </div>
-        <div class="col_sm-4">
+        <div class="grid__col--sm-4">
         </div>
-        <div class="col_sm-4">
+        <div class="grid__col--sm-4">
         </div>
       </div>
     </div>
@@ -163,20 +161,20 @@
   <section id="dropdowns"><!-- Dropdowns -->
     <div class="centered-content">
       <h2>Dropdowns</h2>
-      <div class="row">
-        <div class="col_sm-4">
+      <div class="grid">
+        <div class="grid__col--sm-4">
           <div class="dropdown">
-            {% include "components/button.twig" with {'class' : 'btn_dropdown drawer-toggle', 'text' : 'Dropdown', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
+            {% include "components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
             <div class="card drawer" aria-expanded="false">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
           </div>
         </div>
-        <div class="col_sm-4">
+        <div class="grid__col--sm-4">
           <div class="dropdown">
-            {% include "components/button.twig" with {'class' : 'btn_dropdown drawer-toggle', 'text' : 'Dropdown overlay', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
-            <div class="card drawer drawer_overlay" aria-expanded="false">
+            {% include "components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown overlay', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
+            <div class="card drawer drawer-overlay" aria-expanded="false">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
@@ -190,9 +188,9 @@
     <div class="centered-content">
       <h2>Buttons</h2>
       <p>
-        {% include "components/button.twig" with {'class' : 'btn_pager btn_pager-forward', 'text' : 'Previous button link', 'iconBefore' : 'long-arrow-left'} %}
-        {% include "components/button.twig" with {'class' : 'btn_pager btn_pager-back', 'text' : 'Next button link', 'iconAfter' : 'long-arrow-right'} %}
-        {% include "components/button.twig" with {'class' : 'btn_link', 'text' : 'Link button'} %}
+        {% include "components/button.twig" with {'class' : 'btn--pager btn--pager-forward', 'text' : 'Previous button link', 'iconBefore' : 'long-arrow-left'} %}
+        {% include "components/button.twig" with {'class' : 'btn--pager btn--pager-back', 'text' : 'Next button link', 'iconAfter' : 'long-arrow-right'} %}
+        {% include "components/button.twig" with {'class' : 'btn--link', 'text' : 'Link button'} %}
       </p>
     </div>
   </section><!-- /Buttons -->
@@ -306,19 +304,19 @@
   <section id="tooltips"><!-- Tooltips -->
     <div class="centered-content">
       <h2>Tooltips</h2>
-      <p>Tooltip bottom {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Tooltip top {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_top">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Tooltip left {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_left">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Tooltip right {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_right">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %} nisi ut aliquip ex ea commodo consequat.</p>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore {% include "components/button.twig" with {'class' : 'btn_link tooltip-toggle', 'text' : '<span class="tooltip tooltip_top">this is an example tooltip</span>', 'icon' : 'question-circle'} %} eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      <p>Tooltip bottom {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip top {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip left {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--left">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip right {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--right">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %} nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %} eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
     </div>
   </section><!-- /Tooltips -->
 
   <section id="lists"><!-- Lists -->
     <div class="centered-content">
-      <div class="row">
-        <div class="col_sm-4">
+      <div class="grid">
+        <div class="grid__col--sm-4">
           <ul>
             <li>List item</li>
             <li>List item</li>
@@ -327,7 +325,7 @@
             <li>List item</li>
           </ul>
         </div>
-        <div class="col_sm-4">
+        <div class="grid__col--sm-4">
           <ol>
             <li>List item</li>
             <li>List item</li>
@@ -336,7 +334,7 @@
             <li>List item</li>
           </ol>
         </div>
-        <div class="col_sm-4">
+        <div class="grid__col--sm-4">
           <ul>
             <li>List item</li>
             <li>

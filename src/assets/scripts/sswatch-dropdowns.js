@@ -21,7 +21,7 @@
 
   // Close dropdown when it loses focus
   $('body').focusin(function(e) {
-    $('.drawer_wrapper, .has-submenu').each(function(){
+    $('.drawer-wrapper, .has-submenu').each(function(){
       if(!$(e.target).is($(this).find('*'))){
         $(this).find('.drawer').slideUp('fast').removeClass('open').attr('aria-expanded', 'false');
         $(this).find('.drawer-toggle').attr('aria-expanded', 'false');

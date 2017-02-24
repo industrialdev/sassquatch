@@ -1,6 +1,6 @@
 
 body{
-  &.popup-open{
+  &.popup--open{
     overflow:hidden;
   }
 }
@@ -19,11 +19,11 @@ body{
   height:auto;
   max-height:100%;
   overflow:auto;
-  &_content{
+  &__content{
     position:relative;
     padding:30px;
   }
-  &_close{
+  &__close{
     position:absolute;
     top:5px;
     right:5px;
@@ -34,7 +34,7 @@ body{
       margin-top:0;
     }
   }
-  &_overlay{
+  &__overlay{
     display:none;
     position:fixed;
     top:0;

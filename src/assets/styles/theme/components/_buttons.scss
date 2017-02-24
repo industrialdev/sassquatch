@@ -14,7 +14,7 @@
   &:focus{
     background:lighten($color-med, 10%);
   }
-  &_link{
+  &--link{
     background:transparent;
     text-decoration:none;
     color:$color-dk;
@@ -25,7 +25,7 @@
       text-decoration:underline;
     }
   }
-  &_pager{
+  &--pager{
     display: inline-block;
     position: relative;
     i{
@@ -55,7 +55,7 @@
       }
     }
   }
-  &_close{
+  &--close{
     padding:0;
     background:transparent;
     &:hover,
@@ -63,7 +63,7 @@
       background:transparent;
     }
   }
-  &_dropdown{
+  &--dropdown{
     @include set-type(18, 600, 22);
     width:100%;
     text-align:left;

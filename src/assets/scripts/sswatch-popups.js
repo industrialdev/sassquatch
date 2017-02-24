@@ -4,16 +4,16 @@
   $('*[popup]').click(function(){
     prevLocation = $(this);
     var target = '#' + $(this).attr('popup');
-    $('body').addClass('popup-open');
-    $('body').append('<div class="popup_overlay"></div>');
+    $('body').addClass('popup--open');
+    $('body').append('<div class="popup__overlay"></div>');
     $(target).fadeIn('fast');
-    $('.popup_overlay').fadeIn('fast');
-    $(target).find('.popup_close').focus();
+    $('.popup__overlay').fadeIn('fast');
+    $(target).find('.popup__close').focus();
   });
 
-  $(document).on('click', '.popup_close, .popup_overlay', function(){
-    $('body').removeClass('popup-open');
-    $('.popup_overlay').remove();
+  $(document).on('click', '.popup__close, .popup__overlay', function(){
+    $('body').removeClass('popup--open');
+    $('.popup__overlay').remove();
     $('.popup').hide();
     prevLocation.focus();
   });
