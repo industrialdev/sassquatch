@@ -39,7 +39,12 @@ gulp.task('sass', function () {
     .on('error', function (err) {
       console.log(err.message);
     })
-    .pipe(gulp.dest('./dist/assets/styles'));
+    .pipe(gulp.dest('./dist/assets/styles'))
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }))
+    .pipe(rename('sswatch.min.css'))
+    .pipe(gulp.dest('./dist/assets/styles/min'));
 });
 
 gulp.task('watch', function () {
