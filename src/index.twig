@@ -168,7 +168,7 @@
           <div class="dropdown">
             {% include "components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
             <div class="card drawer" aria-expanded="false">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Lorem ipsum<sup>sup</sup> dolor<sub>sub</sub> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
           </div>
@@ -176,7 +176,7 @@
         <div class="grid__col--sm-4">
           <div class="dropdown">
             {% include "components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown overlay', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
-            <div class="card drawer drawer-overlay" aria-expanded="false">
+            <div class="card drawer drawer--overlay" aria-expanded="false">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
@@ -317,6 +317,7 @@
 
   <section id="lists"><!-- Lists -->
     <div class="centered-content">
+      <h2>Lists</h2>
       <div class="grid">
         <div class="grid__col--sm-4">
           <ul>
@@ -359,5 +360,95 @@
       </div>
     </div>
   </section><!-- /Lists -->
+
+  <section id="tabs"><!-- Tabs -->
+    <div class="centered-content">
+      <h2>Tabs</h2>
+      <div class="tabs">
+        <div class="tabs__list" role="tablist">
+          <a id="tab-1" href="#tab-1-content" class="tabs__list-item tabs__tab-control active" role="tab" aria-selected="true" aria-controls="#tab-1-content">Tab 1</a>
+          <a id="tab-2" href="#tab-2-content" class="tabs__list-item tabs__tab-control" role="tab" aria-selected="false" aria-controls="#tab-2-content">Tab 2</a>
+          <a id="tab-3" href="#tab-3-content" class="tabs__list-item tabs__tab-control" role="tab" aria-selected="false" aria-controls="#tab-3-content">Tab 3</a>
+        </div>
+        <div class="tabs__content-container">
+          <div id="tab-1-content" class="tabs__content active" role="tabpanel" aria-labelledby="#tab-1" tabindex="-1">
+            <h3>Tab 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div id="tab-2-content" class="tabs__content" role="tabpanel" aria-labelledby="#tab-2" tabindex="-1">
+            <h3>Tab 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div id="tab-3-content" class="tabs__content" role="tabpanel" aria-labelledby="#tab-3" tabindex="-1">
+            <h3>Tab 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- /Tabs -->
+
+  <section id="sliders">
+    <div class="centered-content">
+      <h2>Sliders</h2>
+      <div class="slider">
+        <ul class="slider__slides">
+          <li class="slider__slide active">
+            <div class="grid">
+              <div class="grid__col--md-3 slider__slide--mobile active">
+                <a href="#"><img src="https://placehold.it/100x100" alt="product" class="full-width"></a>
+              </div>
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/200x200" alt="product" class="full-width"></a>
+              </div>
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/300x300" alt="product" class="full-width"></a>
+              </div>
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/400x400" alt="product" class="full-width"></a>
+              </div>
+            </div>
+          </li>
+          <li class="slider__slide">
+            <div class="grid">
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/500x500" alt="product" class="full-width"></a>
+              </div>
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/600x600" alt="product" class="full-width"></a>     
+              </div>
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/700x700" alt="product" class="full-width"></a>
+              </div>
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/800x800" alt="product" class="full-width"></a>
+              </div>
+            </div>
+          </li>
+          <li class="slider__slide">
+            <div class="grid">
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/900x900" alt="product" class="full-width"></a>
+              </div>
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/1000x1000" alt="product" class="full-width"></a>
+              </div>
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/1100x1100" alt="product" class="full-width"></a>
+              </div>
+              <div class="grid__col--md-3 slider__slide--mobile">
+                <a href="#"><img src="https://placehold.it/1200x1200" alt="product" class="full-width"></a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button class="slider__btn slider__btn--prev"><i class="fa fa-chevron-left" aria-hidden="true"></i><span class="webaim-hidden">Previous</span></button>
+        <button class="slider__btn slider__btn--next"><i class="fa fa-chevron-right" aria-hidden="true"></i><span class="webaim-hidden">Next</span></button>
+      </div>
+    </div>
+  </section>
 
 {% endblock %}

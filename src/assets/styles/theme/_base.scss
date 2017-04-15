@@ -86,6 +86,12 @@ img{
   border:none;
 }
 
+img{
+  &:only-child{
+    display:block;
+  }
+}
+
 strong{
   font-weight:bold;
 }
@@ -96,6 +102,19 @@ em{
 
 small{
   font-size:0.8em;
+}
+
+sup,
+sub{
+  font-size:0.6em;
+}
+
+sup{
+  vertical-align:text-top;
+}
+
+sub{
+  vertical-align:text-bottom;
 }
 
 ul{

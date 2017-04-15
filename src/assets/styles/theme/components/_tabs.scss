@@ -1,0 +1,31 @@
+.tabs{
+  border:2px solid $color-neutral-lt;
+  &__list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    background:$color-neutral-lt;
+    &-item{
+      margin:0;
+      flex-grow:1;
+      text-align:center;    
+    }
+  }
+  &__tab-control{
+    display:block;
+    padding:10px 15px;
+    background:$color-neutral-lt;
+    &.active{
+      background:$color-med;
+    }
+  }
+  &__content{
+    padding:15px;
+    background:$color-med;
+    display:none;
+    &.active{
+      display:block;
+    }
+  }
+}
