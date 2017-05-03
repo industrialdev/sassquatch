@@ -4,9 +4,9 @@
 {% set items = {
     about:    { title: "Google", url: "http://google.com",
               "below": {
-                services: { title: "Industrial Agency", url: "http://industrialagency.ca" },
-                services: { title: "Industrial Agency", url: "http://industrialagency.ca" },
-                services: { title: "Industrial Agency", url: "http://industrialagency.ca" }
+                services: { title: "Industrial Agency 1", url: "http://industrialagency.ca" },
+                services2: { title: "Industrial Agency2 ", url: "http://industrialagency.ca" },
+                services3: { title: "Industrial Agency3", url: "http://industrialagency.ca" }
               }
     },
     services: { title: "Industrial Agency", url: "http://industrialagency.ca" },
@@ -32,7 +32,7 @@
 
         {% if menu_level == 0 and item.below %}
           <div class="drawer-wrapper">
-            <a href="#" class="drawer-toggle" aria-expanded="false">Menu item 1 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <a href="{{item.url}}" class="drawer-toggle" aria-expanded="false">{{item.title}} <i class="fa fa-angle-down" aria-hidden="true"></i></a>
             <div class="nav__submenu drawer" aria-expanded="false">
               <div class="centered-content">
                 <div class="grid">
