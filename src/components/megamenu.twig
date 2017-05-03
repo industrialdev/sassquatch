@@ -1,0 +1,70 @@
+{% import _self as menus %}
+
+{# https://mijingo.com/blog/key-value-arrays-in-twig #}
+{% set items = {
+    about:    { title: "Google", url: "http://google.com",
+              "below": {
+                services: { title: "Industrial Agency 1", url: "http://industrialagency.ca" },
+                services2: { title: "Industrial Agency2 ", url: "http://industrialagency.ca" },
+                services3: { title: "Industrial Agency3", url: "http://industrialagency.ca" }
+              }
+    },
+    services: { title: "Industrial Agency", url: "http://industrialagency.ca" },
+    services2: { title: "Industrial Agency2 ", url: "http://industrialagency.ca" },
+  }
+%}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul class="nav__menu">
+    {% else %}
+      <ul>
+    {% endif %}
+    {% for item in items %}
+
+      {% if item.in_active_trail %}
+      <li{{ item.attributes.addClass('active-trail') }}>
+      {% else %}
+      <li{{ item.attributes }}>
+      {% endif %}
+
+        {% if menu_level == 0 and item.below %}
+          <div class="drawer-wrapper">
+            <a href="{{item.url}}" class="drawer-toggle" aria-expanded="false">{{item.title}} <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <div class="nav__submenu drawer" aria-expanded="false">
+              <div class="centered-content">
+                <div class="grid">
+                  <div class="grid__col--md-3">
+                    <ul>
+                      {% for item in item.below %}
+                        <li><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <a href="{{item.url}}"><span>{{item.title}}</span></a>
+          {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% endif %}
+        {% endif %}
+
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+<nav class="nav nav--mega">
+{{ menus.menu_links(items, attributes, 0, directory) }}
+</nav>
