@@ -2,7 +2,7 @@
 
   // Attaches an icon that line breaks with the last word in the targeted element
   // data-attach-icon takes font awesome icon class name as the value (excluding the fa prefix)
-  $('*[data-attach-icon-after], *[data-attach-icon-before').each(function(index, element) {
+  $('*[data-attach-icon-after], *[data-attach-icon-before]').each(function(index, element) {
     var text = $(element), word_array, last_word, first_word, first_part;
     var attr = $(this).attr('data-attach-icon-after');
 
