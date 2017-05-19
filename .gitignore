@@ -2,3 +2,5 @@ node_modules
 .tmp
 .sass-cache
 dist
+yarn.lock
+yarn-error.log

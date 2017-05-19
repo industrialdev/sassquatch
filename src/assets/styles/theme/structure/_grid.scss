@@ -18,6 +18,8 @@
   @for $i from 1 through $columns{
     &__col--#{$i}{
       width: (($i / $columns) * 100%);
+      float:left;
+      margin-bottom:0;
     }
     &__col--push-#{$i}{
       margin-left:(($i / $columns) * 100%);
@@ -26,18 +28,24 @@
       margin-left:-(($i / $columns) * 100%);
     }
   }
+  &--flush{
+    margin:0;
+    margin-bottom:0;
+    *[class*="grid__col"]{
+      padding:0;
+      margin-bottom:0;
+    }
+  }
 }
 
 @for $z from 1 through 4{
   @media(min-width: nth($breakpoints, $z)){
-    *[class*="grid__col"]{
-      float:left;
-      margin-bottom:0;
-    }
     .grid{
       @for $i from 1 through $columns{
         &__col--#{nth($grid-prefix, $z)}-#{$i}{
           width: (($i / $columns) * 100%);
+          float:left;
+          margin-bottom:0;
         }
         &__col--push-#{nth($grid-prefix, $z)}-#{$i}{
           margin-left:(($i / $columns) * 100%);
