@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     twig = require('gulp-twig'),
     imagemin = require('gulp-imagemin');
 
-gulp.task('default', ['templates', 'sass', 'scripts', 'webserver', 'watch']);
+gulp.task('default', ['templates', 'sass', 'scripts', 'fonts', 'webserver', 'watch']);
 
 gulp.task('webserver', function() {
   gulp.src('./dist')
@@ -72,6 +72,11 @@ gulp.task('images', function(){
   gulp.src('./src/assets/icons/*')
     .pipe(imagemin())
     .pipe(gulp.dest('./dist/assets/icons'))
+});
+
+gulp.task('fonts', function(){
+  gulp.src('./src/assets/fonts/**/*')
+    .pipe(gulp.dest('./dist/assets/fonts'));
 });
 
 gulp.task('templates', function() {

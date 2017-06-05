@@ -15,35 +15,12 @@
       <h2>Navigation</h2>
       <div class="grid">
         <div class="grid__col--12">
-          {% include "components/megamenu.twig" %}
+          {% include "components/navigation.twig" %}
         </div>
       </div>
       <div class="grid">
         <div class="grid__col--12">
-          <nav class="nav nav--inline">
-            <ul class="nav__menu">
-              <li>
-                <a href="#" class="drawer-toggle" aria-expanded="false">Menu item 1 <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                <div class="nav__submenu drawer" aria-expanded="false">
-                  <ul>
-                    <li><a href="#">Submenu item 1</a></li>
-                    <li><a href="#">Submenu item 2</a></li>
-                    <li><a href="#">Submenu item 3</a></li>
-                    <li><a href="#">Submenu item 4</a></li>
-                    <li><a href="#">Submenu item 5</a></li>
-                    <li><a href="#">Submenu item 6</a></li>
-                    <li><a href="#">Submenu item 7</a></li>
-                    <li><a href="#">Submenu item 8</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li><a href="#">Menu item 2</a></li>
-              <li><a href="#">Menu item 3</a></li>
-              <li><a href="#">Menu item 4</a></li>
-              <li><a href="#">Menu item 5</a></li>
-              <li><a href="#">Menu item 6</a></li>
-            </ul>
-          </nav>
+          {% include "components/navigation.twig" with {'modifier': 'inline'} %}
         </div>
       </div>
       <div class="grid">

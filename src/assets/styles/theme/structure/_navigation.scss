@@ -7,10 +7,11 @@
   ul{
     padding-left:0;
   }
-  &--mega,
-  &--inline{
+  &--primary{
     position:relative;
     ul{
+      display:table;
+      width:100%;
       li{
         display:table-cell;
         text-align:center;
@@ -35,21 +36,18 @@
         }
       }
     }
-  }
-  &--mega{
-    background:$color-lt;
-    ul{
-      display:table;
-      width:100%;
-    }
-    .nav__submenu{
-      width:100%;
-      padding:15px 0;
+    .nav{
+      &__submenu{
+        width:100%;
+        padding:15px 0;
+      }
     }
   }
   &--inline{
     ul{
       @include clearfix();
+      display:block;
+      width:auto;
       li{
         display:inline-block;
         float:left;
@@ -57,14 +55,14 @@
       }
     }
   }
-  &--breadcrumbs{
+  &--breadcrumbs{ 
     ul{
       @include clearfix();
       li{
         display:inline-block;
         float:left;
         &:after{
-          content:'/';
+          content:"/";
           display:inline-block;
           margin:0 5px;
         }
@@ -138,7 +136,6 @@
   &__submenu{
     position:absolute;
     z-index:10;
-    width:200%;
     top:100%;
     left:0;
     padding:15px;
