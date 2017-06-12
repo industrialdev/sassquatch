@@ -1,5 +1,5 @@
 /* Chrome fix for focusing jump link elements */
-window.addEventListener("hashchange", function(event) {
+window.addEventListener('hashchange', function(event) {
   var element = document.getElementById(location.hash.substring(1));
   if (element) {
     if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
@@ -9,6 +9,6 @@ window.addEventListener("hashchange", function(event) {
   }
 }, false);
 
-(function($){
+// (function($){
 
-})(jQuery);
+// })(jQuery);

@@ -1,8 +1,8 @@
 (function($){
 
   /* Auto formats select inputs */
-  $("select").wrap("<div class='select-wrapper'></div>");
-  $(".select-wrapper").append("<i class='fa fa-angle-down' aria-hidden='true'></i>");
+  $('select').wrap('<div class="select-wrapper"></div>');
+  $('.select-wrapper').append('<i class="fa fa-angle-down" aria-hidden="true"></i>');
 
   /* Dropdown/Accordion toggle control */
   // adds accessible icon to toggle button
@@ -19,13 +19,22 @@
     }
   });
 
+  // Safari fix for focusing clicked dropdown buttons
+  $('.drawer-toggle').click(function(){
+    $(this).focus();
+  });
+
   // Close dropdown when it loses focus
   $('body').focusin(function(e) {
     $('.drawer-wrapper, .has-submenu').each(function(){
       if(!$(e.target).is($(this).find('*'))){
+        $(this).find('.drawer-toggle').attr('aria-hidden', 'true'); // Voiceover safari fix
         $(this).find('.drawer').slideUp('fast').removeClass('open').attr('aria-expanded', 'false');
         $(this).find('.drawer-toggle').attr('aria-expanded', 'false');
         $(this).find('.drawer-toggle').removeClass('open');
+        setTimeout(function(){ 
+          $('.drawer-toggle').attr('aria-hidden', 'false'); // Voiceover safari fix
+        }, 400);
       }
     });
   });
