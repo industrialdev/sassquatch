@@ -10,6 +10,7 @@
   text-decoration:none;
   border:0;
   border-radius:0;
+  margin-bottom:5px;
   @include set-type(14, 700, 20);
   &:hover,
   &:focus{
@@ -73,6 +74,7 @@
     border:1px solid $color-neutral-dk;
     position:relative;
     transition:none;
+    margin-bottom:0;
     &:hover,
     &:focus{
       background:$color-lt;

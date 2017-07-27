@@ -39,7 +39,6 @@
   }
   &--flex{
     display:flex;
-    flex-wrap:wrap;
     *[class*="grid__col"]{
       float:none;
     }
@@ -49,6 +48,9 @@
 @for $z from 1 through 4{
   @media(min-width: nth($breakpoints, $z)){
     .grid{
+      &--flex-#{nth($grid-prefix, $z)}{
+        display:flex;
+      }
       @for $i from 1 through $columns{
         &__col--#{nth($grid-prefix, $z)}-#{$i}{
           width: (($i / $columns) * 100%);

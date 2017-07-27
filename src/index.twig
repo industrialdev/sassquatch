@@ -93,7 +93,7 @@
         <div class="grid__col--sm-4">
           <div class="dropdown">
             {% include "components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
-            <div class="card drawer" aria-expanded="false">
+            <div class="card drawer" role="region" aria-expanded="false">
               <p>Lorem ipsum<sup>sup</sup> dolor<sub>sub</sub> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
@@ -102,7 +102,7 @@
         <div class="grid__col--sm-4">
           <div class="dropdown">
             {% include "components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown overlay', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
-            <div class="card drawer drawer--overlay" aria-expanded="false">
+            <div class="card drawer drawer--overlay" role="region" aria-expanded="false">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
             </div>
@@ -211,6 +211,44 @@
     </div>
   </section><!-- /Tables -->
 
+  <section id="forms"><!-- Forms -->
+    <div class="centered-content">
+      <h2>Forms</h2>
+      <form class="form" action="">
+        <div class="grid">
+          <div class="grid__col--md-4">
+            <div class="form__group">
+              <label class="form__label" for="text-input">Text input</label>
+              <input class="form__input" id="text-input" type="text">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="select-input">Select input</label>
+              <select class="form__input" id="select-input">
+                <option value="0">Select an option</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="textarea">Textarea</label>
+              <textarea class="form__input" id="textarea"></textarea>
+            </div>
+            <fieldset class="form__group">
+              <legend class="form__label">Radio group</legend>
+              <label for="radio-1" class="form__radio"><input type="radio" id="radio-1" name="radios"> Radio button 1</label>
+              <label for="radio-2" class="form__radio"><input type="radio" id="radio-2" name="radios"> Radio button 2</label>
+              <label for="radio-3" class="form__radio"><input type="radio" id="radio-3" name="radios"> Radio button 3</label>
+            </fieldset>
+            <fieldset class="form__group">
+              <legend class="form__label">Checkboxes</legend>
+              <label for="checkbox-1" class="form__checkbox"><input type="checkbox" id="checkbox-1" name="checkboxes"> Checkbox 1</label>
+              <label for="checkbox-2" class="form__checkbox"><input type="checkbox" id="checkbox-2" name="checkboxes"> Checkbox 2</label>
+              <label for="checkbox-3" class="form__checkbox"><input type="checkbox" id="checkbox-3" name="checkboxes"> Checkbox 3</label>
+            </fieldset>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section><!-- /Forms -->
+
   <section id="popups"><!-- Popups -->
     <div class="centered-content">
       <h2>Popup Modals</h2>
@@ -228,18 +266,6 @@
       {% include "components/alert.twig" with {'type' : 'danger', 'icon' : 'exclamation-circle', 'content' : 'This is a danger alert'} %}
     </div>
   </section><!-- /Alerts -->
-
-  <section id="tooltips"><!-- Tooltips -->
-    <div class="centered-content">
-      <h2>Tooltips</h2>
-      <p>Tooltip bottom {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Tooltip top {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Tooltip left {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--left">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Tooltip right {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--right">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %} nisi ut aliquip ex ea commodo consequat.</p>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %} eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-    </div>
-  </section><!-- /Tooltips -->
 
   <section id="lists"><!-- Lists -->
     <div class="centered-content">
@@ -287,27 +313,39 @@
     </div>
   </section><!-- /Lists -->
 
+  <section id="tooltips"><!-- Tooltips -->
+    <div class="centered-content">
+      <h2>Tooltips</h2>
+      <p>Tooltip bottom {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip top {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip left {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--left">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip right {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--right">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %} nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %} eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    </div>
+  </section><!-- /Tooltips -->
+
   <section id="tabs"><!-- Tabs -->
     <div class="centered-content">
       <h2>Tabs</h2>
       <div class="tabs">
         <div class="tabs__list" role="tablist">
-          <a id="tab-1" href="#tab-1-content" class="tabs__list-item tabs__tab-control active" role="tab" aria-selected="true" aria-controls="#tab-1-content">Tab 1</a>
-          <a id="tab-2" href="#tab-2-content" class="tabs__list-item tabs__tab-control" role="tab" aria-selected="false" aria-controls="#tab-2-content">Tab 2</a>
-          <a id="tab-3" href="#tab-3-content" class="tabs__list-item tabs__tab-control" role="tab" aria-selected="false" aria-controls="#tab-3-content">Tab 3</a>
+          <a id="tab-1" href="#tab-1-content" class="tabs__list-item tabs__tab-control active" role="tab" aria-selected="true" aria-controls="tab-1-content">Tab 1</a>
+          <a id="tab-2" href="#tab-2-content" class="tabs__list-item tabs__tab-control" role="tab" aria-selected="false" aria-controls="tab-2-content">Tab 2</a>
+          <a id="tab-3" href="#tab-3-content" class="tabs__list-item tabs__tab-control" role="tab" aria-selected="false" aria-controls="tab-3-content">Tab 3</a>
         </div>
         <div class="tabs__content-container">
-          <div id="tab-1-content" class="tabs__content active" role="tabpanel" aria-labelledby="#tab-1" tabindex="-1">
+          <div id="tab-1-content" class="tabs__content active" role="tabpanel" aria-labelledby="tab-1" tabindex="-1">
             <h3>Tab 1</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
-          <div id="tab-2-content" class="tabs__content" role="tabpanel" aria-labelledby="#tab-2" tabindex="-1">
+          <div id="tab-2-content" class="tabs__content" role="tabpanel" aria-labelledby="tab-2" tabindex="-1">
             <h3>Tab 2</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
-          <div id="tab-3-content" class="tabs__content" role="tabpanel" aria-labelledby="#tab-3" tabindex="-1">
+          <div id="tab-3-content" class="tabs__content" role="tabpanel" aria-labelledby="tab-3" tabindex="-1">
             <h3>Tab 3</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -317,7 +355,7 @@
     </div>
   </section><!-- /Tabs -->
 
-  <section id="sliders">
+  <section id="sliders"><!-- Sliders -->
     <div class="centered-content">
       <h2>Sliders</h2>
       <div class="slider">
@@ -373,8 +411,8 @@
         </ul>
         <button class="slider__btn slider__btn--prev"><i class="fa fa-chevron-left" aria-hidden="true"></i><span class="webaim-hidden">Previous</span></button>
         <button class="slider__btn slider__btn--next"><i class="fa fa-chevron-right" aria-hidden="true"></i><span class="webaim-hidden">Next</span></button>
-      </div>
+      </div>       
     </div>
-  </section>
+  </section><!-- /Sliders -->
 
 {% endblock %}

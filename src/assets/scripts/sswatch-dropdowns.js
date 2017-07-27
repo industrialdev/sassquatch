@@ -1,8 +1,8 @@
 (function($){
 
   /* Auto formats select inputs */
-  $('select').wrap('<div class="select-wrapper"></div>');
-  $('.select-wrapper').append('<i class="fa fa-angle-down" aria-hidden="true"></i>');
+  $('select').wrap('<div class="form__select-wrapper"></div>');
+  $('.form__select-wrapper').append('<i class="fa fa-angle-down" aria-hidden="true"></i>');
 
   /* Dropdown/Accordion toggle control */
   // adds accessible icon to toggle button

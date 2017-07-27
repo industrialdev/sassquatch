@@ -33,7 +33,7 @@
         {% if menu_level == 0 and item.below %}
           <div class="drawer-wrapper">
             <a href="{{item.url}}" class="drawer-toggle" aria-expanded="false">{{item.title}} <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-            <div class="nav__submenu drawer" aria-expanded="false">
+            <div class="nav__submenu drawer" role="menu" aria-expanded="false">
               <div class="centered-content">
                 <div class="grid">
                   <div class="grid__col--md-3">

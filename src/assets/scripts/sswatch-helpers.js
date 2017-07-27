@@ -1,3 +1,14 @@
+/* Chrome fix for focusing jump link elements */
+window.addEventListener('hashchange', function(event) {
+  var element = document.getElementById(location.hash.substring(1));
+  if (element) {
+    if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
+      element.tabIndex = -1;
+    }
+    element.focus();
+  }
+}, false);
+
 (function($){
 
   // Attaches an icon that line breaks with the last word in the targeted element
@@ -20,11 +31,6 @@
       text.html([' <span class="no-break"><i class="fa fa-' + icon + '" aria-hidden="true"></i>', first_word, '</span> ', first_part].join(''));
     }
 
-  });
-
-  // Dismiss alerts
-  $('.alert__close').click(function(e){
-    $(this).closest('.alert').remove();
   });
 
   // Wraps tables for mobile scrolling

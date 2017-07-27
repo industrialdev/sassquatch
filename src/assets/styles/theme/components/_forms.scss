@@ -1,16 +1,11 @@
 /* FORM COMPONENTS
 ---------------------------------------------------------------------------*/
-
-input[type="text"],
-input[type="search"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-input[type="number"],
-input[type="date"],
-textarea,
-select{
-  &.form__input{
+.form{
+  &__group{
+    margin-bottom:25px;
+  }
+  &__input{
+    width:100%;
     appearance:none;
     border:none;
     border-radius:0;
@@ -19,45 +14,40 @@ select{
     color:$color-dk;
     font-family:$font-body-family;
     @include set-type(16, 400, 20);
-    padding:5px 10px;
+    padding:10px;
     margin:0;
     max-width:100%;
   }
-}
-
-select{
-  &.form__input{
-    padding-right:30px;
+  &__label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:600;
   }
-  + i{
-    pointer-events:none;
-    position:absolute;
-    right:10px;
-    top:50%;
-    transform:translateY(-50%);
-    color:$color-dk;
-  }
-}
-
-.select-wrapper{
-  position:relative;
-  display:inline-block;
-}
-
-.form{
-  &--inline-submit{
+  &__select-wrapper{
     position:relative;
-    .form{
-      &__input{
-        display:inline-block;
-        width:100%;
+    display:inline-block;
+    width:100%;
+    .form__input{
+      padding-right:30px;
+      + i{
+        pointer-events:none;
+      position:absolute;
+      right:10px;
+      top:50%;
+      transform:translateY(-50%);
+      color:$color-dk;
       }
     }
-    input[type="submit"]{
+  }
+  &__radio,
+  &__checkbox{
+    display:table;
+    padding-left:20px;
+    position:relative;
+    input{
       position:absolute;
-      right:0;
-      top:0;
-      height:100%;
+      left:0;
+      top:6px;
     }
   }
   &--inline{
@@ -77,17 +67,6 @@ select{
         margin-right:10px;
       }
     }
-  }
-  &__group{
-    margin-bottom:25px;
-  }
-  &__input{
-
-  }
-  &__label{
-    display:block;
-    margin-bottom:5px;
-    font-weight:600;
   }
 }
 
