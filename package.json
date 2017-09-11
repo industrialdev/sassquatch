@@ -3,13 +3,14 @@
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.0",
-    "gulp-imagemin": "^3.1.1",
+    "gulp-imagemin": "^3.3.0",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
-    "gulp-twig": "^0.7.0",
-    "gulp-uglify": "^2.1.2",
+    "gulp-twig": "^1.1.1",
+    "gulp-uglify": "^3.0.0",
     "gulp-webserver": "^0.9.1"
-  }
+  },
+  "version": "1.0.1"
 }
