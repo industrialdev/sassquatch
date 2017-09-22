@@ -1,4 +1,8 @@
 header{
-  background:$color-brand-1;
-  padding:60px 0;
+}
+
+.header{
+  &__top{
+    padding:60px 0;
+  }
 }

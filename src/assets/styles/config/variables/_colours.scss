@@ -37,13 +37,13 @@ $color-dk:            #000000; // black
 $color-link: $color-brand-1-dk;
 $color-link-hover: $color-brand-1;
 
-$color-danger:        #ff3333; // red
-$color-danger-lt:     lighten($color-danger, $color-threshold);
-$color-danger-dk:     darken($color-danger, $color-threshold);
+$color-danger:        #e62600; // red
+$color-danger-lt:     #fcf4f2;
+$color-danger-dk:     #a51b00;
 
-$color-success:       #70db70; // green
-$color-success-lt:    lighten($color-success, $color-threshold);
-$color-success-dk:    darken($color-success, $color-threshold);
+$color-success:       #77b259; // green
+$color-success-lt:    #f3faef;
+$color-success-dk:    #325e1c;
 
 $color-caution:       #ffdb4d; // yellow
 $color-caution-lt:    lighten($color-caution, $color-threshold);

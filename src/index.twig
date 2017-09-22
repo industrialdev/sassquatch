@@ -6,23 +6,13 @@
   <section id="grid"><!-- Grid -->
     <div class="centered-content">
       <h2>The Grid</h2>
-      {% include "components/examples/grid.twig" %}
+      {% include "templates/components/examples/grid.twig" %}
     </div>
   </section><!-- /Grid -->
 
   <section id="menus"><!-- Menus -->
     <div class="centered-content">
       <h2>Navigation</h2>
-      <div class="grid">
-        <div class="grid__col--12">
-          {% include "components/navigation.twig" %}
-        </div>
-      </div>
-      <div class="grid">
-        <div class="grid__col--12">
-          {% include "components/navigation.twig" with {'modifier': 'inline'} %}
-        </div>
-      </div>
       <div class="grid">
         <div class="grid__col--12">
           <nav class="nav nav--breadcrumbs">
@@ -92,7 +82,7 @@
       <div class="grid">
         <div class="grid__col--sm-4">
           <div class="dropdown">
-            {% include "components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
+            {% include "templates/components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
             <div class="card drawer" role="region" aria-expanded="false">
               <p>Lorem ipsum<sup>sup</sup> dolor<sub>sub</sub> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
@@ -101,7 +91,7 @@
         </div>
         <div class="grid__col--sm-4">
           <div class="dropdown">
-            {% include "components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown overlay', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
+            {% include "templates/components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown overlay', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
             <div class="card drawer drawer--overlay" role="region" aria-expanded="false">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
@@ -116,9 +106,9 @@
     <div class="centered-content">
       <h2>Buttons</h2>
       <p>
-        {% include "components/button.twig" with {'class' : 'btn--pager btn--pager-forward', 'text' : 'Previous button link', 'iconBefore' : 'long-arrow-left'} %}
-        {% include "components/button.twig" with {'class' : 'btn--pager btn--pager-back', 'text' : 'Next button link', 'iconAfter' : 'long-arrow-right'} %}
-        {% include "components/button.twig" with {'class' : 'btn--link', 'text' : 'Link button'} %}
+        {% include "templates/components/button.twig" with {'class' : 'btn--pager btn--pager-forward', 'text' : 'Previous button link', 'iconBefore' : 'long-arrow-left'} %}
+        {% include "templates/components/button.twig" with {'class' : 'btn--pager btn--pager-back', 'text' : 'Next button link', 'iconAfter' : 'long-arrow-right'} %}
+        {% include "templates/components/button.twig" with {'class' : 'btn--link', 'text' : 'Link button'} %}
       </p>
     </div>
   </section><!-- /Buttons -->
@@ -252,18 +242,18 @@
   <section id="popups"><!-- Popups -->
     <div class="centered-content">
       <h2>Popup Modals</h2>
-      {% include "components/popup.twig" with {'id': 'example-popup', 'buttonText' : 'Example popup', 'title' : 'Popup', 'content' : '<p>This is an example popup</p>'} %}
-      {% include "components/popup.twig" with {'id': 'example-popup-2', 'buttonText' : 'Another popup', 'content' : '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>'} %}
+      {% include "templates/components/popup.twig" with {'id': 'example-popup', 'buttonText' : 'Example popup', 'title' : 'Popup', 'content' : '<p>This is an example popup</p>'} %}
+      {% include "templates/components/popup.twig" with {'id': 'example-popup-2', 'buttonText' : 'Another popup', 'content' : '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>'} %}
     </div>
   </section><!-- /Popups -->
 
   <section id="alerts"><!-- Alerts -->
     <div class="centered-content">
       <h2>Alerts</h2>
-      {% include "components/alert.twig" with {'type' : 'info', 'icon' : 'info-circle', 'content' : 'This is an info alert'} %}
-      {% include "components/alert.twig" with {'type' : 'success', 'icon' : 'check-circle', 'content' : 'This is a success alert'} %}
-      {% include "components/alert.twig" with {'type' : 'warning', 'icon' : 'exclamation-triangle', 'content' : 'This is a warning alert'} %}
-      {% include "components/alert.twig" with {'type' : 'danger', 'icon' : 'exclamation-circle', 'content' : 'This is a danger alert'} %}
+      {% include "templates/components/alert.twig" with {'type' : 'info', 'icon' : 'info-circle', 'content' : 'This is an info alert'} %}
+      {% include "templates/components/alert.twig" with {'type' : 'success', 'icon' : 'check-circle', 'content' : 'This is a success alert'} %}
+      {% include "templates/components/alert.twig" with {'type' : 'warning', 'icon' : 'exclamation-triangle', 'content' : 'This is a warning alert'} %}
+      {% include "templates/components/alert.twig" with {'type' : 'danger', 'icon' : 'exclamation-circle', 'content' : 'This is a danger alert'} %}
     </div>
   </section><!-- /Alerts -->
 
@@ -316,12 +306,12 @@
   <section id="tooltips"><!-- Tooltips -->
     <div class="centered-content">
       <h2>Tooltips</h2>
-      <p>Tooltip bottom {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Tooltip top {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Tooltip left {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--left">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Tooltip right {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--right">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %} nisi ut aliquip ex ea commodo consequat.</p>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %} eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      <p>Tooltip bottom {% include "templates/components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip top {% include "templates/components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip left {% include "templates/components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--left">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Tooltip right {% include "templates/components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--right">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris {% include "templates/components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %} nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore {% include "templates/components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %} eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
     </div>
   </section><!-- /Tooltips -->
 
@@ -354,65 +344,5 @@
       </div>
     </div>
   </section><!-- /Tabs -->
-
-  <section id="sliders"><!-- Sliders -->
-    <div class="centered-content">
-      <h2>Sliders</h2>
-      <div class="slider">
-        <ul class="slider__slides">
-          <li class="slider__slide active">
-            <div class="grid">
-              <div class="grid__col--md-3 slider__slide--mobile active">
-                <a href="#"><img src="https://placehold.it/100x100" alt="product" class="full-width"></a>
-              </div>
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/200x200" alt="product" class="full-width"></a>
-              </div>
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/300x300" alt="product" class="full-width"></a>
-              </div>
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/400x400" alt="product" class="full-width"></a>
-              </div>
-            </div>
-          </li>
-          <li class="slider__slide">
-            <div class="grid">
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/500x500" alt="product" class="full-width"></a>
-              </div>
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/600x600" alt="product" class="full-width"></a>
-              </div>
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/700x700" alt="product" class="full-width"></a>
-              </div>
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/800x800" alt="product" class="full-width"></a>
-              </div>
-            </div>
-          </li>
-          <li class="slider__slide">
-            <div class="grid">
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/900x900" alt="product" class="full-width"></a>
-              </div>
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/1000x1000" alt="product" class="full-width"></a>
-              </div>
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/1100x1100" alt="product" class="full-width"></a>
-              </div>
-              <div class="grid__col--md-3 slider__slide--mobile">
-                <a href="#"><img src="https://placehold.it/1200x1200" alt="product" class="full-width"></a>
-              </div>
-            </div>
-          </li>
-        </ul>
-        <button class="slider__btn slider__btn--prev"><i class="fa fa-chevron-left" aria-hidden="true"></i><span class="webaim-hidden">Previous</span></button>
-        <button class="slider__btn slider__btn--next"><i class="fa fa-chevron-right" aria-hidden="true"></i><span class="webaim-hidden">Next</span></button>
-      </div>       
-    </div>
-  </section><!-- /Sliders -->
 
 {% endblock %}

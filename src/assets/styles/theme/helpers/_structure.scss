@@ -6,6 +6,9 @@
   max-width:$site-width;
   padding:0 $gutter-width;
   margin:0 auto;
+  .centered-content{
+    padding:0;
+  }
 }
 
 .full-width{
