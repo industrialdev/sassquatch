@@ -28,6 +28,10 @@
   text-overflow:ellipsis;
 }
 
+.tagline{
+  @include set-type(28, 600, 34);
+}
+
 *[data-attach-icon-after]{
   i{
     margin-left:5px;

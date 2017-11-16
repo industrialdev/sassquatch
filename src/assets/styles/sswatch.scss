@@ -10,14 +10,52 @@
   .block__element--modifier
 */
 
+/* VARIABLES
+------------------------------------------------------------------------------*/
+@import "config/variables/colours";
+@import "config/variables/typography";
+@import "config/variables/structure";
+
 /* CONFIGURATION
 ------------------------------------------------------------------------------*/
 @import "config/reset";
-@import "config/vars";
 @import "config/mixins";
 @import "config/fonts";
 @import "drupal/tabs";
 
-/* THEME STYLES
+/* THEME BASELINE STYLES
 ------------------------------------------------------------------------------*/
-@import "theme/theme";
+@import "theme/base";
+
+/* THEME ANIMATIONS
+------------------------------------------------------------------------------*/
+@import "theme/animations/animations";
+
+/* THEME STRUCTURE
+------------------------------------------------------------------------------*/
+@import "theme/structure/grid";
+@import "theme/structure/common";
+@import "theme/structure/navigation";
+@import "theme/structure/header";
+@import "theme/structure/sections";
+@import "theme/structure/footer";
+
+/* THEME COMPONENTS
+------------------------------------------------------------------------------*/
+@import "theme/components/banners";
+@import "theme/components/buttons";
+@import "theme/components/cards";
+@import "theme/components/dropdowns";
+@import "theme/components/tooltips";
+@import "theme/components/forms";
+@import "theme/components/tables";
+@import "theme/components/popups";
+@import "theme/components/alerts";
+@import "theme/components/tabs";
+
+/* THEME HELPERS
+------------------------------------------------------------------------------*/
+@import "theme/helpers/components";
+@import "theme/helpers/structure";
+@import "theme/helpers/accessibility";
+@import "theme/helpers/typography";

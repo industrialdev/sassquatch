@@ -12,6 +12,32 @@
   }
 }
 
+/* Adds an animated effect to link interactions */
+@mixin link-interaction($interaction-color) {
+  display:inline-block;
+  padding:2px 0;
+  margin:-2px 0;
+  position:relative;
+  text-decoration:none;
+  &:after{
+    content:'';
+    height:1px;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:0;
+    background:$interaction-color;
+    transition:width 0.2s ease-in-out;
+  }
+  &:hover,
+  &:focus{
+    &:after{
+      width:100%;
+    }
+  }
+}
+
 /* Hide elements while remaining accessible */
 @mixin set-webaim-hidden() {
 	position:absolute;
