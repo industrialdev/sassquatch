@@ -1,11 +1,11 @@
 .tabs{
-  border:2px solid $color-neutral-lt;
+  border:2px solid $color-brand-2-lt;
   &__list{
     list-style:none;
     padding:0;
     margin:0;
     display:flex;
-    background:$color-neutral-lt;
+    background:$color-brand-2-lt;
     &-item{
       margin:0;
       flex-grow:1;
@@ -15,14 +15,14 @@
   &__tab-control{
     display:block;
     padding:10px 15px;
-    background:$color-neutral-lt;
+    background:$color-brand-2-lt;
     &.active{
-      background:$color-med;
+      background:$color-brand-2-lt;
     }
   }
   &__content{
     padding:15px;
-    background:$color-med;
+    background:$color-brand-2-lt;
     display:none;
     &.active{
       display:block;

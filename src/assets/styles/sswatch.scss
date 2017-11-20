@@ -2,12 +2,12 @@
   Sswatch
   Version: 0.1
   Author: Kevin Andrews
-  Organization: Industrial
 
-  Sswatch uses a modified version of the BEM css class naming convention.
+  Sswatch uses the BEM css class naming convention.
   .block__element
   .block--modifier
   .block__element--modifier
+  .block--modifier__element--modifier
 */
 
 /* VARIABLES
@@ -16,20 +16,26 @@
 @import "config/variables/typography";
 @import "config/variables/structure";
 
+/* ANIMATIONS
+------------------------------------------------------------------------------*/
+@import "theme/animations/animations";
+
+/* MIXINS
+------------------------------------------------------------------------------*/
+@import "config/mixins/accessibility";
+@import "config/mixins/components";
+@import "config/mixins/structure";
+@import "config/mixins/typography";
+
 /* CONFIGURATION
 ------------------------------------------------------------------------------*/
 @import "config/reset";
-@import "config/mixins";
 @import "config/fonts";
-@import "drupal/tabs";
+@import "config/drupal/tabs";
 
 /* THEME BASELINE STYLES
 ------------------------------------------------------------------------------*/
 @import "theme/base";
-
-/* THEME ANIMATIONS
-------------------------------------------------------------------------------*/
-@import "theme/animations/animations";
 
 /* THEME STRUCTURE
 ------------------------------------------------------------------------------*/
@@ -38,6 +44,7 @@
 @import "theme/structure/navigation";
 @import "theme/structure/header";
 @import "theme/structure/sections";
+@import "theme/structure/sidebar";
 @import "theme/structure/footer";
 
 /* THEME COMPONENTS

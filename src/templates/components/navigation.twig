@@ -2,15 +2,13 @@
 
 {% 
   set items = {
-    about: { title: "Google", url: "http://google.com",
+    components: { title: "Components", url: "/components.html" },
+    item1: { title: "Item", url: "#",
       "below": {
-        services: { title: "Industrial Agency 1", url: "http://industrialagency.ca" },
-        services2: { title: "Industrial Agency2 ", url: "http://industrialagency.ca" },
-        services3: { title: "Industrial Agency3", url: "http://industrialagency.ca" }
+        item2: { title: "Item", url: "#" },
+        item3: { title: "Item", url: "#" }
       }
     },
-    services: { title: "Industrial Agency", url: "http://industrialagency.ca" },
-    services2: { title: "Industrial Agency2 ", url: "http://industrialagency.ca" },
   }
 %}
 
@@ -54,8 +52,8 @@
   {% endif %}
 {% endmacro %}
 
-<nav class="nav nav--primary{% if modifier %} nav--{{ modifier }}{% endif %}">
-  <div class="centered-content">
+<nav class="nav {% if modifier %} nav--{{ modifier }}{% endif %}">
+  <div class="container">
   {{ menus.menu_links(items, attributes, 0, directory) }}
   </div>
 </nav>

@@ -2,29 +2,21 @@
 ------------------------------------------------------------------------------*/
 $color-threshold: 20%;
 
-$color-brand-1:       #FF5033;  // red
-$color-brand-1-lt:    lighten($color-brand-1, $color-threshold);
-$color-brand-1-dk:    darken($color-brand-1, $color-threshold);
+$color-brand-1:       #ffb3ec;
+$color-brand-1-lt:    #ffe6f9;
+$color-brand-1-dk:    #b30077;
 
-$color-brand-2:       #E4FF00;  // Yellow
-$color-brand-2-lt:    lighten($color-brand-2, $color-threshold);
-$color-brand-2-dk:    darken($color-brand-2, $color-threshold);
+$color-brand-2:       #b3b3cc;
+$color-brand-2-lt:    #e0e0eb;
+$color-brand-2-dk:    #47476b;
 
-$color-brand-3:       #00C360;  // Green
+$color-brand-3:       #000;
 $color-brand-3-lt:    lighten($color-brand-3, $color-threshold);
 $color-brand-3-dk:    darken($color-brand-3, $color-threshold);
 
-$color-brand-4:       #00CBC4;  // Blue
-$color-brand-4-lt:    lighten($color-brand-4, $color-threshold);
-$color-brand-4-dk:    darken($color-brand-4, $color-threshold);
-
-$color-brand-5:       #FF009D;  // Pink
-$color-brand-5-lt:    lighten($color-brand-5, $color-threshold);
-$color-brand-5-dk:    darken($color-brand-5, $color-threshold);
-
-$color-neutral:       #E1E0D6;  // Grey
-$color-neutral-lt:    lighten($color-neutral, $color-threshold);
-$color-neutral-dk:    darken($color-neutral, $color-threshold);
+$color-neutral:       #CCCCCC; // Grey
+$color-neutral-lt:    #f2f2f2;
+$color-neutral-dk:    #4d4d4d;
 
 /* General Colours
 ------------------------------------------------------------------------------*/
@@ -46,9 +38,5 @@ $color-success-lt:    #f3faef;
 $color-success-dk:    #325e1c;
 
 $color-caution:       #ffdb4d; // yellow
-$color-caution-lt:    lighten($color-caution, $color-threshold);
-$color-caution-dk:    darken($color-caution, $color-threshold);
-
-$color-info:          #80ccff; // blue
-$color-info-lt:       lighten($color-info, $color-threshold);
-$color-info-dk:       darken($color-info, $color-threshold);
+$color-caution-lt:    #fff2cc;
+$color-caution-dk:    #806000;

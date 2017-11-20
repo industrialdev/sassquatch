@@ -1,0 +1,22 @@
+/* Converts pixel font size value into EM based on base font size variable */
+@mixin set-type($theSize, $theWeight: "", $theHeight: "") {
+  font-size: #{$theSize / $font-base-size}em;
+  @if $theWeight != "" {
+    font-weight: $theWeight;
+  }
+  @if $theHeight != "" {
+    line-height: #{$theHeight / $theSize};
+  }
+}
+
+@mixin shimmer($component-color, $shimmer-color) {
+  background: $component-color -webkit-gradient(linear, 100% 0, 0 0, from($component-color), color-stop(0.5, $shimmer-color), to($component-color));
+  background-position: -30% top;
+  background-repeat: no-repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: shimmer;
+  animation-duration: 2.2s;
+  animation-iteration-count: 1;
+  background-size: 20% 100%;
+}

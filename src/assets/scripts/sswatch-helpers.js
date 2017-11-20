@@ -11,6 +11,35 @@ window.addEventListener('hashchange', function(event) {
 
 (function($){
 
+  $(document).on('click', 'a[href^="#"]', function(e) {
+    if (!$(this).hasClass('tabs__tab-control')){
+      var id = $(this).attr('href');
+
+      var $id = $(id);
+      if ($id.length === 0) {
+        return;
+      }
+
+      $id.attr("tabindex", -1);
+
+      e.preventDefault();
+
+      if ($(window).width() < 768){
+        var pos = $id.offset().top - 80;
+      } else {
+        var pos = $id.offset().top - 80;
+      }
+
+      $('body, html').animate({
+        scrollTop: pos
+      }, 1000);
+
+      setTimeout(function(){
+        $id.focus();
+      }, 1100);
+    }
+  });
+
   // Attaches an icon that line breaks with the last word in the targeted element
   // data-attach-icon takes font awesome icon class name as the value (excluding the fa prefix)
   $('*[data-attach-icon-after], *[data-attach-icon-before]').each(function(index, element) {

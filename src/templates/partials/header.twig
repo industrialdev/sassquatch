@@ -2,12 +2,12 @@
 
 <header class="header">
   <div class="header__content">
-    <div class="centered-content">
-      <h1><a href="/" class="logo"><img src="assets/images/SSwatch.svg" alt="Sswatch"></a></h1>
-      <span class="tagline">Modular. Extendible. Accessible.</span>
+    <div class="container">
+      <h1 class="brand"><a href="/">Sassquatch.</a></h1>
+      <span class="tagline">Minimal. Modular. <span class="tagline__right">Accessible.</span></span>
     </div>
   </div>
   <div class="header__nav-wrapper">
-    {% include "../components/navigation.twig" %}
+    {% include "../components/navigation.twig" with {'modifier' : 'horizontal'} %}
   </div>
 </header><!-- /header -->

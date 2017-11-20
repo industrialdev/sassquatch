@@ -1,41 +1,49 @@
 .alert{
   padding:15px;
-  border:1px solid;
-  border-left:8px solid;
+  padding-left:40px;
   margin-bottom:15px;
   position:relative;
+  @include component-raised($color-brand-2-lt);
   border-radius:5px;
+  border-left:8px solid;
+  font-weight:600;
   &--info{
-    border-color:$color-info-dk;
-    background:$color-info-lt;
+    border-color:$color-brand-2-lt $color-brand-2-lt $color-brand-2-lt $color-brand-2-dk;
+    background:$color-brand-2-lt;
+    color:$color-brand-2-dk;
     i{
-      color:$color-info-dk;
+      color:$color-brand-2-dk;
     }
   }
   &--success{
-    border-color:#c9e1bd #c9e1bd #c9e1bd $color-success;
+    border-color:$color-success-lt $color-success-lt $color-success-lt $color-success-dk;
     background:$color-success-lt;
+    color:$color-success-dk;
     i{
       color:$color-success-dk;
     }
   }
   &--warning{
-    border-color:$color-caution-dk;
+    border-color:$color-caution-lt $color-caution-lt $color-caution-lt $color-caution-dk;
     background:$color-caution-lt;
+    color:$color-caution-dk;
     i{
       color:$color-caution-dk;
     }
   }
   &--danger{
-    border-color:#f9c9bf #f9c9bf #f9c9bf $color-danger;
+    border-color:$color-danger-lt $color-danger-lt $color-danger-lt $color-danger-dk;
     background:$color-danger-lt;
     color:$color-danger-dk;
-    a{
-      color:$color-dk;
-    }
     i{
       color:$color-danger-dk;
     }
+  }
+  &__icon{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
   }
   &__close{
     position:absolute;

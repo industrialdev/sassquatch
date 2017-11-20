@@ -3,6 +3,7 @@ header{
 }
 
 .header{
+  box-shadow:0px 0px 20px $color-brand-2-lt;
   &__content{
     padding:30px 0;
   }

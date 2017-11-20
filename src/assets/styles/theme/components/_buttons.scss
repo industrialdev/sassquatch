@@ -8,19 +8,21 @@
   display:inline-block;
   appearance:none;
   text-decoration:none;
-  border:0;
   border-radius:0;
   margin-bottom:5px;
+  color:$color-brand-2-dk;
   @include set-type(14, 700, 20);
+  @include component-raised($color-brand-2-lt);
   &:hover,
   &:focus{
-    background:lighten($color-med, 10%);
+    background:$color-brand-2-lt;
   }
   &--link{
     background:transparent;
     text-decoration:none;
-    color:$color-dk;
+    border:0;
     padding:0;
+    box-shadow:none;
     &:hover,
     &:focus{
       background:transparent;
@@ -60,6 +62,8 @@
   &--close{
     padding:0;
     background:transparent;
+    box-shadow:none;
+    border:none;
     &:hover,
     &:focus{
       background:transparent;
@@ -71,13 +75,7 @@
     text-align:left;
     padding:10px 15px;
     background:$color-lt;
-    border:1px solid $color-neutral-dk;
     position:relative;
-    transition:none;
     margin-bottom:0;
-    &:hover,
-    &:focus{
-      background:$color-lt;
-    }
   }
 }

@@ -1,11 +1,25 @@
+.tooltip-toggle{
+  position:relative;
+  &:hover,
+  &:focus{
+    .tooltip{
+      display:inline-block;
+    }
+  }
+}
+
 .tooltip{
   display:none;
   background:$color-lt;
-  border:1px solid $color-dk;
   width:200px;
   padding:10px;
   position:absolute;
+  bottom:100%;
+  left:50%;
+  margin-bottom:10px;
+  transform:translateX(-50%);
   z-index:10;
+  @include component-raised($color-brand-2-lt);
   &:before,
   &:after{
     content:'';
@@ -14,102 +28,20 @@
     height: 0; 
     position:absolute;
   }
-  &--bottom{
-    top:100%;
+  &:before{
+    border-left: 9.5px solid transparent;
+    border-right: 9.5px solid transparent;
+    border-top: 9.5px solid $color-brand-2-lt;
+    bottom:-9.5px;
     left:50%;
-    margin-top:10px;
     transform:translateX(-50%);
-    &:before{
-      border-left: 9.5px solid transparent;
-      border-right: 9.5px solid transparent;
-      border-bottom: 9.5px solid $color-dk;
-      top:-9.5px;
-      left:50%;
-      transform:translateX(-50%);
-    }
-    &:after{
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-bottom: 8px solid $color-lt;
-      top:-8px;
-      left:50%;
-      transform:translateX(-50%);
-    }
   }
-  &--top{
-    bottom:100%;
+  &:after{
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid $color-lt;
+    bottom:-8px;
     left:50%;
-    margin-bottom:10px;
     transform:translateX(-50%);
-    &:before{
-      border-left: 9.5px solid transparent;
-      border-right: 9.5px solid transparent;
-      border-top: 9.5px solid $color-dk;
-      bottom:-9.5px;
-      left:50%;
-      transform:translateX(-50%);
-    }
-    &:after{
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 8px solid $color-lt;
-      bottom:-8px;
-      left:50%;
-      transform:translateX(-50%);
-    }
-  }
-  &--left{
-    top:50%;
-    right:100%;
-    margin-right:10px;
-    transform:translateY(-50%);
-    &:before{
-      border-top: 9.5px solid transparent;
-      border-bottom: 9.5px solid transparent;
-      border-left: 9.5px solid $color-dk;
-      right:-9.5px;
-      top:50%;
-      transform:translateY(-50%);
-    }
-    &:after{
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-      border-left: 8px solid $color-lt;
-      right:-8px;
-      top:50%;
-      transform:translateY(-50%);
-    }
-  }
-  &--right{
-    top:50%;
-    left:100%;
-    margin-left:10px;
-    transform:translateY(-50%);
-    &:before{
-      border-top: 9.5px solid transparent;
-      border-bottom: 9.5px solid transparent;
-      border-right: 9.5px solid $color-dk;
-      left:-9.5px;
-      top:50%;
-      transform:translateY(-50%);
-    }
-    &:after{
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-      border-right: 8px solid $color-lt;
-      left:-8px;
-      top:50%;
-      transform:translateY(-50%);
-    }
-  }
-}
-
-.tooltip-toggle{
-  position:relative;
-  &:hover,
-  &:focus{
-    .tooltip{
-      display:inline-block;
-    }
   }
 }

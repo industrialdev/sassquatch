@@ -1,12 +1,12 @@
 /* STRUCTURE HELPERS
 ---------------------------------------------------------------------------*/
-.centered-content{
+.container{
   @include clearfix();
   width:100%;
   max-width:$site-width;
   padding:0 $gutter-width;
   margin:0 auto;
-  .centered-content{
+  .container{
     padding:0;
   }
 }
@@ -21,4 +21,9 @@
 
 .hidden{
   display:none;
+}
+
+.spacer{
+  background:transparent;
+  margin:$gutter-width 0;
 }

@@ -2,6 +2,25 @@
 ---------------------------------------------------------------------------*/
 .dropdown{
   position:relative;
+  .drawer{
+    position:relative;
+    z-index:2;
+    &--overlay{
+      position:absolute;
+    }
+  }
+}
+
+.drawer-controls{
+  position:relative;
+  .drawer-toggle{
+    position:absolute;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    border:none;
+    background:transparent;
+  }
 }
 
 .drawer-toggle{
