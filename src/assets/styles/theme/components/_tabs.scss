@@ -1,5 +1,4 @@
 .tabs{
-  @include component-raised($color-brand-2-lt);
   border:none;
   &__list{
     list-style:none;
@@ -8,6 +7,7 @@
     display:table;
     background:$color-lt;
     @include clearfix();
+    border-bottom:1px solid $color-brand-2-lt;
   }
   &__tab-control{
     margin:0;
@@ -15,19 +15,20 @@
     text-align:center;   
     display:block;
     padding:10px 15px;
-    background:$color-lt;
     transform:translate(0, 0);
     transition:all 0.2s ease-in-out;
+    border-bottom:3px solid transparent;
+    margin-bottom:-2px;
     &.active{
-      @include component-raised($color-brand-2-lt);
-      border:none;
-      transform:translate(-5px, -10px);
+      border-bottom:3px solid $color-brand-2-dk;
     }
   }
   &__content{
     padding:30px;
     background:$color-lt;
     display:none;
+    @include component-raised($color-brand-2-lt);
+    border:none;
     &.active{
       display:block;
     }

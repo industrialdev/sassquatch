@@ -17,10 +17,6 @@
   &--horizontal{
     position:relative;
     @include component-raised($color-brand-2-lt);
-    border-left:none;
-    border-right:none;
-    border-top:1px solid $color-brand-2-lt;
-    border-bottom:1px solid $color-brand-2-lt;
     .nav__menu{
       display:table;
       width:100%;
@@ -29,11 +25,9 @@
         font-weight:600;
         text-align:center;
         position:relative;
-        &:last-of-type{
-          > a,
-          > .drawer-wrapper > a{
-            border-right:1px solid $color-brand-2-lt;
-          }
+        border-left:1px solid $color-brand-2-lt;
+        &:first-of-type{
+          border-left:none;
         }
         a{
           display:block;
@@ -41,7 +35,6 @@
           background:$color-lt;
           color:$color-brand-2-dk;
           text-decoration:none;
-          border-left:1px solid $color-brand-2-lt;
           &.drawer-toggle{
             padding-right:30px;
           }
@@ -49,6 +42,25 @@
           &:focus,
           &.open{
             background:$color-brand-2-lt;
+          }
+        }
+        .nav__submenu{
+          li{
+            border-left:none;
+          }
+        }
+      }
+    }
+    .container{
+      .nav__menu{
+        border-left:1px solid $color-brand-2-lt;
+        border-right:1px solid $color-brand-2-lt;
+        li{
+          .nav__submenu{
+            .nav__menu{
+              border-left:none;
+              border-right:none;
+            }
           }
         }
       }

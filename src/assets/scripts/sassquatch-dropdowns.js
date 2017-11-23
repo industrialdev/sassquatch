@@ -8,14 +8,25 @@
   // adds accessible icon to toggle button
   $(document).on("click", ".drawer-toggle", function(event){
     event.preventDefault();
-    $(this).next(".drawer").toggleClass("open");
     $(this).toggleClass("open");
-    if($(this).next(".drawer").hasClass("open")){
-      $(this).next(".drawer").slideDown("fast").attr("aria-expanded", "true");
-      $(this).attr("aria-expanded", "true");
+    if($(this).closest(".drawer-controls").length){
+      $(this).closest(".drawer-controls").next(".drawer").toggleClass("open");
+      if($(this).closest(".drawer-controls").next(".drawer").hasClass("open")){
+        $(this).closest(".drawer-controls").next(".drawer").slideDown("fast").attr("aria-expanded", "true");
+        $(this).attr("aria-expanded", "true");
+      }else{
+        $(this).closest(".drawer-controls").next(".drawer").slideUp("fast").attr("aria-expanded", "false");
+        $(this).attr("aria-expanded", "false");
+      }
     }else{
-      $(this).next(".drawer").slideUp("fast").attr("aria-expanded", "false");
-      $(this).attr("aria-expanded", "false");
+      $(this).next(".drawer").toggleClass("open");
+      if($(this).next(".drawer").hasClass("open")){
+        $(this).next(".drawer").slideDown("fast").attr("aria-expanded", "true");
+        $(this).attr("aria-expanded", "true");
+      }else{
+        $(this).next(".drawer").slideUp("fast").attr("aria-expanded", "false");
+        $(this).attr("aria-expanded", "false");
+      }
     }
   });
 
