@@ -26,7 +26,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('sass', function () {
-  gulp.src('./src/assets/styles/sswatch.scss')
+  gulp.src('./src/assets/styles/sassquatch.scss')
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'compressed'
@@ -43,7 +43,7 @@ gulp.task('sass', function () {
     .pipe(sass({
       outputStyle: 'compressed'
     }))
-    .pipe(rename('sswatch.min.css'))
+    .pipe(rename('sassquatch.min.css'))
     .pipe(gulp.dest('./dist/assets/styles/min'));
 });
 
@@ -56,10 +56,10 @@ gulp.task('watch', function () {
 gulp.task('scripts', function() {
   return gulp.src('./src/assets/scripts/*.js')
     .pipe(plumber())
-    .pipe(concat('sswatch.js'))
+    .pipe(concat('sassquatch.js'))
     .on('error', onError)
     .pipe(gulp.dest('./dist/assets/scripts'))
-    .pipe(rename('sswatch.min.js'))
+    .pipe(rename('sassquatch.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./dist/assets/scripts/min'));
 });
