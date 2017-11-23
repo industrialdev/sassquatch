@@ -16,6 +16,9 @@
   }
   &--horizontal{
     position:relative;
+    @include component-raised($color-brand-2-lt);
+    border-left:none;
+    border-right:none;
     border-top:1px solid $color-brand-2-lt;
     border-bottom:1px solid $color-brand-2-lt;
     .nav__menu{

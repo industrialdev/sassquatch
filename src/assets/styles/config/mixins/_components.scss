@@ -1,3 +1,4 @@
+/* Adds depth to the element */
 @mixin component-raised($color) {
   box-shadow:2px 2px 5px $color;
   border:1px solid $color;
@@ -31,5 +32,33 @@
     &:after{
       width:100%;
     }
+  }
+}
+
+/* Styles element as a CSS triangle */
+@mixin triangle($size, $color, $direction: "down") {
+  content:'';
+  display:block;
+  width: 0; 
+  height: 0;
+  @if $direction == "up" {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
+  @if $direction == "down" {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  }
+  @if $direction == "left" {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  }
+  @if $direction == "right" {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
   }
 }

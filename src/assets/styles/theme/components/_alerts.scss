@@ -4,12 +4,11 @@
   margin-bottom:15px;
   position:relative;
   @include component-raised($color-brand-2-lt);
-  border-radius:5px;
   border-left:8px solid;
   font-weight:600;
   &--info{
-    border-color:$color-brand-2-lt $color-brand-2-lt $color-brand-2-lt $color-brand-2-dk;
-    background:$color-brand-2-lt;
+    border-color:$color-lt $color-lt $color-lt $color-brand-2-dk;
+    background:$color-lt;
     color:$color-brand-2-dk;
     i{
       color:$color-brand-2-dk;

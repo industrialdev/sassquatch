@@ -1,28 +1,32 @@
 .tabs{
-  border:2px solid $color-brand-2-lt;
+  @include component-raised($color-brand-2-lt);
+  border:none;
   &__list{
     list-style:none;
     padding:0;
     margin:0;
-    display:flex;
-    background:$color-brand-2-lt;
-    &-item{
-      margin:0;
-      flex-grow:1;
-      text-align:center;    
-    }
+    display:table;
+    background:$color-lt;
+    @include clearfix();
   }
   &__tab-control{
+    margin:0;
+    float:left;
+    text-align:center;   
     display:block;
     padding:10px 15px;
-    background:$color-brand-2-lt;
+    background:$color-lt;
+    transform:translate(0, 0);
+    transition:all 0.2s ease-in-out;
     &.active{
-      background:$color-brand-2-lt;
+      @include component-raised($color-brand-2-lt);
+      border:none;
+      transform:translate(-5px, -10px);
     }
   }
   &__content{
-    padding:15px;
-    background:$color-brand-2-lt;
+    padding:30px;
+    background:$color-lt;
     display:none;
     &.active{
       display:block;

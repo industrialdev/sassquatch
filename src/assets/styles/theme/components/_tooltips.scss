@@ -22,26 +22,83 @@
   @include component-raised($color-brand-2-lt);
   &:before,
   &:after{
-    content:'';
-    display:block;
-    width: 0; 
-    height: 0; 
     position:absolute;
-  }
-  &:before{
-    border-left: 9.5px solid transparent;
-    border-right: 9.5px solid transparent;
-    border-top: 9.5px solid $color-brand-2-lt;
-    bottom:-9.5px;
     left:50%;
     transform:translateX(-50%);
   }
-  &:after{
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid $color-lt;
-    bottom:-8px;
-    left:50%;
-    transform:translateX(-50%);
+  &--top{
+    &:before{
+      @include triangle(9.5px, $color-brand-2-lt);
+      bottom:-9.5px;
+    }
+    &:after{
+      @include triangle(8px, $color-lt);
+      bottom:-8px;
+    }
+  }
+  &--bottom{
+    bottom:auto;
+    top:100%;
+    margin-bottom:0;
+    margin-top:10px;
+    &:before{
+      @include triangle(9.5px, $color-brand-2-lt, "up");
+      top:-9.5px;
+    }
+    &:after{
+      @include triangle(8px, $color-lt, "up");
+      top:-8px;
+    }
+  }
+  &--left,
+  &--right{
+    &:before,
+    &:after{
+      top:50%;
+      transform:translateY(-50%);
+    }
+  }
+  &--left{
+    bottom:auto;
+    left:auto;
+    right:100%;
+    top:50%;
+    margin-bottom:0;
+    margin-right:10px;
+    transform:translateY(-50%);
+    &:before{
+      @include triangle(9.5px, $color-brand-2-lt, "right");
+      bottom:auto;
+      left:auto;
+      right:-9.5px;
+      transform:translateY(-50%);
+    }
+    &:after{
+      @include triangle(9.5px, $color-lt, "right");
+      bottom:auto;
+      left:auto;
+      right:-8px;
+      transform:translateY(-50%);
+    }
+  }
+  &--right{
+    bottom:auto;
+    left:100%;
+    top:50%;
+    margin-bottom:0;
+    margin-left:10px;
+    transform:translateY(-50%);
+    &:before{
+      @include triangle(9.5px, $color-brand-2-lt, "left");
+      bottom:auto;
+      left:-9.5px;
+      transform:translateY(-50%);
+    }
+    &:after{
+      @include triangle(9.5px, $color-lt, "left");
+      bottom:auto;
+      left:-8px;
+      transform:translateY(-50%);
+    }
   }
 }
