@@ -15,6 +15,7 @@
     padding:10px;
     margin:0;
     max-width:100%;
+    text-align:left;
     @include component-raised($color-brand-2-lt);
     @include set-type(16, 400, 20);
   }
@@ -66,10 +67,7 @@
         outline:0;
         + .form__radio-replacement-wrapper,
         + .form__checkbox-replacement-wrapper{
-          outline-color: rgb(77, 144, 254);
-          outline-offset: 0px;
-          outline-style: auto;
-          outline-width: 5px;
+          @include chrome-focus();
         }
       }
     }
@@ -79,7 +77,6 @@
     position:absolute;
     left:0;
     top:4px;
-    background:$color-lt;
   }
   &__radio-replacement,
   &__checkbox-replacement{
@@ -88,6 +85,7 @@
     height:14px;
     width:14px;
     border-radius:50px;
+    background:$color-lt;
     @include component-raised($color-brand-2-lt);
     border:1px solid $color-brand-2-dk;
     transition:background 0.2s ease-in-out;
@@ -132,6 +130,42 @@
 
 textarea{
   min-height:84px;
+}
+
+.select{
+  &--styled{
+ 
+  }
+}
+
+.custom-select{
+  &__list{
+    @include component-raised($color-brand-2-lt);
+    border-top:none;
+    background:$color-lt;
+    list-style:none;
+    padding:0;
+    position:relative;
+    z-index:2;
+  }
+  &__option{
+    button{
+      border:none;
+      padding:5px 10px;
+      width:100%;
+      background:transparent;
+    }
+    &:first-of-type{
+      button{
+        padding-top:10px;
+      }
+    }
+    &:last-of-type{
+      button{
+        padding-bottom:10px;
+      }
+    }
+  }
 }
 
 

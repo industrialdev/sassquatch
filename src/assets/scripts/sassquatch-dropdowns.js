@@ -1,7 +1,11 @@
 (function($){
 
   /* Auto formats select inputs */
-  $('select').wrap('<div class="form__select-wrapper"></div>');
+  $("select").each(function(){
+    if(!$(this).hasClass("select--styled")){
+      $(this).wrap('<div class="form__select-wrapper"></div>');
+    }
+  });
   $('.form__select-wrapper').append('<i class="fa fa-angle-down" aria-hidden="true"></i>');
 
   /* Dropdown/Accordion toggle control */

@@ -28,32 +28,6 @@
   text-overflow:ellipsis;
 }
 
-.brand{
-  font-family:$font-brand-family;
-  @include set-type(56, 400, 100);
-  letter-spacing:1px;
-  margin-bottom:0;
-  a{
-    text-decoration:none;
-    display:inline-block;
-    color:$color-brand-1-dk;
-    position:relative;
-    &:hover,
-    &:focus{
-      @include shimmer($color-brand-1-dk, $color-brand-1);
-    }
-  }
-}
-
-.tagline{
-  @include set-type(15, 400, 20);
-  display:block;
-  margin-top:-24px;
-  &__right{
-    margin-left:15px;
-  }
-}
-
 *[data-attach-icon-after]{
   i{
     margin-left:5px;

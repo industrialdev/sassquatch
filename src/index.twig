@@ -3,7 +3,7 @@
 
 {% block content %}
   
-<div class="container">
+<div class="container article__body">
 
   <div class="grid">
 
@@ -25,9 +25,33 @@
     <div class="grid__col--md-9">
     
       <section id="grid"><!-- Grid -->
-        <h2 class="jumplink__target">The Grid</h2>
+        <h2 class="jumplink__target">Grid</h2>
         {% include "templates/components/examples/grid.twig" %}
       </section><!-- /Grid -->
+
+      <section id="typography"><!-- Typography -->
+        <h2 class="jumplink__target">Typography</h2>
+        <h1>Heading level 1</h1>
+        <h2>Heading level 2</h2>
+        <h3>Heading level 3</h3>
+        <h4>Heading level 4</h4>
+        <h5>Heading level 5</h5>
+        <p>Lorem ipsum dolor sit amet, <strong>bold text</strong><sup>superscript</sup><sub>subscript</sub> <em>italic text</em>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <ul>
+          <li>List item</li>
+          <li>List item</li>
+          <li>
+            List item
+            <ol>
+              <li>Ordered list item</li>
+              <li>Ordered list item</li>
+              <li>Ordered list item</li>
+            </ol>
+          </li>
+          <li>List item</li>
+        </ul>
+      </section><!-- /Typography -->
 
       <section id="menus"><!-- Menus -->
         <h2 class="jumplink__target">Menus</h2>
@@ -97,50 +121,6 @@
               </ul>
             </nav>
             <hr class="spacer">
-            <nav class="nav nav--horizontal nav--megamenu">
-              <ul class="nav__menu">
-                <li><a href="#">Menu Item</a></li>
-                <li>
-                  <div class="drawer-wrapper">
-                    <a href="#" class="drawer-toggle" aria-expanded="false">Menu Item <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                    <div class="nav__submenu drawer" role="menu" aria-expanded="false">
-                      <ul class="nav__menu">
-                        <li><a href="#">Submenu Item</a></li>
-                        <li><a href="#">Submenu Item</a></li>
-                      </ul>
-                    </div>
-                  </div>   
-                </li>
-                <li>
-                  <div class="drawer-wrapper">
-                    <a href="#" class="drawer-toggle" aria-expanded="false">Menu Item <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                    <div class="nav__submenu drawer" role="menu" aria-expanded="false">
-                      <div class="grid">
-                        <div class="grid__col--md-4">
-                          <ul class="nav__menu">
-                            <li><a href="#">Submenu Item</a></li>
-                            <li><a href="#">Submenu Item</a></li>
-                          </ul>
-                        </div>
-                        <div class="grid__col--md-4">
-                          <ul class="nav__menu">
-                            <li><a href="#">Submenu Item</a></li>
-                            <li><a href="#">Submenu Item</a></li>
-                          </ul>
-                        </div>
-                        <div class="grid__col--md-4">
-                          <ul class="nav__menu">
-                            <li><a href="#">Submenu Item</a></li>
-                            <li><a href="#">Submenu Item</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>   
-                </li>
-              </ul>
-            </nav>
-            <hr class="spacer">
             <nav class="nav nav--horizontal">
               <ul class="nav__menu">
                 <li><a href="#">Menu Item</a></li>
@@ -169,7 +149,7 @@
               </ul>
             </nav>
             <hr class="spacer">
-            <nav class="nav nav--horizontal nav--megamenu">
+            <nav class="nav nav--horizontal">
               <ul class="nav__menu">
                 <li><a href="#">Menu Item</a></li>
                 <li>
@@ -190,29 +170,27 @@
                       <button class="drawer-toggle" aria-expanded="false"><i class="fa fa-plus-circle drawer-control--open" aria-hidden="true"></i><i class="fa fa-minus-circle drawer-control--close" aria-hidden="true"></i><span class="webaim-hidden"></span></button>
                     </div>
                     <div class="nav__submenu drawer" role="menu" aria-expanded="false">
-                      <div class="grid">
-                        <div class="grid__col--md-4">
-                          <ul class="nav__menu">
-                            <li><a href="#">Submenu Item</a></li>
-                            <li><a href="#">Submenu Item</a></li>
-                          </ul>
-                        </div>
-                        <div class="grid__col--md-4">
-                          <ul class="nav__menu">
-                            <li><a href="#">Submenu Item</a></li>
-                            <li><a href="#">Submenu Item</a></li>
-                          </ul>
-                        </div>
-                        <div class="grid__col--md-4">
-                          <ul class="nav__menu">
-                            <li><a href="#">Submenu Item</a></li>
-                            <li><a href="#">Submenu Item</a></li>
-                          </ul>
-                        </div>
-                      </div>
+                      <ul class="nav__menu">
+                        <li><a href="#">Submenu Item</a></li>
+                        <li><a href="#">Submenu Item</a></li>
+                      </ul>
                     </div>
                   </div>   
                 </li>
+              </ul>
+            </nav>
+            <hr class="spacer">
+            <nav class="nav nav--pager">
+              <ul class="nav__menu">
+                <li class="prev"><a href="">Previous</a></li>
+                <li><a href="">1</a></li>
+                <li>...</li>
+                <li><a href="">7</a></li>
+                <li class="active"><a href="">8</a></li>
+                <li><a href="">9</a></li>
+                <li>...</li>
+                <li><a href="">20</a></li>
+                <li class="next"><a href="">Next</a></li>
               </ul>
             </nav>
           </div>
@@ -246,6 +224,8 @@
       <section id="buttons"><!-- Buttons -->
         <h2 class="jumplink__target">Buttons</h2>
         <p>
+          {% include "templates/components/button.twig" with {'class' : 'btn--primary', 'text' : 'Primary Button'} %}
+          {% include "templates/components/button.twig" with {'class' : 'btn--secondary', 'text' : 'Secondary Button'} %}
           {% include "templates/components/button.twig" with {'class' : 'btn--pager btn--pager-forward', 'text' : 'Previous button link', 'iconBefore' : 'angle-left'} %}
           {% include "templates/components/button.twig" with {'class' : 'btn--pager btn--pager-back', 'text' : 'Next button link', 'iconAfter' : 'angle-right'} %}
           {% include "templates/components/button.twig" with {'class' : 'btn--link', 'text' : 'Link button'} %}
@@ -264,7 +244,10 @@
               <div class="form__group">
                 <label class="form__label" for="select-input">Select input</label>
                 <select class="form__input" id="select-input">
-                  <option value="0">Select an option</option>
+                  <option value="">Select an option</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
                 </select>
               </div>
               <div class="form__group">

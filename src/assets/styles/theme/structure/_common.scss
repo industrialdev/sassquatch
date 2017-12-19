@@ -1,8 +1,12 @@
-main{
+body{
   background:$color-neutral-lt;
 }
 
-.logo{
+.brand{
   display:block;
-  max-width:400px;
+  width:100%;
+  max-width:300px;
+  img{
+    width:100%;
+  }
 }

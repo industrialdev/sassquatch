@@ -50,6 +50,9 @@
     .grid{
       &--flex-#{nth($grid-prefix, $z)}{
         display:flex;
+        .grid__col{
+          margin-bottom:0;
+        }
       }
       @for $i from 1 through $columns{
         &__col--#{nth($grid-prefix, $z)}-#{$i}{

@@ -17,3 +17,10 @@
   height:auto;
   overflow:visible;
 }
+
+@mixin chrome-focus() {
+  outline-color: rgb(77, 144, 254);
+  outline-offset: 0px;
+  outline-style: auto;
+  outline-width: 5px;
+}

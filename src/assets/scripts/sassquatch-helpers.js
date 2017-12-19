@@ -25,9 +25,9 @@ window.addEventListener('hashchange', function(event) {
       e.preventDefault();
 
       if ($(window).width() < 768){
-        var pos = $id.offset().top - 80;
+        var pos = $id.offset().top - 40;
       } else {
-        var pos = $id.offset().top - 80;
+        var pos = $id.offset().top - 40;
       }
 
       $('body, html').animate({
@@ -64,5 +64,7 @@ window.addEventListener('hashchange', function(event) {
 
   // Wraps tables for mobile scrolling
   $('table').wrap('<div class="table-wrapper"></div>');
+
+  $('hr').attr('aria-hidden', 'true');
 
 })(jQuery);

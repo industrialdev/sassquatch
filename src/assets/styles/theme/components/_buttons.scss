@@ -1,5 +1,11 @@
 /* BUTTON COMPONENTS
 ---------------------------------------------------------------------------*/
+button{
+  font-size:$font-base-size + px;
+  color:$color-brand-2-dk;
+  text-align:left;
+  cursor:pointer;
+}
 
 .btn{
   padding:10px 25px;
@@ -16,6 +22,24 @@
   &:hover,
   &:focus{
     background:$color-brand-2-lt;
+  }
+  &--primary{
+    background:$color-brand-1-dk;
+    color:$color-lt;
+    &:hover,
+    &:focus{
+      background:$color-brand-1;
+      color:$color-brand-1-dk;
+    }
+  }
+  &--secondary{
+    background:$color-brand-2-dk;
+    color:$color-lt;
+    &:hover,
+    &:focus{
+      background:$color-brand-2;
+      color:$color-brand-2-dk;
+    }
   }
   &--link{
     background:transparent;
