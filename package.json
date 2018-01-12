@@ -1,4 +1,21 @@
 {
+  "name": "@industrialdev/sassquatch",
+  "version": "0.1.0",
+  "description": "An in development sass based component library with a large emphasis on accessibility.",
+  "author": "Kevin Andrews",
+  "license": "MIT",
+  "main": "sassquatch",
+  "bugs": {
+    "url": "https://github.com/industrialdev/sassquatch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/industrialdev/sassquatch.git"
+  },
+  "keywords": [
+    "sass"
+  ],
+  "homepage": "https://github.com/industrialdev/sassquatch#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^4.0.0",
@@ -11,6 +28,5 @@
     "gulp-twig": "^1.1.1",
     "gulp-uglify": "^3.0.0",
     "gulp-webserver": "^0.9.1"
-  },
-  "version": "1.0.1"
+  }
 }
