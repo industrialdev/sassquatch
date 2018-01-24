@@ -1,4 +1,5 @@
-var dotenv = require('dotenv').config({path: '.env'}),
+var // Package Variables
+    dotenv = require('dotenv').config({path: '.env'}),
     gulp = require('gulp'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
@@ -9,20 +10,18 @@ var dotenv = require('dotenv').config({path: '.env'}),
     plumber = require('gulp-plumber'),
     notify = require('gulp-notify'),
     twig = require('gulp-twig'),
-    imagemin = require('gulp-imagemin');
-
-var srcPath = process.env.SRC_PATH;
-var destPath = process.env.DEST_PATH;
-
-var styleName = process.env.STYLE_NAME;
-var scriptName = process.env.SCRIPT_NAME;
-
-var templatePath = process.env.TEMPLATE_PATH;
-var stylePath = process.env.STYLE_PATH;
-var scriptPath = process.env.SCRIPT_PATH;
-var imagePath = process.env.IMAGE_PATH;
-var iconPath = process.env.ICON_PATH;
-var fontPath = process.env.FONT_PATH;
+    imagemin = require('gulp-imagemin'),
+    // Environment Variables
+    srcPath = process.env.SRC_PATH,
+    destPath = process.env.DEST_PATH,
+    styleName = process.env.STYLE_NAME,
+    scriptName = process.env.SCRIPT_NAME,
+    templatePath = process.env.TEMPLATE_PATH,
+    stylePath = process.env.STYLE_PATH,
+    scriptPath = process.env.SCRIPT_PATH,
+    imagePath = process.env.IMAGE_PATH,
+    iconPath = process.env.ICON_PATH,
+    fontPath = process.env.FONT_PATH;
 
 gulp.task('default', ['templates', 'sass', 'scripts', 'fonts', 'images', 'watch']);
 
@@ -43,6 +42,7 @@ gulp.task('webserver', function() {
     }));
 });
 
+// Compiles both unminified and minified CSS files
 gulp.task('sass', function () {
   gulp.src(srcPath + stylePath + styleName + '.scss')
     .pipe(plumber())
@@ -65,12 +65,7 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(destPath + stylePath + 'min'));
 });
 
-gulp.task('watch', function () {
-  gulp.watch(srcPath + stylePath + '**/*.scss', ['sass']);
-  gulp.watch(srcPath + scriptPath + '*.js', ['scripts']);
-  gulp.watch(srcPath + '/**/*.twig', ['templates']);
-});
-
+// Compiles both unminified and minified JS files
 gulp.task('scripts', function() {
   return gulp.src(srcPath + scriptPath + '*.js')
     .pipe(plumber())
@@ -82,6 +77,7 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(destPath + scriptPath + 'min'));
 });
 
+// Minifies images to optimize load times
 gulp.task('images', function(){
   gulp.src(srcPath + imagePath + '*')
     .pipe(imagemin())
@@ -92,11 +88,13 @@ gulp.task('images', function(){
     .pipe(gulp.dest(destPath + iconPath))
 });
 
+// Duplicates fonts into destination folder
 gulp.task('fonts', function(){
   gulp.src(srcPath + fontPath + '**/*')
     .pipe(gulp.dest(destPath + fontPath));
 });
 
+// Converts twig templates to HTML
 gulp.task('templates', function() {
   return gulp.src(srcPath + templatePath + '/*.twig')
     .pipe(twig())
@@ -106,7 +104,14 @@ gulp.task('templates', function() {
     .pipe(gulp.dest(destPath));
 });
 
-// error notifications using GULP Notify
+// Watches files for changes and compiles on the fly
+gulp.task('watch', function () {
+  gulp.watch(srcPath + stylePath + '**/*.scss', ['sass']);
+  gulp.watch(srcPath + scriptPath + '*.js', ['scripts']);
+  gulp.watch(srcPath + '/**/*.twig', ['templates']);
+});
+
+// error notifications
 var onError = function (err) {
   notify({
     title: 'Gulp Task Error',
