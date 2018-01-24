@@ -11,33 +11,33 @@ window.addEventListener('hashchange', function(event) {
 
 (function($){
 
+  // Smooth scrolling for jumplinks
   $(document).on('click', 'a[href^="#"]', function(e) {
-    if (!$(this).hasClass('tabs__tab-control')){
-      var id = $(this).attr('href');
+    var id = $(this).attr('href');
 
-      var $id = $(id);
-      if ($id.length === 0) {
-        return;
-      }
-
-      $id.attr("tabindex", -1);
-
-      e.preventDefault();
-
-      if ($(window).width() < 768){
-        var pos = $id.offset().top - 40;
-      } else {
-        var pos = $id.offset().top - 40;
-      }
-
-      $('body, html').animate({
-        scrollTop: pos
-      }, 1000);
-
-      setTimeout(function(){
-        $id.focus();
-      }, 1100);
+    var $id = $(id);
+    if ($id.length === 0) {
+      return;
     }
+
+    $id.attr("tabindex", -1);
+
+    e.preventDefault();
+
+    if ($(window).width() < 768){
+      var pos = $id.offset().top - 40;
+    } else {
+      var pos = $id.offset().top - 40;
+    }
+
+    $('body, html').animate({
+      scrollTop: pos
+    }, 1000);
+
+    // Focus the target element after the scroll
+    setTimeout(function(){
+      $id.focus();
+    }, 1100);
   });
 
   // Attaches an icon that line breaks with the last word in the targeted element
@@ -63,8 +63,13 @@ window.addEventListener('hashchange', function(event) {
   });
 
   // Wraps tables for mobile scrolling
-  $('table').wrap('<div class="table-wrapper"></div>');
+  $('table').each(function(){
+    if(!$(this).closest('table__wrapper').length){
+      $(this).wrap('<div class="table__wrapper"></div>');
+    }
+  });
 
+  // Hides horizontal rules from screen readers
   $('hr').attr('aria-hidden', 'true');
 
 })(jQuery);

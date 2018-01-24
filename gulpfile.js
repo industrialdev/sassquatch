@@ -1,4 +1,5 @@
-var gulp = require('gulp'),
+var dotenv = require('dotenv').config({path: '.env'}),
+    gulp = require('gulp'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
     webserver = require('gulp-webserver'),
@@ -10,10 +11,24 @@ var gulp = require('gulp'),
     twig = require('gulp-twig'),
     imagemin = require('gulp-imagemin');
 
-gulp.task('default', ['templates', 'sass', 'scripts', 'fonts', 'webserver', 'watch']);
+var srcPath = process.env.SRC_PATH;
+var destPath = process.env.DEST_PATH;
+
+var styleName = process.env.STYLE_NAME;
+var scriptName = process.env.SCRIPT_NAME;
+
+var stylePath = process.env.STYLE_PATH;
+var scriptPath = process.env.SCRIPT_PATH;
+var imagePath = process.env.IMAGE_PATH;
+var iconPath = process.env.ICON_PATH;
+var fontPath = process.env.FONT_PATH;
+
+gulp.task('build', ['templates', 'sass', 'scripts', 'fonts', 'images']);
+
+gulp.task('serve', ['webserver', 'watch']);
 
 gulp.task('webserver', function() {
-  gulp.src('./dist')
+  gulp.src(destPath)
     .pipe(webserver({
       fallback: 'index.html',
       livereload: true,
@@ -26,10 +41,10 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('sass', function () {
-  gulp.src('./src/assets/styles/sassquatch.scss')
+  gulp.src(srcPath + stylePath + styleName + '.scss')
     .pipe(plumber())
     .pipe(sass({
-      outputStyle: 'compressed'
+      outputStyle: 'expanded'
     }))
     .on('error', onError)
     .pipe(autoprefixer({
@@ -39,53 +54,53 @@ gulp.task('sass', function () {
     .on('error', function (err) {
       console.log(err.message);
     })
-    .pipe(gulp.dest('./dist/assets/styles'))
+    .pipe(gulp.dest(destPath + stylePath))
     .pipe(sass({
       outputStyle: 'compressed'
     }))
-    .pipe(rename('sassquatch.min.css'))
-    .pipe(gulp.dest('./dist/assets/styles/min'));
+    .pipe(rename(styleName + '.min.css'))
+    .pipe(gulp.dest(destPath + stylePath + 'min'));
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./src/assets/styles/**/*.scss', ['sass']);
-  gulp.watch('./src/assets/scripts/*.js', ['scripts']);
-  gulp.watch('./src/**/*.twig', ['templates']);
+  gulp.watch(srcPath + stylePath + '**/*.scss', ['sass']);
+  gulp.watch(srcPath + scriptPath + '*.js', ['scripts']);
+  gulp.watch(srcPath + '/**/*.twig', ['templates']);
 });
 
 gulp.task('scripts', function() {
-  return gulp.src('./src/assets/scripts/*.js')
+  return gulp.src(srcPath + scriptPath + '*.js')
     .pipe(plumber())
-    .pipe(concat('sassquatch.js'))
+    .pipe(concat(scriptName + '.js'))
     .on('error', onError)
-    .pipe(gulp.dest('./dist/assets/scripts'))
-    .pipe(rename('sassquatch.min.js'))
+    .pipe(gulp.dest(destPath + scriptPath))
+    .pipe(rename(scriptName + '.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/assets/scripts/min'));
+    .pipe(gulp.dest(destPath + scriptPath + 'min'));
 });
 
 gulp.task('images', function(){
-  gulp.src('./src/assets/images/*')
+  gulp.src(srcPath + imagePath + '*')
     .pipe(imagemin())
-    .pipe(gulp.dest('./dist/assets/images'))
+    .pipe(gulp.dest(destPath + imagePath))
 
-  gulp.src('./src/assets/icons/*')
+  gulp.src(srcPath + iconPath + '*')
     .pipe(imagemin())
-    .pipe(gulp.dest('./dist/assets/icons'))
+    .pipe(gulp.dest(destPath + iconPath))
 });
 
 gulp.task('fonts', function(){
-  gulp.src('./src/assets/fonts/**/*')
-    .pipe(gulp.dest('./dist/assets/fonts'));
+  gulp.src(srcPath + fontPath + '**/*')
+    .pipe(gulp.dest(destPath + fontPath));
 });
 
 gulp.task('templates', function() {
-  return gulp.src('./src/*.twig')
+  return gulp.src(srcPath + '/*.twig')
     .pipe(twig())
     .pipe(rename(function(path){
       path.suffix += ".html";
     }))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest(destPath));
 });
 
 // error notifications using GULP Notify

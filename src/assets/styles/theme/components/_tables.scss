@@ -1,12 +1,14 @@
 /* TABLE COMPONENTS
 ---------------------------------------------------------------------------*/
 
-.table-wrapper{
-  overflow-x:auto;
-  margin-bottom:15px;
-  max-width:100%;
-  &:last-child{
-    margin-bottom:0;
+.table{
+  &__wrapper{
+    overflow-x:auto;
+    margin-bottom:15px;
+    max-width:100%;
+    &:last-child{
+      margin-bottom:0;
+    }
   }
 }
 
