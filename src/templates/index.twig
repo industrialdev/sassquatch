@@ -1,4 +1,4 @@
-{% extends "templates/layouts/default.twig" %}
+{% extends "layouts/default.twig" %}
 {% set pageTitle = "Home" %}
 
 {% block content %}
@@ -26,7 +26,7 @@
     
       <section id="grid"><!-- Grid -->
         <h2 class="jumplink__target">Grid</h2>
-        {% include "templates/components/examples/grid.twig" %}
+        {% include "components/examples/grid.twig" %}
       </section><!-- /Grid -->
 
       <section id="typography"><!-- Typography -->
@@ -202,7 +202,7 @@
         <div class="grid">
           <div class="grid__col--md-6">
             <div class="dropdown">
-              {% include "templates/components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
+              {% include "components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
               <div class="card card--padded drawer" role="region" aria-expanded="false">
                 <p>Lorem ipsum<sup>sup</sup> dolor<sub>sub</sub> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
@@ -211,7 +211,7 @@
           </div>
           <div class="grid__col--md-6">
             <div class="dropdown">
-              {% include "templates/components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown overlay', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
+              {% include "components/button.twig" with {'class' : 'btn--dropdown drawer-toggle', 'text' : 'Dropdown overlay', 'icon' : 'angle-down', 'attr' : 'aria-expanded="false"'} %}
               <div class="card card--padded drawer drawer--overlay" role="region" aria-expanded="false">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
@@ -224,11 +224,11 @@
       <section id="buttons"><!-- Buttons -->
         <h2 class="jumplink__target">Buttons</h2>
         <p>
-          {% include "templates/components/button.twig" with {'class' : 'btn--primary', 'text' : 'Primary Button'} %}
-          {% include "templates/components/button.twig" with {'class' : 'btn--secondary', 'text' : 'Secondary Button'} %}
-          {% include "templates/components/button.twig" with {'class' : 'btn--pager btn--pager-forward', 'text' : 'Previous button link', 'iconBefore' : 'angle-left'} %}
-          {% include "templates/components/button.twig" with {'class' : 'btn--pager btn--pager-back', 'text' : 'Next button link', 'iconAfter' : 'angle-right'} %}
-          {% include "templates/components/button.twig" with {'class' : 'btn--link', 'text' : 'Link button'} %}
+          {% include "components/button.twig" with {'class' : 'btn--primary', 'text' : 'Primary Button'} %}
+          {% include "components/button.twig" with {'class' : 'btn--secondary', 'text' : 'Secondary Button'} %}
+          {% include "components/button.twig" with {'class' : 'btn--pager btn--pager-forward', 'text' : 'Previous button link', 'iconBefore' : 'angle-left'} %}
+          {% include "components/button.twig" with {'class' : 'btn--pager btn--pager-back', 'text' : 'Next button link', 'iconAfter' : 'angle-right'} %}
+          {% include "components/button.twig" with {'class' : 'btn--link', 'text' : 'Link button'} %}
         </p>
       </section><!-- /Buttons -->
 
@@ -318,23 +318,23 @@
 
       <section id="popups"><!-- Popups -->
         <h2 class="jumplink__target">Popup Modals</h2>
-        {% include "templates/components/popup.twig" with {'id': 'example-popup', 'buttonText' : 'Example popup', 'title' : 'Popup', 'content' : '<p>This is an example popup</p>'} %}
+        {% include "components/popup.twig" with {'id': 'example-popup', 'buttonText' : 'Example popup', 'title' : 'Popup', 'content' : '<p>This is an example popup</p>'} %}
       </section><!-- /Popups -->
 
       <section id="alerts"><!-- Alerts -->
         <h2 class="jumplink__target">Alerts</h2>
-        {% include "templates/components/alert.twig" with {'type' : 'info', 'icon' : 'info-circle', 'content' : 'This is an info alert'} %}
-        {% include "templates/components/alert.twig" with {'type' : 'success', 'icon' : 'check-circle', 'content' : 'This is a success alert'} %}
-        {% include "templates/components/alert.twig" with {'type' : 'warning', 'icon' : 'exclamation-triangle', 'content' : 'This is a warning alert'} %}
-        {% include "templates/components/alert.twig" with {'type' : 'danger', 'icon' : 'exclamation-circle', 'content' : 'This is a danger alert'} %}
+        {% include "components/alert.twig" with {'type' : 'info', 'icon' : 'info-circle', 'content' : 'This is an info alert'} %}
+        {% include "components/alert.twig" with {'type' : 'success', 'icon' : 'check-circle', 'content' : 'This is a success alert'} %}
+        {% include "components/alert.twig" with {'type' : 'warning', 'icon' : 'exclamation-triangle', 'content' : 'This is a warning alert'} %}
+        {% include "components/alert.twig" with {'type' : 'danger', 'icon' : 'exclamation-circle', 'content' : 'This is a danger alert'} %}
       </section><!-- /Alerts -->
 
       <section id="tooltips"><!-- Tooltips -->
         <h2 class="jumplink__target">Tooltips</h2>
-        <p>Tooltip Top {% include "templates/components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-        <p>Tooltip Right {% include "templates/components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--right">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-        <p>Tooltip Bottom {% include "templates/components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
-        <p>Tooltip Left {% include "templates/components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--left">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+        <p>Tooltip Top {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--top">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+        <p>Tooltip Right {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--right">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+        <p>Tooltip Bottom {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--bottom">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
+        <p>Tooltip Left {% include "components/button.twig" with {'class' : 'btn--link tooltip-toggle', 'text' : '<span class="tooltip tooltip--left">this is an example tooltip</span>', 'icon' : 'question-circle'} %}</p>
       </section><!-- /Tooltips -->
 
       <section id="tabs"><!-- Tabs -->

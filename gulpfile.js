@@ -17,11 +17,14 @@ var destPath = process.env.DEST_PATH;
 var styleName = process.env.STYLE_NAME;
 var scriptName = process.env.SCRIPT_NAME;
 
+var templatePath = process.env.TEMPLATE_PATH;
 var stylePath = process.env.STYLE_PATH;
 var scriptPath = process.env.SCRIPT_PATH;
 var imagePath = process.env.IMAGE_PATH;
 var iconPath = process.env.ICON_PATH;
 var fontPath = process.env.FONT_PATH;
+
+gulp.task('default', ['templates', 'sass', 'scripts', 'fonts', 'images', 'watch']);
 
 gulp.task('build', ['templates', 'sass', 'scripts', 'fonts', 'images']);
 
@@ -95,7 +98,7 @@ gulp.task('fonts', function(){
 });
 
 gulp.task('templates', function() {
-  return gulp.src(srcPath + '/*.twig')
+  return gulp.src(srcPath + templatePath + '/*.twig')
     .pipe(twig())
     .pipe(rename(function(path){
       path.suffix += ".html";
