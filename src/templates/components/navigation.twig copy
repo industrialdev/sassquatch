@@ -1,0 +1,59 @@
+{% import _self as menus %}
+
+{% 
+  set items = {
+    components: { title: "Components", url: "/components.html" },
+    item1: { title: "Item", url: "#",
+      "below": {
+        item2: { title: "Item", url: "#" },
+        item3: { title: "Item", url: "#" }
+      }
+    },
+  }
+%}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      <ul class="nav__menu">
+    {% else %}
+      <ul>
+    {% endif %}
+    {% for item in items %}
+
+      {% if item.in_active_trail %}
+      <li{{ item.attributes.addClass('active-trail') }}>
+      {% else %}
+      <li{{ item.attributes }}>
+      {% endif %}
+
+        {% if menu_level == 0 and item.below %}
+          <div class="drawer-wrapper">
+            <a href="{{item.url}}" class="drawer-toggle" aria-expanded="false">{{item.title}} <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <div class="nav__submenu drawer" role="menu" aria-expanded="false">
+              <ul class="nav__menu">
+                {% for item in item.below %}
+                  <li><a href="{{item.url}}"><span>{{item.title}}</span></a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% else %}
+          <a href="{{item.url}}"><span>{{item.title}}</span></a>
+          {% if item.below %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% endif %}
+        {% endif %}
+
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+<nav class="nav {% if modifier %} nav--{{ modifier }}{% endif %}">
+  <div class="container">
+  {{ menus.menu_links(items, attributes, 0, directory) }}
+  </div>
+</nav>
