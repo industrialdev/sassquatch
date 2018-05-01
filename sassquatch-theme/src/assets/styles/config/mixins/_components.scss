@@ -5,8 +5,8 @@
 }
 
 /* Adds an animated effect to link interactions */
-@mixin link-interaction($interaction-color, $size: 1px, $direction: "center", $duration: 0.2s) {
-  display:inline-block;
+@mixin link-interaction($interaction-color, $reversed: 'false', $size: 1px, $direction: "center", $duration: 0.2s) {
+  display:inline;
   padding:2px 0;
   margin:-2px 0;
   position:relative;
@@ -16,7 +16,6 @@
     height:$size;
     position:absolute;
     bottom:0;
-    width:0;
     background:$interaction-color;
     transition:width $duration ease-in-out;
     @if $direction == "center" {
@@ -26,11 +25,20 @@
     @if $direction == "left" {
       left:0;
     }
+    @if $reversed == "false" {
+      width: 0;
+    } @else {
+      width: 100%;
+    }
   }
   &:hover,
   &:focus{
     &:after{
-      width:100%;
+      @if $reversed == "false" {
+        width: 100%;
+      } @else {
+        width: 0;
+      }
     }
   }
 }

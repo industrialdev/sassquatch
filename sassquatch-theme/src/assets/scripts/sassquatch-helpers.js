@@ -51,13 +51,13 @@ window.addEventListener('hashchange', function(event) {
       word_array = text.html().split(/\s+/);
       last_word = word_array.pop();
       first_part = word_array.join(' ');
-      text.html([first_part, ' <span class="no-break">', last_word, '<i class="fa fa-' + icon + '" aria-hidden="true"></i></span>'].join(''));
+      text.html([first_part, ' <span class="no-break">', last_word, '<i class="' + icon + '" aria-hidden="true"></i></span>'].join(''));
     }else{
       var icon = $(this).attr('data-attach-icon-before');
       word_array = text.html().split(/\s+/);
       first_word = word_array.shift();
       first_part = word_array.join(' ');
-      text.html([' <span class="no-break"><i class="fa fa-' + icon + '" aria-hidden="true"></i>', first_word, '</span> ', first_part].join(''));
+      text.html([' <span class="no-break"><i class="' + icon + '" aria-hidden="true"></i>', first_word, '</span> ', first_part].join(''));
     }
 
   });
