@@ -8,22 +8,22 @@ import {
   Switch
 } from 'react-router-dom'
 
-import App from './components/App/App';
-import NotFound from './components/App/NotFound';
-import Home from './components/Home/Home';
-import HelloWorld from './components/HelloWorld/HelloWorld';
+import Default from './Layouts/Default';
+import NotFound from './Pages/NotFound';
+import Home from './Pages/Home';
+import Login from './Pages/Login';
 
 // Load stylesheet from theme folder
 import '../../../sassquatch-theme/src/assets/styles/sassquatch.scss';
 
 render((
   <Router>
-    <App>
+    <Default>
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/helloworld" component={HelloWorld}/>
+        <Route path="/login" component={Login}/>
         <Route component={NotFound}/>
       </Switch>
-    </App>
+    </Default>
   </Router>
 ), document.getElementById('app'));
