@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom'
 
 import Default from './Layouts/Default';
+import HeadLess from './Layouts/HeadLess';
 import NotFound from './Pages/NotFound';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
@@ -18,12 +19,9 @@ import '../../../sassquatch-theme/src/assets/styles/sassquatch.scss';
 
 render((
   <Router>
-    <Default>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/login" component={Login}/>
-        <Route component={NotFound}/>
-      </Switch>
-    </Default>
+    <Switch>
+      <Route exact path="/" render={() => <Default><Home /></Default>}/>
+      <Route path="/login" render={() => <HeadLess><Login /></HeadLess>}/>
+    </Switch>
   </Router>
 ), document.getElementById('app'));

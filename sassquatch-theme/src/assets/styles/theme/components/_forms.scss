@@ -16,6 +16,7 @@
     margin:0;
     max-width:100%;
     text-align:left;
+    border:1px solid $color-brand-2-lt;
     @include component-raised($color-brand-2-lt);
     @include set-type(16, 400, 20);
   }

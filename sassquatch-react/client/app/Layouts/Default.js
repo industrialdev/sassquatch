@@ -7,8 +7,12 @@ const Default = ({ children }) => (
   <>
     <Header />
 
-    <main>
-      {children}
+    <main id="main-content">
+    	<section id="page-content">
+	    	<div className="container">
+	      	{children}
+	      </div>
+      </section>
     </main>
 
     <Footer />

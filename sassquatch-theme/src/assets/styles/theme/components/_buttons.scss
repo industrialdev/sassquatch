@@ -5,6 +5,7 @@ button{
   color:$color-brand-2-dk;
   text-align:left;
   cursor:pointer;
+  border:none;
 }
 
 .btn{
@@ -15,6 +16,7 @@ button{
   appearance:none;
   text-decoration:none;
   border-radius:0;
+  border:none;
   margin-bottom:5px;
   color:$color-brand-2-dk;
   @include set-type(14, 700, 20);
@@ -28,7 +30,7 @@ button{
     color:$color-lt;
     &:hover,
     &:focus{
-      background:$color-brand-1;
+      background:$color-lt;
       color:$color-brand-1-dk;
     }
   }

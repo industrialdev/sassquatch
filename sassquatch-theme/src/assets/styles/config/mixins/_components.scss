@@ -1,7 +1,6 @@
 /* Adds depth to the element */
 @mixin component-raised($color) {
   box-shadow:2px 2px 5px $color;
-  border:1px solid $color;
 }
 
 /* Adds an animated effect to link interactions */
