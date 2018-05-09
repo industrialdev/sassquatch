@@ -2,13 +2,10 @@ body{
   background:$color-neutral-lt;
 }
 
-
 .brand{
-	display:flex;
-	align-items:center;
 	@include set-type(54, 400, 60);
 	&__logo{
-		display:block;
+		@include remove-link-interaction();
 	  width:100%;
 	  max-width:300px;
 	  img{
@@ -22,23 +19,5 @@ body{
 	  		max-width:150px;
 	  	}
 	  }
-	}
-	&__text{
-		font-family:$font-brand-family;
-  	font-weight:400;
-	}
-}
-
-.content{
-	&--fixed{
-		padding:15px;
-		position:fixed;
-		top:50%;
-		left:50%;
-		transform:translate(-50%, -50%);
-		width:1200px;
-		max-width:100%;
-		max-height:100%;
-		overflow-y:auto;
 	}
 }

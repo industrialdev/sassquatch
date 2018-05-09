@@ -4,8 +4,14 @@
   &__group{
     margin-bottom:25px;
   }
+  &__label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:600;
+  }
   &__input{
     width:100%;
+    max-width:100%;
     appearance:none;
     border:none;
     border-radius:0;
@@ -14,16 +20,13 @@
     font-family:$font-body-family;
     padding:10px;
     margin:0;
-    max-width:100%;
     text-align:left;
     border:1px solid $color-brand-2-lt;
     @include component-raised($color-brand-2-lt);
     @include set-type(16, 400, 20);
   }
-  &__label{
-    display:block;
-    margin-bottom:5px;
-    font-weight:600;
+  &__helper{
+    font-size:0.9em;
   }
   &__select-wrapper{
     position:relative;
@@ -33,11 +36,11 @@
       padding-right:30px;
       + i{
         pointer-events:none;
-      position:absolute;
-      right:10px;
-      top:50%;
-      transform:translateY(-50%);
-      color:$color-dk;
+        position:absolute;
+        right:10px;
+        top:50%;
+        transform:translateY(-50%);
+        color:$color-dk;
       }
     }
   }
@@ -46,67 +49,12 @@
     display:table;
     padding-left:25px;
     position:relative;
+    cursor:pointer;
     input{
       position:absolute;
       left:0;
-      top:5px;
-      height:1px;
-      width:1px;
-      &:checked{
-        + .form__radio-replacement-wrapper,
-        + .form__checkbox-replacement-wrapper{
-          .form__radio-replacement,
-          .form__checkbox-replacement{
-            background:$color-brand-2-dk;
-            &:before{
-              transform:translate(-50%, -50%) scale(1);
-            }
-          }
-        }
-      }
-      &:focus{
-        outline:0;
-        + .form__radio-replacement-wrapper,
-        + .form__checkbox-replacement-wrapper{
-          @include chrome-focus();
-        }
-      }
-    }
-  }
-  &__radio-replacement-wrapper,
-  &__checkbox-replacement-wrapper{
-    position:absolute;
-    left:0;
-    top:4px;
-  }
-  &__radio-replacement,
-  &__checkbox-replacement{
-    position:relative;
-    display:block;
-    height:14px;
-    width:14px;
-    border-radius:50px;
-    background:$color-lt;
-    @include component-raised($color-brand-2-lt);
-    border:1px solid $color-brand-2-dk;
-    transition:background 0.2s ease-in-out;
-    &:before{
-      content:'';
-      height:8px;
-      width:8px;
-      border-radius:50px;
-      background:$color-lt;
-      position:absolute;
-      left:50%;
       top:50%;
-      transform:translate(-50%, -50%) scale(0);
-      transition:all 0.4s ease-in-out;
-    }
-  }
-  &__checkbox-replacement{
-    border-radius:0;
-    &:before{
-      border-radius:0;
+      transform:translateY(-50%);
     }
   }
   &--inline{
@@ -131,42 +79,6 @@
 
 textarea{
   min-height:84px;
-}
-
-.select{
-  &--styled{
- 
-  }
-}
-
-.custom-select{
-  &__list{
-    @include component-raised($color-brand-2-lt);
-    border-top:none;
-    background:$color-lt;
-    list-style:none;
-    padding:0;
-    position:relative;
-    z-index:2;
-  }
-  &__option{
-    button{
-      border:none;
-      padding:5px 10px;
-      width:100%;
-      background:transparent;
-    }
-    &:first-of-type{
-      button{
-        padding-top:10px;
-      }
-    }
-    &:last-of-type{
-      button{
-        padding-bottom:10px;
-      }
-    }
-  }
 }
 
 

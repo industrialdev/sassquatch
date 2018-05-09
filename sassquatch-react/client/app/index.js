@@ -12,7 +12,7 @@ import Default from './Layouts/Default';
 import HeadLess from './Layouts/HeadLess';
 import NotFound from './Pages/NotFound';
 import Home from './Pages/Home';
-import Login from './Pages/Login';
+import Counter from './Pages/Counter';
 
 // Load stylesheet from theme folder
 import '../../../sassquatch-theme/src/assets/styles/sassquatch.scss';
@@ -21,7 +21,7 @@ render((
   <Router>
     <Switch>
       <Route exact path="/" render={() => <Default><Home /></Default>}/>
-      <Route path="/login" render={() => <HeadLess><Login /></HeadLess>}/>
+      <Route exact path="/counter" render={() => <Default><Counter /></Default>}/>
     </Switch>
   </Router>
 ), document.getElementById('app'));

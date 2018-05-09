@@ -16,38 +16,6 @@
   &:last-of-type{
     margin-bottom:0;
   }
-  &__col{
-    &--padded{
-      padding:60px;
-    }
-    &--padded-top{
-      padding-top:60px;
-    }
-    &--padded-bottom{
-      padding-bottom:60px;
-    }
-    &--padded-right{
-      padding-right:60px;
-    }
-    &--padded-left{
-      padding-left:60px;
-    }
-    &--bordered{
-      border:1px solid $color-brand-2-lt;
-    }
-    &--bordered-top{
-      border-top:1px solid $color-brand-2-lt
-    }
-    &--bordered-bottom{
-      border-bottom:1px solid $color-brand-2-lt;
-    }
-    &--bordered-right{
-      border-right:1px solid $color-brand-2-lt;
-    }
-    &--bordered-left{
-      border-left:1px solid $color-brand-2-lt;
-    }
-  }
   @for $i from 1 through $columns{
     &__col--#{$i}{
       width: (($i / $columns) * 100%);
@@ -59,14 +27,6 @@
     }
     &__col--offset-left-#{$i}{
       margin-left:-(($i / $columns) * 100%);
-    }
-  }
-  &--flush{
-    margin:0;
-    margin-bottom:0;
-    *[class*="grid__col"]{
-      padding:0;
-      margin-bottom:0;
     }
   }
   &--flex{
@@ -85,36 +45,6 @@
         .grid__col{
           margin-bottom:0;
         }
-      }
-      &__col--padded-top-#{nth($grid-prefix, $z)}{
-        padding-top:60px;
-      }
-      &__col--padded-bottom-#{nth($grid-prefix, $z)}{
-        padding-bottom:60px;
-      }
-      &__col--padded-right-#{nth($grid-prefix, $z)}{
-        padding-right:60px;
-      }
-      &__col--padded-left-#{nth($grid-prefix, $z)}{
-        padding-left:60px;
-      }
-      &__col--padded-#{nth($grid-prefix, $z)}{
-        padding:60px;
-      }
-      &__col--bordered-top-#{nth($grid-prefix, $z)}{
-        border-top:1px solid $color-brand-2-lt;
-      }
-      &__col--bordered-bottom-#{nth($grid-prefix, $z)}{
-        border-bottom:1px solid $color-brand-2-lt;
-      }
-      &__col--bordered-right-#{nth($grid-prefix, $z)}{
-        border-right:1px solid $color-brand-2-lt;
-      }
-      &__col--bordered-left-#{nth($grid-prefix, $z)}{
-        border-left:1px solid $color-brand-2-lt;
-      }
-      &__col--bordered-#{nth($grid-prefix, $z)}{
-        border:1px solid $color-brand-2-lt;
       }
       @for $i from 1 through $columns{
         &__col--#{nth($grid-prefix, $z)}-#{$i}{

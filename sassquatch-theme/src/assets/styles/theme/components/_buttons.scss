@@ -17,9 +17,10 @@ button{
   text-decoration:none;
   border-radius:0;
   border:none;
+  margin-right:5px;
   margin-bottom:5px;
   color:$color-brand-2-dk;
-  @include set-type(14, 700, 20);
+  @include set-type(16, 700, 22);
   @include component-raised($color-brand-2-lt);
   &:hover,
   &:focus{
@@ -43,6 +44,14 @@ button{
       color:$color-brand-2-dk;
     }
   }
+  &--sm{
+    padding:5px 15px;
+    @include set-type(14, 700, 20);
+  }
+  &--lg{
+    padding:15px 30px;
+    @include set-type(18, 700, 24);
+  }
   &--link{
     background:transparent;
     text-decoration:none;
@@ -63,14 +72,6 @@ button{
       top:50%;
       transform:translate(0, -50%);
       transition:transform 0.1s ease-in-out; 
-    }
-    &:hover,
-    &:focus{
-      i{
-        animation-name: hover-button;
-        animation-duration: 1s;
-        transform:translate(0, -50%);
-      }
     }
     &-forward{
       padding-left: 30px;
@@ -101,6 +102,7 @@ button{
     text-align:left;
     padding:10px 15px;
     background:$color-lt;
+    border:1px solid $color-brand-2-lt;
     position:relative;
     margin-bottom:0;
   }

@@ -42,6 +42,15 @@
   }
 }
 
+@mixin remove-link-interaction(){
+  display:block;
+  padding:0;
+  margin:0;
+  &:after{
+    display:none;
+  }
+}
+
 /* Styles element as a CSS triangle */
 @mixin triangle($size, $color, $direction: "down") {
   content:'';

@@ -16,10 +16,6 @@
 @import "config/variables/typography";
 @import "config/variables/structure";
 
-/* ANIMATIONS
-------------------------------------------------------------------------------*/
-@import "theme/animations/animations";
-
 /* MIXINS
 ------------------------------------------------------------------------------*/
 @import "config/mixins/accessibility";
@@ -59,7 +55,7 @@
 @import "theme/components/popups";
 @import "theme/components/alerts";
 @import "theme/components/tabs";
-@import "theme/components/custom-select";
+@import "theme/components/status";
 
 /* THEME HELPERS
 ------------------------------------------------------------------------------*/

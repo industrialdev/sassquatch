@@ -22,12 +22,12 @@ body{
   
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6{
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6{
   font-family:$font-display-family;
   margin-bottom: 20px;
   margin-top:15px;
@@ -37,37 +37,37 @@ h6{
 }
 
 *{
-  + h1,
-  + h2,
-  + h3,
-  + h4,
-  + h5,
-  + h6{
+  + h1, + .h1,
+  + h2, + .h2,
+  + h3, + .h3,
+  + h4, + .h4,
+  + h5, + .h5,
+  + h6, + .h6{
     margin-top:45px;
   }
 }
 
-h1{
+h1, .h1{
   @include set-type(32, 700, 38);
 }
 
-h2{
+h2, .h2{
   @include set-type(28, 600, 34);
 }
 
-h3{
+h3, .h3{
   @include set-type(24, 600, 28);
 }
 
-h4{
+h4, .h4{
   @include set-type(20, 600, 24);
 }
 
-h5{
+h5, .h5{
   @include set-type(18, 600, 22);
 }
 
-h6{
+h6, .h6{
   @include set-type(16, 600, 20);
 }
 
@@ -77,10 +77,7 @@ p{
 
 a{
   color:$color-link;
-  &:hover,
-  &:focus{
-    text-decoration:none;
-  }
+  @include link-interaction($color-link, 'true');
 }
 
 a, 
@@ -91,6 +88,15 @@ img{
 img{
   &:only-child{
     display:block;
+  }
+}
+
+figure{
+  img{
+    
+  }
+  figcaption{
+
   }
 }
 
@@ -120,7 +126,7 @@ sub{
 }
 
 ul{
-  list-style:initial;
+  list-style:disc;
 }
 
 ol{
