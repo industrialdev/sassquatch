@@ -78,6 +78,11 @@ p{
 a{
   color:$color-link;
   @include link-interaction($color-link, 'true');
+  &.btn{
+    &:after{
+      display:none;
+    }
+  }
 }
 
 a, 

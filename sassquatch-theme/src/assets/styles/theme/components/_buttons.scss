@@ -19,13 +19,10 @@ button{
   border:none;
   margin-right:5px;
   margin-bottom:5px;
+  background:$color-lt;
   color:$color-brand-2-dk;
   @include set-type(16, 700, 22);
   @include component-raised($color-brand-2-lt);
-  &:hover,
-  &:focus{
-    background:$color-brand-2-lt;
-  }
   &--primary{
     background:$color-brand-1-dk;
     color:$color-lt;
