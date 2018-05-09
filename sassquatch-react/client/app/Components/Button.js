@@ -42,8 +42,13 @@ class Button extends Component {
 			'btn--lg': this.props.size === 'large' || this.props.size === 'lg',
 		}, this.props.className);
 
+		const elementProps = {
+			to: !this.props.link ? this.props.path : null,
+			href: !this.props.path ? this.props.link : null
+		}
+
     return (
-      <Tag {...(!this.props.link ? {to: this.props.path} : {})} {...(!this.props.path ? {href: this.props.link} : {})} className={btnClasses} onClick={this.props.onClick}>{Parser(buttonText)}</Tag>
+      <Tag {...elementProps} className={btnClasses} onClick={this.props.onClick}>{Parser(buttonText)}</Tag>
     );
   }
 
