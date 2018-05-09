@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Parser from 'html-react-parser';
 import Icon from './Icon';
 
 class Button extends Component {
