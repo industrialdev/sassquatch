@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Parser from 'html-react-parser';
+import Icon from './Icon';
 
 class Button extends Component {
   
@@ -11,27 +12,31 @@ class Button extends Component {
 
 		let Tag = 'button';
 
-		// Uses the Link component if the button has a link property
+		// Uses the Link component if the button has a path property
 		if(this.props.path && !this.props.link){
 			Tag = Link;
 		}
-
+		// Uses a basic anchor if the button has a link property
 		if(this.props.link && !this.props.path){
 			Tag = 'a';
 		}
 
-		let buttonText = this.props.children;
+		let buttonText = this.props.children.trim().split(' ');
 
 		// Attaches icons to the first/last word of the text so that they do not wrap independently.
 		if(this.props.iconBefore || this.props.iconAfter){
-			buttonText = this.props.children.trim().split(' ');
 			if(this.props.iconBefore){
+				const iconBefore = (
+					<Icon style={this.props.iconStyle} icon={this.props.iconBefore} />
+				);
 				buttonText[0] = '<span class="text--no-break"><i class="icon--before ' + this.props.iconBefore + '" aria-hidden="true"></i>' + buttonText[0] + '</span>';
 			}
 			if(this.props.iconAfter){
-				buttonText[buttonText.length - 1] = '<span class="text--no-break">' + buttonText[buttonText.length - 1] + '<i class="icon--after ' + this.props.iconAfter + '" aria-hidden="true"></i></span>';
+				const iconAfter = (
+					<Icon style={this.props.iconStyle} icon={this.props.iconAfter} />
+				)
+				buttonText[buttonText.length - 1] = '<span class="text--no-break">' + buttonText[buttonText.length - 1]  + iconAfter + '</span>';
 			}
-			buttonText = buttonText.join(' ');
 		}
 
 		let btnClasses = classNames({
@@ -42,13 +47,14 @@ class Button extends Component {
 			'btn--lg': this.props.size === 'large' || this.props.size === 'lg',
 		}, this.props.className);
 
+		// Only one of (to, href) can be present at a time - if both are included on the component neither will appear and the tag will default to a button.
 		const elementProps = {
 			to: !this.props.link ? this.props.path : null,
 			href: !this.props.path ? this.props.link : null
 		}
 
     return (
-      <Tag {...elementProps} className={btnClasses} onClick={this.props.onClick}>{Parser(buttonText)}</Tag>
+      <Tag {...elementProps} className={btnClasses} onClick={this.props.onClick}>{buttonText}</Tag>
     );
   }
 
@@ -62,8 +68,9 @@ Button.propTypes = {
 	link: PropTypes.string,
 	children: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
+	iconStyle: PropTypes.oneOf(['light', 'regular', 'solid']),
 	iconBefore: PropTypes.string,
-	iconAfter: PropTypes.string
+	iconAfter: PropTypes.string,
 };
 
 export default Button;
