@@ -12,8 +12,12 @@ class Button extends Component {
 		let Tag = 'button';
 
 		// Uses the Link component if the button has a link property
-		if(this.props.link){
+		if(this.props.path && !this.props.link){
 			Tag = Link;
+		}
+
+		if(this.props.link && !this.props.path){
+			Tag = 'a';
 		}
 
 		let buttonText = this.props.children;
@@ -39,7 +43,7 @@ class Button extends Component {
 		}, this.props.className);
 
     return (
-      <Tag to={this.props.link} className={btnClasses} onClick={this.props.onClick}>{Parser(buttonText)}</Tag>
+      <Tag {...(!this.props.link ? {to: this.props.path} : {})} {...(!this.props.path ? {href: this.props.link} : {})} className={btnClasses} onClick={this.props.onClick}>{Parser(buttonText)}</Tag>
     );
   }
 
@@ -49,6 +53,7 @@ Button.propTypes = {
 	className: PropTypes.string,
 	type: PropTypes.oneOf(['primary', 'secondary']),
 	size: PropTypes.oneOf(['sm', 'small', 'lg', 'large']),
+	path: PropTypes.string,
 	link: PropTypes.string,
 	children: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
