@@ -8,13 +8,11 @@
   @include component-raised($color-brand-2-lt);
   border-left:8px solid;
   font-weight:600;
-  &--info{
-    border-color:$color-lt $color-lt $color-lt $color-brand-2-dk;
-    background:$color-lt;
+  border-color:$color-lt $color-lt $color-lt $color-brand-2-dk;
+  background:$color-lt;
+  color:$color-brand-2-dk;
+  i{
     color:$color-brand-2-dk;
-    i{
-      color:$color-brand-2-dk;
-    }
   }
   &--success{
     border-color:$color-success-lt $color-success-lt $color-success-lt $color-success-dk;
