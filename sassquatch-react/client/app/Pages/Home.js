@@ -11,15 +11,15 @@ class Home extends Component {
     return (
       <>
         <p>
-          <Button size="large" onClick={this.buttonHandleClick.bind(this)}>Large Button</Button>
+          <Button btnSize="large" onClick={this.buttonHandleClick.bind(this)}>Large Button</Button>
           <Button onClick={this.buttonHandleClick.bind(this)}>Default Button</Button>
-          <Button size="small" onClick={this.buttonHandleClick.bind(this)}>Small Button</Button>
+          <Button btnSize="small" onClick={this.buttonHandleClick.bind(this)}>Small Button</Button>
         </p>
         <p>
-          <Button path="/counter">Internally Linked button</Button>
-          <Button link="https://industrialagency.ca">Externally Linked button</Button>
-          <Button type="primary" onClick={this.buttonHandleClick.bind(this)}>Primary Button</Button>
-          <Button type="secondary" onClick={this.buttonHandleClick.bind(this)}>Secondary Button</Button>
+          <Button btnPath="/counter">Internally Linked button</Button>
+          <Button btnLink="https://industrialagency.ca">Externally Linked button</Button>
+          <Button btnType="primary" onClick={this.buttonHandleClick.bind(this)}>Primary Button</Button>
+          <Button btnType="secondary" onClick={this.buttonHandleClick.bind(this)}>Secondary Button</Button>
           <Button iconBefore="info-circle">Button with icon before</Button>
           <Button iconAfter="info-circle" iconStyle="solid">Button with icon after</Button>
           <Button iconBefore="info-circle" iconAfter="info-circle" iconStyle="light">Button with icon before and after</Button>

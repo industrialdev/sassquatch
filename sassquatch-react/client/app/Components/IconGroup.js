@@ -12,7 +12,6 @@ export default function IconGroup(props) {
     noBreak
   } = props;
 
-  let element = null;
   let beforeElement = Boolean(iconBefore) && <Icon iconName={iconBefore} iconStyle={iconStyle} before />;
   let afterElement = Boolean(iconAfter) && <Icon iconName={iconAfter} iconStyle={iconStyle} after />;
   let mainElement = children;
@@ -66,9 +65,14 @@ export default function IconGroup(props) {
 }
 
 IconGroup.defaultProps = {
+  iconStyle: "regular",
   noBreak: true
 }
 
 IconGroup.propTypes = {
+  children: PropTypes.element.isRequired,
+  iconBefore: PropTypes.string,
+  iconAfter: PropTypes.string,
+  iconStyle: PropTypes.string,
   noBreak: PropTypes.bool
 }
