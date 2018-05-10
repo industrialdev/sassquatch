@@ -11,10 +11,9 @@ class Icon extends Component {
 			far: this.props.iconStyle != 'solid' && this.props.iconStyle != 'light',
 			fas: this.props.iconStyle === 'solid',
 			fal: this.props.iconStyle === 'light',
-			[`fa-${this.props.iconName}`]: true,
 			'icon--before': this.props.before,
 			'icon--after': this.props.after
-		}, this.props.className);
+		}, [`fa-${this.props.iconName}`], this.props.className);
 
     return (
 			<i className={iconClasses} aria-hidden="true"></i>
