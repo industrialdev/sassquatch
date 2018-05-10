@@ -17,8 +17,8 @@ class Icon extends Component {
 
 		// Only one of (to, href) can be present at a time - if both are included on the component neither will appear and the tag will default to a button.
 		const elementProps = {
-			'aria-hidden': !this.props.iconLabel ? true : null,
-			'aria-label': this.props.iconLabel
+			'aria-hidden': !this.props.label ? true : null,
+			'aria-label': this.props.label
 		}
 
     return (
@@ -38,7 +38,7 @@ Icon.propTypes = {
 	className: PropTypes.string,
 	iconStyle: PropTypes.oneOf(['light', 'regular', 'solid']),
 	iconName: PropTypes.string.isRequired,
-	iconLabel: PropTypes.string
+	label: PropTypes.string
 };
 
 export default Icon;

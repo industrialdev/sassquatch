@@ -17,16 +17,17 @@ class Home extends Component {
           <Button btnSize="small" onClick={this.buttonHandleClick.bind(this)}>Small Button</Button>
         </p>
         <p>
-          <Button btnPath="/counter">Internally Linked button</Button>
-          <Button btnLink="https://industrialagency.ca">Externally Linked button</Button>
+          <Button path="/counter">Internally Linked button</Button>
+          <Button link="https://industrialagency.ca">Externally Linked button</Button>
           <Button btnStyle="primary" onClick={this.buttonHandleClick.bind(this)}>Primary Button</Button>
           <Button btnStyle="secondary" onClick={this.buttonHandleClick.bind(this)}>Secondary Button</Button>
           <Button iconBefore="info-circle">Button with icon before</Button>
           <Button iconAfter="info-circle" iconStyle="solid">Button with icon after</Button>
-          <Button iconBefore="info-circle" iconAfter="info-circle" iconStyle="light" disabled>Button with icon before and after</Button>
+          <Button iconBefore="info-circle" iconAfter="info-circle" Style="light" disabled>Button with icon before and after</Button>
         </p>
         <p>
-          <Icon iconName="info-circle" iconLabel="this is a test" />
+          <Icon iconName="info-circle" /> This icon is hidden from screen readers<br/>
+          <Icon iconName="info-circle" label="this is a test" /> This icon has a label which is read by screen readers
         </p>
       </>
     );

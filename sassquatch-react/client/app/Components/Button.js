@@ -13,11 +13,11 @@ class Button extends Component {
     let children = this.props.children;
 
 		// Uses the Link component if the button has a path property
-		if(this.props.btnPath && !this.props.btnLink){
+		if(this.props.path && !this.props.link){
 			Tag = Link;
 		}
 		// Uses a basic anchor if the button has a link property
-		if(this.props.btnLink && !this.props.btnPath){
+		if(this.props.link && !this.props.path){
 			Tag = 'a';
 		}
 
@@ -39,8 +39,8 @@ class Button extends Component {
 
 		// Only one of (to, href) can be present at a time - if both are included on the component neither will appear and the tag will default to a button.
 		const elementProps = {
-			to: !this.props.btnLink ? this.props.btnPath : null,
-			href: !this.props.btnPath ? this.props.btnLink : null,
+			to: !this.props.link ? this.props.path : null,
+			href: !this.props.path ? this.props.link : null,
 			disabled: this.props.disabled
 		}
 
@@ -55,8 +55,8 @@ Button.propTypes = {
 	className: PropTypes.string,
 	btnStyle: PropTypes.oneOf(['primary', 'secondary']),
 	btnSize: PropTypes.oneOf(['sm', 'small', 'lg', 'large']),
-	btnPath: PropTypes.string,
-	btnLink: PropTypes.string,
+	path: PropTypes.string,
+	link: PropTypes.string,
 	children: PropTypes.node.isRequired,
 	onClick: PropTypes.func,
 	iconStyle: PropTypes.oneOf(['light', 'regular', 'solid']),

@@ -25,7 +25,6 @@ export default function IconGroup(props) {
     // Two words or less with both before + end icons is a special case,
     // can use noBreak as the main element.
     if (isTwoWordsOrLess && iconBefore && iconAfter) {
-      
       return (
         <Text noBreak>
           {beforeElement}
