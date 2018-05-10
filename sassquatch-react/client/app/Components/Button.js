@@ -40,7 +40,8 @@ class Button extends Component {
 		// Only one of (to, href) can be present at a time - if both are included on the component neither will appear and the tag will default to a button.
 		const elementProps = {
 			to: !this.props.btnLink ? this.props.btnPath : null,
-			href: !this.props.btnPath ? this.props.btnLink : null
+			href: !this.props.btnPath ? this.props.btnLink : null,
+			disabled: this.props.disabled
 		}
 
     return (
@@ -56,11 +57,12 @@ Button.propTypes = {
 	btnSize: PropTypes.oneOf(['sm', 'small', 'lg', 'large']),
 	btnPath: PropTypes.string,
 	btnLink: PropTypes.string,
-	children: PropTypes.element.isRequired,
+	children: PropTypes.node.isRequired,
 	onClick: PropTypes.func,
 	iconStyle: PropTypes.oneOf(['light', 'regular', 'solid']),
 	iconBefore: PropTypes.string,
 	iconAfter: PropTypes.string,
+	disabled: PropTypes.bool
 };
 
 export default Button;

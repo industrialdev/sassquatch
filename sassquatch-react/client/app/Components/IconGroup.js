@@ -70,7 +70,7 @@ IconGroup.defaultProps = {
 }
 
 IconGroup.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   iconBefore: PropTypes.string,
   iconAfter: PropTypes.string,
   iconStyle: PropTypes.string,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Button from '../Components/Button';
+import Icon from '../Components/Icon';
 
 class Home extends Component {
   buttonHandleClick(event) {
@@ -22,7 +23,10 @@ class Home extends Component {
           <Button btnStyle="secondary" onClick={this.buttonHandleClick.bind(this)}>Secondary Button</Button>
           <Button iconBefore="info-circle">Button with icon before</Button>
           <Button iconAfter="info-circle" iconStyle="solid">Button with icon after</Button>
-          <Button iconBefore="info-circle" iconAfter="info-circle" iconStyle="light">Button with icon before and after</Button>
+          <Button iconBefore="info-circle" iconAfter="info-circle" iconStyle="light" disabled>Button with icon before and after</Button>
+        </p>
+        <p>
+          <Icon iconName="info-circle" iconLabel="this is a test" />
         </p>
       </>
     );
