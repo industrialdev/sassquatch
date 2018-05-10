@@ -16,7 +16,7 @@ class Icon extends Component {
 
 Icon.propTypes = {
 	iconStyle: PropTypes.oneOf(['light', 'regular', 'solid']),
-	icon: PropTypes.string,
+	name: PropTypes.string.isRequired,
 };
 
 export default Icon;

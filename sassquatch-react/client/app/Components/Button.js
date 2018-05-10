@@ -4,12 +4,14 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from './Icon';
+import IconGroup from './IconGroup';
 
 class Button extends Component {
   
   render() {
 
-		let Tag = 'button';
+    let Tag = 'button';
+    let children = this.props.children;
 
 		// Uses the Link component if the button has a path property
 		if(this.props.path && !this.props.link){
@@ -20,24 +22,14 @@ class Button extends Component {
 			Tag = 'a';
 		}
 
-		let buttonText = this.props.children.trim().split(' ');
-
-		// Attaches icons to the first/last word of the text so that they do not wrap independently.
-		if(this.props.iconBefore || this.props.iconAfter){
-			if(this.props.iconBefore){
-				const iconBefore = (
-					<Icon style={this.props.iconStyle} icon={this.props.iconBefore} />
-				);
-				buttonText[0] = '<span class="text--no-break"><i class="icon--before ' + this.props.iconBefore + '" aria-hidden="true"></i>' + buttonText[0] + '</span>';
-			}
-			if(this.props.iconAfter){
-				const iconAfter = (
-					<Icon style={this.props.iconStyle} icon={this.props.iconAfter} />
-				)
-				buttonText[buttonText.length - 1] = '<span class="text--no-break">' + buttonText[buttonText.length - 1]  + iconAfter + '</span>';
-			}
-		}
-
+    if (this.props.iconBefore || this.props.iconAfter) {
+      children = (
+        <IconGroup iconBefore={this.props.iconBefore} iconAfter={this.props.iconAfter} iconStyle={this.props.iconStyle}>
+          {children}
+        </IconGroup>
+      );
+    }
+		
 		let btnClasses = classNames({
 			'btn': true,
 			'btn--primary': this.props.type === 'primary',
@@ -53,7 +45,7 @@ class Button extends Component {
 		}
 
     return (
-      <Tag {...elementProps} className={btnClasses} onClick={this.props.onClick}>{buttonText}</Tag>
+      <Tag {...elementProps} className={btnClasses} onClick={this.props.onClick}>{children}</Tag>
     );
   }
 
