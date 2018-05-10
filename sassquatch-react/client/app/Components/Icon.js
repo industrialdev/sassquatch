@@ -8,9 +8,9 @@ class Icon extends Component {
   render() {
 
 		let iconClasses = classNames({
-			far: this.props.iconStyle != 'solid' && this.props.iconStyle != 'light',
-			fas: this.props.iconStyle === 'solid',
 			fal: this.props.iconStyle === 'light',
+			far: this.props.iconStyle === 'regular',
+			fas: this.props.iconStyle === 'solid',
 			'icon--before': this.props.before,
 			'icon--after': this.props.after
 		}, [`fa-${this.props.iconName}`], this.props.className);
@@ -22,11 +22,15 @@ class Icon extends Component {
 
 }
 
+Icon.defaultProps = {
+	iconStyle: 'regular'
+};
+
 Icon.propTypes = {
 	before: PropTypes.boolean,
 	after: PropTypes.boolean,
 	className: PropTypes.string,
-	iconStyle: PropTypes.oneOf(['light', 'solid']),
+	iconStyle: PropTypes.oneOf(['light', 'regular', 'solid']),
 	iconName: PropTypes.string.isRequired,
 };
 
