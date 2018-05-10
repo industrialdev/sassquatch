@@ -31,8 +31,8 @@ class Button extends Component {
 		
 		let btnClasses = classNames({
 			'btn': true,
-			'btn--primary': this.props.btnType === 'primary',
-			'btn--secondary': this.props.btnType === 'secondary',
+			'btn--primary': this.props.btnStyle === 'primary',
+			'btn--secondary': this.props.btnStyle === 'secondary',
 			'btn--sm': this.props.btnSize === 'small' || this.props.btnSize === 'sm',
 			'btn--lg': this.props.btnSize === 'large' || this.props.btnSize === 'lg',
 		}, this.props.className);
@@ -52,7 +52,7 @@ class Button extends Component {
 
 Button.propTypes = {
 	className: PropTypes.string,
-	btnType: PropTypes.oneOf(['primary', 'secondary']),
+	btnStyle: PropTypes.oneOf(['primary', 'secondary']),
 	btnSize: PropTypes.oneOf(['sm', 'small', 'lg', 'large']),
 	btnPath: PropTypes.string,
 	btnLink: PropTypes.string,
