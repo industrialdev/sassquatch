@@ -13,8 +13,8 @@ export default function IconGroup(props) {
   } = props;
 
   let element = null;
-  let beforeElement = Boolean(iconBefore) && <Icon name={iconBefore} style={iconStyle} before />;
-  let afterElement = Boolean(iconAfter) && <Icon name={iconAfter} style={iconStyle} after />;
+  let beforeElement = Boolean(iconBefore) && <Icon iconName={iconBefore} iconStyle={iconStyle} before />;
+  let afterElement = Boolean(iconAfter) && <Icon iconName={iconAfter} iconStyle={iconStyle} after />;
   let mainElement = children;
 
   // If chilren is a plain string and noBreak is enabled

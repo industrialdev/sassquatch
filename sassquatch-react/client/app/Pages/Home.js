@@ -20,9 +20,9 @@ class Home extends Component {
           <Button link="https://industrialagency.ca">Externally Linked button</Button>
           <Button type="primary" onClick={this.buttonHandleClick.bind(this)}>Primary Button</Button>
           <Button type="secondary" onClick={this.buttonHandleClick.bind(this)}>Secondary Button</Button>
-          <Button iconBefore="far fa-info-circle">Button with icon before</Button>
-          <Button iconAfter="far fa-info-circle">Button with icon after</Button>
-          <Button iconBefore="far fa-info-circle" iconAfter="far fa-info-circle">Button with icon before and after</Button>
+          <Button iconBefore="info-circle">Button with icon before</Button>
+          <Button iconAfter="info-circle" iconStyle="solid">Button with icon after</Button>
+          <Button iconBefore="info-circle" iconAfter="info-circle" iconStyle="light">Button with icon before and after</Button>
         </p>
       </>
     );
