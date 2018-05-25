@@ -30,11 +30,11 @@ class Button extends Component {
     }
 		
 		let btnClasses = classNames({
-			'btn': true,
-			'btn--primary': this.props.btnStyle === 'primary',
-			'btn--secondary': this.props.btnStyle === 'secondary',
-			'btn--sm': this.props.btnSize === 'small' || this.props.btnSize === 'sm',
-			'btn--lg': this.props.btnSize === 'large' || this.props.btnSize === 'lg',
+			'button': true,
+			'button--primary': this.props.btnStyle === 'primary',
+			'button--secondary': this.props.btnStyle === 'secondary',
+			'button--small': this.props.btnSize === 'small' || this.props.btnSize === 'sm',
+			'button--large': this.props.btnSize === 'large' || this.props.btnSize === 'lg',
 		}, this.props.className);
 
 		// Only one of (to, href) can be present at a time - if both are included on the component neither will appear and the tag will default to a button.

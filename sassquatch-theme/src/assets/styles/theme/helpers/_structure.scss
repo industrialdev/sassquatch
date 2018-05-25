@@ -11,6 +11,16 @@
   }
 }
 
+.no-margin{
+  margin:0;
+  &--top{
+    margin-top:0;
+  }
+  &--bottom{
+    margin-bottom:0;
+  }
+}
+
 .full-width{
   width:100%;
 }

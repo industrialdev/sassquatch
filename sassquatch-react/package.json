@@ -11,17 +11,19 @@
   "private": true,
   "scripts": {
     "start": "webpack -p --progress --profile --colors && node server",
-    "start:dev": "node server"
+    "start:dev": "node server",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "engines": {
     "node": ">=6"
   },
   "dependencies": {
-    "@babel/core": "^7.0.0-beta.42",
-    "@babel/preset-env": "^7.0.0-beta.42",
-    "@babel/preset-react": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "@babel/preset-react": "^7.0.0-beta.44",
     "autoprefixer": "^8.2.0",
-    "babel-loader": "^8.0.0-beta.2",
+    "babel-loader": "^8.0.0-beta.0",
     "classnames": "^2.2.5",
     "connect-history-api-fallback": "^1.5.0",
     "copy-webpack-plugin": "^4.5.1",
@@ -40,6 +42,7 @@
     "react-hot-loader": "^4.0.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-transition-group": "^2.3.1",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "webpack": "^4.2.0",
@@ -48,5 +51,15 @@
     "webpack-hot-middleware": "^2.21.2",
     "webpack-merge": "^4.1.2",
     "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.44",
+    "@babel/runtime": "7.0.0-beta.44",
+    "@storybook/addon-actions": "^3.4.5",
+    "@storybook/addon-links": "^3.4.5",
+    "@storybook/addons": "^3.4.5",
+    "@storybook/react": "^3.4.5",
+    "babel-core": "^7.0.0-beta.3",
+    "babel-runtime": "^7.0.0-beta.3"
   }
 }

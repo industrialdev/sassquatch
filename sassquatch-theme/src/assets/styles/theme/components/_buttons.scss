@@ -1,18 +1,9 @@
 /* BUTTON COMPONENTS
 ---------------------------------------------------------------------------*/
-button{
-  font-size:$font-base-size + px;
-  color:$color-brand-2-dk;
-  text-align:left;
-  cursor:pointer;
-  border:none;
-}
-
-.btn{
+.button{
   padding:10px 25px;
   cursor:pointer;
   transition:all 0.2s;
-  display:inline-block;
   appearance:none;
   text-decoration:none;
   border-radius:0;
@@ -23,6 +14,10 @@ button{
   color:$color-brand-2-dk;
   @include set-type(16, 700, 22);
   @include component-raised($color-brand-2-lt);
+  &:active{
+    transform:translate(1px, 1px);
+    box-shadow:inset 0px 0px 10px $color-brand-2-lt;
+  }
   &--primary{
     background:$color-brand-1-dk;
     color:$color-lt;
@@ -41,67 +36,13 @@ button{
       color:$color-brand-2-dk;
     }
   }
-  &--sm{
+  &--small{
     padding:5px 15px;
     @include set-type(14, 700, 20);
   }
-  &--lg{
+  &--large{
     padding:15px 30px;
     @include set-type(18, 700, 24);
-  }
-  &--link{
-    background:transparent;
-    text-decoration:none;
-    border:0;
-    padding:0;
-    box-shadow:none;
-    &:hover,
-    &:focus{
-      background:transparent;
-      text-decoration:underline;
-    }
-  }
-  &--pager{
-    display: inline-block;
-    position: relative;
-    i{
-      position:absolute;
-      top:50%;
-      transform:translate(0, -50%);
-      transition:transform 0.1s ease-in-out; 
-    }
-    &-forward{
-      padding-left: 30px;
-      i{
-        left:10px;
-      }
-    }
-    &-back{
-      padding-right: 30px;
-      i{
-        right:10px;
-      }
-    }
-  }
-  &--close{
-    padding:0;
-    background:transparent;
-    box-shadow:none;
-    border:none;
-    &:hover,
-    &:focus{
-      background:transparent;
-    }
-  }
-  &--dropdown{
-    @include set-type(18, 600, 22);
-    width:100%;
-    text-align:left;
-    padding:10px 15px;
-    background:$color-lt;
-    border:1px solid $color-brand-2-lt;
-    position:relative;
-    margin-bottom:0;
   }
   &[disabled]{
     cursor:default;
