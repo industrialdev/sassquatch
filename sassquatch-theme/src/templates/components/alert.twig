@@ -1,7 +1,0 @@
-<div class="alert alert--{{ type }}">
-  {% if icon %}
-    <i class="alert__icon fa fa-{{ icon }}" aria-hidden="true"></i>
-  {% endif %}
-  {{ content }}
-  {% include "button.twig" with {'class' : 'btn--close alert__close', 'icon' : 'times', 'text' : '<span class="webaim-hidden">Dismiss alert</span>'} %}
-</div>
