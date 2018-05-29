@@ -10,9 +10,9 @@ class Button extends Component {
   
   render(props) {
 
-  	const {
-  		...otherProps
-  	} = props;
+		const {
+			...otherProps
+		} = props;
 
     let Tag = 'button';
     let children = this.props.children;
@@ -55,10 +55,11 @@ class Button extends Component {
 			href: !this.props.path ? this.props.link : null,
 			disabled: this.props.disabled,
 			target: this.props.link ? '_blank' : null,
+			...otherProps
 		}
 
     return (
-      <Tag {...elementProps} {...otherProps} className={btnClasses} onClick={this.props.onClick}>{children}</Tag>
+      <Tag {...elementProps} className={btnClasses} onClick={this.props.onClick}>{children}</Tag>
     );
   }
 

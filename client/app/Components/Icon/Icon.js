@@ -35,12 +35,12 @@ Icon.defaultProps = {
 };
 
 Icon.propTypes = {
+	/** Additional class names that do not get defined by another prop */
+	className: PropTypes.string,
 	/** Sets right margin to the icon */
 	before: PropTypes.bool,
 	/** Sets left margin to the icon */
 	after: PropTypes.bool,
-	/** Additional class names that do not get defined by another prop */
-	className: PropTypes.string,
 	/** Fontawesome Pro icon style, determines the icon prefix ie: far */
 	iconStyle: PropTypes.oneOf(['light', 'regular', 'solid']),
 	/** Name of the Fontawesome icon to be used */

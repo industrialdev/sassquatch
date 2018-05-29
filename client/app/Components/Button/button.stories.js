@@ -73,7 +73,7 @@ storiesOf('Button', module)
       <Button link="http://sassquatch.ca/">Linked Button</Button>
     )
   )
-  .add('Click', 
+  .add('Clickable', 
     withInfo(`
       onClick can be used to call a custom function.
     `)(() =>

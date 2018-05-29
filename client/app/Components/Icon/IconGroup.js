@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Icon from './Icon';
 import Text from '../Text/Text';
 import PropTypes from 'prop-types';
@@ -56,11 +56,11 @@ export default function IconGroup(props) {
   }
 
   return (
-    <Fragment>
+    <React.Fragment>
       {beforeElement}
       {mainElement}
       {afterElement}
-    </Fragment>
+    </React.Fragment>
   );
 }
 
