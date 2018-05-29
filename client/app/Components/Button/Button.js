@@ -10,7 +10,7 @@ class Button extends Component {
   
   render(props) {
 
-  	const{
+  	const {
   		...otherProps
   	} = props;
 

@@ -44,12 +44,11 @@
 
 /* THEME COMPONENTS
 ------------------------------------------------------------------------------*/
-$components-path: "../../client/app/Components/";
-
 @import "../../client/app/Components/Button/button";
 @import "../../client/app/Components/Dropdown/dropdown";
 @import "../../client/app/Components/Alert/alert";
 @import "../../client/app/Components/Icon/icon";
+@import "../../client/app/Components/Text/text";
 @import "components/banners";
 @import "components/cards";
 @import "components/tooltips";

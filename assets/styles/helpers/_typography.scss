@@ -1,33 +1,5 @@
 /* TYPOGRAPHY HELPERS
 ---------------------------------------------------------------------------*/
-.text{
-  &--centered{
-    text-align:center;
-  }
-  &--right{
-    text-align:right;
-  }
-  &--left{
-    text-align:left;
-  }
-  &--italic{
-    font-style:italic;
-  }
-  &--caps{
-    text-transform:uppercase;
-  }
-  &--no-break{
-    white-space:nowrap;
-  }
-  &--ellipsis{
-    display:block;
-    white-space:nowrap;
-    max-width:100%;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
-}
-
 *[data-attach-icon-after]{
   i{
     margin-left:5px;
