@@ -8,7 +8,11 @@ import IconGroup from '../Icon/IconGroup';
 /** Button component description */
 class Button extends Component {
   
-  render() {
+  render(props) {
+
+  	const{
+  		...otherProps
+  	} = props;
 
     let Tag = 'button';
     let children = this.props.children;
@@ -30,10 +34,10 @@ class Button extends Component {
 		if(this.props.link && !this.props.path){
 			Tag = 'a';
 			children = (
-				<>
+				<React.Fragment>
 					{children}
 					<span className="webaim-hidden">Opens in a new window</span>
-				</>
+				</React.Fragment>
 			);
 		}
 		
@@ -50,12 +54,11 @@ class Button extends Component {
 			to: !this.props.link ? this.props.path : null,
 			href: !this.props.path ? this.props.link : null,
 			disabled: this.props.disabled,
-			'aria-expanded': this.props.ariaExpanded,
 			target: this.props.link ? '_blank' : null,
 		}
 
     return (
-      <Tag {...elementProps} className={btnClasses} onClick={this.props.onClick}>{children}</Tag>
+      <Tag {...elementProps} {...otherProps} className={btnClasses} onClick={this.props.onClick}>{children}</Tag>
     );
   }
 
@@ -84,8 +87,6 @@ Button.propTypes = {
 	iconAfter: PropTypes.string,
 	/** Controls the disabled state of the button */
 	disabled: PropTypes.bool,
-	/** For use in combination with the Dropdown component to tell the screen reader the opened/closed state of the dropdown */
-	ariaExpanded: PropTypes.bool,
 };
 
 export default Button;

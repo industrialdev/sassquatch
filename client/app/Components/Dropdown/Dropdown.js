@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Button from '../Button/Button';
 
+/** Dropdown component description */
 class Dropdown extends Component {
 	constructor(props) {
 		super(props);
@@ -30,7 +31,7 @@ class Dropdown extends Component {
 		});
 
 		const btnProps = {
-			'ariaExpanded': this.state.open,
+			'aria-expanded': this.state.open,
 		}
 
 		const contentProps = {
@@ -48,7 +49,9 @@ class Dropdown extends Component {
 }
 
 Dropdown.propTypes = {
+	/** The text you that will appear in the toggle button */
 	btnLabel: PropTypes.string.isRequired,
+	/** What will appear in the content of the dropdown */
 	children: PropTypes.node.isRequired,
 };
 

@@ -1,53 +1,68 @@
 import React from 'react';
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { setDefaults, withInfo } from '@storybook/addon-info';
+import { storiesOf } from '@storybook/react'; 
+import { withInfo } from '@storybook/addon-info';
 
 import Icon from './Icon';
 import IconGroup from './IconGroup';
 
-setDefaults({
-  header: false,
-  inline: true,
-  maxPropsIntoLine: 10,
-  styles: {},
-});
-
 storiesOf('Icon', module)
-  .add('Usage',
+  .add('Regular',
     withInfo(`
-      The icon component uses the Fontawesome library to display an icon. An icon reference guide can be found [here](https://fontawesome.com/icons?d=gallery).
+      The Icon component uses the Fontawesome Pro library and can be set by using the hyphen separated name of the icon.
     `)(() =>
-      <Icon iconName="info-circle" iconStyle="solid" label="Label for screen readers"  />
+      <Icon iconName="info-circle" />
     )
   )
-	.add('Examples', () => (
-    <>
-      <p><Icon iconName="info-circle" label="Label for screen readers"  />This icon has a label that will be read to a screen reader.</p>
-      <p><Icon iconName="info-circle" />This icon is hidden to screen readers.</p>
-      <p><Icon iconName="info-circle" iconStyle="regular" />Regular Icon Style.</p>
-      <p><Icon iconName="info-circle" iconStyle="light" />Light Icon Style.</p>
-      <p><Icon iconName="info-circle" iconStyle="solid" />Solid Icon Style.</p>
-      <p><Icon iconName="info-circle" before/>Icon with 'Before' prop.</p>
-      <p>Icon with 'After' prop.<Icon iconName="info-circle" after/></p>
-      <p> Icon with both 'Before'<Icon iconName="plus-circle" label="and" before after/>'After' props.</p>
-    </>
-  ));
-
-storiesOf('Icon Group', module)
-  .add('Usage',
+  .add('Light',
     withInfo(`
-      The icon group component is used to attach multiple icons to a single grouping of elements. If the contents of IconGroup are a string then the icons will be attached to the first and/or last word.
+      Fontawesome Pro provides 3 different styles of each icon 'Regular', 'Light', and 'Solid'.
+    `)(() =>
+      <Icon iconName="info-circle" iconStyle="light" />
+    )
+  )
+  .add('Solid',
+    withInfo(`
+      Fontawesome Pro provides 3 different styles of each icon 'Regular', 'Light', and 'Solid'.
+    `)(() =>
+      <Icon iconName="info-circle" iconStyle="solid" />
+    )
+  )
+  .add('With Margin Right',
+    withInfo(`
+      If you are not using an Icon Group you can set margin on the Icon to separate it from accompanying text. 'Before' will apply margin on the right side of the icon.
+    `)(() =>
+      <div>
+        <Icon iconName="info-circle" before />Icon before text.
+      </div>
+    )
+  )
+  .add('With Margin Left',
+    withInfo(`
+      If you are not using an Icon Group you can set margin on the Icon to separate it from accompanying text. 'After' will apply margin on the left side of the icon.
+    `)(() =>
+      <div>
+        Icon after text.<Icon iconName="info-circle" after />
+      </div>
+    )
+  )
+  .add('With Accessible Label',
+    withInfo(`
+      If your icon is not accompanied by another element which gives the icon context you should provide a label. The 'Label' property will provide a string which is only read by a screen reader.
+    `)(() =>
+      <div>
+        <Icon iconName="info-circle" label="This text will be read by a screen reader." />
+      </div>
+    )
+  )
+  .add('Icon Group',
+    withInfo(`
+      The Icon Group is used to attach multiple icons to a single grouping of elements. If the contents of IconGroup are a string then the icons will be attached to the first and/or last word.
     `)(() =>
       <IconGroup iconBefore="info-circle" iconAfter="info-circle" iconStyle="regular">
         Example Icon Group
       </IconGroup>
     )
-  )
-  .add('Examples', () => (
-    <>
-
-    </>
-  ));
+  );
+  
 

@@ -14,6 +14,7 @@ class Alert extends Component {
 			'alert--warning': this.props.alertStyle === 'warning',
 			'alert--danger': this.props.alertStyle === 'danger',
 			'alert--success': this.props.alertStyle === 'success',
+			'alert--no-icon': !this.props.iconName
 		}, this.props.className);
 
 		let alertIcon = '';

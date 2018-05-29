@@ -1,51 +1,82 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { setDefaults, withInfo } from '@storybook/addon-info';
+import { withInfo } from '@storybook/addon-info';
 
 import Button from './Button';
 
-setDefaults({
-  header: false,
-  inline: true,
-  maxPropsIntoLine: 10,
-  styles: {},
-});
+function handleClick(){
+  alert('clicked');
+}
 
 storiesOf('Button', module)
-  .add('Usage',
+  .add('Default', 
     withInfo(`
-      The button component can be used for various actions such as calling a function, linking internally/externally, or controlling other components like the dropdown.
+      The Default Button style has minimal styling applied to it.
     `)(() =>
-      <Button btnSize="large" btnStyle="primary" link="http://sassquatch.ca/" iconBefore="info-circle" iconStyle="solid">Example Button</Button>
+      <Button>Default Button</Button>
     )
   )
-	.add('Examples', () => (
-    <>
-      <h2>Styles</h2>
-  		<p>
-  			<Button>Default Button</Button>
-  			<Button btnStyle="primary">Primary Button</Button>
-  			<Button btnStyle="secondary">Secondary Button</Button>
-  			<Button disabled>Disabled Button</Button>
-      </p>
-      <h2>Sizes</h2>
-      <p>
-        <Button btnSize="large">Large Button</Button>
-        <Button>Default Button</Button>
-        <Button btnSize="small">Small Button</Button>
-      </p>
-      <h2>Icons</h2>
-      <p>
-        <Button iconBefore="info-circle">Icon Before</Button>
-        <Button iconBefore="info-circle" iconAfter="info-circle">Icon Before and After</Button>
-        <Button iconAfter="info-circle">Icon After</Button>
-      </p>
-      <p>
-        <Button iconBefore="info-circle" iconStyle="regular">Regular Icon Style</Button>
-        <Button iconBefore="info-circle" iconStyle="light">Light Icon Style</Button>
-        <Button iconBefore="info-circle" iconStyle="solid">Solid Icon Style</Button>
-      </p>
-    </>
-  ));
+  .add('Primary', 
+    withInfo(`
+      The Primary Button style is styled using the primary brand color.
+    `)(() =>
+      <Button btnStyle="primary">Primary Button</Button>
+    )
+  )
+  .add('Secondary', 
+    withInfo(`
+      The Secondary Button style is styled using the secondary brand color.
+    `)(() =>
+      <Button btnStyle="secondary">Secondary Button</Button>
+    )
+  )
+  .add('Disabled', 
+    withInfo(`
+      A disabled button cannot be interacted with.
+    `)(() =>
+      <Button disabled>Disabled Button</Button>
+    )
+  )
+  .add('Large', 
+    withInfo(`
+      The Large Button size can be used to increase emphasis on the button.
+    `)(() =>
+      <Button btnSize="large">Large Button</Button>
+    )
+  )
+  .add('Small', 
+    withInfo(`
+      The Small Button size can be used to reduce emphasis on the button.
+    `)(() =>
+      <Button btnSize="small">Small Button</Button>
+    )
+  )
+  .add('With Icon Before', 
+    withInfo(`
+      An icon added before will be attached to the first word in the button so that it does not wrap on its own.
+    `)(() =>
+      <Button iconBefore="info-circle">Button With Icon Before</Button>
+    )
+  )
+  .add('With Icon After', 
+    withInfo(`
+      An icon added after will be attached to the last word in the button so that it does not wrap on its own.
+    `)(() =>
+      <Button iconAfter="info-circle">Button With Icon After</Button>
+    )
+  )
+  .add('Linked', 
+    withInfo(`
+      The Button can be linked in two different ways. Internally using the 'path' property, or externally using the 'link' property. The 'path' property uses react router to apply a link to the button.
+    `)(() =>
+      <Button link="http://sassquatch.ca/">Linked Button</Button>
+    )
+  )
+  .add('Click', 
+    withInfo(`
+      onClick can be used to call a custom function.
+    `)(() =>
+      <Button onClick={handleClick}>Button With Click Function</Button>
+    )
+  );

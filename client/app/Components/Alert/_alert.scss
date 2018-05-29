@@ -38,6 +38,9 @@
       color:$color-danger-dk;
     }
   }
+  &--no-icon{
+    padding-left:15px;
+  }
   &__icon{
     position:absolute;
     left:15px;
