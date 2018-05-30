@@ -65,7 +65,6 @@ export default function IconGroup(props) {
 }
 
 IconGroup.defaultProps = {
-  iconStyle: "regular",
   noBreak: true
 }
 
@@ -77,7 +76,7 @@ IconGroup.propTypes = {
   /** Name of the icon that will appear after the children. */
   iconAfter: PropTypes.string,
   /** Fontawesome Pro icon style, determines the icon prefix ie: far */
-  iconStyle: PropTypes.string,
+  iconStyle: PropTypes.oneOf(['light', 'regular', 'solid']),
   /** Passed to the Text component if children is a string of text. Prevents the icon from breaking to a new line on its own. */
   noBreak: PropTypes.bool
 }

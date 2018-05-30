@@ -13,6 +13,7 @@ class Icon extends Component {
 			fal: this.props.iconStyle === 'light',
 			far: this.props.iconStyle === 'regular',
 			fas: this.props.iconStyle === 'solid',
+			fa: !this.props.iconStyle,
 			'icon--before': this.props.before,
 			'icon--after': this.props.after
 		}, [`fa-${this.props.iconName}`], this.props.className);
@@ -29,10 +30,6 @@ class Icon extends Component {
   }
 
 }
-
-Icon.defaultProps = {
-	iconStyle: 'regular'
-};
 
 Icon.propTypes = {
 	/** Additional class names that do not get defined by another prop */

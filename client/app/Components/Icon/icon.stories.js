@@ -9,21 +9,21 @@ import IconGroup from './IconGroup';
 storiesOf('Icon', module)
   .add('Regular',
     withInfo(`
-      The Icon component uses the Fontawesome Pro library and can be set by using the hyphen separated name of the icon.
+      The Icon component uses the Fontawesome library and can be set by using the hyphen separated name of the icon.
     `)(() =>
-      <Icon iconName="info-circle" />
+      <Icon iconName="info-circle" iconStyle="regular" />
     )
   )
   .add('Light',
     withInfo(`
-      Fontawesome Pro provides 3 different styles of each icon 'Regular', 'Light', and 'Solid'.
+      Fontawesome Pro provides 3 different styles of each icon 'Regular', 'Light', and 'Solid'. If the free version of Fontawesome is being used the iconStyle property should be omitted.
     `)(() =>
       <Icon iconName="info-circle" iconStyle="light" />
     )
   )
   .add('Solid',
     withInfo(`
-      Fontawesome Pro provides 3 different styles of each icon 'Regular', 'Light', and 'Solid'.
+      Fontawesome Pro provides 3 different styles of each icon 'Regular', 'Light', and 'Solid'. If the free version of Fontawesome is being used the iconStyle property should be omitted.
     `)(() =>
       <Icon iconName="info-circle" iconStyle="solid" />
     )
@@ -59,7 +59,7 @@ storiesOf('Icon', module)
     withInfo(`
       The Icon Group is used to attach multiple icons to a single grouping of elements. If the contents of IconGroup are a string then the icons will be attached to the first and/or last word.
     `)(() =>
-      <IconGroup iconBefore="info-circle" iconAfter="info-circle" iconStyle="regular">
+      <IconGroup iconBefore="info-circle" iconAfter="info-circle">
         Example Icon Group
       </IconGroup>
     )
