@@ -1,6 +1,7 @@
-# Sassquatch React
+# Sassquatch
 
-This is a boilerplate project using the following technologies:
+An in development sass based component library with heavy emphasis on accessibility.
+
 - [React](https://facebook.github.io/react/) and [React Router](https://reacttraining.com/react-router/) for the frontend
 - [Express](http://expressjs.com/) and [Mongoose](http://mongoosejs.com/) for the backend
 - [Sass](http://sass-lang.com/) for styles (using the SCSS syntax)
@@ -14,7 +15,6 @@ This is a boilerplate project using the following technologies:
 ```shell
 npm install
 ```
-
 
 ## Running
 

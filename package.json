@@ -1,14 +1,21 @@
 {
-  "name": "MERN-boilerplate",
-  "version": "1.0.0",
-  "description": "MERN stack project boilerplate",
-  "author": "Eugene Cheung",
+  "name": "@industrialdev/sassquatch",
+  "version": "1.0.1",
+  "description": "An in development sass based component library with heavy emphasis on accessibility.",
+  "author": "Kevin Andrews",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/industrialdev/sassquatch/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arkon/MERN-boilerplate.git"
+    "url": "git+https://github.com/industrialdev/sassquatch.git"
   },
-  "license": "MIT",
-  "private": true,
+  "keywords": [
+    "sass",
+    "accessibility"
+  ],
+  "homepage": "https://github.com/industrialdev/sassquatch#readme",
   "scripts": {
     "start": "webpack -p --progress --profile --colors && node server",
     "start:dev": "node server",
