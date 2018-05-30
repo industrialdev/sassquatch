@@ -1,0 +1,25 @@
+{
+  "name": "@industrialdev/sassquatch",
+  "version": "1.1.0",
+  "description": "An in development sass based component library with heavy emphasis on accessibility.",
+  "author": "Kevin Andrews",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/industrialdev/sassquatch/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/industrialdev/sassquatch.git"
+  },
+  "keywords": [
+    "sass",
+    "accessibility"
+  ],
+  "homepage": "https://github.com/industrialdev/sassquatch#readme",
+  "main": "../../assets/styles/sassquatch.scss",
+  "files": [
+    "../../assets",
+    "../../assets",
+    "README.md"
+  ]
+}
