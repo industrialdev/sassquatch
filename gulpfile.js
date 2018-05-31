@@ -61,7 +61,7 @@ gulp.task('sass', function () {
     }))
     .pipe(rename(styleName + '.min.css'))
     .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
-    .pipe(gulp.dest(srcPath + 'packages/sassquatch/assets/styles'));
+    .pipe(gulp.dest(srcPath + 'packages/theme/assets/styles'));
 });
 
 // Compiles both unminified and minified JS files
@@ -112,11 +112,11 @@ gulp.task('watch', function () {
 
 // Builds the default sassquatch package directory
 gulp.task('package', function () {
-  gulp.src(srcPath + 'packages/sassquatch-react/client/app/Components/**/*.scss')
-    .pipe(gulp.dest(srcPath + 'packages/sassquatch/client/app/Components'))
+  gulp.src(srcPath + 'packages/react/client/app/Components/**/*.scss')
+    .pipe(gulp.dest(srcPath + 'packages/theme/client/app/Components'))
 
-  gulp.src(srcPath + 'packages/sassquatch-react/assets/**/*')
-    .pipe(gulp.dest(srcPath + 'packages/sassquatch/assets'))
+  gulp.src(srcPath + 'packages/react/assets/**/*')
+    .pipe(gulp.dest(srcPath + 'packages/theme/assets'))
 });
 
 // error notifications

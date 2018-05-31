@@ -1,2 +1,4 @@
 dist
 node_modules
+packages/theme/assets
+packages/theme/client
