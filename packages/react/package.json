@@ -1,5 +1,5 @@
 {
-  "name": "@industrialdev/sassquatch-react",
+  "name": "@sassquatch/react",
   "version": "1.0.0",
   "description": "An in development sass based component library with heavy emphasis on accessibility.",
   "author": "Kevin Andrews",
