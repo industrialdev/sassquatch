@@ -1,0 +1,66 @@
+/* GRID
+---------------------------------------------------------------------------*/
+*[class*="grid__col"]{
+  padding:0 ($gutter-width);
+  margin-bottom:($gutter * 2) + px;
+  width:100%;
+  &:last-of-type{
+    margin-bottom:0;
+  }
+}
+
+.grid{
+  @include clearfix();
+  margin:0 (-$gutter-width);
+  margin-bottom:($gutter * 2) + px;
+  &:last-of-type{
+    margin-bottom:0;
+  }
+  @for $i from 1 through $columns{
+    &__col--#{$i}{
+      width: (($i / $columns) * 100%);
+      float:left;
+      margin-bottom:0;
+    }
+    &__col--offset-right-#{$i}{
+      margin-left:(($i / $columns) * 100%);
+    }
+    &__col--offset-left-#{$i}{
+      margin-left:-(($i / $columns) * 100%);
+    }
+  }
+  &--flex{
+    display:flex;
+    *[class*="grid__col"]{
+      float:none;
+    }
+  }
+}
+
+@for $z from 1 through 4{
+  @media(min-width: nth($breakpoints, $z)){
+    .grid{
+      &--flex-#{nth($grid-prefix, $z)}{
+        display:flex;
+        .grid__col{
+          margin-bottom:0;
+        }
+      }
+      @for $i from 1 through $columns{
+        &__col--#{nth($grid-prefix, $z)}-#{$i}{
+          width: (($i / $columns) * 100%);
+          float:left;
+          margin-bottom:0;
+        }
+        &__col--offset-right-#{nth($grid-prefix, $z)}-#{$i}{
+          margin-left:(($i / $columns) * 100%);
+        }
+        &__col--offset-left-#{nth($grid-prefix, $z)}-#{$i}{
+          margin-left:-(($i / $columns) * 100%);
+        }
+      }
+    }
+  }
+}
+
+

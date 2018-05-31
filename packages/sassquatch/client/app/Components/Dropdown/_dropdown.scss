@@ -1,0 +1,52 @@
+/* DROPDOWN COMPONENT
+---------------------------------------------------------------------------*/
+.dropdown{
+  position:relative;
+  &__toggle{
+    position:relative;
+    padding-right:30px;
+    width:100%;
+    text-align:left;
+    margin-bottom:0;
+    i{
+      position:absolute;
+      right:15px;
+      top:50%;
+      transform:translateY(-50%);
+      transition:transform 0.2s;
+    }
+    &.open{
+      i{
+        transform:rotate(180deg) translateY(50%);
+      }
+    }
+  }
+  &__content{
+    position:relative;
+    z-index:2;
+    height:0px;
+    overflow:hidden;
+    transition:all 300ms;
+    @include component-raised($color-brand-2-lt);
+    &--small{
+      .dropdown__content-wrapper{
+        padding:15px;
+      }
+    }
+    &--large{
+      .dropdown__content-wrapper{
+        padding:15px 30px;
+      }
+    }  
+    &--overlay{
+      position:absolute;
+      width:100%;
+      z-index:10;
+    }
+  }
+  &__content-wrapper{
+    padding:15px 25px;
+    background:$color-lt;
+    border-top:1px solid $color-neutral-lt;
+  }
+}

@@ -1,0 +1,28 @@
+/* TEXT COMPONENT
+---------------------------------------------------------------------------*/
+.text{
+  &--centered{
+    display:block;
+    text-align:center;
+  }
+  &--right{
+    display:block;
+    text-align:right;
+  }
+  &--italic{
+    font-style:italic;
+  }
+  &--caps{
+    text-transform:uppercase;
+  }
+  &--no-break{
+    white-space:nowrap;
+  }
+  &--ellipsis{
+    display:block;
+    white-space:nowrap;
+    max-width:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+}

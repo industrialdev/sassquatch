@@ -1,0 +1,15 @@
+/* ACCESSIBILITY HELPERS
+---------------------------------------------------------------------------*/
+.webaim-hidden,
+.skip-link{
+  @include set-webaim-hidden();
+  z-index:1000;
+}
+
+.skip-link:focus {
+  @include set-webaim-hidden-false();
+  position:fixed;
+  left: $gutter-width;
+  top: $gutter-width;   
+  background: $color-lt;
+}

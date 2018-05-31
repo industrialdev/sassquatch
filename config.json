@@ -1,0 +1,13 @@
+{
+  "build_dir": "packages/sassquatch",
+  "vendor_files": {
+    "js": [
+      
+    ],
+    "css": [
+    ],
+    "assets": [
+      "client/app/Components/**/*.scss"
+    ]
+  }
+}

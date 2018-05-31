@@ -1,0 +1,26 @@
+/* Hide elements while remaining accessible */
+@mixin set-webaim-hidden() {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+/* Reset styles applied with the set-webaim-hidden mixin */
+@mixin set-webaim-hidden-false() {
+  position:relative;
+  left:auto;
+  top:auto;
+  width:auto;
+  height:auto;
+  overflow:visible;
+}
+
+@mixin chrome-focus() {
+  outline-color: rgb(77, 144, 254);
+  outline-offset: 0px;
+  outline-style: auto;
+  outline-width: 5px;
+}

@@ -1,0 +1,80 @@
+/* Adds depth to the element */
+@mixin component-raised($color) {
+  box-shadow:2px 2px 5px $color;
+}
+
+/* Adds an animated effect to link interactions */
+@mixin link-interaction($interaction-color, $reversed: 'false', $size: 1px, $direction: "center", $duration: 0.2s) {
+  display:inline;
+  padding:2px 0;
+  margin:-2px 0;
+  position:relative;
+  text-decoration:none;
+  &:after{
+    content:'';
+    height:$size;
+    position:absolute;
+    bottom:0;
+    background:$interaction-color;
+    transition:width $duration ease-in-out;
+    @if $direction == "center" {
+      left:50%;
+      transform:translateX(-50%);
+    }
+    @if $direction == "left" {
+      left:0;
+    }
+    @if $reversed == "false" {
+      width: 0;
+    } @else {
+      width: 100%;
+    }
+  }
+  &:hover,
+  &:focus{
+    &:after{
+      @if $reversed == "false" {
+        width: 100%;
+      } @else {
+        width: 0;
+      }
+    }
+  }
+}
+
+@mixin remove-link-interaction(){
+  display:block;
+  padding:0;
+  margin:0;
+  &:after{
+    display:none;
+  }
+}
+
+/* Styles element as a CSS triangle */
+@mixin triangle($size, $color, $direction: "down") {
+  content:'';
+  display:block;
+  width: 0; 
+  height: 0;
+  @if $direction == "up" {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
+  @if $direction == "down" {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  }
+  @if $direction == "left" {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  }
+  @if $direction == "right" {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  }
+}

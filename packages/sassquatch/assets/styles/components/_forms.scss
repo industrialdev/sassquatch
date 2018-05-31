@@ -1,0 +1,84 @@
+/* FORM COMPONENTS
+---------------------------------------------------------------------------*/
+.form{
+  &__group{
+    margin-bottom:25px;
+  }
+  &__label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:600;
+  }
+  &__input{
+    width:100%;
+    max-width:100%;
+    appearance:none;
+    border:none;
+    border-radius:0;
+    background:$color-lt;
+    color:$color-brand-2-dk;
+    font-family:$font-body-family;
+    padding:10px;
+    margin:0;
+    text-align:left;
+    border:1px solid $color-brand-2-lt;
+    @include component-raised($color-brand-2-lt);
+    @include set-type(16, 400, 20);
+  }
+  &__helper{
+    font-size:0.9em;
+  }
+  &__select-wrapper{
+    position:relative;
+    display:inline-block;
+    width:100%;
+    .form__input{
+      padding-right:30px;
+      + i{
+        pointer-events:none;
+        position:absolute;
+        right:10px;
+        top:50%;
+        transform:translateY(-50%);
+        color:$color-dk;
+      }
+    }
+  }
+  &__radio,
+  &__checkbox{
+    display:table;
+    padding-left:25px;
+    position:relative;
+    cursor:pointer;
+    input{
+      position:absolute;
+      left:0;
+      top:50%;
+      transform:translateY(-50%);
+    }
+  }
+  &--inline{
+    .form{
+      &__group,
+      &__label,
+      &__input{
+        display:inline-block;
+      }
+      &__group{
+        margin-right:30px;
+        &:last-of-type{
+          margin-right:0;
+        }
+      }
+      &__label{
+        margin-right:10px;
+      }
+    }
+  }
+}
+
+textarea{
+  min-height:84px;
+}
+
+

@@ -1,22 +1,36 @@
-# Sassquatch React
+# Sassquatch
 
 An in development sass based component library with heavy emphasis on accessibility.
 
-- [React](https://facebook.github.io/react/) and [React Router](https://reacttraining.com/react-router/) for the frontend
-- [Express](http://expressjs.com/) and [Mongoose](http://mongoosejs.com/) for the backend
-- [Sass](http://sass-lang.com/) for styles (using the SCSS syntax)
-- [Webpack](https://webpack.github.io/) for compilation
-
+This repository contains two packages. A react project that contains a library of react components, and an asset project for including assets in your projects.
+The static directory contains twig templates that can be used for testing out the library of assets.
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/en/) 6+
+### Node.js
+https://nodejs.org/en/ 6+
+
+```shell
+npm install --global gulp-cli
+```
 
 ```shell
 npm install
 ```
+or
 
-## Running
+```shell
+yarn install
+```
+
+## Commands
+
+'gulp' : the default task which will compile all assets into minified files, render the static templates as HTML, and watch the template files and assets for changes
+'gulp build' : compiles all assets into minified files and renders the static templates as HTML
+'gulp serve' : Runs a webserver at localhost:8000 using the rendered HTML and minified assets and watches for changes. When changes are made the webserver will livereload
+'gulp package' : rebuilds the sassquatch asset package to prepare it for publishing
+
+## In packages/sassquatch-react
 
 Make sure to add a `config.js` file in the `config` folder. See the example there for more details.
 
@@ -33,6 +47,9 @@ mongod
 npm run start:dev
 ```
 
-## Storybook
+### Storybook
 
 yarn run storybook
+
+
+

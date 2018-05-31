@@ -14,14 +14,11 @@ var // Package Variables
     // Environment Variables
     srcPath = process.env.SRC_PATH,
     destPath = process.env.DEST_PATH,
-    styleName = process.env.STYLE_NAME,
-    scriptName = process.env.SCRIPT_NAME,
+    destAssetPath = process.env.DEST_ASSET_PATH,
     templatePath = process.env.TEMPLATE_PATH,
-    stylePath = process.env.STYLE_PATH,
-    scriptPath = process.env.SCRIPT_PATH,
-    imagePath = process.env.IMAGE_PATH,
-    iconPath = process.env.ICON_PATH,
-    fontPath = process.env.FONT_PATH;
+    assetPath = process.env.ASSET_PATH,
+    styleName = process.env.STYLE_NAME,
+    scriptName = process.env.SCRIPT_NAME;
 
 gulp.task('default', ['templates', 'sass', 'scripts', 'fonts', 'images', 'watch']);
 
@@ -44,7 +41,7 @@ gulp.task('webserver', function() {
 
 // Compiles both unminified and minified CSS files
 gulp.task('sass', function () {
-  gulp.src(srcPath + stylePath + styleName + '.scss')
+  gulp.src(srcPath + assetPath + '/styles/' + styleName + '.scss')
     .pipe(plumber())
     .pipe(sass({
       outputStyle: 'expanded',
@@ -58,46 +55,47 @@ gulp.task('sass', function () {
     .on('error', function (err) {
       console.log(err.message);
     })
-    .pipe(gulp.dest(destPath + stylePath))
+    .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
     .pipe(sass({
       outputStyle: 'compressed'
     }))
     .pipe(rename(styleName + '.min.css'))
-    .pipe(gulp.dest(destPath + stylePath + 'min'));
+    .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
+    .pipe(gulp.dest(srcPath + 'packages/sassquatch/assets/styles'));
 });
 
 // Compiles both unminified and minified JS files
 gulp.task('scripts', function() {
-  return gulp.src(srcPath + scriptPath + '*.js')
+  return gulp.src(srcPath + assetPath + '/scripts/' + '*.js')
     .pipe(plumber())
     .pipe(concat(scriptName + '.js'))
     .on('error', onError)
-    .pipe(gulp.dest(destPath + scriptPath))
+    .pipe(gulp.dest(destPath + destAssetPath + '/scripts/'))
     .pipe(rename(scriptName + '.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(destPath + scriptPath + 'min'));
+    .pipe(gulp.dest(destPath + destAssetPath + '/scripts/' + 'min'));
 });
 
 // Minifies images to optimize load times
 gulp.task('images', function(){
-  gulp.src(srcPath + imagePath + '*')
+  gulp.src(srcPath + assetPath + '/images/' + '*')
     .pipe(imagemin())
-    .pipe(gulp.dest(destPath + imagePath))
+    .pipe(gulp.dest(destPath + destAssetPath + '/images/'))
 
-  gulp.src(srcPath + iconPath + '*')
+  gulp.src(srcPath + assetPath + '/icons/' + '*')
     .pipe(imagemin())
-    .pipe(gulp.dest(destPath + iconPath))
+    .pipe(gulp.dest(destPath + destAssetPath + '/icons/'))
 });
 
 // Duplicates fonts into destination folder
 gulp.task('fonts', function(){
-  gulp.src(srcPath + fontPath + '**/*')
-    .pipe(gulp.dest(destPath + fontPath));
+  gulp.src(srcPath + assetPath + '/fonts/' + '**/*')
+    .pipe(gulp.dest(destPath + destAssetPath + '/fonts/'));
 });
 
 // Converts twig templates to HTML
 gulp.task('templates', function() {
-  return gulp.src(srcPath + templatePath + '/*.twig')
+  gulp.src(srcPath + templatePath + '/*.twig')
     .pipe(twig())
     .pipe(rename(function(path){
       path.suffix += ".html";
@@ -107,9 +105,18 @@ gulp.task('templates', function() {
 
 // Watches files for changes and compiles on the fly
 gulp.task('watch', function () {
-  gulp.watch(srcPath + stylePath + '**/*.scss', ['sass']);
-  gulp.watch(srcPath + scriptPath + '*.js', ['scripts']);
-  gulp.watch(srcPath + '/**/*.twig', ['templates']);
+  gulp.watch(srcPath + assetPath + '/styles/' + '**/*.scss', ['sass']);
+  gulp.watch(srcPath + assetPath + '/scripts/' + '*.js', ['scripts']);
+  gulp.watch(srcPath + 'static/**/*.twig', ['templates']);
+});
+
+// Builds the default sassquatch package directory
+gulp.task('package', function () {
+  gulp.src(srcPath + 'packages/sassquatch-react/client/app/Components/**/*.scss')
+    .pipe(gulp.dest(srcPath + 'packages/sassquatch/client/app/Components'))
+
+  gulp.src(srcPath + 'packages/sassquatch-react/assets/**/*')
+    .pipe(gulp.dest(srcPath + 'packages/sassquatch/assets'))
 });
 
 // error notifications

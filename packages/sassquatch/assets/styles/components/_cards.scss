@@ -1,0 +1,32 @@
+/* CARD COMPONENTS
+---------------------------------------------------------------------------*/
+.card{
+  border:1px solid $color-brand-2-lt;
+  overflow:hidden;
+  background:$color-lt;
+  @include component-raised($color-brand-2-lt);
+  &.drawer{
+    background:$color-lt;
+    border-top:none;
+  }
+  &__header{
+    padding:$gutter-width;
+    background:$color-brand-2-dk;
+    color:$color-lt;
+  }
+  &__title{
+    text-transform:uppercase;
+    @include set-type(18, 700, 24);
+  }
+  &__footer{
+    padding:$gutter-width;
+    background:$color-brand-2-lt;
+    font-weight:700;
+  }
+  &--padded{
+    padding:15px;
+  }
+  &--flush{
+    margin:0 -$gutter-width;
+  }
+}
