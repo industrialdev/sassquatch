@@ -25,10 +25,10 @@ yarn install
 
 ## Commands
 
-'gulp' : the default task which will compile all assets into minified files, render the static templates as HTML, and watch the template files and assets for changes
-'gulp build' : compiles all assets into minified files and renders the static templates as HTML
-'gulp serve' : Runs a webserver at localhost:8000 using the rendered HTML and minified assets and watches for changes. When changes are made the webserver will livereload
-'gulp package' : rebuilds the sassquatch asset package to prepare it for publishing
+- 'gulp' : the default task which will compile all assets into minified files, render the static templates as HTML, and watch the template files and assets for changes
+- 'gulp build' : compiles all assets into minified files and renders the static templates as HTML
+- 'gulp serve' : Runs a webserver at localhost:8000 using the rendered HTML and minified assets and watches for changes. When changes are made the webserver will livereload
+- 'gulp package' : rebuilds the sassquatch asset package to prepare it for publishing
 
 ## In packages/sassquatch-react
 

@@ -1,7 +1,7 @@
-$site-width:1260px;
+$site-width:1260px!default;
 
-$columns: 12;
-$gutter: 15;
+$columns: 12!default;
+$gutter: 15!default;
 $gutter-width:$gutter + px;
 
 $mobile:       480px;

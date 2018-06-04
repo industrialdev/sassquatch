@@ -31,7 +31,7 @@
   }
   &--flex{
     display:flex;
-    *[class*="grid__col"]{
+    > *[class*="grid__col"]{
       float:none;
     }
   }
