@@ -3,5 +3,36 @@
 
 {% block content %}
   
+  <div class="tabs">
+    <div class="tabs__list" role="tablist">
+      <a id="tab-1" href="#tab-1-content" class="tabs__list-item tabs__tab-control active" role="tab" aria-selected="true" aria-controls="tab-1-content">Regional Overview</a>
+      <a id="tab-2" href="#tab-2-content" class="tabs__list-item tabs__tab-control" role="tab" aria-selected="false" aria-controls="tab-2-content">Forecast: New Jobs Each Year</a>
+      <a id="tab-3" href="#tab-3-content" class="tabs__list-item tabs__tab-control" role="tab" aria-selected="false" aria-controls="tab-3-content">Trade colleges across the country</a>
+    </div>
+    <div class="tabs__content-container">
+      <div id="tab-1-content" class="tabs__content active" role="tabpanel" aria-labelledby="tab-1" tabindex="-1">
+        <div class="tabs">
+        	<div class="tabs__list" role="tablist">
+      			<a id="tab-4" href="#tab-4-content" class="tabs__list-item tabs__tab-control active" role="tab" aria-selected="true" aria-controls="tab-4-content">Map</a>
+      			<a id="tab-5" href="#tab-5-content" class="tabs__list-item tabs__tab-control" role="tab" aria-selected="false" aria-controls="tab-5-content">Table</a>
+    			</div>
+    			<div class="tabs__content-container">
+    				<div id="tab-4-content" class="tabs__content active" role="tabpanel" aria-labelledby="tab-4" tabindex="-1">
+    					Test
+						</div>
+						<div id="tab-5-content" class="tabs__content" role="tabpanel" aria-labelledby="tab-5" tabindex="-1">
+							Test 2
+						</div>
+    			</div>
+        </div>
+      </div>
+      <div id="tab-2-content" class="tabs__content" role="tabpanel" aria-labelledby="tab-2" tabindex="-1">
+        Test 3
+      </div>
+      <div id="tab-3-content" class="tabs__content" role="tabpanel" aria-labelledby="tab-3" tabindex="-1">
+        Test 4
+      </div>
+    </div>
+  </div>
 
 {% endblock %}
