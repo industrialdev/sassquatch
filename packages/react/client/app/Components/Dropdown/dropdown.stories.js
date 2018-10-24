@@ -27,6 +27,13 @@ storiesOf('Dropdown', module)
       <Dropdown btnLabel="Secondary Dropdown" btnStyle="secondary">Example Dropdown Content</Dropdown>
     )
   )
+  .add('Disabled', 
+    withInfo(`
+      A disabled dropdown cannot be interacted with.
+    `)(() =>
+      <Dropdown btnLabel="Disabled Dropdown" disabled>Example Dropdown Content</Dropdown>
+    )
+  )
   .add('Large', 
     withInfo(`
       The Dropdown component accepts all the same button sizes as the button component.

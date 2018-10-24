@@ -38,7 +38,7 @@ Icon.propTypes = {
 	before: PropTypes.bool,
 	/** Sets left margin to the icon */
 	after: PropTypes.bool,
-	/** Fontawesome Pro icon style, determines the icon prefix ie: far */
+	/** Fontawesome Pro icon style, determines the icon prefix ie: far. Leave blank for free version of Fontawesome */
 	iconStyle: PropTypes.oneOf(['light', 'regular', 'solid']),
 	/** Name of the Fontawesome icon to be used */
 	iconName: PropTypes.string.isRequired,

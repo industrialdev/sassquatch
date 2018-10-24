@@ -25,7 +25,7 @@ class Text extends Component {
 
 Text.propTypes = {
   /** Text that the properties will be applied to */
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   /** Additional class names that do not get defined by another prop */
   className: PropTypes.string,
   /** Sets alignment of the text */

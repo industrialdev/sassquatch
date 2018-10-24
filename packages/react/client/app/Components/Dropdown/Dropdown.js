@@ -50,6 +50,7 @@ class Dropdown extends Component {
 
 		const btnProps = {
 			'aria-expanded': this.state.open,
+			'disabled': this.props.disabled,
 		}
 
 		const contentProps = {
@@ -81,6 +82,8 @@ Dropdown.propTypes = {
 	btnStyle: PropTypes.oneOf(['primary', 'secondary']),
 	/** Determines the size of the button */
 	btnSize: PropTypes.oneOf(['sm', 'small', 'lg', 'large']),
+	/** Controls the disabled state of the button */
+	disabled: PropTypes.bool,
 	/** Makes the dropdown overlap other content on the page */
 	overlay: PropTypes.bool
 };

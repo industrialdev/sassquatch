@@ -2,7 +2,6 @@
 ---------------------------------------------------------------------------*/
 .alert{
   padding:15px;
-  padding-left:40px;
   margin-bottom:15px;
   position:relative;
   @include component-raised($color-brand-2-lt);
@@ -38,8 +37,8 @@
       color:$color-danger-dk;
     }
   }
-  &--no-icon{
-    padding-left:15px;
+  &--has-icon{
+    padding-left:40px;
   }
   &__icon{
     position:absolute;
