@@ -7,9 +7,16 @@ import Icon from './Icon';
 import IconGroup from './IconGroup';
 
 storiesOf('Icon', module)
-  .add('Regular',
+  .add('Default',
     withInfo(`
       The Icon component uses the Fontawesome library and can be set by using the hyphen separated name of the icon.
+    `)(() =>
+      <Icon iconName="info-circle" />
+    )
+  )
+  .add('Regular',
+    withInfo(`
+      Fontawesome Pro provides 3 different styles of each icon 'Regular', 'Light', and 'Solid'. If the free version of Fontawesome is being used the iconStyle property should be omitted.
     `)(() =>
       <Icon iconName="info-circle" iconStyle="regular" />
     )

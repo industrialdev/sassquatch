@@ -24,7 +24,7 @@ storiesOf('Alert', module)
     withInfo(`
       The danger alert should be used for displaying important information to the user that needs to be actioned.
     `)(() =>
-      <Alert alertStyle="danger">Danger Alert</Alert>
+      <Alert alertStyle="error">Error Alert</Alert>
     )
   )
   .add('Success',

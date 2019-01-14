@@ -4,37 +4,37 @@
   padding:15px;
   margin-bottom:15px;
   position:relative;
-  @include component-raised($color-brand-2-lt);
+  @include component-raised($color-default-lt);
   border-left:8px solid;
   font-weight:600;
-  border-color:$color-lt $color-lt $color-lt $color-brand-2-dk;
+  border-color:$color-lt $color-lt $color-lt $color-default-dk;
   background:$color-lt;
-  color:$color-brand-2-dk;
+  color:$color-default-dk;
   i{
-    color:$color-brand-2-dk;
+    color:$color-default-dk;
   }
   &--success{
-    border-color:$color-success-lt $color-success-lt $color-success-lt $color-success-dk;
-    background:$color-success-lt;
+    border-color:$color-lt $color-lt $color-lt $color-success-dk;
+    background:$color-lt;
     color:$color-success-dk;
     i{
       color:$color-success-dk;
     }
   }
   &--warning{
-    border-color:$color-caution-lt $color-caution-lt $color-caution-lt $color-caution-dk;
+    border-color:$color-lt $color-lt $color-lt $color-warning-dk;
     background:$color-lt;
     color:$color-dk;
     i{
-      color:$color-caution-dk;
+      color:$color-warning-dk;
     }
   }
-  &--danger{
-    border-color:$color-danger-lt $color-danger-lt $color-danger-lt $color-danger-dk;
-    background:$color-danger-lt;
-    color:$color-danger-dk;
+  &--error{
+    border-color:$color-lt $color-lt $color-lt $color-error-dk;
+    background:$color-lt;
+    color:$color-error-dk;
     i{
-      color:$color-danger-dk;
+      color:$color-error-dk;
     }
   }
   &--has-icon{

@@ -75,16 +75,6 @@ p{
   margin-bottom:15px;
 }
 
-a{
-  color:$color-link;
-  @include link-interaction($color-link, 'true');
-  &.button{
-    &:after{
-      display:none;
-    }
-  }
-}
-
 a, 
 img{
   border:none;

@@ -12,7 +12,7 @@ class Alert extends Component {
 		let alertClasses = classNames({
 			alert: true,
 			'alert--warning': this.props.alertStyle === 'warning',
-			'alert--danger': this.props.alertStyle === 'danger',
+			'alert--error': this.props.alertStyle === 'error',
 			'alert--success': this.props.alertStyle === 'success',
 			'alert--has-icon': this.props.iconName
 		}, this.props.className);
@@ -46,7 +46,7 @@ Alert.propTypes = {
 	/** Additional class names that do not get defined by another prop */
 	className: PropTypes.string,
 	/** Determines what the alert will look like, provides context to the alert */
-	alertStyle: PropTypes.oneOf(['default', 'warning', 'danger', 'success']),
+	alertStyle: PropTypes.oneOf(['default', 'warning', 'error', 'success']),
 	/** Fontawesome Pro icon style, determines the icon prefix ie: far */
 	iconStyle: PropTypes.oneOf(['light', 'regular', 'solid']),
 	/** Name of the Fontawesome icon to appear before the contents of the alert */

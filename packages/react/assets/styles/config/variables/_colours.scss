@@ -2,15 +2,15 @@
 ------------------------------------------------------------------------------*/
 $color-threshold: 20%;
 
-$color-brand-1:       #ffb3ec!default;
+$color-brand-1:       #ffb3ec!default; // pink
 $color-brand-1-lt:    #ffe6f9!default;
 $color-brand-1-dk:    #b30077!default;
 
-$color-brand-2:       #b3b3cc!default;
+$color-brand-2:       #b3b3cc!default; // blue
 $color-brand-2-lt:    #e0e0eb!default;
 $color-brand-2-dk:    #47476b!default;
 
-$color-neutral:       #CCCCCC!default; // Grey
+$color-neutral:       #CCCCCC!default; // grey
 $color-neutral-lt:    #f2f2f2!default;
 $color-neutral-dk:    #4d4d4d!default;
 
@@ -22,17 +22,18 @@ $color-dk:            #000000!default; // black
 
 /* Contextual Colours
 ------------------------------------------------------------------------------*/
-$color-link: $color-brand-1-dk!default;
-$color-link-hover: $color-brand-1!default;
+$color-default:       #b3b3cc!default; // blue
+$color-default-lt:    #e0e0eb!default;
+$color-default-dk:    #47476b!default;
 
-$color-danger:        #e62600!default; // red
-$color-danger-lt:     #fcf4f2!default;
-$color-danger-dk:     #a51b00!default;
+$color-error:         #e62600!default; // red
+$color-error-lt:      #fcf4f2!default;
+$color-error-dk:      #a51b00!default;
 
 $color-success:       #77b259!default; // green
 $color-success-lt:    #f3faef!default;
 $color-success-dk:    #325e1c!default;
 
-$color-caution:       #ffdb4d!default; // yellow
-$color-caution-lt:    #fff2cc!default;
-$color-caution-dk:    #806000!default;
+$color-warning:       #ffdb4d!default; // yellow
+$color-warning-lt:    #fffae6!default;
+$color-warning-dk:    #e6b800!default;

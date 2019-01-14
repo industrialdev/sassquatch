@@ -6,6 +6,7 @@
   transition:all 0.2s;
   display:inline-block;
   appearance:none;
+  font-family:$font-body-family;
   text-decoration:none;
   border-radius:0;
   border:none;
@@ -24,7 +25,7 @@
     color:$color-lt;
     &:hover,
     &:focus{
-      background:$color-lt;
+      background:$color-brand-1-lt;
       color:$color-brand-1-dk;
     }
   }
@@ -33,7 +34,7 @@
     color:$color-lt;
     &:hover,
     &:focus{
-      background:$color-lt;
+      background:$color-brand-2-lt;
       color:$color-brand-2-dk;
     }
   }
