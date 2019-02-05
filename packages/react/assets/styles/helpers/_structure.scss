@@ -37,3 +37,24 @@
   background:transparent;
   margin:$gutter-width 0;
 }
+
+*[class*="breakpoint-shown-"]{
+  display:none;
+}
+
+*[class*="breakpoint-hidden-"]{
+  display:block;
+}
+
+@for $z from 1 through 4{
+  @media(min-width: nth($breakpoints, $z)){
+    .breakpoint-hidden-#{nth($grid-prefix, $z)}{
+      display:none;
+    }
+  }
+  @media(min-width: nth($breakpoints, $z)){
+    .breakpoint-shown-#{nth($grid-prefix, $z)}{
+      display:block;
+    }
+  }
+}
