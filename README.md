@@ -22,13 +22,22 @@ npm install --global gulp-cli
 ```shell
 npm install
 ```
-or
 
-```shell
-yarn install
-```
+## Getting Started
 
-## Commands
+### Environment
+
+Download the example.gulpfile.js and .env to the route of your project.
+
+Configure the .env variables to fit the needs of your project.
+
+In the main scss file for your project be sure to include the sassquatch library: @import "@sassquatch/theme/assets/styles/sassquatch"
+
+JS files can individually be included in your project by copy/pasting the files from the vendor directory into your project scripts folder. /node_modules/@sassquatch/theme/assets/scripts/filename.js/. If you are using the example.gulpfile.js then these files will be compiled into a single minified JS file when running any of the commands below.
+
+Note: for our Wordpress and Drupal base projects this has already been configured.
+
+### Commands
 
 - 'gulp' : the default task which will compile all assets into minified files, render the static templates as HTML, and watch the template files and assets for changes
 - 'gulp build' : compiles all assets into minified files and renders the static templates as HTML
