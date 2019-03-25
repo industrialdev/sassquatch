@@ -8,6 +8,8 @@ The static directory contains twig templates that can be used for testing out th
 
 Currently the two packages react and theme, must be maintained individually, but should be kept in sync.
 
+For example useage please see http://sassquatch.ca/
+
 ## Requirements
 
 ### Node.js
