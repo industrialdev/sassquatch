@@ -1,8 +1,19 @@
 /* FORM COMPONENTS
 ---------------------------------------------------------------------------*/
+
+form{
+  margin-bottom:30px;
+  &:last-child{
+    margin-bottom:0;
+  }
+}
+
 .form{
   &__group{
-    margin-bottom:25px;
+    margin-bottom:30px;
+    &:last-child{
+      margin-bottom:0;
+    }
   }
   &__label{
     display:block;
@@ -16,28 +27,28 @@
     border:none;
     border-radius:0;
     background:$color-lt;
-    color:$color-brand-2-dk;
+    color:$color-brand-2;
     font-family:$font-body-family;
-    padding:10px;
+    padding:10px 15px;
     margin:0;
     text-align:left;
-    border:1px solid $color-brand-2-lt;
-    @include component-raised($color-brand-2-lt);
-    @include set-type(16, 400, 20);
+    border:1px solid $color-med;
+    box-shadow:0 0 5px $color-med;
+    @include set-type(16, 400, 24);
   }
   &__helper{
     font-size:0.9em;
   }
   &__select-wrapper{
     position:relative;
-    display:inline-block;
+    display:block;
     width:100%;
     .form__input{
       padding-right:30px;
       + i{
         pointer-events:none;
         position:absolute;
-        right:10px;
+        right:15px;
         top:50%;
         transform:translateY(-50%);
         color:$color-dk;
@@ -46,15 +57,15 @@
   }
   &__radio,
   &__checkbox{
-    display:table;
-    padding-left:25px;
+    display:block;
+    padding-left:30px;
     position:relative;
-    cursor:pointer;
+    margin-bottom:10px;
     input{
+      margin:0;
       position:absolute;
       left:0;
-      top:50%;
-      transform:translateY(-50%);
+      top:0;
     }
   }
   &--inline{
@@ -73,6 +84,18 @@
       &__label{
         margin-right:10px;
       }
+    }
+  }
+}
+
+fieldset{
+  margin-bottom:30px;
+  legend{
+    display:block;
+    margin-bottom:15px;
+    font-weight:600;
+    &.form__label{
+      margin-bottom:15px;
     }
   }
 }

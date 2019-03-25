@@ -11,33 +11,6 @@
   }
 }
 
-.no-margin{
-  margin:0;
-  &--top{
-    margin-top:0;
-  }
-  &--bottom{
-    margin-bottom:0;
-  }
-}
-
-.full-width{
-  width:100%;
-}
-
-.pull-right{
-  float:right;
-}
-
-.hidden{
-  display:none;
-}
-
-.spacer{
-  background:transparent;
-  margin:$gutter-width 0;
-}
-
 *[class*="breakpoint-shown-"]{
   display:none;
 }

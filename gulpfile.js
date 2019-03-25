@@ -62,6 +62,27 @@ gulp.task('sass', function () {
     .pipe(rename(styleName + '.min.css'))
     .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
     .pipe(gulp.dest(srcPath + 'packages/theme/assets/styles'));
+
+  gulp.src(srcPath + assetPath + '/styles/demo.scss')
+    .pipe(plumber())
+    .pipe(sass({
+      outputStyle: 'expanded',
+      includePaths: ['node_modules']
+    }))
+    .on('error', onError)
+    .pipe(autoprefixer({
+      browsers: ['last 100 versions'],
+      cascade: false
+    }))
+    .on('error', function (err) {
+      console.log(err.message);
+    })
+    .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }))
+    .pipe(rename('demo.min.css'))
+    .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'));
 });
 
 // Compiles both unminified and minified JS files

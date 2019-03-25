@@ -14,11 +14,12 @@
 table{
   thead{
     tr{
-      background:$color-brand-2-dk;
-      th{
+      background:$color-brand-2;
+      th,
+      td{
         text-align:left;
         font-weight:700;
-        padding:10px;
+        padding:15px;
         white-space:nowrap;
         color:$color-lt;
       }
@@ -27,11 +28,8 @@ table{
   tbody{
     tr{
       td{
-        padding:10px;
-        border-bottom:1px solid $color-brand-2-lt;
-      }
-      &:nth-of-type(2n){
-        background:$color-brand-2-lt;
+        padding:15px;
+        border-bottom:1px solid $color-med;
       }
     }
   }

@@ -1,6 +1,9 @@
 /* COMPONENT HELPERS
 ---------------------------------------------------------------------------*/
-.img-centered{
-  display:block;
-  margin:0 auto;
+.jumplink{
+	&__target{
+		&:focus{
+			outline:0;
+		}
+	}
 }

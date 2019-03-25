@@ -4,6 +4,9 @@
   padding:0 ($gutter-width);
   margin-bottom:($gutter * 2) + px;
   width:100%;
+  img{
+    max-width:100%;
+  }
   &:last-of-type{
     margin-bottom:0;
   }
@@ -31,6 +34,9 @@
   }
   &--flex{
     display:flex;
+    &-centered{
+      align-items:center;
+    }
     > *[class*="grid__col"]{
       float:none;
     }

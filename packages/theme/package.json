@@ -1,7 +1,7 @@
 {
   "name": "@sassquatch/theme",
-  "version": "1.0.8",
-  "description": "An in development sass based component library with heavy emphasis on accessibility.",
+  "version": "1.0.9",
+  "description": "An in development sass based component library.",
   "author": "Kevin Andrews",
   "license": "MIT",
   "bugs": {

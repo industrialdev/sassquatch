@@ -9,29 +9,25 @@
     display:table;
     background:$color-lt;
     @include clearfix();
-    border-bottom:1px solid $color-brand-2-lt;
+    border-bottom:1px solid $color-med;
   }
   &__tab-control{
-    @include remove-link-interaction();
     margin:0;
     float:left;
     text-align:center;   
     display:block;
     padding:10px 15px;
     transform:translate(0, 0);
-    transition:all 0.2s ease-in-out;
     border-bottom:3px solid transparent;
     margin-bottom:-2px;
-    &.active{
-      border-bottom:3px solid $color-brand-2-dk;
+    &--active{
+      border-bottom:3px solid $color-dk;
     }
   }
   &__content{
     padding:30px;
     background:$color-lt;
     display:none;
-    @include component-raised($color-brand-2-lt);
-    border:none;
     &.active{
       display:block;
     }

@@ -1,6 +1,9 @@
 /* ACCESSIBILITY HELPERS
 ---------------------------------------------------------------------------*/
-.webaim-hidden,
+.webaim-hidden{
+	@include set-webaim-hidden();
+}
+
 .skip-link{
   @include set-webaim-hidden();
   z-index:1000;

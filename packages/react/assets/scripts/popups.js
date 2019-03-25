@@ -1,4 +1,5 @@
 (function($){
+
   var prevLocation;
 
   // Manages opening of popup modals
@@ -18,6 +19,18 @@
     $('.popup__overlay').remove();
     $('.popup').hide();
     prevLocation.focus();
+  });
+
+  $(document).keyup(function(e) {
+    if (e.key === "Escape") {
+      if($('.popup.open').length){
+        var target = $('.popup[style="display: block;"]');
+        $('.popup__overlay').remove();
+        $('.popup').hide();
+        $('.popup.open').removeClass('open');
+        prevLocation.focus();
+      }
+    }
   });
 
 })(jQuery);

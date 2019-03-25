@@ -13,17 +13,14 @@ body{
   left:50%;
   transform:translate(-50%, -50%);
   background:$color-lt;
-  border:1px solid $color-brand-2-lt;
+  border:1px solid $color-med;
   z-index:1500;
+  height:auto;
   width:500px;
   max-width:100%;
-  height:auto;
   max-height:100%;
   overflow:auto;
-  &__content{
-    position:relative;
-    padding:30px;
-  }
+  padding:30px;
   &__close{
     position:absolute;
     top:5px;
@@ -42,7 +39,7 @@ body{
     left:0;
     height:100%;
     width:100%;
-    background:rgba($color-brand-2-dk,0.8);
-    z-index:1000;
+    background:rgba($color-dk,0.8);
+    z-index:1250;
   }
 }

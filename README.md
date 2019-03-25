@@ -1,9 +1,12 @@
 # Sassquatch
 
-An in development sass based component library with heavy emphasis on accessibility.
+An in development sass based component library.
 
 This repository contains two packages. A react project that contains a library of react components, and an asset project for including assets in your projects.
+
 The static directory contains twig templates that can be used for testing out the library of assets.
+
+Currently the two packages react and theme, must be maintained individually, but should be kept in sync.
 
 ## Requirements
 

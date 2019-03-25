@@ -1,53 +1,30 @@
-/* Adds depth to the element */
-@mixin component-raised($color) {
-  box-shadow:2px 2px 5px $color;
-}
-
 /* Adds an animated effect to link interactions */
-@mixin link-interaction($interaction-color, $reversed: 'false', $size: 1px, $direction: "center", $duration: 0.2s) {
+@mixin link-interaction($interaction-color, $reversed: 'false', $duration: 0.2s) {
   display:inline;
-  padding:2px 0;
-  margin:-2px 0;
-  position:relative;
+  padding:0;
+  margin:0;
   text-decoration:none;
-  &:after{
-    content:'';
-    height:$size;
-    position:absolute;
-    bottom:0;
-    background:$interaction-color;
-    transition:width $duration ease-in-out;
-    @if $direction == "center" {
-      left:50%;
-      transform:translateX(-50%);
-    }
-    @if $direction == "left" {
-      left:0;
-    }
-    @if $reversed == "false" {
-      width: 0;
-    } @else {
-      width: 100%;
-    }
+  @if $reversed == "false" {
+    border-bottom:1px solid transparent;
+  } @else {
+    border-bottom:1px solid $interaction-color;
   }
+  transition:border $duration ease-in-out;
   &:hover,
   &:focus{
-    &:after{
-      @if $reversed == "false" {
-        width: 100%;
-      } @else {
-        width: 0;
-      }
+    @if $reversed == "false" {
+      border-bottom:1px solid $interaction-color;
+    } @else {
+      border-bottom:1px solid transparent;
     }
   }
 }
 
 @mixin remove-link-interaction(){
-  display:block;
-  padding:0;
-  margin:0;
-  &:after{
-    display:none;
+  border-bottom:none;
+  &:hover,
+  &:focus{
+    border-bottom:none;
   }
 }
 
@@ -77,4 +54,4 @@
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
   }
-}
+ }

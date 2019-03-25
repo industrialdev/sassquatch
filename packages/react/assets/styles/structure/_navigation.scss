@@ -1,84 +1,10 @@
 /* NAVIGATION COMPONENTS
 ---------------------------------------------------------------------------*/
 .nav{
-  a{
-    transition:all 0.4s;
-  }
-  ul{
-    padding-left:0;
-  }
-  .nav__menu{
-    .drawer-controls{
-      a{
-        padding-right:30px;
-      }
-    }
-  }
-  &--horizontal{
-    position:relative;
-    @include component-raised($color-brand-2-lt);
-    .nav__menu{
-      display:table;
-      width:100%;
-      li{
-        display:table-cell;
-        font-weight:600;
-        text-align:center;
-        position:relative;
-        border-left:1px solid $color-brand-2-lt;
-        &:first-of-type{
-          border-left:none;
-        }
-        a{
-          @include remove-link-interaction();
-          display:block;
-          padding:10px 15px;
-          background:$color-lt;
-          color:$color-brand-2-dk;
-          text-decoration:none;
-          &.drawer-toggle{
-            padding-right:30px;
-          }
-          &:hover,
-          &:focus,
-          &.open{
-            background:$color-brand-2-lt;
-          }
-        }
-        .nav__submenu{
-          li{
-            border-left:none;
-          }
-        }
-      }
-    }
-    .container{
-      .nav__menu{
-        border-left:1px solid $color-brand-2-lt;
-        border-right:1px solid $color-brand-2-lt;
-        li{
-          .nav__submenu{
-            .nav__menu{
-              border-left:none;
-              border-right:none;
-            }
-          }
-        }
-      }
-    }
-  }
-  &--megamenu{
-    .nav__menu{
-      position:relative;
-      li{
-        position:static;
-      }
-    }
-    .nav__submenu{
-      .nav__menu{
-        position:static;
-      }
-    }
+  &__menu{
+    padding:0;
+    margin:0;
+    list-style:none;
   }
   &--breadcrumbs{
     margin-bottom:15px;
@@ -100,60 +26,6 @@
       }
     }
   }
-  &--vertical{
-    ul{
-      li{
-        position:relative;
-        a{
-          @include remove-link-interaction();
-          padding:10px 15px;
-          color:$color-dk;
-          text-decoration:none;
-          border-bottom:1px solid $color-brand-2-lt;
-          &:hover,
-          &:focus{
-            background:$color-brand-2-lt;
-          }
-        }
-        ul{
-          li{
-            a{
-              padding-left:40px;
-            }
-            ul{
-              li{
-                a{
-                  padding-left:70px;
-                }
-                ul{
-                  li{
-                    a{
-                      padding-left:100px;
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  &--trail{
-    ul{
-      li{
-        ul{
-          display:none;
-        }
-        &.active,
-        &.active-trail{
-          > ul{
-            display:block;
-          }
-        }
-      }
-    }
-  }
   &--pager{
     .nav__menu{
       li{
@@ -161,7 +33,20 @@
         padding:0 5px;
         a{
           @include remove-link-interaction();
+          text-decoration:none;
           padding:5px;  
+        }
+        &.prev{
+          padding-left:0;
+          a{
+            padding-left:0;
+          }
+        }
+        &.next{
+          padding-right:0;
+          a{
+            padding-right:0;
+          }
         }
         &.prev,
         &.next{
@@ -171,53 +56,6 @@
             border:none;
             box-shadow:none;
             font-weight:600;
-            &:hover,
-            &:focus{
-              text-decoration:underline;
-            }
-          }
-        }
-      }
-    }
-  }
-  &__submenu{
-    position:absolute;
-    z-index:10;
-    top:100%;
-    left:0;
-    padding:15px;
-    background:$color-lt;
-    @include component-raised($color-brand-2-lt);
-    border:1px solid $color-brand-2-lt;
-    text-align:left;
-    width:auto;
-    min-width:100%;
-    .nav__menu{
-      display:block;
-      li{
-        display:block;
-        text-align:left;
-        white-space:nowrap;
-        &:first-of-type{
-          a{
-            padding-top:0;
-          }
-        }
-        &:last-of-type{
-          a{
-            border:none;
-            padding-bottom:0;
-          }
-        }
-        a{
-          @include remove-link-interaction();
-          border:none;
-          padding:10px 0;
-          background:transparent;
-          &:hover,
-          &:focus{
-            background:transparent;
-            text-decoration:underline;
           }
         }
       }
