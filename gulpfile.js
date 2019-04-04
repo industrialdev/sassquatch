@@ -1,7 +1,9 @@
 var // Package Variables
     dotenv = require('dotenv').config({path: '.env'}),
     gulp = require('gulp'),
+    filter = require('gulp-filter'),
     sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
     webserver = require('gulp-webserver'),
     autoprefixer = require('gulp-autoprefixer'),
@@ -43,6 +45,7 @@ gulp.task('webserver', function() {
 gulp.task('sass', function () {
   gulp.src(srcPath + assetPath + '/styles/' + styleName + '.scss')
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded',
       includePaths: ['node_modules']
@@ -55,7 +58,9 @@ gulp.task('sass', function () {
     .on('error', function (err) {
       console.log(err.message);
     })
+    .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
+    .pipe(filter("\.css\.map$"))
     .pipe(sass({
       outputStyle: 'compressed'
     }))
@@ -65,6 +70,7 @@ gulp.task('sass', function () {
 
   gulp.src(srcPath + assetPath + '/styles/demo.scss')
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'expanded',
       includePaths: ['node_modules']
@@ -77,7 +83,9 @@ gulp.task('sass', function () {
     .on('error', function (err) {
       console.log(err.message);
     })
+    .pipe(sourcemaps.write('../maps'))
     .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
+    .pipe(filter("\.css\.map$"))
     .pipe(sass({
       outputStyle: 'compressed'
     }))
