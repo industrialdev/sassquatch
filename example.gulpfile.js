@@ -67,7 +67,7 @@ gulp.task('sass', function () {
 
 // Compiles both unminified and minified JS files
 gulp.task('scripts', function() {
-  gulp.src([srcPath + assetPath + '/scripts/' + '*.js', srcPath + 'node_modules/theme/assets/scripts/*.js'])
+  gulp.src([srcPath + assetPath + '/scripts/' + '*.js', 'node_modules/@sassquatch/theme/assets/scripts/*.js'])
     .pipe(plumber())
     .pipe(concat(scriptName + '.js'))
     .on('error', onError)
