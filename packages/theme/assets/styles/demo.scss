@@ -1,0 +1,90 @@
+/*
+  Sassquatch
+  Version: 0.1
+  Author: Kevin Andrews
+
+  sassquatch uses the BEM css class naming convention.
+  .block__element
+  .block--modifier
+  .block__element--modifier
+  .block--modifier__element--modifier
+*/
+
+/* VARIABLES
+------------------------------------------------------------------------------*/
+@import "config/variables/colours";
+@import "config/variables/typography";
+@import "config/variables/structure";
+
+/* MIXINS
+------------------------------------------------------------------------------*/
+@import "config/mixins/accessibility";
+@import "config/mixins/components";
+@import "config/mixins/structure";
+@import "config/mixins/typography";
+
+/* DEMO STYLES
+------------------------------------------------------------------------------*/
+body{
+	color:$color-brand-2;
+}
+
+a{
+	color:$color-brand-1;
+	@include link-interaction($color-brand-1-dk, 'true');
+}
+
+.header{
+	border-bottom:1px solid $color-neutral-lt;
+	&__logo{
+		width:100%;
+		max-width:285px;
+	}
+}
+
+.main{
+	background:$color-neutral-lt;
+}
+
+.footer{
+	color:$color-lt;
+	background:$color-brand-1;
+	border-top:1px solid $color-neutral-lt;
+	a{
+		color:$color-lt;
+		@include link-interaction($color-lt, 'true');
+	}
+	&__logo{
+		width:100%;
+		max-width:75px!important;
+	}
+}
+
+.nav{
+	&--breadcrumbs{
+		.nav__menu{
+			li{
+				a{
+					color:$color-brand-1;
+					@include link-interaction($color-brand-1, 'true');
+				}
+			}
+		}
+	}
+	&--pager{
+		.nav__menu{
+			li{
+				a{
+					color:$color-brand-1;
+					@include link-interaction($color-brand-1, 'true');
+				}
+				&.prev,
+				&.next{
+					a{
+						@include link-interaction($color-brand-1, 'false');
+					}
+				}
+			}
+		}
+	}
+}

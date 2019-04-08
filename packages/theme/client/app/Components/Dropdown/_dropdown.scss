@@ -1,0 +1,35 @@
+/* DROPDOWN COMPONENT
+---------------------------------------------------------------------------*/
+.dropdown{
+  position:relative;
+  &__toggle{
+    position:relative;
+    padding-right:30px;
+    width:100%;
+    text-align:left;
+    margin-bottom:0;
+    i{
+      position:absolute;
+      right:15px;
+      top:50%;
+      transform:translateY(-50%);
+      transition:transform 0.2s;
+    }
+    &.open{
+      i{
+        transform:rotate(180deg) translateY(50%);
+      }
+    }
+  }
+  &__content{
+    position:relative;
+    z-index:2;
+    overflow:hidden;
+    display:none;
+    &--overlay{
+      position:absolute;
+      width:100%;
+      z-index:10;
+    }
+  }
+}

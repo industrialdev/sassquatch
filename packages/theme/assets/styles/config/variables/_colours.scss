@@ -1,0 +1,33 @@
+/* Brand Colours
+------------------------------------------------------------------------------*/
+$color-brand-1:       #b30077!default; // Pink
+$color-brand-1-lt:    lighten($color-brand-1, 10%)!default;
+$color-brand-1-dk:    darken($color-brand-1, 10%)!default;
+
+$color-brand-2:       #47476b!default; // Navy
+$color-brand-2-lt:    lighten($color-brand-2, 10%)!default;
+$color-brand-2-dk:    darken($color-brand-2, 10%)!default;
+
+$color-neutral:       #CCCCCC!default; // Grey
+$color-neutral-lt:    #f2f2f2!default;
+$color-neutral-dk:    #4d4d4d!default;
+
+/* General Colours
+------------------------------------------------------------------------------*/
+$color-lt:            #ffffff!default; // White
+$color-med:           #CCCCCC!default; // Grey
+$color-dk:            #000000!default; // Black
+
+/* Contextual Colours
+------------------------------------------------------------------------------*/
+$color-danger:        #e62600!default; // Red
+$color-danger-lt:     #fcf4f2!default;
+$color-danger-dk:     #a51b00!default;
+
+$color-success:       #77b259!default; // Green
+$color-success-lt:    #f3faef!default;
+$color-success-dk:    #325e1c!default;
+
+$color-caution:       #ffdb4d!default; // Yellow
+$color-caution-lt:    #fff2cc!default;
+$color-caution-dk:    #806000!default;

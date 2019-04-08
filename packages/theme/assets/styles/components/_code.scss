@@ -1,0 +1,32 @@
+pre,
+code{
+	font-family: monospace, monospace;
+}
+
+pre{
+	overflow:auto;
+	> code{
+		display: block;
+	  padding: 1rem;
+	  word-wrap: normal;
+	}
+}
+
+code{
+	background:#363738;
+}
+
+.code{
+	&--javascript{
+		color:#ef006b;
+		.prop{
+			color:#6aff07;
+			&__value{
+				color:#fff72b;
+			}
+		}
+	}
+	&__text{
+		color:$color-lt;
+	}
+}

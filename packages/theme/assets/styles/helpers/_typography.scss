@@ -1,0 +1,13 @@
+/* TYPOGRAPHY HELPERS
+---------------------------------------------------------------------------*/
+*[data-attach-icon-after]{
+  i{
+    margin-left:5px;
+  }
+}
+
+*[data-attach-icon-before]{
+  i{
+    margin-right:5px;
+  }
+}

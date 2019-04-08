@@ -1,0 +1,66 @@
+/*
+  Sassquatch
+  Version: 0.1
+  Author: Kevin Andrews
+
+  sassquatch uses the BEM css class naming convention.
+  .block__element
+  .block--modifier
+  .block__element--modifier
+  .block--modifier__element--modifier
+*/
+
+/* VARIABLES
+------------------------------------------------------------------------------*/
+@import "config/variables/colours";
+@import "config/variables/typography";
+@import "config/variables/structure";
+
+/* MIXINS
+------------------------------------------------------------------------------*/
+@import "config/mixins/accessibility";
+@import "config/mixins/components";
+@import "config/mixins/structure";
+@import "config/mixins/typography";
+
+/* CONFIGURATION
+------------------------------------------------------------------------------*/
+@import "config/reset";
+@import "config/fonts";
+
+/* THEME BASELINE STYLES
+------------------------------------------------------------------------------*/
+@import "base";
+
+/* THEME STRUCTURE
+------------------------------------------------------------------------------*/
+@import "structure/grid";
+@import "structure/common";
+@import "structure/navigation";
+@import "structure/header";
+@import "structure/sections";
+@import "structure/sidebar";
+@import "structure/footer";
+
+/* THEME COMPONENTS
+------------------------------------------------------------------------------*/
+@import "../../client/app/Components/Button/button";
+@import "../../client/app/Components/Dropdown/dropdown";
+@import "../../client/app/Components/Alert/alert";
+@import "../../client/app/Components/Icon/icon";
+@import "../../client/app/Components/Text/text";
+@import "components/banners";
+@import "components/cards";
+@import "components/tooltips";
+@import "components/forms";
+@import "components/tables";
+@import "components/popups";
+@import "components/tabs";
+@import "components/status";
+
+/* THEME HELPERS
+------------------------------------------------------------------------------*/
+@import "helpers/components";
+@import "helpers/structure";
+@import "helpers/accessibility";
+@import "helpers/typography";
