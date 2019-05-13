@@ -14,9 +14,9 @@
       e.preventDefault();
 
       if ($(window).width() < 768){
-        var pos = $id.offset().top - 100;
+        var pos = $id.offset().top;
       } else {
-        var pos = $id.offset().top - 60;
+        var pos = $id.offset().top;
       }
 
       $('body, html').animate({
