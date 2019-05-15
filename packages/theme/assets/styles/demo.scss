@@ -60,6 +60,16 @@ a{
 	}
 }
 
+*[parallax]{
+	position:relative;
+	z-index:-1;
+}
+
+section{
+	position:relative;
+	z-index:2;
+}
+
 .nav{
 	&--breadcrumbs{
 		.nav__menu{
