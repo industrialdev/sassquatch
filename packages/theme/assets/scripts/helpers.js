@@ -9,8 +9,6 @@
         return;
       }
 
-      $id.attr("tabindex", -1);
-
       e.preventDefault();
 
       if ($(window).width() < 768){
