@@ -100,9 +100,11 @@ gulp.task('scripts', function() {
     .pipe(concat(scriptName + '.js'))
     .on('error', onError)
     .pipe(gulp.dest(destPath + destAssetPath + '/scripts/'))
+    .pipe(gulp.dest(srcPath + 'packages/theme/assets/scripts/' + 'libraries'))
     .pipe(rename(scriptName + '.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(destPath + destAssetPath + '/scripts/' + 'min'));
+    .pipe(gulp.dest(destPath + destAssetPath + '/scripts/' + 'min'))
+    .pipe(gulp.dest(srcPath + 'packages/theme/assets/scripts/' + 'min'));
 });
 
 // Minifies images to optimize load times

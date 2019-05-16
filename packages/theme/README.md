@@ -1,6 +1,6 @@
 # Sassquatch
 
-An in development sass based component library with heavy emphasis on accessibility.
+An in development sass and javascript based component library.
 
 ## Get Started
 
