@@ -2,6 +2,10 @@
 
 An in development sass and javascript based component library.
 
+For example useage please see http://sassquatch.ca/
+
+view package on NPM https://www.npmjs.com/package/@sassquatch/theme
+
 ## Get Started
 
 ```shell
