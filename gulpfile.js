@@ -13,6 +13,8 @@ var // Package Variables
     notify = require('gulp-notify'),
     twig = require('gulp-twig'),
     imagemin = require('gulp-imagemin'),
+    wrap = require('gulp-wrap'),
+    insert = require('gulp-insert'),
     // Environment Variables
     srcPath = process.env.SRC_PATH,
     destPath = process.env.DEST_PATH,
@@ -98,6 +100,7 @@ gulp.task('scripts', function() {
   return gulp.src(srcPath + assetPath + '/scripts/' + '*.js')
     .pipe(plumber())
     .pipe(concat(scriptName + '.js'))
+    .pipe(insert.wrap('(function($){\n\n', '\n\n})(jQuery);'))
     .on('error', onError)
     .pipe(gulp.dest(destPath + destAssetPath + '/scripts/'))
     .pipe(gulp.dest(srcPath + 'packages/theme/assets/scripts/' + 'libraries'))

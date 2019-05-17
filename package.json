@@ -15,6 +15,8 @@
     "gulp-twig": "^1.1.1",
     "gulp-uglify": "^3.0.0",
     "gulp-webserver": "^0.9.1",
-    "lerna": "^2.11.0"
+    "gulp-wrap": "^0.15.0",
+    "lerna": "^2.11.0",
+    "gulp-insert": "^0.5.0"
   }
 }

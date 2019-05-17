@@ -1,3 +1,5 @@
+(function($){
+
 
 function setCookie(cname, cvalue, exdays) {
   var cookieDate = new Date();
@@ -294,3 +296,6 @@ $('.tabs__tab-control').click(function(e){
   $(this).closest('.tabs').find('> .tabs__content-container > .tabs__content').removeClass('active');
   $(target).addClass('active');
 });
+
+
+})(jQuery);
