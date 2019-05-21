@@ -3,7 +3,7 @@ $('*[parallax]').each(function(){
   parallax($(this));
 });
 
-var parallaxScroll = function () {
+var parallaxScroll = function() {
   $('*[parallax]').each(function(){
     parallax($(this));
   });
@@ -58,5 +58,5 @@ function parallax(element){
       position = minMovement;
     }
   }
-  element.css('transform', 'translate(0, ' + position + 'px)');
+  element.css('transform', 'translate3d(0, ' + position + 'px, 0)');
 }
