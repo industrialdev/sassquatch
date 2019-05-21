@@ -3,12 +3,35 @@ $('*[parallax]').each(function(){
   parallax($(this));
 });
 
-// Sets parallax position on scroll
-$(window).scroll(function(){
+var parallaxScroll = function () {
   $('*[parallax]').each(function(){
     parallax($(this));
   });
-});
+};
+
+var parallaxFrame = window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.msRequestAnimationFrame ||
+  window.oRequestAnimationFrame;
+
+var lastScrollTop = $(window).scrollTop();
+
+if (parallaxFrame){
+  parallaxCheckScroll();
+}
+
+function parallaxCheckScroll() {
+  var scrollTop = $(window).scrollTop();
+  if (lastScrollTop === scrollTop) {
+    parallaxFrame(parallaxCheckScroll);
+    return;
+  } else {
+    lastScrollTop = scrollTop;
+    parallaxScroll();
+    parallaxFrame(parallaxCheckScroll);
+  }
+}
 
 // Controls parallax positioning
 function parallax(element){
