@@ -41,25 +41,6 @@
       float:none;
     }
   }
-
-  @for $z from 1 through 4{
-    @media(min-width: nth($breakpoints, $z)){
-      @for $i from 1 through $columns{
-        &--wrap-#{nth($grid-prefix, $z)}-#{$i}{
-          display: flex;
-          flex-wrap: wrap;
-          align-content: space-between;
-          .grid__col{
-            width: ((1 / $i) * 100%);
-            align-self: stretch;
-          }
-          .grid__col:last-of-type{
-            margin-bottom:($gutter * 2) + px;
-          }
-        }
-      }
-    }
-  }
 }
 
 @for $z from 1 through 4{
@@ -82,6 +63,18 @@
         }
         &__col--offset-left-#{nth($grid-prefix, $z)}-#{$i}{
           margin-left:-(($i / $columns) * 100%);
+        }
+        &--wrap-#{nth($grid-prefix, $z)}-#{$i}{
+          display: flex;
+          flex-wrap: wrap;
+          align-content: space-between;
+          .grid__col{
+            width: ((1 / $i) * 100%);
+            align-self: stretch;
+          }
+          .grid__col:last-of-type{
+            margin-bottom:($gutter * 2) + px;
+          }
         }
       }
     }
