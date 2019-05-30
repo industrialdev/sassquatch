@@ -64,6 +64,18 @@
         &__col--offset-left-#{nth($grid-prefix, $z)}-#{$i}{
           margin-left:-(($i / $columns) * 100%);
         }
+        &--wrap-#{nth($grid-prefix, $z)}-#{$i}{
+          display: flex;
+          flex-wrap: wrap;
+          align-content: space-between;
+          .grid__col{
+            width: ((1 / $i) * 100%);
+            align-self: stretch;
+          }
+          .grid__col:last-of-type{
+            margin-bottom:($gutter * 2) + px;
+          }
+        }
       }
     }
   }
