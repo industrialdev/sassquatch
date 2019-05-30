@@ -4,4 +4,5 @@
   background:$color-lt;
   border:1px solid $color-med;
   padding:$gutter-width;
+  height: 100%; // for fitting in flex boxes
 }
