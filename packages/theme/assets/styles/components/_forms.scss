@@ -68,6 +68,52 @@ form{
       top:0;
     }
   }
+
+  &__checkbox{
+    input[type="checkbox"]{
+      @include set-webaim-hidden();
+      &:checked{
+        + .form__checkbox-label{
+          &:before{
+            background: $color-brand-1;
+          }
+          &:after{
+            transform:scale(1);
+          }
+        }
+      }
+      &:focus + .form__checkbox-label:before{
+        box-shadow: inset 0 0 0 1px white, 0 0 3px 1px $color-brand-1;
+      }
+    }
+  }
+  &__checkbox-label{
+    &:before{
+      content:'';
+      height: $gutter-width;
+      width: $gutter-width;
+      background: $color-lt;
+      border:1px solid $color-brand-2;
+      position:absolute;
+      left:0;
+      top:0;
+      transition:background 0.2s ease-in-out;
+      cursor:pointer;
+    }
+    &:after{
+      content: "\2713";
+      font-weight:400;
+      color:$color-lt;
+      transform:scale(0);
+      transition:transform 0.2s ease-in-out;
+      position:absolute;
+      left:4px;
+      top: 3px;
+      font-size:13px;
+      line-height:1em;
+      cursor:pointer;
+    }
+  }
   &--inline{
     .form{
       &__group,
