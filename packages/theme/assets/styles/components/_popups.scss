@@ -17,10 +17,10 @@ body{
   z-index:1500;
   height:auto;
   width:500px;
-  max-width:calc(100% - #{$gutter-width} - #{$gutter-width});
-  max-height:calc(100% - #{$gutter-width} - #{$gutter-width});
+  max-width:calc(100% - #{$gutter-width} * 2);
+  max-height:calc(100% - #{$gutter-width} * 2);
   overflow:auto;
-  padding:30px;
+  padding: $gutter-double;
   &__close{
     position:absolute;
     top:5px;
@@ -41,5 +41,9 @@ body{
     width:100%;
     background:rgba($color-dk,0.8);
     z-index:1250;
+  }
+  .scrolling-content{
+    height:calc(100vh - #{$gutter-double} * 3 - 2px);
+    overflow: auto;
   }
 }
