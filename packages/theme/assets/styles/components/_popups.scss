@@ -17,8 +17,8 @@ body{
   z-index:1500;
   height:auto;
   width:500px;
-  max-width:100%;
-  max-height:100%;
+  max-width:calc(100% - #{$gutter-width} - #{$gutter-width});
+  max-height:calc(100% - #{$gutter-width} - #{$gutter-width});
   overflow:auto;
   padding:30px;
   &__close{
