@@ -1,6 +1,10 @@
 var prevLocation = null;
 var scrollDistance = 0;
 
+/*
+Why are we doing all this craziness with scrollDistance?
+See the following SO answer for details: https://stackoverflow.com/a/54798936
+ */
 function handleOpeningPopup(prev){
   prevLocation = prev;
 
