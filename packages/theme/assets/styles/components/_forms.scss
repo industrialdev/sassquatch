@@ -68,13 +68,12 @@ form{
       top:0;
     }
   }
-
   &__checkbox{
     input[type="checkbox"]{
       @include set-webaim-hidden();
       &:checked{
         + .form__checkbox-label{
-          .form__checkbox-check{
+          .form__checkbox-icon{
             transform:scale(1);
           }
         }
@@ -102,18 +101,15 @@ form{
       cursor:pointer;
     }
   }
-  &__checkbox-check{
+  &__checkbox-icon{
     position:absolute;
     left:4px;
-    top: 0;
+    top: 2px;
     transform:scale(0);
     cursor:pointer;
     transition:transform 0.2s ease-in-out;
-    &:after{
-      content: "\2713";
-      @include set-type(13, 400, 13);
-      color:$color-brand-2;
-    }
+    @include set-type(13, 400, 13);
+    color:$color-brand-2;
   }
   &--inline{
     .form{
@@ -134,94 +130,82 @@ form{
     }
   }
   &__switch{
-    /* The switch - the box around the slider */
-    position: relative;
-    display: inline-block;
-    width: 80px;
-    &.medium{
-      width: 120px;
+    margin-bottom:10px;
+    &:last-of-type{
+      margin-bottom:0;
     }
-    &.large{
-      width: 160px;
-    }
-    height: 34px;
-    vertical-align: bottom;
-
-    /* Hide default HTML checkbox */
-    input {
-      @include set-webaim-hidden();
-    }
-
-    /* The slider */
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: $color-lt;
-      transition: .4s;
-      border-radius: 34px;
-      border: 1px solid $color-med;
-      box-shadow: inset 0 0 0 1px $color-lt;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 26px;
-      width: 26px;
-      left: 2px;
-      bottom: 2px;
-      background-color: $color-brand-2;
-      border: 1px solid $color-med;
-      transition: .4s;
-      border-radius: 50%;
-    }
-
-    input:checked + .slider {
-      background-color: $color-brand-1;
-    }
-
-    input:focus + .slider {
-      box-shadow: inset 0 0 0 1px $color-lt, 0 0 3px 1px $color-brand-1;
-    }
-
-    input + .slider::after{
-      content: "Off";
-      text-align: right;
-      display: block;
-      padding: 0 10px;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 32px;
-    }
-    input + .slider[data-off]::after{
-      content: attr(data-off);
-    }
-
-    input:checked + .slider::after{
-      content: "On";
-      text-align: left;
-      color: $color-lt;
-    }
-    input:checked + .slider[data-on]::after{
-      content: attr(data-on);
-    }
-
-    input:checked + .slider:before {
-      transform: translateX(46px);
-    }
-    &.medium{
-      input:checked + .slider:before {
-        transform: translateX(86px);
+    .form{
+      &__switch-toggle{
+        display:inline-block;
+        cursor:pointer;
+        padding:8px 15px;
+        border-radius:50px;
+        border:1px solid $color-med;
+        font-weight:600;
+        padding-left:35px;
+        position:relative;
+        transition:all 0.2s ease-in-out;
+        &:after{
+          content:'';
+          height:24px;
+          width:24px;
+          border-radius:100%;
+          border:1px solid $color-med;
+          background:$color-lt;
+          position:absolute;
+          margin:0 3px;
+          top:50%;
+          left:0;
+          transform:translateY(-50%);
+          transition:all 0.2s ease-in-out;
+        }
+        &--inline{
+          margin-left:15px;
+        }
+      }
+      &__switch-active-text,
+      &__switch-inactive-text{
+        overflow:hidden;
+        display:block;
+        margin:0;
+        transition:all 0.2s ease-in-out;
+      }
+      &__switch-active-text{
+        display:none;
       }
     }
-    &.large{
-      input:checked + .slider:before {
-        transform: translateX(126px);
+    input[type="checkbox"]{
+      &:focus{
+        + label{
+          .form__switch-toggle{
+            box-shadow:0px 0px 10px $color-med;
+          }
+        }
       }
+      &:checked{
+        + label{
+          .form__switch-toggle{
+            padding-left:15px;
+            padding-right:35px;
+            background:$color-brand-2;
+            &:after{
+              left:100%;
+              transform:translate(-33px, -50%);
+            }
+          }
+          .form__switch-active-text{
+            display:block;
+            color:$color-lt;
+          }
+          .form__switch-inactive-text{
+            display:none;
+          }
+        }
+      }
+    }
+    &--inline{
+      display:inline-block;
+      margin-right:30px;
     }
   }
 }

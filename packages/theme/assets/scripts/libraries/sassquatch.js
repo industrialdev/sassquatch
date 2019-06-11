@@ -26,7 +26,7 @@ function getCookie(cname) {
 
 /* Dropdown/Accordion toggle control */
 // adds accessible icon to toggle button
-$(document).on('click', ".dropdown__toggle", function(event){
+$(document).on('click', ".dropdown__toggle, .accordion__toggle", function(event){
   event.preventDefault();
   $(this).toggleClass("open");
   var targetContent = '#' + $(this).attr('aria-controls');
@@ -43,19 +43,17 @@ $(document).on('click', ".dropdown__toggle", function(event){
 // Close dropdown when it loses focus
 $('body').focusin(function(e) {
   setTimeout(function(){
-
-    $('.dropdown').each(function(){
+    $('.accordion').each(function(){
       if(!$(e.target).is($(this).find('*'))){
-        $(this).find('.dropdown__toggle').attr('aria-hidden', 'true'); // Voiceover safari fix
-        $(this).find('.dropdown__content').slideUp('fast').removeClass('open').attr('aria-expanded', 'false');
-        $(this).find('.dropdown__toggle').attr('aria-expanded', 'false');
-        $(this).find('.dropdown__toggle').removeClass('open');
+        $(this).find('.accordion__toggle').attr('aria-hidden', 'true'); // Voiceover safari fix
+        $(this).find('.accordion__content').slideUp('fast').removeClass('open').attr('aria-expanded', 'false');
+        $(this).find('.accordion__toggle').attr('aria-expanded', 'false');
+        $(this).find('.accordion__toggle').removeClass('open');
         setTimeout(function(){
-          $('.dropdown__toggle').attr('aria-hidden', 'false'); // Voiceover safari fix
+          $('.accordion__toggle').attr('aria-hidden', 'false'); // Voiceover safari fix
         }, 400);
       }
     });
-
   }, 250);
 });
 

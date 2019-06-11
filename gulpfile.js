@@ -103,7 +103,6 @@ gulp.task('scripts', function() {
     .pipe(insert.wrap('(function($){\n\n', '\n\n})(jQuery);'))
     .on('error', onError)
     .pipe(gulp.dest(destPath + destAssetPath + '/scripts/'))
-    .pipe(gulp.dest(srcPath + 'packages/theme/assets/scripts/' + 'libraries'))
     .pipe(rename(scriptName + '.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest(destPath + destAssetPath + '/scripts/' + 'min'))
@@ -140,6 +139,7 @@ gulp.task('templates', function() {
 // Watches files for changes and compiles on the fly
 gulp.task('watch', function () {
   gulp.watch(srcPath + assetPath + '/styles/' + '**/*.scss', ['sass']);
+  gulp.watch(srcPath + 'packages/theme/client/app/Components/' + '**/*.scss', ['sass']);
   gulp.watch(srcPath + assetPath + '/scripts/' + '*.js', ['scripts']);
   gulp.watch(srcPath + 'static/**/*.twig', ['templates']);
 });

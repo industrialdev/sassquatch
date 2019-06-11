@@ -36,31 +36,47 @@
 			<legend class="form__label">Checkbox Group</legend>
 			<label class="form__checkbox">
 				<input id="checkbox-1" type="checkbox" name="checkboxes-1" value="checkbox-1">
-				<span class="form__checkbox-label">Checkbox 1 <i class="form__checkbox-check" aria-hidden="true"></i></span>
+				<span class="form__checkbox-label">Checkbox 1 <i class="form__checkbox-icon" aria-hidden="true">&#10003;</i></span>
 			</label>
 			<label class="form__checkbox">
 				<input id="checkbox-2" type="checkbox" name="checkboxes-1" value="checkbox-2">
-				<span class="form__checkbox-label">Checkbox 2 <i class="form__checkbox-check" aria-hidden="true"></i></span>
+				<span class="form__checkbox-label">Checkbox 2 <i class="form__checkbox-icon" aria-hidden="true">&#10003;</i></span>
 			</label>
 			<label class="form__checkbox">
 				<input id="checkbox-3" type="checkbox" name="checkboxes-1" value="checkbox-3">
-				<span class="form__checkbox-label">Checkbox 3 <i class="form__checkbox-check" aria-hidden="true"></i></span>
+				<span class="form__checkbox-label">Checkbox 3 <i class="form__checkbox-icon" aria-hidden="true">&#10003;</i></span>
 			</label>
 		</fieldset>
 		<fieldset class="form__group">
 			<legend class="form__label">Switch Group</legend>
-			<label class="form__switch">
-				<input id="switch-1" type="checkbox" name="switches-1" value="switch-1">
-				<span class="slider"  ></span>
-			</label>
-			<label class="form__switch medium" >
-				<input id="switch-2" type="checkbox" name="switches-1" value="switch-2">
-				<span class="slider" data-on="Enabled" data-off="Disabled" ></span>
-			</label>
-			<label class="form__switch large">
-				<input id="switch-3" type="checkbox" name="switches-1" value="switch-3">
-				<span class="slider" data-off="Name Fallback" ></span>
-			</label>
+			<div class="form__switch">
+				<input id="switch-1" name="switches" value="1" type="checkbox" class="webaim-hidden">
+				<label for="switch-1">
+					Switch 1 
+					<span class="form__switch-toggle form__switch-toggle--inline" aria-hidden="true">
+						<span class="form__switch-active-text">
+							Yes, this switch is active
+						</span>
+						<span class="form__switch-inactive-text">
+							No, this switch is not active
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="form__switch">
+				<input id="switch-2" name="switches" value="1" type="checkbox" class="webaim-hidden">
+				<label for="switch-2">
+					Switch 2
+					<span class="form__switch-toggle form__switch-toggle--inline" aria-hidden="true">
+						<span class="form__switch-active-text">
+							Yes
+						</span>
+						<span class="form__switch-inactive-text">
+							No
+						</span>
+					</span>
+				</label>
+			</div>
 		</fieldset>
 	</form>
 </section>
