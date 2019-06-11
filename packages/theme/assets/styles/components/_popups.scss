@@ -21,11 +21,11 @@ body{
   border:1px solid $color-med;
   z-index:1500;
   height:auto;
-  width:500px;
+  width:750px;
   max-width:calc(100% - #{$gutter-width} * 2);
   max-height:calc(100% - #{$gutter-width} * 2);
   overflow:auto;
-  padding: $gutter-double;
+  padding-top:$gutter-double;
   &__close{
     position:absolute;
     top:5px;
@@ -48,7 +48,9 @@ body{
     z-index:1250;
   }
   .scrolling-content{
-    height:calc(100vh - #{$gutter-double} * 3 - 2px);
+    max-height:calc(100vh - #{$gutter-double} * 3 - 2px);
+    padding: $gutter-double;
+    padding-top:0;
     overflow: auto;
   }
 }
