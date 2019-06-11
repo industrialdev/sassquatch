@@ -62,54 +62,65 @@ form{
     position:relative;
     margin-bottom:10px;
     input{
-      margin:0;
-      position:absolute;
-      left:0;
-      top:0;
-    }
-  }
-  &__checkbox{
-    input[type="checkbox"]{
       @include set-webaim-hidden();
       &:checked{
-        + .form__checkbox-label{
-          .form__checkbox-icon{
-            transform:scale(1);
+        + .form__checkbox-label,
+        + .form__radio-label{
+          .form__checkbox-icon,
+          .form__radio-icon{
+            display:block;
           }
         }
       }
       &:focus{
-        + .form__checkbox-label{
+        + .form__checkbox-label,
+        + .form__radio-label{
           &:before{
-            box-shadow:0 0 3px 1px $color-brand-2;
+            box-shadow:0 0 5px $color-med;
           }
         }
       }
     }
-  }
-  &__checkbox-label{
-    &:before{
-      content:'';
-      height: $gutter-width;
-      width: $gutter-width;
-      background: $color-lt;
-      border:1px solid $color-neutral;
+    &-label{
+      &:before{
+        content:'';
+        height: 15px;
+        width: 15px;
+        background: $color-lt;
+        border:1px solid $color-neutral;
+        position:absolute;
+        left:0;
+        top:0;
+        transition:background 0.2s ease-in-out;
+        cursor:pointer;
+      }
+    }
+    &-icon{
       position:absolute;
-      left:0;
-      top:0;
-      transition:background 0.2s ease-in-out;
+      left:4px;
+      top: 2px;
       cursor:pointer;
+      @include set-type(13, 400, 13);
+      color:$color-brand-2;
+      display:none;
     }
   }
-  &__checkbox-icon{
-    position:absolute;
-    left:4px;
-    top: 2px;
-    transform:scale(0);
-    cursor:pointer;
-    transition:transform 0.2s ease-in-out;
-    @include set-type(13, 400, 13);
-    color:$color-brand-2;
+  &__radio{
+    &-label{
+      &:before{
+        border-radius:100%;
+      }
+    }
+    &-icon{
+      height:9px;
+      width:9px;
+      border-radius:100%;
+      background:$color-brand-2;
+      display:none;
+      position:absolute;
+      left:4px;
+      top:4px;
+    }
   }
   &--inline{
     .form{
