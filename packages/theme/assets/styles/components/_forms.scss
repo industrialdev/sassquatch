@@ -68,6 +68,53 @@ form{
       top:0;
     }
   }
+
+  &__checkbox{
+    input[type="checkbox"]{
+      @include set-webaim-hidden();
+      &:checked{
+        + .form__checkbox-label{
+          .form__checkbox-check{
+            transform:scale(1);
+          }
+        }
+      }
+      &:focus{
+        + .form__checkbox-label{
+          &:before{
+            box-shadow:0 0 3px 1px $color-brand-2;
+          }
+        }
+      }
+    }
+  }
+  &__checkbox-label{
+    &:before{
+      content:'';
+      height: $gutter-width;
+      width: $gutter-width;
+      background: $color-lt;
+      border:1px solid $color-neutral;
+      position:absolute;
+      left:0;
+      top:0;
+      transition:background 0.2s ease-in-out;
+      cursor:pointer;
+    }
+  }
+  &__checkbox-check{
+    position:absolute;
+    left:4px;
+    top: 0;
+    transform:scale(0);
+    cursor:pointer;
+    transition:transform 0.2s ease-in-out;
+    &:after{
+      content: "\2713";
+      @include set-type(13, 400, 13);
+      color:$color-brand-2;
+    }
+  }
   &--inline{
     .form{
       &__group,
@@ -87,7 +134,6 @@ form{
     }
   }
   &__switch{
-
     /* The switch - the box around the slider */
     position: relative;
     display: inline-block;
