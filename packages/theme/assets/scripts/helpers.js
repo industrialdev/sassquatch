@@ -75,7 +75,7 @@ $('.link--new-window').each(function(index, element){
   word_array = text.html().split(/\s+/);
   last_word = word_array.pop();
   first_part = word_array.join(' ');
-  text.html([first_part, ' <span class="text--no-break">', last_word, '<i class="' + icon + '" aria-hidden="true"></i></span><span class="webaim-hidden">' + iconText + '</span>'].join(''));
+  text.html([first_part, ' <span class="text--no-break">', last_word, ' <i class="' + icon + '" aria-label="' + iconText + '"></i></span>'].join(''));
 });
 
 $('.link--file').each(function(index, element){
