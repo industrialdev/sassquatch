@@ -48,20 +48,34 @@ $('*[data-attach-icon-after], *[data-attach-icon-before]').each(function(index, 
 
 $('.link--internal').each(function(index, element){
   var text = $(element), word_array, last_word, first_word, first_part;
-  var icon = 'far fa-arrow-right';
+  var icon = $(this).attr('data-icon');
+  if(typeof attr !== typeof undefined && attr !== false){
+    icon = $(this).data('icon');
+  }else{
+    icon = 'far fa-external-link-square';
+  }
   word_array = text.html().split(/\s+/);
   last_word = word_array.pop();
   first_part = word_array.join(' ');
   text.html([first_part, ' <span class="text--no-break">', last_word, '<i class="' + icon + '" aria-hidden="true"></i></span>'].join(''));
 });
 
-$('.link--external').each(function(index, element){
+$('.link--new-window').each(function(index, element){
   var text = $(element), word_array, last_word, first_word, first_part;
-  var icon = 'far fa-external-link-square';
+  var icon = $(this).attr('data-icon');
+  var iconText = "Opens in a new window";
+  if(typeof icon !== typeof undefined && icon !== false){
+    icon = $(this).data('icon');
+  }else{
+    icon = 'far fa-external-link-square';
+  }
+  if($('html[lang^="fr"]').length){
+    iconText = "Ouvre dans une nouvelle fenêtre";
+  }
   word_array = text.html().split(/\s+/);
-  first_word = word_array.shift();
+  last_word = word_array.pop();
   first_part = word_array.join(' ');
-  text.html([' <span class="text--no-break"><i class="' + icon + '" aria-hidden="true"></i>', first_word, '</span> ', first_part].join(''));
+  text.html([first_part, ' <span class="text--no-break">', last_word, '<i class="' + icon + '" aria-hidden="true"></i></span><span class="webaim-hidden">' + iconText + '</span>'].join(''));
 });
 
 $('.link--file').each(function(index, element){
