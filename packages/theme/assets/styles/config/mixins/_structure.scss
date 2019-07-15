@@ -5,3 +5,15 @@
     display: table;
   }
 }
+
+@mixin for-size($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin larger-than($size) {
+  @media (min-width: $size + 1) {
+    @content;
+  }
+}

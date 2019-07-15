@@ -1,0 +1,21 @@
+<section id="sassquatch-mixins">
+    <h2 class="jumplink__target">Mixins</h2>
+    <pre>
+.thing{
+	color: red;
+	@include for-size($tablet) {
+		color: blue;
+	}
+	@include for-size($mobile) {
+		color: green;
+	}
+	@include larger-than($tablet){
+		background-color: moccasin;
+	}
+}
+    </pre>
+    <div class="thing card">
+        This text changes color based on screen size.
+    </div>
+
+</section>

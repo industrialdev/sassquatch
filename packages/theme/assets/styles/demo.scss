@@ -99,3 +99,27 @@ a{
 		}
 	}
 }
+
+pre{
+	font-family: monospace;
+	background: $color-lt;
+	color: $color-brand-2;
+	@include set-type(11);
+	padding: $gutter-width;
+	margin-bottom: $gutter-width;
+	border: 1px solid $color-brand-1-lt;
+	line-height: 1.2;
+}
+
+.thing{
+	color: red;
+	@include for-size($tablet) {
+		color: blue;
+	}
+	@include for-size($mobile) {
+		color: green;
+	}
+	@include larger-than($tablet){
+		background-color: moccasin;
+	}
+}
