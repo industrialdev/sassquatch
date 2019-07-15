@@ -5,7 +5,8 @@ var // Package Variables
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
-    webserver = require('gulp-webserver'),
+    connect = require('gulp-connect'),
+    open = require('gulp-open');
     autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
@@ -28,19 +29,20 @@ gulp.task('default', ['templates', 'sass', 'scripts', 'fonts', 'images', 'watch'
 
 gulp.task('build', ['templates', 'sass', 'scripts', 'fonts', 'images']);
 
-gulp.task('serve', ['webserver', 'watch']);
+gulp.task('serve', ['connect', 'watch']);
 
-gulp.task('webserver', function() {
-  gulp.src(destPath)
-    .pipe(webserver({
+gulp.task('connect', function() {
+  var connection = connect.server({
+      root: destPath,
       fallback: 'index.html',
       livereload: true,
       directoryListing: {
         enable: true,
         path: 'root'
-      },
-      open: true
-    }));
+      }
+  });
+  var url = "http://" + connection.host + ":" + connection.port;
+  gulp.src(destPath).pipe(open({uri:url}));
 });
 
 // Compiles both unminified and minified CSS files
@@ -68,7 +70,8 @@ gulp.task('sass', function () {
     }))
     .pipe(rename(styleName + '.min.css'))
     .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
-    .pipe(gulp.dest(srcPath + 'packages/theme/assets/styles'));
+    .pipe(gulp.dest(srcPath + 'packages/theme/assets/styles'))
+    .pipe(connect.reload());
 
   gulp.src(srcPath + assetPath + '/styles/demo.scss')
     .pipe(plumber())
@@ -92,7 +95,8 @@ gulp.task('sass', function () {
       outputStyle: 'compressed'
     }))
     .pipe(rename('demo.min.css'))
-    .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'));
+    .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
+    .pipe(connect.reload());
 });
 
 // Compiles both unminified and minified JS files
@@ -106,7 +110,8 @@ gulp.task('scripts', function() {
     .pipe(rename(scriptName + '.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest(destPath + destAssetPath + '/scripts/' + 'min'))
-    .pipe(gulp.dest(srcPath + 'packages/theme/assets/scripts/' + 'min'));
+    .pipe(gulp.dest(srcPath + 'packages/theme/assets/scripts/' + 'min'))
+    .pipe(connect.reload());
 });
 
 // Minifies images to optimize load times
@@ -133,7 +138,8 @@ gulp.task('templates', function() {
     .pipe(rename(function(path){
       path.suffix += ".html";
     }))
-    .pipe(gulp.dest(destPath));
+    .pipe(gulp.dest(destPath))
+    .pipe(connect.reload());
 });
 
 // Watches files for changes and compiles on the fly
