@@ -44,11 +44,11 @@
 
 /* THEME COMPONENTS
 ------------------------------------------------------------------------------*/
-@import "../../client/app/Components/Button/button";
-@import "../../client/app/Components/Dropdown/dropdown";
-@import "../../client/app/Components/Alert/alert";
-@import "../../client/app/Components/Icon/icon";
-@import "../../client/app/Components/Text/text";
+@import "components/button";
+@import "components/dropdown";
+@import "components/alert";
+@import "components/icon";
+@import "components/text";
 @import "components/links";
 @import "components/banners";
 @import "components/cards";
