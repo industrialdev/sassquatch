@@ -2,22 +2,22 @@
   "devDependencies": {
     "axe-core": "^2.6.1",
     "dotenv": "^4.0.0",
-    "gulp": "^3.9.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.7.0",
     "gulp-filter": "^5.1.0",
-    "gulp-imagemin": "^3.3.0",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-insert": "^0.5.0",
     "gulp-notify": "^3.0.0",
+    "gulp-open": "^3.0.1",
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-twig": "^1.1.1",
     "gulp-uglify": "^3.0.0",
-    "gulp-connect": "^5.7.0",
-    "gulp-open": "^3.0.1",
     "gulp-wrap": "^0.15.0",
-    "lerna": "^2.11.0",
-    "gulp-insert": "^0.5.0"
+    "lerna": "^2.11.0"
   }
 }
