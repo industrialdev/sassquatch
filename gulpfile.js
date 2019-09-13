@@ -36,61 +36,63 @@ gulp.task('connect', function() {
       }
   });
   var url = "http://" + connection.host + ":" + connection.port;
-  gulp.src(destPath).pipe(open({uri:url}));
+  return gulp.src(destPath).pipe(open({uri:url}));
 });
 
 // Compiles both unminified and minified CSS files
 gulp.task('sass', function () {
-  gulp.src(srcPath + assetPath + '/styles/' + styleName + '.scss')
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      outputStyle: 'expanded',
-      includePaths: ['node_modules']
-    }))
-    .on('error', onError)
-    .pipe(autoprefixer({
-      browsers: ['last 100 versions'],
-      cascade: false
-    }))
-    .on('error', function (err) {
-      console.log(err.message);
-    })
-    .pipe(sourcemaps.write('../maps'))
-    .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
-    .pipe(filter("\.css\.map$"))
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }))
-    .pipe(rename(styleName + '.min.css'))
-    .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
-    .pipe(gulp.dest(srcPath + 'packages/theme/assets/styles'))
-    .pipe(connect.reload());
+  return merge(
+    gulp.src(srcPath + assetPath + '/styles/' + styleName + '.scss')
+      .pipe(plumber())
+      .pipe(sourcemaps.init())
+      .pipe(sass({
+        outputStyle: 'expanded',
+        includePaths: ['node_modules']
+      }))
+      .on('error', onError)
+      .pipe(autoprefixer({
+        browsers: ['last 100 versions'],
+        cascade: false
+      }))
+      .on('error', function (err) {
+        console.log(err.message);
+      })
+      .pipe(sourcemaps.write('../maps'))
+      .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
+      .pipe(filter("\.css\.map$"))
+      .pipe(sass({
+        outputStyle: 'compressed'
+      }))
+      .pipe(rename(styleName + '.min.css'))
+      .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
+      .pipe(gulp.dest(srcPath + 'packages/theme/assets/styles'))
+      .pipe(connect.reload()),
 
-  gulp.src(srcPath + assetPath + '/styles/demo.scss')
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      outputStyle: 'expanded',
-      includePaths: ['node_modules']
-    }))
-    .on('error', onError)
-    .pipe(autoprefixer({
-      browsers: ['last 100 versions'],
-      cascade: false
-    }))
-    .on('error', function (err) {
-      console.log(err.message);
-    })
-    .pipe(sourcemaps.write('../maps'))
-    .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
-    .pipe(filter("\.css\.map$"))
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }))
-    .pipe(rename('demo.min.css'))
-    .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
-    .pipe(connect.reload());
+    gulp.src(srcPath + assetPath + '/styles/demo.scss')
+      .pipe(plumber())
+      .pipe(sourcemaps.init())
+      .pipe(sass({
+        outputStyle: 'expanded',
+        includePaths: ['node_modules']
+      }))
+      .on('error', onError)
+      .pipe(autoprefixer({
+        browsers: ['last 100 versions'],
+        cascade: false
+      }))
+      .on('error', function (err) {
+        console.log(err.message);
+      })
+      .pipe(sourcemaps.write('../maps'))
+      .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
+      .pipe(filter("\.css\.map$"))
+      .pipe(sass({
+        outputStyle: 'compressed'
+      }))
+      .pipe(rename('demo.min.css'))
+      .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
+      .pipe(connect.reload())
+  )();
 });
 
 // Compiles both unminified and minified JS files
@@ -110,24 +112,26 @@ gulp.task('scripts', function() {
 
 // Minifies images to optimize load times
 gulp.task('images', function(){
-  gulp.src(srcPath + assetPath + '/images/' + '*')
+  return merge(
+    gulp.src(srcPath + assetPath + '/images/' + '*')
     .pipe(imagemin())
-    .pipe(gulp.dest(destPath + destAssetPath + '/images/'))
+    .pipe(gulp.dest(destPath + destAssetPath + '/images/')),
 
-  gulp.src(srcPath + assetPath + '/icons/' + '*')
-    .pipe(imagemin())
-    .pipe(gulp.dest(destPath + destAssetPath + '/icons/'))
+    gulp.src(srcPath + assetPath + '/icons/' + '*')
+      .pipe(imagemin())
+      .pipe(gulp.dest(destPath + destAssetPath + '/icons/'))
+  )();
 });
 
 // Duplicates fonts into destination folder
 gulp.task('fonts', function(){
-  gulp.src(srcPath + assetPath + '/fonts/' + '**/*')
+  return gulp.src(srcPath + assetPath + '/fonts/' + '**/*')
     .pipe(gulp.dest(destPath + destAssetPath + '/fonts/'));
 });
 
 // Converts twig templates to HTML
 gulp.task('templates', function() {
-  gulp.src(srcPath + templatePath + '/*.twig')
+  return gulp.src(srcPath + templatePath + '/*.twig')
     .pipe(twig())
     .pipe(rename(function(path){
       path.suffix += ".html";
@@ -138,19 +142,21 @@ gulp.task('templates', function() {
 
 // Watches files for changes and compiles on the fly
 gulp.task('watch', function () {
-  gulp.watch(srcPath + assetPath + '/styles/' + '**/*.scss', ['sass']);
-  gulp.watch(srcPath + 'packages/theme/client/app/Components/' + '**/*.scss', ['sass']);
-  gulp.watch(srcPath + assetPath + '/scripts/' + '*.js', ['scripts']);
-  gulp.watch(srcPath + 'static/**/*.twig', ['templates']);
+  gulp.watch(srcPath + assetPath + '/scripts/' + '*.js', gulp.series(['scripts']))
+  gulp.watch(srcPath + assetPath + '/styles/' + '**/*.scss', gulp.series(['sass'])),
+  gulp.watch(srcPath + 'packages/theme/client/app/Components/' + '**/*.scss', gulp.series(['sass'])),
+  gulp.watch(srcPath + 'static/**/*.twig', gulp.series(['templates']))
 });
 
 // Builds the default sassquatch package directory
 gulp.task('package', function () {
-  gulp.src(srcPath + 'packages/react/client/app/Components/**/*.scss')
-    .pipe(gulp.dest(srcPath + 'packages/theme/client/app/Components'))
+  return gulp.series(
+    gulp.src(srcPath + 'packages/react/client/app/Components/**/*.scss')
+      .pipe(gulp.dest(srcPath + 'packages/theme/client/app/Components')),
 
-  gulp.src(srcPath + 'packages/react/assets/**/*')
-    .pipe(gulp.dest(srcPath + 'packages/theme/assets'))
+    gulp.src(srcPath + 'packages/react/assets/**/*')
+      .pipe(gulp.dest(srcPath + 'packages/theme/assets'))
+  )();
 });
 
 // error notifications
@@ -163,8 +169,8 @@ var onError = function (err) {
   this.emit('end');
 }
 
-gulp.task('default', gulp.series('templates', 'sass', 'scripts', 'fonts', 'images', 'watch'));
+gulp.task('default', gulp.series(['templates', 'scripts', 'fonts', 'watch']));
 
-gulp.task('build', gulp.series('templates', 'sass', 'scripts', 'fonts', 'images'));
+gulp.task('build', gulp.series(['templates', 'scripts', 'fonts']));
 
-gulp.task('serve', gulp.series('connect', 'watch'));
+gulp.task('serve', gulp.series(gulp.parallel(['connect', 'watch'])));
