@@ -6,6 +6,7 @@ const // Package Variables
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
     connect = require('gulp-connect'),
+    browserSync = require("browser-sync").create();
     open = require('gulp-open');
     autoprefixer = require('gulp-autoprefixer'),
     concat = require('gulp-concat'),
@@ -25,78 +26,77 @@ const // Package Variables
     styleName = process.env.STYLE_NAME,
     scriptName = process.env.SCRIPT_NAME;
 
-gulp.task('connect', function() {
-  var connection = connect.server({
-      root: destPath,
-      fallback: 'index.html',
-      livereload: true,
-      directoryListing: {
-        enable: true,
-        path: 'root'
-      }
+function serveTask(){
+  browserSync.init({
+    server: {
+      baseDir: destPath
+    }
   });
-  var url = "http://" + connection.host + ":" + connection.port;
-  return gulp.src(destPath).pipe(open({uri:url}));
-});
+};
+
+function reloadTask(done) {
+  browserSync.reload();
+  done();
+};
 
 // Compiles both unminified and minified CSS files
-gulp.task('sass', function () {
-  return merge(
-    gulp.src(srcPath + assetPath + '/styles/' + styleName + '.scss')
-      .pipe(plumber())
-      .pipe(sourcemaps.init())
-      .pipe(sass({
-        outputStyle: 'expanded',
-        includePaths: ['node_modules']
-      }))
-      .on('error', onError)
-      .pipe(autoprefixer({
-        browsers: ['last 100 versions'],
-        cascade: false
-      }))
-      .on('error', function (err) {
-        console.log(err.message);
-      })
-      .pipe(sourcemaps.write('../maps'))
-      .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
-      .pipe(filter("\.css\.map$"))
-      .pipe(sass({
-        outputStyle: 'compressed'
-      }))
-      .pipe(rename(styleName + '.min.css'))
-      .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
-      .pipe(gulp.dest(srcPath + 'packages/theme/assets/styles'))
-      .pipe(connect.reload()),
+function sassTask(){
+  return gulp.src(srcPath + assetPath + '/styles/' + styleName + '.scss')
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      outputStyle: 'expanded',
+      includePaths: ['node_modules']
+    }))
+    .on('error', onError)
+    .pipe(autoprefixer({
+      browsers: ['last 100 versions'],
+      cascade: false
+    }))
+    .on('error', function (err) {
+      console.log(err.message);
+    })
+    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
+    .pipe(filter("\.css\.map$"))
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }))
+    .pipe(rename(styleName + '.min.css'))
+    .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
+    .pipe(gulp.dest(srcPath + 'packages/theme/assets/styles'))
+    .pipe(browserSync.stream())
+};
 
-    gulp.src(srcPath + assetPath + '/styles/demo.scss')
-      .pipe(plumber())
-      .pipe(sourcemaps.init())
-      .pipe(sass({
-        outputStyle: 'expanded',
-        includePaths: ['node_modules']
-      }))
-      .on('error', onError)
-      .pipe(autoprefixer({
-        browsers: ['last 100 versions'],
-        cascade: false
-      }))
-      .on('error', function (err) {
-        console.log(err.message);
-      })
-      .pipe(sourcemaps.write('../maps'))
-      .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
-      .pipe(filter("\.css\.map$"))
-      .pipe(sass({
-        outputStyle: 'compressed'
-      }))
-      .pipe(rename('demo.min.css'))
-      .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
-      .pipe(connect.reload())
-  )();
-});
+function demoSassTask(){
+  return gulp.src(srcPath + assetPath + '/styles/demo.scss')
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      outputStyle: 'expanded',
+      includePaths: ['node_modules']
+    }))
+    .on('error', onError)
+    .pipe(autoprefixer({
+      browsers: ['last 100 versions'],
+      cascade: false
+    }))
+    .on('error', function (err) {
+      console.log(err.message);
+    })
+    .pipe(sourcemaps.write('../maps'))
+    .pipe(gulp.dest(destPath + destAssetPath + '/styles/'))
+    .pipe(filter("\.css\.map$"))
+    .pipe(sass({
+      outputStyle: 'compressed'
+    }))
+    .pipe(rename('demo.min.css'))
+    .pipe(gulp.dest(destPath + destAssetPath + '/styles/' + 'min'))
+    .pipe(browserSync.stream())
+}
 
 // Compiles both unminified and minified JS files
-gulp.task('scripts', function() {
+function scriptsTask(){
   return gulp.src(srcPath + assetPath + '/scripts/' + '*.js')
     .pipe(plumber())
     .pipe(concat(scriptName + '.js'))
@@ -107,57 +107,46 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .pipe(gulp.dest(destPath + destAssetPath + '/scripts/' + 'min'))
     .pipe(gulp.dest(srcPath + 'packages/theme/assets/scripts/' + 'min'))
-    .pipe(connect.reload());
-});
+    .pipe(browserSync.stream())
+};
 
 // Minifies images to optimize load times
-gulp.task('images', function(){
-  return merge(
-    gulp.src(srcPath + assetPath + '/images/' + '*')
-    .pipe(imagemin())
-    .pipe(gulp.dest(destPath + destAssetPath + '/images/')),
+function imagesTask(){
+  return gulp.src(srcPath + assetPath + '/images/' + '*')
+  .pipe(imagemin())
+  .pipe(gulp.dest(destPath + destAssetPath + '/images/'))
+};
 
-    gulp.src(srcPath + assetPath + '/icons/' + '*')
-      .pipe(imagemin())
-      .pipe(gulp.dest(destPath + destAssetPath + '/icons/'))
-  )();
-});
+function iconsTask(){
+  return gulp.src(srcPath + assetPath + '/icons/' + '*')
+    .pipe(imagemin())
+    .pipe(gulp.dest(destPath + destAssetPath + '/icons/'));
+}
 
 // Duplicates fonts into destination folder
-gulp.task('fonts', function(){
+function fontsTask(){
   return gulp.src(srcPath + assetPath + '/fonts/' + '**/*')
     .pipe(gulp.dest(destPath + destAssetPath + '/fonts/'));
-});
+};
 
 // Converts twig templates to HTML
-gulp.task('templates', function() {
+function templatesTask() {
   return gulp.src(srcPath + templatePath + '/*.twig')
     .pipe(twig())
     .pipe(rename(function(path){
       path.suffix += ".html";
     }))
     .pipe(gulp.dest(destPath))
-    .pipe(connect.reload());
-});
+    .pipe(browserSync.stream())
+};
 
 // Watches files for changes and compiles on the fly
-gulp.task('watch', function () {
-  gulp.watch(srcPath + assetPath + '/scripts/' + '*.js', gulp.series(['scripts']))
-  gulp.watch(srcPath + assetPath + '/styles/' + '**/*.scss', gulp.series(['sass'])),
-  gulp.watch(srcPath + 'packages/theme/client/app/Components/' + '**/*.scss', gulp.series(['sass'])),
-  gulp.watch(srcPath + 'static/**/*.twig', gulp.series(['templates']))
-});
-
-// Builds the default sassquatch package directory
-gulp.task('package', function () {
-  return gulp.series(
-    gulp.src(srcPath + 'packages/react/client/app/Components/**/*.scss')
-      .pipe(gulp.dest(srcPath + 'packages/theme/client/app/Components')),
-
-    gulp.src(srcPath + 'packages/react/assets/**/*')
-      .pipe(gulp.dest(srcPath + 'packages/theme/assets'))
-  )();
-});
+function watchTask() {
+  gulp.watch(srcPath + assetPath + 'scripts/' + '*.js', gulp.series(scriptsTask, reloadTask));
+  gulp.watch(srcPath + assetPath + 'styles/' + '**/*.scss', gulp.series(sassTask, demoSassTask, reloadTask));
+  gulp.watch(srcPath + 'packages/theme/client/app/Components/' + '**/*.scss', gulp.series(sassTask, demoSassTask, reloadTask));
+  gulp.watch(srcPath + 'static/**/*.twig', gulp.series(templatesTask, reloadTask));
+};
 
 // error notifications
 var onError = function (err) {
@@ -169,8 +158,22 @@ var onError = function (err) {
   this.emit('end');
 }
 
-gulp.task('default', gulp.series(['templates', 'scripts', 'fonts', 'watch']));
-
-gulp.task('build', gulp.series(['templates', 'scripts', 'fonts']));
-
-gulp.task('serve', gulp.series(gulp.parallel(['connect', 'watch'])));
+module.exports = {
+  sass: gulp.series(
+    sassTask, demoSassTask
+  ),
+  scripts: gulp.series(scriptsTask),
+  images: gulp.series(
+    imagesTask, iconsTask
+  ),
+  watch: gulp.series(watchTask),
+  default: gulp.series(
+    templatesTask, sassTask, demoSassTask, scriptsTask, fontsTask, watchTask
+  ),
+  serve: gulp.parallel(
+    serveTask, watchTask
+  ),
+  build: gulp.series(
+    templatesTask, sassTask, demoSassTask, scriptsTask, imagesTask, iconsTask, fontsTask
+  )
+};
