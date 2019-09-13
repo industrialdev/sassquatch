@@ -2,7 +2,7 @@
   "devDependencies": {
     "axe-core": "^2.6.1",
     "dotenv": "^4.0.0",
-    "gulp": "^4.0.2",
+    "gulp": "^4.0",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^5.7.0",

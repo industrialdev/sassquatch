@@ -1,4 +1,4 @@
-var // Package Variables
+const // Package Variables
     dotenv = require('dotenv').config({path: '.env'}),
     gulp = require('gulp'),
     filter = require('gulp-filter'),
@@ -24,12 +24,6 @@ var // Package Variables
     assetPath = process.env.ASSET_PATH,
     styleName = process.env.STYLE_NAME,
     scriptName = process.env.SCRIPT_NAME;
-
-gulp.task('default', ['templates', 'sass', 'scripts', 'fonts', 'images', 'watch']);
-
-gulp.task('build', ['templates', 'sass', 'scripts', 'fonts', 'images']);
-
-gulp.task('serve', ['connect', 'watch']);
 
 gulp.task('connect', function() {
   var connection = connect.server({
@@ -168,3 +162,9 @@ var onError = function (err) {
 
   this.emit('end');
 }
+
+gulp.task('default', gulp.series('templates', 'sass', 'scripts', 'fonts', 'images', 'watch'));
+
+gulp.task('build', gulp.series('templates', 'sass', 'scripts', 'fonts', 'images'));
+
+gulp.task('serve', gulp.series('connect', 'watch'));
