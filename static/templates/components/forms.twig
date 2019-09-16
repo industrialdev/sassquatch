@@ -1,6 +1,6 @@
 <section id="sassquatch-forms">
 	<h2 class="jumplink__target">Forms</h2>
-	<form action="">
+	<form>
 		<div class="form__group">
 			<label for="text-1" class="form__label">Text Input</label>
 			<input id="text-1" type="text" class="form__input" placeholder="Placeholder text">
@@ -79,4 +79,50 @@
 			</div>
 		</fieldset>
 	</form>
+	<h3>Hijax forms</h3>
+	<style>
+		#hijax-target.loading{opacity: 0.5;}
+	</style>
+	<div class="grid" id="hijax-target">
+		<div class="grid__col--md-6">
+			<form class="form--hijax" data-target="hijax-target">
+
+				<div class="form__group">
+					<label for="text-1" class="form__label">Hijaxed Input</label>
+					<input id="text-1" type="text" class="form__input" placeholder="Placeholder text" name="val1">
+				</div>
+
+				<div class="form__group">
+					<label for="select-1" class="form__label">Select Input</label>
+					<select id="select-1" class="form__input"  name="val2">
+						<option value="">Please Select</option>
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+					</select>
+				</div>
+
+				<div class="form__group">
+					<label for="select-1" class="form__label">Select Input</label>
+					<select id="select-1" class="form__input"  name="val3">
+						<option value="">Please Select</option>
+						<option value="1">Option 1</option>
+						<option value="2">Option 2</option>
+					</select>
+				</div>
+
+				<a class="button button--secondary reset-form" href="/">Reset</a>
+				<input type="submit" value="Submit" class="button button--primary">
+
+			</form>
+		</div>
+		<div class="grid__col--md-6">
+			<div class="card">
+
+				<h4>Hijax note</h4>
+				<p>This page is not dynamic, so when submitting the form, your input will be reset and nothing will change.</p>
+				<p>Check the URL to see how hijax would work in a dynamic server environment.</p>
+
+			</div>
+		</div>
+	</div>
 </section>
