@@ -74,10 +74,10 @@ p{
 }
 
 a{
-  transition:all 0.2s ease-in-out;
+  color:$color-link;
+	@include link-interaction($color-link, 'true');
 }
 
-a, 
 img{
   border:none;
 }
@@ -135,6 +135,10 @@ hr{
   height:1px;
   width:100%;
   background:$color-med;
+  &.spacer{
+    background:transparent;
+    margin-top:0;
+  }
 }
 
 details{

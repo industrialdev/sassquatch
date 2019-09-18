@@ -18,9 +18,7 @@
     "gulp-twig": "^1.1.1",
     "gulp-uglify": "^3.0.0",
     "gulp-wrap": "^0.15.0",
-    "lerna": "^2.11.0"
-  },
-  "dependencies": {
+    "lerna": "^2.11.0",
     "browser-sync": "^2.26.7"
   }
 }

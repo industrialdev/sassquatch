@@ -5,7 +5,6 @@ const // Package Variables
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
-    connect = require('gulp-connect'),
     browserSync = require("browser-sync").create();
     open = require('gulp-open');
     autoprefixer = require('gulp-autoprefixer'),
