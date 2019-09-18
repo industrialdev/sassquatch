@@ -17,6 +17,7 @@
   }
   &--fixed{
     position:fixed;
+    z-index:100;
   }
   &__container{
     position:relative;
@@ -34,6 +35,8 @@
   &__content{
     display:none;
     padding:30px;
+    max-width:1290px;
+    margin:0 auto;
   }
   &__controls{
     margin:0;

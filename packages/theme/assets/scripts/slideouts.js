@@ -19,7 +19,11 @@ $(document).on('click', '.slideout__toggle', function(){
       target.fadeIn().addClass('open');
     }, 400);
     slideout.addClass('open');
-    slideout.closest('.slideout__container').css('padding-right', '460px');
+    if(slideout.closest('.slideout__container').outerWidth() <= 800){
+      slideout.closest('.slideout__container').css('padding-right', '60px');
+    }else{
+      slideout.closest('.slideout__container').css('padding-right', '460px');
+    }
     if(overlayed){
       slideout.addClass('open--wide');
       slideout.closest('.slideout__container').css('padding-right', '60px');
