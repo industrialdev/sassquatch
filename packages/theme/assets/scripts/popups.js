@@ -80,3 +80,11 @@ $(document).keyup(function(e) {
     }
   }
 });
+
+$('body').focusin(function(e) {
+  if($('.popup:visible').length){
+    if(!$(e.target).is($('.popup:visible').find('*'))){
+      $('.popup:visible').find('.popup__close').focus();
+    }
+  }
+});
