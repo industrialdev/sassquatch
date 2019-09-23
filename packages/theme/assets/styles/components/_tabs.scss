@@ -7,9 +7,9 @@
     padding:0;
     margin:0;
     display:table;
-    background:$color-lt;
+    background:white;
     @include clearfix();
-    border-bottom:1px solid $color-med;
+    border-bottom:1px solid $color-neutral;
   }
   &__tab-control{
     margin:0;
@@ -21,12 +21,12 @@
     border-bottom:3px solid transparent;
     margin-bottom:-2px;
     &--active{
-      border-bottom:3px solid $color-dk;
+      border-bottom:3px solid black;
     }
   }
   &__content{
     padding:30px;
-    background:$color-lt;
+    background:white;
     display:none;
     &.active{
       display:block;

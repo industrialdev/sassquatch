@@ -1,31 +1,39 @@
 /* BUTTON COMPONENT
 ---------------------------------------------------------------------------*/
+button{
+  border:none;
+  padding:0;
+  appearance:none;
+  @include set-type(16, 400);
+  cursor:pointer;
+}
+
 .button{
+  appearance:none;
   padding:10px 25px;
   cursor:pointer;
   transition:all 0.2s;
   display:inline-block;
-  appearance:none;
   font-family:$font-body-family;
   text-decoration:none;
   border-radius:0;
   border:none;
   margin:5px;
   margin-left:0;
-  background:$color-lt;
+  background:white;
   color:$color-brand-2;
-  @include set-type(16, 700, 24);
-  box-shadow:0 0 5px $color-med;
+  @include set-type(16, 700);
+  box-shadow:0 0 5px $color-neutral;
   &:active{
     transform:translate(1px, 1px);
-    box-shadow:inset 0px 0px 10px $color-med;
+    box-shadow:inset 0px 0px 10px $color-neutral;
   }
   &:last-child{
     margin-bottom:0;
   }
   &--primary{
     background:$color-brand-1;
-    color:$color-lt;
+    color:white;
     &:hover,
     &:focus{
       background:$color-brand-1-lt;
@@ -33,7 +41,7 @@
   }
   &--secondary{
     background:$color-brand-2;
-    color:$color-lt;
+    color:white;
     &:hover,
     &:focus{
       background:$color-brand-2-lt;
@@ -52,18 +60,30 @@
   &--dropdown{
     width:100%;
     display:block;
-    border:1px solid $color-med;
+    border:1px solid $color-neutral;
     + .dropdown__content{
       border-top:none;
+    }
+    i{
+      position:absolute;
+      right:15px;
+      top:50%;
+      transform:translateY(-50%);
+      transition:transform 0.2s;
+    }
+    &.open{
+      i{
+        transform:rotate(180deg) translateY(50%);
+      }
     }
   }
   &--small{
     padding:5px 15px;
-    @include set-type(14, 700, 20);
+    @include set-type(14, 700);
   }
   &--large{
     padding:15px 30px;
-    @include set-type(18, 700, 26);
+    @include set-type(18, 700);
   }
   &--full-width{
     display:block;

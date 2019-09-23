@@ -9,3 +9,29 @@ header,
 		max-width:285px;
 	}
 }
+
+@media(max-width:767px){
+	.header{
+		padding:0;
+		&__content{
+			position:fixed;
+			top:0;
+			left:0;
+			z-index:1000;
+			padding:15px 0;
+			height:$mobile-header-height;
+			width:100%;
+			background:white;
+			border-bottom:1px solid $color-neutral;
+		}
+		&__logo{
+			display:none;
+			position:absolute;
+			left:15px;
+			top:15px;
+			height:calc(100% - 30px);
+			width:auto;
+			max-width:100%;
+		}
+	}
+}

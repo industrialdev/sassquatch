@@ -6,31 +6,31 @@
   position:relative;
   border-left:8px solid;
   font-weight:600;
-  border-color:$color-med $color-med $color-med $color-brand-1;
-  background:$color-lt;
+  border-color:$color-neutral $color-neutral $color-neutral $color-brand-1;
+  background:white;
   color:$color-brand-1;
   i{
     color:$color-brand-1;
   }
   &--success{
-    border-color:$color-med $color-med $color-med $color-success;
-    background:$color-lt;
+    border-color:$color-neutral $color-neutral $color-neutral $color-success;
+    background:white;
     color:$color-success;
     i{
       color:$color-success;
     }
   }
   &--warning{
-    border-color:$color-med $color-med $color-med $color-caution;
-    background:$color-lt;
+    border-color:$color-neutral $color-neutral $color-neutral $color-caution;
+    background:white;
     color:$color-caution-dk;
     i{
       color:$color-caution;
     }
   }
   &--error{
-    border-color:$color-med $color-med $color-med $color-danger;
-    background:$color-lt;
+    border-color:$color-neutral $color-neutral $color-neutral $color-danger;
+    background:white;
     color:$color-danger;
     i{
       color:$color-danger;

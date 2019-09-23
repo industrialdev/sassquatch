@@ -2,7 +2,7 @@
 ---------------------------------------------------------------------------*/
 .tooltip{
   display:none;
-  background:$color-lt;
+  background:white;
   width:300px;
   padding:10px;
   position:absolute;
@@ -11,7 +11,7 @@
   margin-bottom:10px;
   transform:translateX(-50%);
   z-index:10;
-  box-shadow:0 0 5px $color-med;
+  box-shadow:0 0 5px $color-neutral;
   &:before,
   &:after{
     position:absolute;
@@ -20,11 +20,11 @@
   }
   &--top{
     &:before{
-      @include triangle(9.5px, $color-med);
+      @include triangle(9.5px, $color-neutral);
       bottom:-9.5px;
     }
     &:after{
-      @include triangle(8px, $color-lt);
+      @include triangle(8px, white);
       bottom:-8px;
     }
   }
@@ -34,11 +34,11 @@
     margin-bottom:0;
     margin-top:10px;
     &:before{
-      @include triangle(9.5px, $color-med, "up");
+      @include triangle(9.5px, $color-neutral, "up");
       top:-9.5px;
     }
     &:after{
-      @include triangle(8px, $color-lt, "up");
+      @include triangle(8px, white, "up");
       top:-8px;
     }
   }
@@ -59,14 +59,14 @@
     margin-right:10px;
     transform:translateY(-50%);
     &:before{
-      @include triangle(9.5px, $color-med, "right");
+      @include triangle(9.5px, $color-neutral, "right");
       bottom:auto;
       left:auto;
       right:-9.5px;
       transform:translateY(-50%);
     }
     &:after{
-      @include triangle(9.5px, $color-lt, "right");
+      @include triangle(9.5px, white, "right");
       bottom:auto;
       left:auto;
       right:-8px;
@@ -81,13 +81,13 @@
     margin-left:10px;
     transform:translateY(-50%);
     &:before{
-      @include triangle(9.5px, $color-med, "left");
+      @include triangle(9.5px, $color-neutral, "left");
       bottom:auto;
       left:-9.5px;
       transform:translateY(-50%);
     }
     &:after{
-      @include triangle(9.5px, $color-lt, "left");
+      @include triangle(9.5px, white, "left");
       bottom:auto;
       left:-8px;
       transform:translateY(-50%);

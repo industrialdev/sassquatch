@@ -21,7 +21,7 @@ table{
         font-weight:700;
         padding:15px;
         white-space:nowrap;
-        color:$color-lt;
+        color:white;
       }
     }
   }
@@ -29,7 +29,7 @@ table{
     tr{
       td{
         padding:15px;
-        border-bottom:1px solid $color-med;
+        border-bottom:1px solid $color-neutral;
       }
     }
   }

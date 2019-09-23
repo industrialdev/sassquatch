@@ -1,5 +1,5 @@
 /* Converts pixel font size value into EM based on base font size variable */
-@mixin set-type($theSize, $theWeight: "", $theHeight: "") {
+@mixin set-type($theSize, $theWeight: "", $theHeight: $theSize + 10) {
   font-size: #{$theSize / $font-base-size}em;
   @if $theWeight != "" {
     font-weight: $theWeight;

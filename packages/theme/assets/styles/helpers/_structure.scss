@@ -13,21 +13,33 @@
 
 *[class*="breakpoint-shown-"]{
   display:none;
+  &--force{
+    display:none!important;
+  }
 }
 
 *[class*="breakpoint-hidden-"]{
   display:block;
+  &--force{
+    display:block!important;
+  }
 }
 
 @for $z from 1 through 4{
   @media(min-width: nth($breakpoints, $z)){
     .breakpoint-hidden-#{nth($grid-prefix, $z)}{
       display:none;
+      &--force{
+        display:none!important;
+      }
     }
   }
   @media(min-width: nth($breakpoints, $z)){
     .breakpoint-shown-#{nth($grid-prefix, $z)}{
       display:block;
+      &--force{
+        display:block!important;
+      }
     }
   }
 }

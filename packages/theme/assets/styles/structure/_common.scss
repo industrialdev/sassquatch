@@ -2,3 +2,9 @@ main,
 .main{
   background:$color-bg;
 }
+
+@media(max-width:767px){
+  body{
+    padding-top:$mobile-header-height;
+  }
+}

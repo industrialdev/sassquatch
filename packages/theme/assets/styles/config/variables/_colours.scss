@@ -12,12 +12,6 @@ $color-neutral:       #CCCCCC!default; // Grey
 $color-neutral-lt:    #f2f2f2!default;
 $color-neutral-dk:    #4d4d4d!default;
 
-/* General Colours
-------------------------------------------------------------------------------*/
-$color-lt:            #ffffff!default; // White
-$color-med:           #CCCCCC!default; // Grey
-$color-dk:            #000000!default; // Black
-
 /* Contextual Colours
 ------------------------------------------------------------------------------*/
 $color-bg:            $color-neutral-lt!default;
@@ -34,4 +28,4 @@ $color-success-dk:    #325e1c!default;
 
 $color-caution:       #ffdb4d!default; // Yellow
 $color-caution-lt:    #fff2cc!default;
-$color-caution-dk:    #806000!default;
+$color-caution-dk:    $color-neutral-dk!default;

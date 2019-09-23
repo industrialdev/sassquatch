@@ -6,7 +6,7 @@
   border-left:1px solid $color-neutral;
   width:0;
   max-width:calc(100% - 47px);
-  background:$color-lt;
+  background:white;
   transition:width 0.4s ease-in-out;
   &.open{
     width:400px;
@@ -61,11 +61,23 @@
     padding:10px 15px;
     border:1px solid $color-neutral;
     border-bottom:none;
-    @include set-type(18, 400, 18);
+    @include set-type(18, 400);
     transition:all 0.2s ease-in-out;
     &:hover,
     &:focus{
       background:$color-neutral;
+      border-bottom:none;
+    }
+  }
+}
+
+@media(max-width:767px){
+  .slideout{
+    &.open{
+      width:calc(100% - 47px);
+    }
+    &--fixed{
+      top:$mobile-header-height;
     }
   }
 }

@@ -26,15 +26,15 @@ form{
     appearance:none;
     border:none;
     border-radius:0;
-    background:$color-lt;
+    background:white;
     color:$color-brand-2;
     font-family:$font-body-family;
     padding:10px 15px;
     margin:0;
     text-align:left;
-    border:1px solid $color-med;
-    box-shadow:0 0 5px $color-med;
-    @include set-type(16, 400, 24);
+    border:1px solid $color-neutral;
+    box-shadow:0 0 5px $color-neutral;
+    @include set-type(16, 400);
   }
   &__helper{
     font-size:0.9em;
@@ -51,7 +51,7 @@ form{
         right:15px;
         top:50%;
         transform:translateY(-50%);
-        color:$color-dk;
+        color:black;
       }
     }
   }
@@ -76,7 +76,7 @@ form{
         + .form__checkbox-label,
         + .form__radio-label{
           &:before{
-            box-shadow:0 0 5px $color-med;
+            box-shadow:0 0 5px $color-neutral;
           }
         }
       }
@@ -86,7 +86,7 @@ form{
         content:'';
         height: 15px;
         width: 15px;
-        background: $color-lt;
+        background: white;
         border:1px solid $color-neutral;
         position:absolute;
         left:0;
@@ -100,7 +100,7 @@ form{
       left:4px;
       top: 2px;
       cursor:pointer;
-      @include set-type(13, 400, 13);
+      @include set-type(13, 400);
       color:$color-brand-2;
       display:none;
     }
@@ -151,7 +151,7 @@ form{
         cursor:pointer;
         padding:8px 15px;
         border-radius:50px;
-        border:1px solid $color-med;
+        border:1px solid $color-neutral;
         font-weight:600;
         padding-left:35px;
         position:relative;
@@ -161,8 +161,8 @@ form{
           height:24px;
           width:24px;
           border-radius:100%;
-          border:1px solid $color-med;
-          background:$color-lt;
+          border:1px solid $color-neutral;
+          background:white;
           position:absolute;
           margin:0 3px;
           top:50%;
@@ -189,7 +189,7 @@ form{
       &:focus{
         + label{
           .form__switch-toggle{
-            box-shadow:0px 0px 10px $color-med;
+            box-shadow:0px 0px 10px $color-neutral;
           }
         }
       }
@@ -206,7 +206,7 @@ form{
           }
           .form__switch-active-text{
             display:block;
-            color:$color-lt;
+            color:white;
           }
           .form__switch-inactive-text{
             display:none;
