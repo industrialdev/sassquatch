@@ -1,13 +1,215 @@
 <section id="sassquatch-menus">
   <h2 class="jumplink__target">Menus</h2>
-  <h3>Basic Navigation</h3>
-  <nav class="nav">
+  <h3>Horizontal</h3>
+  <nav class="nav nav--horizontal">
     <ul class="nav__menu">
-      <li><a href="#">Nav Item</a></li>
-      <li><a href="#">Nav Item</a></li>
-      <li><a href="#">Nav Item</a></li>
-      <li><a href="#">Nav Item</a></li>
-      <li><a href="#">Nav Item</a></li>
+      <li class="nav__menu-item dropdown--accordion">
+        <button id="example-menu-dropdown-1-control" class="nav__menu-link dropdown__toggle" aria-expanded="false" aria-controls="example-menu-dropdown-1">
+          Menu Item Parent <i class="far fa-angle-down dropdown__icon" aria-hidden="true"></i>
+        </button>
+        <div id="example-menu-dropdown-1" class="nav__submenu" aria-expanded="false" aria-labelledby="example-menu-dropdown-1-control" role="region">
+          <div class="grid grid--flex-md nav__grid">
+            <div class="grid__col--md-8 nav__col">
+              <div class="grid">
+                <div class="grid__col--md-4">
+                  <h2 class="nav__heading">Menu Header</h2>
+                  <ul class="nav__menu">
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                  </ul>
+                </div>
+                <div class="grid__col--md-4">
+                  <h2 class="nav__heading">Menu Header</h2>
+                  <ul class="nav__menu">
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                  </ul>
+                </div>
+                <div class="grid__col--md-4">
+                  <h2 class="nav__heading">Menu Header</h2>
+                  <ul class="nav__menu">
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="grid__col--md-4 nav__col nav__content">
+              <h2>Some Heading</h2>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav__menu-item dropdown--accordion">
+        <div class="nav__wrapper">
+          <a href="#" class="nav__menu-link">
+            Linked Menu Item Parent
+          </a>
+          <button id="example-menu-dropdown-2-control" class="nav__menu-toggle dropdown__toggle" aria-expanded="false" aria-controls="example-menu-dropdown-2">
+            <i class="far fa-angle-down" aria-hidden="true"></i>
+            <span class="webaim-hidden">Toggle Clickable Menu Item Parent</span>
+          </button>
+        </div>
+        <div id="example-menu-dropdown-2" class="nav__submenu" aria-expanded="false" aria-labelledby="example-menu-dropdown-2-control" role="region">
+          <div class="grid">
+            <div class="grid__col--md-3">
+              <ul class="nav__menu">
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+              </ul>
+            </div>
+            <div class="grid__col--md-3">
+              <ul class="nav__menu">
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+              </ul>
+            </div>
+            <div class="grid__col--md-3">
+              <ul class="nav__menu">
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+              </ul>
+            </div>
+            <div class="grid__col--md-3">
+              <ul class="nav__menu">
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+    </ul>
+  </nav>
+  <h3>Vertical</h3>
+  <nav class="nav nav--vertical">
+    <ul class="nav__menu">
+      <li class="nav__menu-item dropdown--accordion">
+        <button id="example-menu-2-dropdown-1-control" class="nav__menu-link dropdown__toggle" aria-expanded="false" aria-controls="example-menu-2-dropdown-1">
+          Menu Item Parent <i class="far fa-angle-down dropdown__icon" aria-hidden="true"></i>
+        </button>
+        <div id="example-menu-2-dropdown-1" class="nav__submenu" aria-expanded="false" aria-labelledby="example-menu-2-dropdown-1-control" role="region">
+          <div class="grid grid--flex-md nav__grid">
+            <div class="grid__col--md-8 nav__col">
+              <div class="grid">
+                <div class="grid__col--md-4">
+                  <h2 class="nav__heading">Menu Header</h2>
+                  <ul class="nav__menu">
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                  </ul>
+                </div>
+                <div class="grid__col--md-4">
+                  <h2 class="nav__heading">Menu Header</h2>
+                  <ul class="nav__menu">
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                  </ul>
+                </div>
+                <div class="grid__col--md-4">
+                  <h2 class="nav__heading">Menu Header</h2>
+                  <ul class="nav__menu">
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                    <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="grid__col--md-4 nav__col nav__content">
+              <h2>Some Heading</h2>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav__menu-item dropdown--accordion">
+        <div class="nav__wrapper">
+          <a href="#" class="nav__menu-link">
+            Linked Menu Item Parent
+          </a>
+          <button id="example-menu-2-dropdown-2-control" class="nav__menu-toggle dropdown__toggle" aria-expanded="false" aria-controls="example-menu-2-dropdown-2">
+            <i class="far fa-angle-down" aria-hidden="true"></i>
+            <span class="webaim-hidden">Toggle Clickable Menu Item Parent</span>
+          </button>
+        </div>
+        <div id="example-menu-2-dropdown-2" class="nav__submenu" aria-expanded="false" aria-labelledby="example-menu-2-dropdown-2-control" role="region">
+          <div class="grid">
+            <div class="grid__col--md-3">
+              <ul class="nav__menu">
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+              </ul>
+            </div>
+            <div class="grid__col--md-3">
+              <ul class="nav__menu">
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+              </ul>
+            </div>
+            <div class="grid__col--md-3">
+              <ul class="nav__menu">
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+              </ul>
+            </div>
+            <div class="grid__col--md-3">
+              <ul class="nav__menu">
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+    </ul>
+  </nav>
+  <h3>Vertical (Expanded)</h3>
+  <nav class="nav nav--vertical">
+    <ul class="nav__menu">
+      <li class="nav__menu-item nav__menu-item--has-children">
+        <a href="#" class="nav__menu-link">Menu Item Parent</a>
+        <ul class="nav__menu">
+          <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+          <li class="nav__menu-item nav__menu-item--has-children">
+            <a href="#" class="nav__menu-link">Menu Item</a>
+            <ul class="nav__menu">
+              <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+              <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+              <li class="nav__menu-item nav__menu-item--has-children">
+                <a href="#" class="nav__menu-link">Menu Item</a>
+                <ul class="nav__menu">
+                  <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                  <li class="nav__menu-item">
+                    <a href="#" class="nav__menu-link">Menu Item</a>
+                  </li>
+                  <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+        </ul>
+      </li>
+      <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+      <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
+      <li class="nav__menu-item"><a href="#" class="nav__menu-link">Menu Item</a></li>
     </ul>
   </nav>
 </section>
