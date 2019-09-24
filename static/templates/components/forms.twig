@@ -1,9 +1,19 @@
 <section id="sassquatch-forms">
 	<h2 class="jumplink__target">Forms</h2>
 	<form action="/">
-		<div class="form__group">
-			<label for="text-1" class="form__label">Text Input</label>
+		<div class="form__group form__group--inline-button form__group--has-icon">
+			<label for="text-inline-button" class="form__label webaim-hidden">Inline Button</label>
+			<i class="far fa-search" aria-hidden="true"></i>
+			<input id="text-inline-button" type="text" class="form__input" placeholder="Inline button (with icon)">
+			<button type="submit" class="button button--primary">Button</button>
+		</div>
+		<div class="form__group form__group--inline-label">
+			<label for="text-1" class="form__label">Inline Label</label>
 			<input id="text-1" type="text" class="form__input" placeholder="Placeholder text">
+		</div>
+		<div class="form__group">
+			<label for="text-2" class="form__label">Text Input</label>
+			<input id="text-2" type="text" class="form__input" placeholder="Placeholder text">
 		</div>
 		<div class="form__group">
 			<label for="select-1" class="form__label">Select Input</label>

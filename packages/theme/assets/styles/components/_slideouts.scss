@@ -19,10 +19,25 @@
     position:fixed;
     z-index:100;
   }
+  &--left{
+    right:auto;
+    left:0;
+    .slideout{
+      &__controls{
+        left:auto;
+        right:0;
+        transform:translateX(100%);
+      }
+    }
+  }
   &__container{
     position:relative;
     padding-right:60px;
     transition:padding 0.4s ease-in-out;
+    &--left{
+      padding-right:0;
+      padding-left:60px;
+    }
   }
   &__content-wrapper{
     position:absolute;
@@ -63,6 +78,7 @@
     border-bottom:none;
     @include set-type(18, 400);
     transition:all 0.2s ease-in-out;
+    background:white;
     &:hover,
     &:focus{
       background:$color-neutral;

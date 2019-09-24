@@ -152,3 +152,13 @@ details{
 select::-ms-expand {
   display: none;
 }
+
+blockquote{
+  padding-left:45px;
+  margin-bottom:30px;
+  border-left:10px solid $color-brand-1;
+  @include set-type(20, 400);
+  p{
+    margin-bottom:15px;
+  }
+}

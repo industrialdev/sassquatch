@@ -14,6 +14,45 @@ form{
     &:last-child{
       margin-bottom:0;
     }
+    &--has-icon{
+      position:relative;
+      .form__input{
+        padding-left:45px;
+      }
+      i{
+        position:absolute;
+        left:15px;
+        top:50%;
+        transform:translateY(-50%);
+      }
+    }
+    &--inline-button{
+      position:relative;
+      .form__input{
+        padding-right:115px;
+      }
+      .button{
+        margin:0;
+        position:absolute;
+        right:0;
+        top:0;
+        height:100%;
+      }
+    }
+    &--inline-label{
+      display:flex;
+      align-items:center;
+      .form__label{
+        display:inline-block;
+        white-space:nowrap;
+        margin:0;
+        margin-right:15px;
+      }
+      .form__input{
+        display:inline-block;
+        width:100%;
+      }
+    }
   }
   &__label{
     display:block;

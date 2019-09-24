@@ -2,6 +2,10 @@ $(document).on('click', '.slideout__toggle', function(){
   var target = $('#' + $(this).attr('aria-controls'));
   var slideout = $(this).closest('.slideout');
   var overlayed = false;
+  var orientation = 'right';
+  if(slideout.hasClass('slideout--left')){
+    orientation = 'left';
+  }
   $(this).toggleClass('open');
   slideout.removeClass('open');
   slideout.removeClass('open--wide');
@@ -20,18 +24,18 @@ $(document).on('click', '.slideout__toggle', function(){
     }, 400);
     slideout.addClass('open');
     if(slideout.closest('.slideout__container').outerWidth() <= 800){
-      slideout.closest('.slideout__container').css('padding-right', '60px');
+      slideout.closest('.slideout__container').css('padding-' + orientation, '60px');
     }else{
-      slideout.closest('.slideout__container').css('padding-right', '460px');
+      slideout.closest('.slideout__container').css('padding-' + orientation, '460px');
     }
     if(overlayed){
       slideout.addClass('open--wide');
-      slideout.closest('.slideout__container').css('padding-right', '60px');
+      slideout.closest('.slideout__container').css('padding-' + orientation, '60px');
     }
   }else{
     target.hide().removeClass('open');
     slideout.removeClass('open');
     slideout.removeClass('open--wide');
-    slideout.closest('.slideout__container').css('padding-right', '60px');
+    slideout.closest('.slideout__container').css('padding-' + orientation, '60px');
   }
 });

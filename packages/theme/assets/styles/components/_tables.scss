@@ -12,9 +12,10 @@
 }
 
 table{
+  width:100%;
   thead{
     tr{
-      background:$color-brand-2;
+      background:$color-brand-1;
       th,
       td{
         text-align:left;
@@ -27,9 +28,18 @@ table{
   }
   tbody{
     tr{
+      background:white;
       td{
         padding:15px;
         border-bottom:1px solid $color-neutral;
+      }
+    }
+  }
+  tfoot{
+    tr{
+      background:$color-neutral;
+      td{
+        padding:15px;
       }
     }
   }
