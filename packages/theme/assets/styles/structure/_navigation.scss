@@ -112,22 +112,20 @@
             padding:0;
             display:block;
             outline:none;
-            .nav__menu{
-              .nav__menu-item{
-                padding-left:30px;
-                &--has-heading{
-                  padding-left:0;
-                  > .nav__menu > .nav__menu-item{
-                    padding-left:0;
-                  }
-                }
-              }
-            }
           }
           &__menu-item{
+            padding-left:30px;
             margin-bottom:15px;
             border:none;
             display:block;
+            &--first-level{
+              padding-left:0;
+            }
+            &--has-heading{
+              > .nav__menu > .nav__menu-item{
+                padding-left:0;
+              }
+            }
             + .nav__menu-item > h2{
               margin-top:45px;
             }
