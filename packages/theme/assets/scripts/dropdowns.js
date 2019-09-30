@@ -17,7 +17,7 @@ $(document).on('click', ".dropdown__toggle, .accordion__toggle", function(event)
 $(document).on('mouseenter', '.dropdown--hover .dropdown__toggle--hover, .accordion--hover .accordion__toggle--hover', function(){
   $(this).addClass("open");
   var targetContent = '#' + $(this).attr('aria-controls');
-  $(targetContent).slideDown('fast').attr("aria-expanded", "true");
+  $(targetContent).stop().slideDown('fast').attr("aria-expanded", "true");
   $(this).attr("aria-expanded", "true");
   $(this).focus();
 });
@@ -25,7 +25,7 @@ $(document).on('mouseenter', '.dropdown--hover .dropdown__toggle--hover, .accord
 $(document).on('mouseleave', '.dropdown--hover, .accordion--hover', function(){
   $(this).find('.dropdown__toggle--hover').removeClass('open');
   var targetContent = '#' +  $(this).find('.dropdown__toggle--hover').attr('aria-controls');
-  $(targetContent).slideUp('fast').attr("aria-expanded", "false");
+  $(targetContent).stop().slideUp('fast').attr("aria-expanded", "false");
   $(this).find('.dropdown__toggle--hover').attr("aria-expanded", "false");
 });
 
