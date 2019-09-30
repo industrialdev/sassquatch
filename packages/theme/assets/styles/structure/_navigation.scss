@@ -117,6 +117,9 @@
                 padding-left:30px;
                 &--has-heading{
                   padding-left:0;
+                  > .nav__menu > .nav__menu-item{
+                    padding-left:0;
+                  }
                 }
               }
             }
