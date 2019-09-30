@@ -106,16 +106,28 @@
         background:white;
         .nav{
           &__menu{
+            float:none;
             border:none;
             background:transparent;
             padding:0;
             display:block;
             outline:none;
+            .nav__menu{
+              .nav__menu-item{
+                padding-left:30px;
+                &--has-heading{
+                  padding-left:0;
+                }
+              }
+            }
           }
           &__menu-item{
             margin-bottom:15px;
             border:none;
             display:block;
+            + .nav__menu-item > h2{
+              margin-top:45px;
+            }
             &:last-of-type{
               margin-bottom:0;
             }
