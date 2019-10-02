@@ -176,12 +176,15 @@
   }
 }
 
-#mobile-toggle{
-	margin:0;
-	position:absolute;
-	right:15px;
-  top:15px;
-  height:calc(100% - 30px);
+.mobile{
+  &__toggle{
+    margin:0;
+    position:fixed;
+    right:15px;
+    top:15px;
+    height:60px;
+    z-index:1100;
+  }
 }
 
 @media(max-width:767px){
@@ -221,7 +224,7 @@
       }
     }
   }
-  #main-menu{
+  .mobile__menu{
     position:fixed;
     z-index:999;
     top:0;

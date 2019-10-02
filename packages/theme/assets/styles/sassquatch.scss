@@ -32,16 +32,6 @@
 ------------------------------------------------------------------------------*/
 @import "base";
 
-/* THEME STRUCTURE
-------------------------------------------------------------------------------*/
-@import "structure/grid";
-@import "structure/common";
-@import "structure/navigation";
-@import "structure/header";
-@import "structure/sections";
-@import "structure/sidebar";
-@import "structure/footer";
-
 /* THEME COMPONENTS
 ------------------------------------------------------------------------------*/
 @import "components/button";
@@ -61,6 +51,16 @@
 @import "components/code";
 @import "components/parallax";
 @import "components/slideouts";
+
+/* THEME STRUCTURE
+------------------------------------------------------------------------------*/
+@import "structure/grid";
+@import "structure/common";
+@import "structure/navigation";
+@import "structure/header";
+@import "structure/sections";
+@import "structure/sidebar";
+@import "structure/footer";
 
 /* THEME HELPERS
 ------------------------------------------------------------------------------*/
